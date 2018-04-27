@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblLanguage: UILabel!
+    @IBOutlet weak var lbl2: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let locString = NSLocalizedString("welcome", comment: "")
+        lblLanguage.text = locString
+        lbl2.text = "goodM".localized()
     }
 
     override func didReceiveMemoryWarning() {
