@@ -347,6 +347,10 @@
                         <viewLayoutGuide key="safeArea" id="yWY-uf-Dbr"/>
                     </view>
                     <connections>
+                        <outlet property="labelDetailContent" destination="t4t-Fm-nNJ" id="bYu-K7-1Eh"/>
+                        <outlet property="labelDetailTitle" destination="fUy-qL-QvX" id="gTK-Dl-mNp"/>
+                        <outlet property="labelProductDescription" destination="ZzH-mn-1i2" id="6nV-cM-LaJ"/>
+                        <outlet property="labelProductTitle" destination="JWD-QV-nqv" id="6ep-cI-vve"/>
                         <outlet property="topImage" destination="Hn7-n6-oQB" id="XzF-X2-hoI"/>
                     </connections>
                 </viewController>

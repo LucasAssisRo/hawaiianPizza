@@ -10,14 +10,48 @@ import UIKit
 
 class ProductsViewController: UIViewController {
 
-    @IBOutlet weak var topImage: UIImageView!
+    //Outlets
     
+    //Product image
+    @IBOutlet weak var topImage: UIImageView!
+   
+    //Product name
+    @IBOutlet weak var labelProductTitle: UILabel!
+    
+    //Details type (like allergenes)
+    @IBOutlet weak var labelDetailTitle: UILabel!
+    
+    //Details content
+    @IBOutlet weak var labelDetailContent: UILabel!
+    
+    //Product description
+    @IBOutlet weak var labelProductDescription: UILabel!
+    
+    //Class var
     var topImageName: String = ""
+    
+
+    // var used for testing: here we'll use the API
+        var name: String = ""
+        var images: String = ""
+        var allergens: [String] = []
+        var productDescription: String = ""
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var textAllergens = ""
+        
         topImage.image = UIImage(named: topImageName)
+        labelProductTitle.text = name
+        labelDetailContent.text = "Allergens"
+        labelProductDescription.text = productDescription
+        for i in 0...(allergens.count) - 2 {
+            textAllergens += "\(allergens[i]), "
+        }
+        textAllergens += (allergens.last)!
+        labelDetailContent.text = textAllergens
     }
 
     override func didReceiveMemoryWarning() {

@@ -74,8 +74,7 @@ class StoresViewController: UIViewController {
         // change the number of the shop images to check if they are hidden or not
         shop = Shop(venueId: "venue1", name: "Tea Shop", images: ["p1","p2"], description: "The Best the you can drink...", category: "category1", tags: ["1", "2"], address1: "Via da the", address2: "address2", city: "Naples", country: "Italy", zipCode: "80100", phone: "+39.081.23.24.25", email: "thebest@thebest.com")
         
-        
-        
+ 
         // init the outlets
         labelShopType.text = shop?.category
         labelShopName.text = shop?.name
@@ -134,6 +133,9 @@ class StoresViewController: UIViewController {
         if segue.identifier == "shopSegue" {
             let vc = segue.destination as! ProductsViewController
             vc.topImageName = productToShow
+            vc.name = "\(shop!.name) product"
+            vc.allergens = ["aller1", "aller2", "aller3"]
+            vc.productDescription = "The best description"
         }
     }
 
