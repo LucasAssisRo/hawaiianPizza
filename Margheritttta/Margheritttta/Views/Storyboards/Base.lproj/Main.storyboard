@@ -530,6 +530,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFP-m8-WFR">
                                                         <rect key="frame" x="0.0" y="1310.3333333333333" width="414" height="30"/>
                                                         <state key="normal" title="Report this shop"/>
+                                                        <connections>
+                                                            <action selector="buttonReportThisShopAction:" destination="J5Y-Ll-9Zg" eventType="touchUpInside" id="hy5-jO-pWE"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -564,7 +567,10 @@
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="buttonMore" destination="6jM-EE-jxC" id="u62-Si-Ceq"/>
+                        <outlet property="buttonReportThisShop" destination="kFP-m8-WFR" id="00j-Fq-2Vg"/>
                         <outlet property="firstImage" destination="6Z2-uV-BNF" id="eua-cb-RJ1"/>
+                        <outlet property="labelContact" destination="01E-TQ-Kg8" id="BWu-VC-pla"/>
+                        <outlet property="labelMailContact" destination="YES-Io-j7x" id="gvL-94-ucB"/>
                         <outlet property="labelShopDescription" destination="M1x-CS-m2n" id="Uea-OV-j1H"/>
                         <outlet property="labelShopName" destination="I7L-u3-TJ4" id="9jY-zG-jVT"/>
                         <outlet property="labelShopType" destination="Dh8-Jc-Acl" id="FdC-UK-Vre"/>
