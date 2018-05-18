@@ -10,10 +10,14 @@ import UIKit
 
 class ProductsViewController: UIViewController {
 
+    @IBOutlet weak var topImage: UIImageView!
+    
+    var topImageName: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        topImage.image = UIImage(named: topImageName)
     }
 
     override func didReceiveMemoryWarning() {

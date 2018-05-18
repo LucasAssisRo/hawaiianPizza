@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J5Y-Ll-9Zg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRJ-wS-sx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1233" y="2370"/>
+            <point key="canvasLocation" x="-1097" y="2369"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="jWf-iI-oGb">
@@ -346,10 +346,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yWY-uf-Dbr"/>
                     </view>
+                    <connections>
+                        <outlet property="topImage" destination="Hn7-n6-oQB" id="XzF-X2-hoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYm-Te-QTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="2704"/>
+            <point key="canvasLocation" x="823" y="2680"/>
         </scene>
         <!--Stores View Controller-->
         <scene sceneID="MZq-7B-KdB">
@@ -416,6 +419,9 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jM-EE-jxC">
                                                                                 <rect key="frame" x="0.0" y="61" width="389" height="30"/>
                                                                                 <state key="normal" title="More"/>
+                                                                                <connections>
+                                                                                    <action selector="buttonMoreAction:" destination="J5Y-Ll-9Zg" eventType="touchUpInside" id="5zs-X9-Idj"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
@@ -557,7 +563,15 @@
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
-                        <segue destination="wdS-C4-7P7" kind="show" id="uLi-td-4uM"/>
+                        <outlet property="buttonMore" destination="6jM-EE-jxC" id="u62-Si-Ceq"/>
+                        <outlet property="firstImage" destination="6Z2-uV-BNF" id="eua-cb-RJ1"/>
+                        <outlet property="labelShopDescription" destination="M1x-CS-m2n" id="Uea-OV-j1H"/>
+                        <outlet property="labelShopName" destination="I7L-u3-TJ4" id="9jY-zG-jVT"/>
+                        <outlet property="labelShopType" destination="Dh8-Jc-Acl" id="FdC-UK-Vre"/>
+                        <outlet property="labelStreetnameCity" destination="dpd-HK-VWM" id="Oql-B8-R08"/>
+                        <outlet property="secondImage" destination="0XP-9B-aV1" id="8E0-Ed-4cB"/>
+                        <outlet property="thirdImage" destination="xOw-mb-XGi" id="dib-Sc-UZu"/>
+                        <segue destination="wdS-C4-7P7" kind="show" identifier="shopSegue" id="uLi-td-4uM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAd-4k-M9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -570,6 +584,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Uq-7V-Za1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yer-47-3k7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
