@@ -29,9 +29,24 @@ class StoresViewController: UIViewController {
     @IBAction func buttonMoreAction(_ sender: UIButton) {
     }
     
+    // Product images
+    
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var thirdImage: UIImageView!
+    
+    // Contact
+    
+    // before the label maybe we need an image for the phone icon and the email icon
+    @IBOutlet weak var labelContact: UILabel!
+    
+    @IBOutlet weak var labelMailContact: UILabel!
+    
+    // Report
+    @IBOutlet weak var buttonReportThisShop: UIButton!
+    
+    @IBAction func buttonReportThisShopAction(_ sender: UIButton) {
+    }
     
     var imageSender : Int = 0
     var productToShow: String = ""
