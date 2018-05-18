@@ -8,11 +8,18 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+ 
+    @IBOutlet weak var collectionViewNear: UICollectionView!
+    
+    let imagesTopFt: [String] = ["2", "2", "2", "2", "2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionViewNear.delegate = self
+        collectionViewNear.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +39,31 @@ class MainViewController: UIViewController {
     }
     */
 
+}
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if collectionView == self.collectionViewNear {
+            return imagesTopFt.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        switch collectionView {
+        case collectionViewNear:
+            let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "CellShopsNear", for: indexPath) as! CellNearShops
+            
+            cell0.imageViewShopNear.image = UIImage(named: imagesTopFt[indexPath.row])
+            return cell0
+        default:
+            break
+        }
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "CellShopsNear", for: indexPath)
+        
+    }
+    
+    
 }
