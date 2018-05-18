@@ -5,45 +5,60 @@
 //  Created by Lucas Assis Rodrigues on 08/05/2018.
 //
 
-import Foundation
-import SwiftKueryORM
+import UIKit
 
 struct Product: Codable {
     var productId: String
     var venueId: String
     var name: String
-    var images: Data // [UIImage]
-    var allergens: Data // [String]
+    var images: [UIImage]
+    var allergens: [String]
     var description: String
     
-    init?(venueId: String, name: String, images: Data, allergens: Data, description: String) {
+    init?(productId: String, venueId: String, name: String, images: Data, allergens: Data, description: String) {
+        guard let images = NSKeyedUnarchiver.unarchiveObject(with: images) as? [UIImage],
+            let allergens = NSKeyedUnarchiver.unarchiveObject(with: allergens) as? [String] else {
+            return nil
+        }
+        
+        self.productId = productId
         self.venueId = venueId
         self.name = name
+        self.images = images
         self.allergens = allergens
         self.description = description
-        self.images = images
-        
-        // Generate random id - not tested completely - not working
-        self.productId = "\(self.name.hashValue)\(self.images.hashValue)\(self.description.hashValue)"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.productId = try container.decode(String.self, forKey: .productId)
+        self.venueId = try container.decode(String.self, forKey: .venueId)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.images = NSKeyedUnarchiver.unarchiveObject(with: try container.decode(Data.self,
+                                                                                   forKey: .images)) as! [UIImage] 
+        self.allergens = try container.decode([String].self, forKey: .allergens)
+        self.description = try container.decode(String.self, forKey: .description)
     }
     
-    struct Query: QueryParams {
-        var productId: String?
-        var venueId: String?
-        var name: String?
-        var images: Data?
-        var allergens: Data?
-        var description: String?
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.productId, forKey: .productId)
+        try container.encode(self.venueId, forKey: .venueId)
+        try container.encode(self.name, forKey: .name)
+        try container.encode(NSKeyedArchiver.archivedData(withRootObject: self.images), forKey: .images)
+        try container.encode(self.allergens, forKey: .allergens)
+        try container.encode(self.description, forKey: .description)
     }
     
-    struct Short: Codable {
-        var productId: String
-        var name: String?
-        var images: String?
+    public enum CodingKeys: String, CodingKey {
+        case productId
+        case venueId
+        case name
+        case images
+        case allergens
+        case description
     }
 }
-
-extension Product: Model { }
 
 extension Product: Equatable {
     public static func ==(lhs: Product, rhs: Product) -> Bool {

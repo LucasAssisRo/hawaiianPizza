@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftKueryORM
 
 struct TourVenueLink: Codable {
     var tourId: String
@@ -16,11 +15,4 @@ struct TourVenueLink: Codable {
         self.tourId = tourId
         self.venueId = venueId
     }
-    
-    struct Query: QueryParams {
-        var tourId: String?
-        var venueId: String?
-    }
 }
-
-extension TourVenueLink: Model {}
