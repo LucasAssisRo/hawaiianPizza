@@ -568,15 +568,15 @@
                     <connections>
                         <outlet property="buttonMore" destination="6jM-EE-jxC" id="u62-Si-Ceq"/>
                         <outlet property="buttonReportThisShop" destination="kFP-m8-WFR" id="00j-Fq-2Vg"/>
-                        <outlet property="firstImage" destination="6Z2-uV-BNF" id="eua-cb-RJ1"/>
                         <outlet property="labelContact" destination="01E-TQ-Kg8" id="BWu-VC-pla"/>
                         <outlet property="labelMailContact" destination="YES-Io-j7x" id="gvL-94-ucB"/>
                         <outlet property="labelShopDescription" destination="M1x-CS-m2n" id="Uea-OV-j1H"/>
                         <outlet property="labelShopName" destination="I7L-u3-TJ4" id="9jY-zG-jVT"/>
                         <outlet property="labelShopType" destination="Dh8-Jc-Acl" id="FdC-UK-Vre"/>
                         <outlet property="labelStreetnameCity" destination="dpd-HK-VWM" id="Oql-B8-R08"/>
-                        <outlet property="secondImage" destination="0XP-9B-aV1" id="8E0-Ed-4cB"/>
-                        <outlet property="thirdImage" destination="xOw-mb-XGi" id="dib-Sc-UZu"/>
+                        <outletCollection property="imagesArray" destination="6Z2-uV-BNF" collectionClass="NSMutableArray" id="9fM-0t-Rq1"/>
+                        <outletCollection property="imagesArray" destination="0XP-9B-aV1" collectionClass="NSMutableArray" id="myd-NP-JQe"/>
+                        <outletCollection property="imagesArray" destination="xOw-mb-XGi" collectionClass="NSMutableArray" id="SyJ-4E-aJw"/>
                         <segue destination="wdS-C4-7P7" kind="show" identifier="shopSegue" id="uLi-td-4uM"/>
                     </connections>
                 </viewController>

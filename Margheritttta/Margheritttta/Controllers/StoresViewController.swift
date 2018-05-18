@@ -15,17 +15,13 @@ class StoresViewController: UIViewController {
     // Header Informations
         // General Information
     @IBOutlet weak var labelShopType: UILabel!
-    
     @IBOutlet weak var labelShopName: UILabel!
-    
     @IBOutlet weak var labelStreetnameCity: UILabel!
     
         // Description
     
     @IBOutlet weak var labelShopDescription: UILabel!
-    
     @IBOutlet weak var buttonMore: UIButton!
-    
     @IBAction func buttonMoreAction(_ sender: UIButton) {
     }
     
@@ -35,41 +31,83 @@ class StoresViewController: UIViewController {
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var thirdImage: UIImageView!
     
+    @IBOutlet var imagesArray: [UIImageView]!
+    
     // Contact
     
     // before the label maybe we need an image for the phone icon and the email icon
     @IBOutlet weak var labelContact: UILabel!
-    
     @IBOutlet weak var labelMailContact: UILabel!
     
     // Report
     @IBOutlet weak var buttonReportThisShop: UIButton!
-    
     @IBAction func buttonReportThisShopAction(_ sender: UIButton) {
     }
     
-    var imageSender : Int = 0
+    //Class var
     var productToShow: String = ""
+    var tapGestures = [UITapGestureRecognizer]()
+
+    // this var is for internal test: it has to be replaced with the Venue struct
+    var shop: Shop?
+    
+    struct Shop {
+        var venueId: String
+        var name: String
+        var images: [String]
+        var description: String
+        var category: String
+        var tags: [String]
+        var address1: String
+        var address2: String?
+        var city: String
+        var country: String
+        var zipCode: String
+        var phone: String?
+        var email: String?
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        // this shop is for testing. It has to be replaced by the API.
+        // change the number of the shop images to check if they are hidden or not
+        shop = Shop(venueId: "venue1", name: "Tea Shop", images: ["p1","p2"], description: "The Best the you can drink...", category: "category1", tags: ["1", "2"], address1: "Via da the", address2: "address2", city: "Naples", country: "Italy", zipCode: "80100", phone: "+39.081.23.24.25", email: "thebest@thebest.com")
+        
+        
+        
+        // init the outlets
+        labelShopType.text = shop?.category
+        labelShopName.text = shop?.name
+        labelStreetnameCity.text = "\(shop!.address1),\(shop!.city)"
+        
+        labelShopDescription.text = shop?.description
+
+        // hide all images
+        for img in imagesArray {
+            img.isHidden = true
+        }
+
+        
+        for i in 0 ... (shop?.images)!.count - 1 {
+            imagesArray[i].isHidden = false
+            imagesArray[i].image = UIImage(named: (shop?.images[i])!)
+            imagesArray[i].isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            tapGestures.append(tap)
+            tapGestures[i].name = "tapGest\(i)"
+            imagesArray[i].addGestureRecognizer(tapGestures[i])
+        }
+        
+        labelContact.text = shop?.phone
+        labelMailContact.text = shop?.email
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
 
-        let tapFirst = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tapFirst.name = "tapFirst"
-        firstImage.isUserInteractionEnabled = true
-        firstImage.addGestureRecognizer(tapFirst)
-      
-        let tapSecond = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tapSecond.name = "tapSecond"
-        secondImage.isUserInteractionEnabled = true
-        secondImage.addGestureRecognizer(tapSecond)
-        
-        let tapThird = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tapThird.name = "tapThird"
-        thirdImage.isUserInteractionEnabled = true
-        thirdImage.addGestureRecognizer(tapThird)
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,12 +118,12 @@ class StoresViewController: UIViewController {
     @objc func handleTap(sender: UITapGestureRecognizer?) {
         // handling code
         switch sender?.name {
-        case "tapFirst":
-            productToShow = "1"
-        case "tapSecond":
-            productToShow = "2"
-        case "tapThird":
-            productToShow = "3"
+        case "tapGest0":
+            productToShow = (shop?.images[0])!
+        case "tapGest1":
+            productToShow = (shop?.images[1])!
+        case "tapGest2":
+            productToShow = (shop?.images[2])!
         default:
             productToShow = ""
         }
@@ -111,12 +149,4 @@ class StoresViewController: UIViewController {
 //        }
 //    }
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        
-        
-        
-        super.performSegue(withIdentifier: identifier, sender: sender)
-    }
-    
-
 }
