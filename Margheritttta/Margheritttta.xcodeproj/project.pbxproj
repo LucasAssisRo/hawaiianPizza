@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0774216F20ACECB700935F9C /* Routeshop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0774216E20ACECB700935F9C /* Routeshop.xib */; };
 		0774217420AEB92B00935F9C /* CellNearShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0774217320AEB92B00935F9C /* CellNearShops.swift */; };
+		411D3BC820AF0CB00098F018 /* ShopCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */; };
 		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
 		4168F664208E286F00727EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F663208E286F00727EEB /* ViewController.swift */; };
 		4168F667208E286F00727EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F665208E286F00727EEB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		0774216E20ACECB700935F9C /* Routeshop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Routeshop.xib; sourceTree = "<group>"; };
 		0774217320AEB92B00935F9C /* CellNearShops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellNearShops.swift; sourceTree = "<group>"; };
+		411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionView.xib; sourceTree = "<group>"; };
 		4168F65E208E286F00727EEB /* Margheritttta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Margheritttta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4168F663208E286F00727EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				4168F66A208E286F00727EEB /* LaunchScreen.storyboard */,
 				4168F665208E286F00727EEB /* Main.storyboard */,
+				411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411D3BC820AF0CB00098F018 /* ShopCollectionView.xib in Resources */,
 				4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */,
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
@@ -447,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GUPEPQU7DU;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
@@ -462,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GUPEPQU7DU;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
