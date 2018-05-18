@@ -10,8 +10,11 @@
 		0774216F20ACECB700935F9C /* Routeshop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0774216E20ACECB700935F9C /* Routeshop.xib */; };
 		0774217420AEB92B00935F9C /* CellNearShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0774217320AEB92B00935F9C /* CellNearShops.swift */; };
 		411D3BC820AF0CB00098F018 /* ShopCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */; };
+		411D3BD020AF107B0098F018 /* TourVenueLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D3BCC20AF107A0098F018 /* TourVenueLink.swift */; };
+		411D3BD120AF107B0098F018 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D3BCD20AF107A0098F018 /* Tour.swift */; };
+		411D3BD220AF107B0098F018 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D3BCE20AF107A0098F018 /* Venue.swift */; };
+		411D3BD320AF107B0098F018 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D3BCF20AF107B0098F018 /* Product.swift */; };
 		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
-		4168F664208E286F00727EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F663208E286F00727EEB /* ViewController.swift */; };
 		4168F667208E286F00727EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F665208E286F00727EEB /* Main.storyboard */; };
 		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
@@ -39,9 +42,12 @@
 		0774216E20ACECB700935F9C /* Routeshop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Routeshop.xib; sourceTree = "<group>"; };
 		0774217320AEB92B00935F9C /* CellNearShops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellNearShops.swift; sourceTree = "<group>"; };
 		411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionView.xib; sourceTree = "<group>"; };
+		411D3BCC20AF107A0098F018 /* TourVenueLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourVenueLink.swift; sourceTree = "<group>"; };
+		411D3BCD20AF107A0098F018 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		411D3BCE20AF107A0098F018 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		411D3BCF20AF107B0098F018 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		4168F65E208E286F00727EEB /* Margheritttta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Margheritttta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4168F663208E286F00727EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4168F666208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4168F668208E286F00727EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4168F66B208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,12 +85,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0774217020ACED3A00935F9C /* Custom Views */ = {
+		411D3BCA20AF0FFF0098F018 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4168F66A208E286F00727EEB /* LaunchScreen.storyboard */,
+				4168F665208E286F00727EEB /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		411D3BCB20AF10140098F018 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
 				0774216E20ACECB700935F9C /* Routeshop.xib */,
+				411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */,
 			);
-			path = "Custom Views";
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		411D3BD420AF109C0098F018 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				411D3BCF20AF107B0098F018 /* Product.swift */,
+				411D3BCD20AF107A0098F018 /* Tour.swift */,
+				411D3BCC20AF107A0098F018 /* TourVenueLink.swift */,
+				411D3BCE20AF107A0098F018 /* Venue.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4168F655208E286E00727EEB = {
@@ -108,10 +135,9 @@
 		4168F660208E286F00727EEB /* Margheritttta */ = {
 			isa = PBXGroup;
 			children = (
-				0774217020ACED3A00935F9C /* Custom Views */,
-				F1A5C49E20934443001C93CC /* Controllers */,
-				F1A5C49D20934443001C93CC /* Models */,
+				411D3BD420AF109C0098F018 /* Models */,
 				F1A5C49C20934443001C93CC /* Views */,
+				F1A5C49E20934443001C93CC /* Controllers */,
 				F1A5C4C1209376ED001C93CC /* SupportFiles */,
 				4168F668208E286F00727EEB /* Assets.xcassets */,
 				4168F66D208E286F00727EEB /* Info.plist */,
@@ -132,25 +158,16 @@
 		F1A5C49C20934443001C93CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4168F66A208E286F00727EEB /* LaunchScreen.storyboard */,
-				4168F665208E286F00727EEB /* Main.storyboard */,
-				411D3BC720AF0CB00098F018 /* ShopCollectionView.xib */,
+				411D3BCB20AF10140098F018 /* Nibs */,
+				411D3BCA20AF0FFF0098F018 /* Storyboards */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F1A5C49D20934443001C93CC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F1A5C49E20934443001C93CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0774217320AEB92B00935F9C /* CellNearShops.swift */,
-				4168F663208E286F00727EEB /* ViewController.swift */,
 				F1A5C4AF20934D7D001C93CC /* MainViewController.swift */,
 				F1F884712099B5F900B6DE7A /* StoresViewController.swift */,
 				F1F884732099B61D00B6DE7A /* EventsViewController.swift */,
@@ -214,7 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lucas Assis Rodrigues";
 				TargetAttributes = {
 					4168F65D208E286E00727EEB = {
@@ -279,12 +296,15 @@
 				F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */,
 				F1F884722099B5F900B6DE7A /* StoresViewController.swift in Sources */,
 				F1F884762099B64500B6DE7A /* ProductsViewController.swift in Sources */,
+				411D3BD120AF107B0098F018 /* Tour.swift in Sources */,
+				411D3BD220AF107B0098F018 /* Venue.swift in Sources */,
+				411D3BD320AF107B0098F018 /* Product.swift in Sources */,
 				F1A5C4B020934D7D001C93CC /* MainViewController.swift in Sources */,
-				4168F664208E286F00727EEB /* ViewController.swift in Sources */,
 				4168F662208E286F00727EEB /* AppDelegate.swift in Sources */,
 				F1F884782099B66F00B6DE7A /* ProfileViewController.swift in Sources */,
 				0774217420AEB92B00935F9C /* CellNearShops.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* EventsViewController.swift in Sources */,
+				411D3BD020AF107B0098F018 /* TourVenueLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +372,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -359,6 +380,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -410,6 +432,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -417,6 +440,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
