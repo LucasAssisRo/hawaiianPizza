@@ -8,18 +8,12 @@
 
 import UIKit
 
-class MainViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MainViewController: UITableViewController {
     
- 
-    @IBOutlet weak var collectionViewNear: UICollectionView!
-    
-    let imagesTopFt: [String] = ["2", "2", "2", "2", "2"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        collectionViewNear.delegate = self
-        collectionViewNear.dataSource = self
+        self.tableView.register(ShopTableRow.self, forCellReuseIdentifier: "ShopTableRow")
+        self.tableView.register(UINib(nibName: "ShopTableRow", bundle: nil), forCellReuseIdentifier: "ShopTableRow")
         // Do any additional setup after loading the view.
     }
 
@@ -38,32 +32,26 @@ class MainViewController: UITableViewController, UICollectionViewDelegate, UICol
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 151
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShopTableRow") as! ShopTableRow
+        cell.registerNibThis()
+        return cell
+    }
+    
 
 }
 
-extension MainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView == self.collectionViewNear {
-            return imagesTopFt.count
-        }
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        switch collectionView {
-        case collectionViewNear:
-            let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "CellShopsNear", for: indexPath) as! CellNearShops
-            
-            cell0.imageViewShopNear.image = UIImage(named: imagesTopFt[indexPath.row])
-            return cell0
-        default:
-            break
-        }
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "CellShopsNear", for: indexPath)
-        
-    }
-    
-    
-}
+
