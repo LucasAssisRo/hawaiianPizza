@@ -110,7 +110,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9q-ae-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123" y="1623"/>
+            <point key="canvasLocation" x="-162" y="1622"/>
         </scene>
         <!--Item-->
         <scene sceneID="tqa-Sf-typ">
@@ -570,6 +570,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Uq-7V-Za1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yer-47-3k7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -619,7 +620,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OS-S4-V6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123.18840579710145" y="623.64130434782612"/>
+            <point key="canvasLocation" x="-162" y="624"/>
         </scene>
     </scenes>
     <resources>
