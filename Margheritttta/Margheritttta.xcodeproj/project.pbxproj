@@ -41,8 +41,8 @@
 		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
+		41A1A31420B45C3D00F18705 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1A31320B45C3D00F18705 /* MainViewController.swift */; };
 		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
-		F1A5C4B020934D7D001C93CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4AF20934D7D001C93CC /* MainViewController.swift */; };
 		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
 		F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */; };
 		F1F884722099B5F900B6DE7A /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884712099B5F900B6DE7A /* StoresViewController.swift */; };
@@ -102,10 +102,10 @@
 		4168F672208E286F00727EEB /* MargherittttaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MargherittttaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A1A31320B45C3D00F18705 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.release.xcconfig"; sourceTree = "<group>"; };
-		F1A5C4AF20934D7D001C93CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Margheritttta/Controller/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		F1A5C4B220936852001C93CC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F1A5C4B620936993001C93CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1A5C4B820936995001C93CC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -137,15 +137,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		034C2B4CCECDA6373137A25C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D2C1F82CDA8A67D8D5FEA19E /* Pods_Margheritttta.framework */,
-				D5F0F2FA8C986B012A562537 /* Pods_MargherittttaUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0774217020ACED3A00935F9C /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,8 +317,8 @@
 		F1A5C49E20934443001C93CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41A1A31320B45C3D00F18705 /* MainViewController.swift */,
 				4168F663208E286F00727EEB /* ViewController.swift */,
-				41A1A31120B458D700F18705 /* MainViewController.swift */,
 				F1F884712099B5F900B6DE7A /* StoresViewController.swift */,
 				F1F884732099B61D00B6DE7A /* EventsViewController.swift */,
 				F1F884752099B64500B6DE7A /* ProductsViewController.swift */,
@@ -376,8 +367,6 @@
 				4168F66E208E286F00727EEB /* Sources */,
 				4168F66F208E286F00727EEB /* Frameworks */,
 				4168F670208E286F00727EEB /* Resources */,
-				2CF86173204C26C3C4DE324E /* [CP] Embed Pods Frameworks */,
-				7AC6120B8B851B0AA4FE254E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -524,7 +513,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0789DB4620B2DC93004E66BB /* WideCollectionViewItem.swift in Sources */,
-				41A1A31220B458D800F18705 /* MainViewController.swift in Sources */,
 				0789DB5320B30004004E66BB /* MixedCollectionViewSubitem.swift in Sources */,
 				F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */,
 				077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */,
@@ -538,6 +526,7 @@
 				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,
 				07F1FBE220B45820009EE51B /* Product.swift in Sources */,
 				0789DB4C20B2F13C004E66BB /* MixedShopsTableRow.swift in Sources */,
+				41A1A31420B45C3D00F18705 /* MainViewController.swift in Sources */,
 				4168F664208E286F00727EEB /* ViewController.swift in Sources */,
 				07F1FBE320B45820009EE51B /* Tour.swift in Sources */,
 				0789DB4220B2DBCB004E66BB /* WideShopsTableRow.swift in Sources */,
@@ -715,7 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUNH82DZ4W;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
@@ -731,7 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUNH82DZ4W;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
