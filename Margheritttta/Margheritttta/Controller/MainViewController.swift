@@ -17,9 +17,9 @@ class MainViewController: UITableViewController, UICollectionViewDelegate, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        collectionViewNear.delegate = self
-        collectionViewNear.dataSource = self
+//
+//        collectionViewNear.delegate = self
+//        collectionViewNear.dataSource = self
         // Do any additional setup after loading the view.
     }
 

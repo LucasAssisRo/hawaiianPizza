@@ -10,10 +10,8 @@ import UIKit
 import KituraKit
 
 final class ServerHandler {
-    public static let shared = KituraConnection()
+    public static let shared = ServerHandler()
 
     private let url = "https://capricciosa.herokuapp.com"
     private init() {}
-    
-    
 }
