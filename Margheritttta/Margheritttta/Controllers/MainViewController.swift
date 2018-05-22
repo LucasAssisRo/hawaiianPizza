@@ -20,6 +20,10 @@ class MainViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "LinearShopsTableRow", bundle: nil), forCellReuseIdentifier: "LinearShopsTableRow")
         self.tableView.register(WideShopsTableRow.self, forCellReuseIdentifier: "WideShopsTableRow")
         self.tableView.register(UINib(nibName: "WideShopsTableRow", bundle: nil), forCellReuseIdentifier: "WideShopsTableRow")
+        self.tableView.register(MixedShopsTableRow.self, forCellReuseIdentifier: "MixedShopsTableRow")
+        self.tableView.register(UINib(nibName: "MixedShopsTableRow", bundle: nil), forCellReuseIdentifier: "MixedShopsTableRow")
+        self.tableView.register(ClusteredShopsTableRow.self, forCellReuseIdentifier: "ClusteredShopsTableRow")
+        self.tableView.register(UINib(nibName: "ClusteredShopsTableRow", bundle: nil), forCellReuseIdentifier: "ClusteredShopsTableRow")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
 
     }
@@ -30,11 +34,22 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        switch indexPath.section {
+        case 0:
+            return 185
+        case 1:
+            return 185
+        case 2:
+            return 595
+        case 3:
+            return 370
+        default:
+            return 180
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +127,12 @@ class MainViewController: UITableViewController {
         case 1:
             button.tag = 1
             button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+        case 2:
+            button.tag = 2
+            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+        case 3:
+            button.tag = 3
+            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
         default:
             break
         }
@@ -168,6 +189,10 @@ class MainViewController: UITableViewController {
             heading = "Shops near you"
         case 1:
             heading = "Other Shops"
+        case 2:
+            heading = "Stacked Shops"
+        case 3:
+            heading = "Clustered Shops"
         default:
             heading = ""
         }
@@ -194,6 +219,10 @@ class MainViewController: UITableViewController {
             description = "Check out the new amazing stores"
         case 1:
             description = "Visit some other doofy stores"
+        case 2:
+            description = "Some wrapped up stores"
+        case 3:
+            description = "You see all those clusters?"
         default:
             description = ""
         }
@@ -235,27 +264,39 @@ class MainViewController: UITableViewController {
             print("Section 0 button clicked")
         case 1:
             print("Section 1 button clicked")
+        case 2:
+            print("Section 2 button clicked")
+        case 3:
+            print("Section 3 button clicked")
         default:
             return
         }
     }
     
-   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
+    
+   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow") as! LinearShopsTableRow
                 cell.registerNibThis()
-            return cell
+                return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow") as! WideShopsTableRow
-            cell.registerNibThis()
-            return cell
+                cell.registerNibThis()
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableRow") as! MixedShopsTableRow
+                cell.registerNibThis()
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableRow") as! ClusteredShopsTableRow
+                cell.registerNibThis()
+                return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow") as! LinearShopsTableRow
                 cell.registerNibThis()
                 return cell
-            break
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  MixedShopstableRow.swift
+//  WideShopsTableRow.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 21.05.18.
@@ -36,21 +36,21 @@ class MixedShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 1
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MixedCollectionViewItem", for: indexPath) as! MixedCollectionViewItem
         
-        cell.contentView.layer.cornerRadius = 3
-        cell.contentView.layer.masksToBounds = true
-        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        cell.layer.shadowOffset = CGSize(width:2,height: 4.0)
-        cell.layer.shadowRadius = 4.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false;
-        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+//        cell.contentView.layer.cornerRadius = 3
+//        cell.contentView.layer.masksToBounds = true
+//        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+//        cell.layer.shadowOffset = CGSize(width:2,height: 4.0)
+//        cell.layer.shadowRadius = 4.0
+//        cell.layer.shadowOpacity = 1.0
+//        cell.layer.masksToBounds = false;
+//        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         return cell
     }
 }
-

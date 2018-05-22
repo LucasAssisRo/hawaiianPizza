@@ -42,6 +42,7 @@ class WideShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewItem", for: indexPath) as! WideCollectionViewItem
         
+    
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true
         cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor

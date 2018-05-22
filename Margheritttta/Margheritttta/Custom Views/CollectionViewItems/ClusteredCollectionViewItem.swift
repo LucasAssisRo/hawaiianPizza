@@ -1,15 +1,15 @@
 //
-//  ShopCollectionViewItem.swift
+//  ClusteredCollectionViewItem.swift
 //  Margheritttta
 //
-//  Created by Alexander Schülke on 19.05.18.
+//  Created by Alexander Schülke on 22.05.18.
 //  Copyright © 2018 Lucas Assis Rodrigues. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ShopCollectionViewItem: UICollectionViewCell {
-    @IBOutlet weak var shopName: UILabel!
+class ClusteredCollectionViewItem: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }

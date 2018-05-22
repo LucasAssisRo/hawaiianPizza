@@ -12,14 +12,168 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WJh-xi-3SB">
-            <rect key="frame" x="0.0" y="0.0" width="309" height="300"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WJh-xi-3SB" customClass="MixedCollectionViewItem" customModule="Margheritttta" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="389"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="309" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="309" height="389"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z7-2o-8eR" customClass="MixedCollectionViewSubItem" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="309" height="210"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-ME-UN5" customClass="MixedCollectionViewImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="309" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="MZ9-8g-Jwn"/>
+                                    <constraint firstAttribute="width" constant="309" id="uvz-PF-PDU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCorners">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gha-XK-dO7">
+                                <rect key="frame" x="8" y="163" width="293" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP6-MW-Dbq">
+                                <rect key="frame" x="8" y="185" width="64" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tUO-ME-UN5" secondAttribute="trailing" id="Ltz-yg-hvH"/>
+                            <constraint firstAttribute="height" constant="210" id="cPT-lk-aKM"/>
+                            <constraint firstItem="tUO-ME-UN5" firstAttribute="top" secondItem="7Z7-2o-8eR" secondAttribute="top" id="eJS-ke-6sQ"/>
+                            <constraint firstItem="tUO-ME-UN5" firstAttribute="leading" secondItem="7Z7-2o-8eR" secondAttribute="leading" id="xWL-5t-Ti2"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTM-Ls-eFw" customClass="MixedCollectionViewSubItem" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="219" width="154" height="170"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="NSD-MY-ANa" customClass="MixedCollectionViewImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="154" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="IdP-Cz-PHu"/>
+                                    <constraint firstAttribute="height" constant="116" id="ayI-Jd-pzH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCorners">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOv-gS-ckQ">
+                                <rect key="frame" x="8" y="122" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCQ-sa-T1d">
+                                <rect key="frame" x="8" y="145" width="64" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vOv-gS-ckQ" firstAttribute="leading" secondItem="eTM-Ls-eFw" secondAttribute="leading" constant="8" id="0RH-UM-vCI"/>
+                            <constraint firstItem="NSD-MY-ANa" firstAttribute="leading" secondItem="eTM-Ls-eFw" secondAttribute="leading" id="94Z-jH-kCK"/>
+                            <constraint firstItem="vOv-gS-ckQ" firstAttribute="top" secondItem="NSD-MY-ANa" secondAttribute="bottom" constant="6" id="HiR-ft-7Tm"/>
+                            <constraint firstAttribute="trailing" secondItem="mCQ-sa-T1d" secondAttribute="trailing" constant="82" id="Jq1-8y-LGV"/>
+                            <constraint firstAttribute="trailing" secondItem="vOv-gS-ckQ" secondAttribute="trailing" constant="8" id="KKv-x6-BGH"/>
+                            <constraint firstAttribute="width" constant="154" id="KZR-go-aSp"/>
+                            <constraint firstAttribute="height" constant="170" id="Rtl-q4-ezb"/>
+                            <constraint firstAttribute="trailing" secondItem="NSD-MY-ANa" secondAttribute="trailing" id="VoT-py-VUa"/>
+                            <constraint firstItem="mCQ-sa-T1d" firstAttribute="top" secondItem="vOv-gS-ckQ" secondAttribute="bottom" id="adG-hZ-pB5"/>
+                            <constraint firstItem="NSD-MY-ANa" firstAttribute="top" secondItem="eTM-Ls-eFw" secondAttribute="top" id="erD-GD-tvZ"/>
+                            <constraint firstItem="mCQ-sa-T1d" firstAttribute="leading" secondItem="eTM-Ls-eFw" secondAttribute="leading" constant="8" id="jXo-Bz-OPw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHg-AV-lTA" customClass="MixedCollectionViewSubItem" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="161" y="218" width="148" height="171"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-tS-OJ6" customClass="MixedCollectionViewImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="148" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="hqe-Q3-qn7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCorners">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-51-JKP">
+                                <rect key="frame" x="8" y="125" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTj-gx-iOg">
+                                <rect key="frame" x="8" y="143" width="64" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oVu-51-JKP" firstAttribute="leading" secondItem="iHg-AV-lTA" secondAttribute="leading" constant="8" id="6vt-2v-jGW"/>
+                            <constraint firstAttribute="trailing" secondItem="LfR-tS-OJ6" secondAttribute="trailing" id="8GL-5a-dQk"/>
+                            <constraint firstItem="LfR-tS-OJ6" firstAttribute="top" secondItem="iHg-AV-lTA" secondAttribute="top" id="9GB-pj-HTC"/>
+                            <constraint firstItem="UTj-gx-iOg" firstAttribute="leading" secondItem="iHg-AV-lTA" secondAttribute="leading" constant="8" id="G1O-HO-iNg"/>
+                            <constraint firstItem="UTj-gx-iOg" firstAttribute="top" secondItem="LfR-tS-OJ6" secondAttribute="bottom" constant="26" id="UZV-GB-7go"/>
+                            <constraint firstItem="LfR-tS-OJ6" firstAttribute="leading" secondItem="iHg-AV-lTA" secondAttribute="leading" id="YDR-rg-FcD"/>
+                            <constraint firstItem="oVu-51-JKP" firstAttribute="top" secondItem="LfR-tS-OJ6" secondAttribute="bottom" constant="8" id="cTe-7r-s3o"/>
+                            <constraint firstAttribute="width" constant="148" id="j50-uJ-Wtb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iHg-AV-lTA" secondAttribute="bottom" id="4un-ZK-oY1"/>
+                <constraint firstItem="iHg-AV-lTA" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" constant="218" id="Dc5-tX-mdo"/>
+                <constraint firstAttribute="trailing" secondItem="iHg-AV-lTA" secondAttribute="trailing" id="OLP-av-2Pu"/>
+                <constraint firstAttribute="bottom" secondItem="eTM-Ls-eFw" secondAttribute="bottom" id="PDK-1u-Jvv"/>
+                <constraint firstItem="7Z7-2o-8eR" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="RPa-R8-i3N"/>
+                <constraint firstItem="7Z7-2o-8eR" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" id="SE9-7J-6Bj"/>
+                <constraint firstItem="eTM-Ls-eFw" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="U32-aw-w6K"/>
+                <constraint firstItem="eTM-Ls-eFw" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" constant="219" id="X7f-xo-ac3"/>
+                <constraint firstAttribute="trailing" secondItem="7Z7-2o-8eR" secondAttribute="trailing" id="fDv-LX-VpQ"/>
+                <constraint firstItem="eTM-Ls-eFw" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="fbl-Oc-HAU"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="IkX-rf-Aaq"/>
+            <size key="customSize" width="309" height="389"/>
+            <point key="canvasLocation" x="33.5" y="98.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="2" width="1280" height="1135"/>
+    </resources>
 </document>

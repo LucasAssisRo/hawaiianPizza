@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class ClusteredShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,9 +24,9 @@ class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollecti
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(ShopCollectionViewItem.self, forCellWithReuseIdentifier: "ShopCollectionViewItem")
-        self.collectionView.register(UINib(nibName: "ShopCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "ShopCollectionViewItem")
-
+        self.collectionView.register(ClusteredCollectionViewItem.self, forCellWithReuseIdentifier: "ClusteredCollectionViewItem")
+        self.collectionView.register(UINib(nibName: "ClusteredCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "ClusteredCollectionViewItem")
+        
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
     
@@ -36,11 +36,16 @@ class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameWidth = collectionView.frame.size.width
+        return CGSize(width: frameWidth / 2 - 30, height: 175)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCollectionViewItem", for: indexPath) as! ShopCollectionViewItem
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClusteredCollectionViewItem", for: indexPath) as! ClusteredCollectionViewItem
         
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true
