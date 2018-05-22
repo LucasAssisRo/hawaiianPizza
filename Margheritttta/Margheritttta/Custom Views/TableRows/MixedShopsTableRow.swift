@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MixedShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class MixedShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -39,6 +39,11 @@ class MixedShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectio
         return 1
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameWidth = collectionView.frame.size.width
+        return CGSize(width: frameWidth - 30, height: 400)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MixedCollectionViewItem", for: indexPath) as! MixedCollectionViewItem

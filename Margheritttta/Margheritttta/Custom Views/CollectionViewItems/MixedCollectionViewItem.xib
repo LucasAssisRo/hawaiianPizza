@@ -13,10 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WJh-xi-3SB" customClass="MixedCollectionViewItem" customModule="Margheritttta" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="309" height="389"/>
+            <rect key="frame" x="0.0" y="0.0" width="323" height="395"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="309" height="389"/>
+                <rect key="frame" x="0.0" y="0.0" width="323" height="395"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z7-2o-8eR" customClass="MixedCollectionViewSubItem" customModule="Margheritttta" customModuleProvider="target">
@@ -157,20 +157,21 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="iHg-AV-lTA" secondAttribute="bottom" id="4un-ZK-oY1"/>
+                <constraint firstItem="iHg-AV-lTA" firstAttribute="leading" secondItem="eTM-Ls-eFw" secondAttribute="trailing" constant="7" id="6CY-Qz-rQN"/>
+                <constraint firstAttribute="trailing" secondItem="7Z7-2o-8eR" secondAttribute="trailing" constant="14" id="8P4-Z6-goP"/>
                 <constraint firstItem="iHg-AV-lTA" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" constant="218" id="Dc5-tX-mdo"/>
-                <constraint firstAttribute="trailing" secondItem="iHg-AV-lTA" secondAttribute="trailing" id="OLP-av-2Pu"/>
-                <constraint firstAttribute="bottom" secondItem="eTM-Ls-eFw" secondAttribute="bottom" id="PDK-1u-Jvv"/>
                 <constraint firstItem="7Z7-2o-8eR" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="RPa-R8-i3N"/>
                 <constraint firstItem="7Z7-2o-8eR" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" id="SE9-7J-6Bj"/>
+                <constraint firstAttribute="bottom" secondItem="eTM-Ls-eFw" secondAttribute="bottom" constant="6" id="SNZ-Ax-hN8"/>
                 <constraint firstItem="eTM-Ls-eFw" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="U32-aw-w6K"/>
                 <constraint firstItem="eTM-Ls-eFw" firstAttribute="top" secondItem="WJh-xi-3SB" secondAttribute="top" constant="219" id="X7f-xo-ac3"/>
-                <constraint firstAttribute="trailing" secondItem="7Z7-2o-8eR" secondAttribute="trailing" id="fDv-LX-VpQ"/>
+                <constraint firstAttribute="trailing" secondItem="iHg-AV-lTA" secondAttribute="trailing" constant="14" id="dRG-4u-C9E"/>
                 <constraint firstItem="eTM-Ls-eFw" firstAttribute="leading" secondItem="WJh-xi-3SB" secondAttribute="leading" id="fbl-Oc-HAU"/>
+                <constraint firstAttribute="bottom" secondItem="iHg-AV-lTA" secondAttribute="bottom" constant="6" id="y8C-qj-oj7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="IkX-rf-Aaq"/>
-            <size key="customSize" width="309" height="389"/>
-            <point key="canvasLocation" x="33.5" y="98.5"/>
+            <size key="customSize" width="323" height="389"/>
+            <point key="canvasLocation" x="40.5" y="98.5"/>
         </collectionViewCell>
     </objects>
     <resources>

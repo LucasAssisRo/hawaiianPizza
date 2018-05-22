@@ -40,7 +40,7 @@ class MainViewController: UITableViewController {
         case 1:
             return 185
         case 2:
-            return 595
+            return 400
         case 3:
             return 370
         default:
