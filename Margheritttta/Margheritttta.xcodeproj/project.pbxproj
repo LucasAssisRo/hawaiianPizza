@@ -27,6 +27,11 @@
 		07AE6B7720B07AF800321D8B /* LinearShopsTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE6B7620B07AF800321D8B /* LinearShopsTableRow.swift */; };
 		07DA706720B40D120053FDE4 /* ClusteredShopsTableRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DA706620B40D120053FDE4 /* ClusteredShopsTableRow.xib */; };
 		07DA706920B40D200053FDE4 /* ClusteredShopsTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA706820B40D200053FDE4 /* ClusteredShopsTableRow.swift */; };
+		07F1FBE020B45820009EE51B /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDC20B45820009EE51B /* Venue.swift */; };
+		07F1FBE120B45820009EE51B /* TourVenueLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDD20B45820009EE51B /* TourVenueLink.swift */; };
+		07F1FBE220B45820009EE51B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDE20B45820009EE51B /* Product.swift */; };
+		07F1FBE320B45820009EE51B /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDF20B45820009EE51B /* Tour.swift */; };
+		07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBE420B4582B009EE51B /* ServerHandler.swift */; };
 		07FBBF2C20B07C5A0012B99C /* ShopCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBBF2B20B07C5A0012B99C /* ShopCollectionViewItem.xib */; };
 		07FBBF2E20B07C8D0012B99C /* ShopCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBBF2D20B07C8D0012B99C /* ShopCollectionViewItem.swift */; };
 		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
@@ -75,6 +80,11 @@
 		07AE6B7620B07AF800321D8B /* LinearShopsTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearShopsTableRow.swift; sourceTree = "<group>"; };
 		07DA706620B40D120053FDE4 /* ClusteredShopsTableRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusteredShopsTableRow.xib; sourceTree = "<group>"; };
 		07DA706820B40D200053FDE4 /* ClusteredShopsTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusteredShopsTableRow.swift; sourceTree = "<group>"; };
+		07F1FBDC20B45820009EE51B /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		07F1FBDD20B45820009EE51B /* TourVenueLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourVenueLink.swift; sourceTree = "<group>"; };
+		07F1FBDE20B45820009EE51B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		07F1FBDF20B45820009EE51B /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		07F1FBE420B4582B009EE51B /* ServerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
 		07FBBF2B20B07C5A0012B99C /* ShopCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionViewItem.xib; sourceTree = "<group>"; };
 		07FBBF2D20B07C8D0012B99C /* ShopCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewItem.swift; sourceTree = "<group>"; };
 		4168F65E208E286F00727EEB /* Margheritttta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Margheritttta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +150,10 @@
 		07F1FBD420B4566D009EE51B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07F1FBDE20B45820009EE51B /* Product.swift */,
+				07F1FBDF20B45820009EE51B /* Tour.swift */,
+				07F1FBDD20B45820009EE51B /* TourVenueLink.swift */,
+				07F1FBDC20B45820009EE51B /* Venue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +298,7 @@
 		F1A5C4C1209376ED001C93CC /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				07F1FBE420B4582B009EE51B /* ServerHandler.swift */,
 				4168F661208E286F00727EEB /* AppDelegate.swift */,
 				F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */,
 			);
@@ -415,12 +430,17 @@
 				0789DB5020B2F206004E66BB /* MixedCollectionViewItem.swift in Sources */,
 				F1F884762099B64500B6DE7A /* ProductsViewController.swift in Sources */,
 				F1A5C4B020934D7D001C93CC /* MainViewController.swift in Sources */,
+				07F1FBE020B45820009EE51B /* Venue.swift in Sources */,
 				07AE6B7720B07AF800321D8B /* LinearShopsTableRow.swift in Sources */,
+				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,
+				07F1FBE220B45820009EE51B /* Product.swift in Sources */,
 				0789DB4C20B2F13C004E66BB /* MixedShopsTableRow.swift in Sources */,
 				4168F664208E286F00727EEB /* ViewController.swift in Sources */,
+				07F1FBE320B45820009EE51B /* Tour.swift in Sources */,
 				0789DB4220B2DBCB004E66BB /* WideShopsTableRow.swift in Sources */,
 				071F952620B44A8C00BEBFC2 /* MixedCollectionViewImageView.swift in Sources */,
 				4168F662208E286F00727EEB /* AppDelegate.swift in Sources */,
+				07F1FBE120B45820009EE51B /* TourVenueLink.swift in Sources */,
 				F1F884782099B66F00B6DE7A /* ProfileViewController.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* EventsViewController.swift in Sources */,
 				07FBBF2E20B07C8D0012B99C /* ShopCollectionViewItem.swift in Sources */,
