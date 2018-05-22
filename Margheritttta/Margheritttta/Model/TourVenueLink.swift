@@ -8,10 +8,10 @@
 import Foundation
 
 struct TourVenueLink: Codable {
-    var tourId: String
-    var venueId: String
+    public var tourId: String
+    public var venueId: String
     
-    init?(tourId: String, venueId: String) {
+    public init?(tourId: String, venueId: String) {
         self.tourId = tourId
         self.venueId = venueId
     }
