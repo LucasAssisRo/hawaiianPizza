@@ -10,28 +10,10 @@ import UIKit
 import KituraKit
 
 final class ServerHandler {
-    public static let shared = ServerHandler()
+    public static let shared = KituraConnection()
 
     private let url = "https://capricciosa.herokuapp.com"
-    private let kitura: KituraKit?
+    private init() {}
     
-    private init() {
-        self.kitura = KituraKit(baseURL: url)
-    }
     
-    public func getAllProducts(completion: @escaping (([Product]?, Error?) -> Void)) {
-        guard let kitura = kitura else {
-            completion(nil, RequestError.internalServerError)
-            return
-        }
-        
-        kitura.get("/products/all") { (products:[Product]? , error: Error?) in
-            guard let error = error  else {
-                completion(products, nil)
-                return
-            }
-            
-            completion(nil, error)
-        }
-    }
 }

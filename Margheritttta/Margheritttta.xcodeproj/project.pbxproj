@@ -20,7 +20,6 @@
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
 		41A044ED20B2F4BB00A6178E /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A044EC20B2F4BB00A6178E /* ServerHandler.swift */; };
-		41A044EF20B2FBA700A6178E /* UselessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A044EE20B2FBA700A6178E /* UselessViewController.swift */; };
 		59230D7001472D00FA0AE903 /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C75080F0179F33DDAC06CC /* Pods_MargherittttaUITests.framework */; };
 		C7FB8FB63222B77D1CD9D445 /* Pods_Margheritttta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA2C3D07D42AD0FAE473750 /* Pods_Margheritttta.framework */; };
 		F1A5C4B020934D7D001C93CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4AF20934D7D001C93CC /* MainViewController.swift */; };
@@ -60,7 +59,6 @@
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41A044EC20B2F4BB00A6178E /* ServerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
-		41A044EE20B2FBA700A6178E /* UselessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UselessViewController.swift; sourceTree = "<group>"; };
 		4DA2C3D07D42AD0FAE473750 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C75080F0179F33DDAC06CC /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA63E3CDF8F978B9B9205AF /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				4168F668208E286F00727EEB /* Assets.xcassets */,
 				4168F66D208E286F00727EEB /* Info.plist */,
 				F1A5C4B720936993001C93CC /* Localizable.strings */,
-				41A044EE20B2FBA700A6178E /* UselessViewController.swift */,
 			);
 			path = Margheritttta;
 			sourceTree = "<group>";
@@ -450,7 +447,6 @@
 				F1F884782099B66F00B6DE7A /* ProfileViewController.swift in Sources */,
 				0774217420AEB92B00935F9C /* CellNearShops.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* EventsViewController.swift in Sources */,
-				41A044EF20B2FBA700A6178E /* UselessViewController.swift in Sources */,
 				41A044ED20B2F4BB00A6178E /* ServerHandler.swift in Sources */,
 				411D3BD020AF107B0098F018 /* TourVenueLink.swift in Sources */,
 			);
