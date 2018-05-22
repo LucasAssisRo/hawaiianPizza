@@ -34,12 +34,14 @@
 		07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBE420B4582B009EE51B /* ServerHandler.swift */; };
 		07FBBF2C20B07C5A0012B99C /* ShopCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBBF2B20B07C5A0012B99C /* ShopCollectionViewItem.xib */; };
 		07FBBF2E20B07C8D0012B99C /* ShopCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBBF2D20B07C8D0012B99C /* ShopCollectionViewItem.swift */; };
+		3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */; };
 		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
 		4168F664208E286F00727EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F663208E286F00727EEB /* ViewController.swift */; };
 		4168F667208E286F00727EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F665208E286F00727EEB /* Main.storyboard */; };
 		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
+		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
 		F1A5C4B020934D7D001C93CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4AF20934D7D001C93CC /* MainViewController.swift */; };
 		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
 		F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */; };
@@ -87,6 +89,9 @@
 		07F1FBE420B4582B009EE51B /* ServerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
 		07FBBF2B20B07C5A0012B99C /* ShopCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionViewItem.xib; sourceTree = "<group>"; };
 		07FBBF2D20B07C8D0012B99C /* ShopCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewItem.swift; sourceTree = "<group>"; };
+		0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.debug.xcconfig"; sourceTree = "<group>"; };
+		2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F65E208E286F00727EEB /* Margheritttta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Margheritttta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4168F663208E286F00727EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +102,10 @@
 		4168F672208E286F00727EEB /* MargherittttaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MargherittttaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1A5C4AF20934D7D001C93CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Margheritttta/Controllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.release.xcconfig"; sourceTree = "<group>"; };
+		F1A5C4AF20934D7D001C93CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Margheritttta/Controller/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		F1A5C4B220936852001C93CC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F1A5C4B620936993001C93CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1A5C4B820936995001C93CC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,12 +240,23 @@
 			path = Nib;
 			sourceTree = "<group>";
 		};
+		3695AB3BF7361A5AA11043C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */,
+				37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4168F655208E286E00727EEB = {
 			isa = PBXGroup;
 			children = (
 				4168F660208E286F00727EEB /* Margheritttta */,
 				4168F675208E286F00727EEB /* MargherittttaUITests */,
 				4168F65F208E286F00727EEB /* Products */,
+				E3835AE4A79D8134E3A12229 /* Pods */,
+				3695AB3BF7361A5AA11043C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +291,17 @@
 				4168F678208E286F00727EEB /* Info.plist */,
 			);
 			path = MargherittttaUITests;
+			sourceTree = "<group>";
+		};
+		E3835AE4A79D8134E3A12229 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */,
+				EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */,
+				ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */,
+				2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F1A5C49C20934443001C93CC /* View */ = {
@@ -312,9 +344,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "Margheritttta" */;
 			buildPhases = (
+				C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */,
 				4168F65A208E286E00727EEB /* Sources */,
 				4168F65B208E286E00727EEB /* Frameworks */,
 				4168F65C208E286E00727EEB /* Resources */,
+				9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +363,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "MargherittttaUITests" */;
 			buildPhases = (
+				ED8A0DE9875E4DA8394457A2 /* [CP] Check Pods Manifest.lock */,
 				4168F66E208E286F00727EEB /* Sources */,
 				4168F66F208E286F00727EEB /* Frameworks */,
 				4168F670208E286F00727EEB /* Resources */,
@@ -414,6 +449,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Margheritttta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED8A0DE9875E4DA8394457A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MargherittttaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4168F65A208E286E00727EEB /* Sources */ = {
@@ -608,10 +700,11 @@
 		};
 		4168F67C208E286F00727EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
@@ -623,10 +716,11 @@
 		};
 		4168F67D208E286F00727EEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
@@ -638,6 +732,7 @@
 		};
 		4168F67F208E286F00727EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,6 +749,7 @@
 		};
 		4168F680208E286F00727EEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
