@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KituraKit
 
 struct TourVenueLink: Codable {
     public var tourId: String
@@ -14,5 +15,10 @@ struct TourVenueLink: Codable {
     public init?(tourId: String, venueId: String) {
         self.tourId = tourId
         self.venueId = venueId
+    }
+    
+    struct Query: QueryParams {
+        var tourId: String?
+        var venueId: String?
     }
 }

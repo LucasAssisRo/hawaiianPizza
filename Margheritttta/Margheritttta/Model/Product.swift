@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KituraKit
 
 struct Product: Codable {
     
@@ -32,6 +33,15 @@ struct Product: Codable {
         self.images = images
         self.allergens = allergens
         self.description = description
+    }
+    
+    struct Query: QueryParams {
+        var images: Data?
+        var allergens: Data?
+        var productId: String?
+        var venueId: String?
+        var name: String?
+        var description: String?
     }
 }
 

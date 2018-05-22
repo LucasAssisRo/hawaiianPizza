@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KituraKit
 
 struct Tour: Codable {
     
@@ -34,6 +35,16 @@ struct Tour: Codable {
         self.milestones = milestones
         self.duration = duration
         self.route = route
+    }
+    
+    struct Query: QueryParams {
+        var images: Data?
+        var route: Data
+        var tourId: String?
+        var name: String?
+        var description: String?
+        var milestones: Int?
+        var duration: Int?
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KituraKit
 
 struct Venue: Codable {
     private var images: Data
@@ -45,6 +46,22 @@ struct Venue: Codable {
         self.zipCode = zipCode
         self.phone = phone
         self.email = email
+    }
+    
+    struct Query: QueryParams {
+        var images: Data?
+        var tags: Data?
+        var venueId: String?
+        var name: String?
+        var description: String?
+        var category: String?
+        var address1: String?
+        var address2: String?
+        var city: String?
+        var country: String?
+        var zipCode: String?
+        var phone: String?
+        var email: String?
     }
 }
 

@@ -29,13 +29,16 @@ final class ServerHandler {
         }
     }
     
-    public func getProductsBy(venueId: String, completion: @escaping (([Product]?, Error?) -> Void)) {
+    public func getProductsBy(venueId: String, completion: @escaping (([Product]?, RequestError?) -> Void)) {
         guard let kitura = kitura else {
             completion(nil, RequestError.internalServerError)
             return
         }
         
-        kitura.get("/products?venueId=\(venueId)") { (products: [Product]?, error: Error?) in
+        var query = Product.Query()
+        query.venueId =  venueId
+        
+        kitura.get("/products", query: query) { (products: [Product]?, error: RequestError?) in
             completion(products, error)
         }
     }
