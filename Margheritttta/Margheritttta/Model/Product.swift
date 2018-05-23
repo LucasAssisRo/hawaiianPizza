@@ -42,6 +42,10 @@ struct Product: Codable {
         var venueId: String?
         var name: String?
         var description: String?
+        
+        init(venueId: String) {
+            self.venueId = venueId
+        }
     }
 }
 
