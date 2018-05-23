@@ -10,6 +10,9 @@ import UIKit
 
 class ToursViewController: UITableViewController {
 
+    // The index of the sections that should contain a "See all tours button"
+    private let sectionsWithButtons = [2, 3]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -244,37 +247,44 @@ class ToursViewController: UITableViewController {
         
         // Create the actual footer view
         let cell = ShopTableFooter(frame: CGRect(x: 0, y: 0, width: footerFrame.width, height: 0))
-        // Create the button for the footer view
-        let button = self.getTableFooterButton(for: cell)
         
-        // Assign a different tag to trigger different functionality in showMore()
-        switch section {
-        case 0:
-            button.tag = 0
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 1:
-            button.tag = 1
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 2:
-            button.tag = 2
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 3:
-            button.tag = 3
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        default:
-            break
+        if sectionsWithButtons.contains(section) {
+        
+            // Create the button for the footer view
+            let button = self.getTableFooterButton(for: cell)
+            
+            // Assign a different tag to trigger different functionality in showMore()
+            switch section {
+            case 0:
+                button.tag = 0
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 1:
+                button.tag = 1
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 2:
+                button.tag = 2
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 3:
+                button.tag = 3
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            default:
+                break
+            }
+            
+            cell.addSubview(button)
+            
+            // Assign constraints
+            self.createConstants(for: button, with: cell)
         }
-        
-        cell.addSubview(button)
-        
-        // Assign constraints
-        self.createConstants(for: button, with: cell)
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
+        if sectionsWithButtons.contains(section) {
+            return 100
+        } else {
+            return 40
+        }
     }
     
     /**
