@@ -338,6 +338,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yWY-uf-Dbr"/>
                     </view>
+                    <connections>
+                        <outlet property="imgProductImage" destination="Hn7-n6-oQB" id="9Wj-bB-ccc"/>
+                        <outlet property="lblAllergens" destination="fUy-qL-QvX" id="SF7-Ts-E4p"/>
+                        <outlet property="lblAllergensDescription" destination="t4t-Fm-nNJ" id="7fa-KS-v5w"/>
+                        <outlet property="lblProductDescription" destination="ZzH-mn-1i2" id="wEg-Th-7gQ"/>
+                        <outlet property="lblProductTitle" destination="JWD-QV-nqv" id="uo0-3n-1rX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYm-Te-QTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,6 +415,9 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jM-EE-jxC">
                                                                                 <rect key="frame" x="0.0" y="61" width="389" height="30"/>
                                                                                 <state key="normal" title="More"/>
+                                                                                <connections>
+                                                                                    <action selector="btnMoreAction:" destination="J5Y-Ll-9Zg" eventType="touchUpInside" id="CTg-kb-LCF"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
@@ -516,6 +526,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFP-m8-WFR">
                                                         <rect key="frame" x="0.0" y="1310.3333333333333" width="414" height="30"/>
                                                         <state key="normal" title="Report this shop"/>
+                                                        <connections>
+                                                            <action selector="btnReportAction:" destination="J5Y-Ll-9Zg" eventType="touchUpInside" id="Sch-PV-Ool"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -549,6 +562,17 @@
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="btnMore" destination="6jM-EE-jxC" id="HTU-zH-XFQ"/>
+                        <outlet property="btnReport" destination="kFP-m8-WFR" id="Gs4-lc-ix3"/>
+                        <outlet property="imgTopTitleImage" destination="WHc-bz-0t6" id="heS-yL-nIf"/>
+                        <outlet property="lblProducts" destination="ufC-rG-zsB" id="MMd-81-mDs"/>
+                        <outlet property="lblShopDescription" destination="M1x-CS-m2n" id="As0-gy-34G"/>
+                        <outlet property="lblShopName" destination="I7L-u3-TJ4" id="Aye-7d-AwD"/>
+                        <outlet property="lblShopStreetnameCity" destination="dpd-HK-VWM" id="mDt-Aa-bGd"/>
+                        <outlet property="lblShopType" destination="Dh8-Jc-Acl" id="19r-tx-LTn"/>
+                        <outletCollection property="imgProducts" destination="6Z2-uV-BNF" collectionClass="NSMutableArray" id="GH4-Iq-dgy"/>
+                        <outletCollection property="imgProducts" destination="0XP-9B-aV1" collectionClass="NSMutableArray" id="yaS-SH-UQ3"/>
+                        <outletCollection property="imgProducts" destination="xOw-mb-XGi" collectionClass="NSMutableArray" id="3PP-sd-BTd"/>
                         <segue destination="wdS-C4-7P7" kind="show" id="uLi-td-4uM"/>
                     </connections>
                 </viewController>

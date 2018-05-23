@@ -10,6 +10,21 @@ import UIKit
 
 class ProductsViewController: UIViewController {
 
+    //Outlets
+    
+    //Product image
+    @IBOutlet weak var imgProductImage: UIImageView!
+    
+    //Product Title
+    @IBOutlet weak var lblProductTitle: UILabel!
+    
+    //Product Allergens
+    @IBOutlet weak var lblAllergens: UILabel!
+    @IBOutlet weak var lblAllergensDescription: UILabel!
+    
+    //Product Description
+    @IBOutlet weak var lblProductDescription: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
