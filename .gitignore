@@ -67,3 +67,5 @@ fastlane/screenshots
 fastlane/test_output
 
 *.sketch
+
+*.DS_Store
