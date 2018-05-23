@@ -226,7 +226,7 @@ class ToursViewController: UITableViewController {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.setTitle("See all shops", for: .normal)
+        button.setTitle("See all tours", for: .normal)
         
         return button
     }
