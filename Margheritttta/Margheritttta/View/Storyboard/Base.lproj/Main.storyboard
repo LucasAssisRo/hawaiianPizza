@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J5Y-Ll-9Zg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8bv-3P-ifG">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,44 +41,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRJ-wS-sx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1097" y="2680"/>
-        </scene>
-        <!--Tours-->
-        <scene sceneID="jWf-iI-oGb">
-            <objects>
-                <collectionViewController id="MxH-fl-M8L" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1q0-4D-XUn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMR-TR-Ptb">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tld-OX-6jM">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="MxH-fl-M8L" id="nU3-o4-p8b"/>
-                            <outlet property="delegate" destination="MxH-fl-M8L" id="rQL-1w-w9G"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Tours" id="PiH-sY-xrn"/>
-                    <connections>
-                        <segue destination="ruT-vk-fLm" kind="show" id="acr-Aw-LNm"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c9q-ae-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-123" y="1552"/>
         </scene>
         <!--Saved-->
         <scene sceneID="tqa-Sf-typ">
@@ -125,6 +87,34 @@
             </objects>
             <point key="canvasLocation" x="1813.0434782608697" y="623.64130434782612"/>
         </scene>
+        <!--Tours View Controller-->
+        <scene sceneID="Bs3-ra-NuO">
+            <objects>
+                <tableViewController id="8bv-3P-ifG" customClass="ToursViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="HXJ-IA-Qwq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9RI-L8-Qs5">
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RI-L8-Qs5" id="4TN-3J-dLO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8bv-3P-ifG" id="YMh-UZ-rg2"/>
+                            <outlet property="delegate" destination="8bv-3P-ifG" id="n2K-YJ-1TV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKS-g7-L2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="1404"/>
+        </scene>
         <!--Tour-->
         <scene sceneID="3z8-u7-Uw2">
             <objects>
@@ -134,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgQ-op-0RJ">
-                                <rect key="frame" x="0.0" y="116" width="414" height="835"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBT-O7-nCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="516"/>
@@ -184,7 +174,7 @@
                                                         <edgeInsets key="layoutMargins" top="8" left="17" bottom="8" right="8"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RSu-DK-0qA" userLabel="Route">
-                                                        <rect key="frame" x="0.0" y="479.66666666666663" width="414" height="36.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="479.66666666666669" width="414" height="36.333333333333314"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zem-1D-Kqo" userLabel="Heading">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="36.333333333333336"/>
@@ -649,9 +639,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MxH-fl-M8L" kind="relationship" relationship="rootViewController" id="cLd-2A-vGF"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OS-S4-V6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
