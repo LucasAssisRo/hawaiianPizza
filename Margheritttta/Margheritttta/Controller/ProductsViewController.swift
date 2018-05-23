@@ -25,10 +25,34 @@ class ProductsViewController: UIViewController {
     //Product Description
     @IBOutlet weak var lblProductDescription: UILabel!
     
+    //Class var
+    
+    //fake product for testing
+    struct MyProd {
+         var images: String
+         var allergens: [String]
+        
+         var productId: String
+         var venueId: String
+         var name: String
+         var description: String
+    }
+    
+    var myProd = MyProd(images: "p3", allergens: ["allergen1", "allergen1"], productId: "prodId", venueId: "venueId", name: "name", description: "descr")
+    
+
+    var prodImage: String = ""
+    var prodName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imgProductImage.image = UIImage(named: myProd.images)
+        lblProductTitle.text = myProd.name
+        lblAllergens.text = "Allergens"
+        lblAllergensDescription.text = myProd.allergens[0]
+        lblProductDescription.text = myProd.description
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

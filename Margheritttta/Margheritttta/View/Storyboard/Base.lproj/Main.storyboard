@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Uq-7V-Za1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J5Y-Ll-9Zg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -247,7 +247,7 @@
         <!--Product-->
         <scene sceneID="i6x-aJ-N2X">
             <objects>
-                <viewController title="Product" id="wdS-C4-7P7" customClass="ProductsViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productsViewController" title="Product" id="wdS-C4-7P7" customClass="ProductsViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qh-PH-4zl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYm-Te-QTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="2680"/>
+            <point key="canvasLocation" x="906" y="2658"/>
         </scene>
         <!--Shop-->
         <scene sceneID="MZq-7B-KdB">
@@ -446,21 +446,33 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="6Z2-uV-BNF" userLabel="First">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
+                                                                        <gestureRecognizers/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="218" id="F1t-j2-QrM"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="5dP-4p-V2b" appends="YES" id="N1C-rS-AsK"/>
+                                                                        </connections>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-9B-aV1" userLabel="Second">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-9B-aV1" userLabel="Second">
                                                                         <rect key="frame" x="0.0" y="223.00000000000006" width="414" height="218"/>
+                                                                        <gestureRecognizers/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="218" id="Zs7-LO-6bv"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="ISV-Qs-SJm" appends="YES" id="YWG-iC-0lf"/>
+                                                                        </connections>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-mb-XGi" userLabel="Third">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-mb-XGi" userLabel="Third">
                                                                         <rect key="frame" x="0.0" y="446" width="414" height="218"/>
+                                                                        <gestureRecognizers/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="218" id="TII-RY-lut"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="OUF-sB-6KQ" appends="YES" id="ni6-0g-bK3"/>
+                                                                        </connections>
                                                                     </imageView>
                                                                 </subviews>
                                                             </stackView>
@@ -573,12 +585,27 @@
                         <outletCollection property="imgProducts" destination="6Z2-uV-BNF" collectionClass="NSMutableArray" id="GH4-Iq-dgy"/>
                         <outletCollection property="imgProducts" destination="0XP-9B-aV1" collectionClass="NSMutableArray" id="yaS-SH-UQ3"/>
                         <outletCollection property="imgProducts" destination="xOw-mb-XGi" collectionClass="NSMutableArray" id="3PP-sd-BTd"/>
-                        <segue destination="wdS-C4-7P7" kind="show" id="uLi-td-4uM"/>
+                        <segue destination="wdS-C4-7P7" kind="show" identifier="segueShopToProduct" id="uLi-td-4uM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAd-4k-M9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5dP-4p-V2b">
+                    <connections>
+                        <action selector="displayProduct:" destination="J5Y-Ll-9Zg" id="1VF-uO-aHM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ISV-Qs-SJm">
+                    <connections>
+                        <action selector="displayProduct:" destination="J5Y-Ll-9Zg" id="Tk5-bd-vVK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OUF-sB-6KQ">
+                    <connections>
+                        <action selector="displayProduct:" destination="J5Y-Ll-9Zg" id="36f-hL-y4U"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-123" y="2680"/>
+            <point key="canvasLocation" x="-123" y="2659"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HUF-ai-oyl">
