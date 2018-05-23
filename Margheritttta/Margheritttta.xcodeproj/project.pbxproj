@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071DCA1C20B5C90A000E3E79 /* CoverCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DCA1B20B5C90A000E3E79 /* CoverCollectionViewItem.swift */; };
+		071DCA1E20B5C92A000E3E79 /* CoverCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071DCA1D20B5C92A000E3E79 /* CoverCollectionViewItem.xib */; };
 		071F952220B4162700BEBFC2 /* ClusteredCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F952120B4162700BEBFC2 /* ClusteredCollectionViewItem.xib */; };
 		071F952420B4163600BEBFC2 /* ClusteredCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F952320B4163600BEBFC2 /* ClusteredCollectionViewItem.swift */; };
 		071F952620B44A8C00BEBFC2 /* MixedCollectionViewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F952520B44A8C00BEBFC2 /* MixedCollectionViewImageView.swift */; };
+		072CE3B420B5C71E00E9CB88 /* CoverTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072CE3B320B5C71E00E9CB88 /* CoverTableRow.swift */; };
+		072CE3B620B5C72C00E9CB88 /* CoverTableRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072CE3B520B5C72C00E9CB88 /* CoverTableRow.xib */; };
 		077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FDD0520B15B5400928FD8 /* ShopTableFooter.swift */; };
 		077FDD0820B15B6100928FD8 /* ShopTableFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077FDD0720B15B6100928FD8 /* ShopTableFooter.xib */; };
 		0789DB4020B2DBBB004E66BB /* WideShopsTableRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0789DB3F20B2DBBB004E66BB /* WideShopsTableRow.xib */; };
@@ -62,9 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071DCA1B20B5C90A000E3E79 /* CoverCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCollectionViewItem.swift; sourceTree = "<group>"; };
+		071DCA1D20B5C92A000E3E79 /* CoverCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverCollectionViewItem.xib; sourceTree = "<group>"; };
 		071F952120B4162700BEBFC2 /* ClusteredCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusteredCollectionViewItem.xib; sourceTree = "<group>"; };
 		071F952320B4163600BEBFC2 /* ClusteredCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusteredCollectionViewItem.swift; sourceTree = "<group>"; };
 		071F952520B44A8C00BEBFC2 /* MixedCollectionViewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedCollectionViewImageView.swift; sourceTree = "<group>"; };
+		072CE3B320B5C71E00E9CB88 /* CoverTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverTableRow.swift; sourceTree = "<group>"; };
+		072CE3B520B5C72C00E9CB88 /* CoverTableRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverTableRow.xib; sourceTree = "<group>"; };
 		077FDD0520B15B5400928FD8 /* ShopTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableFooter.swift; sourceTree = "<group>"; };
 		077FDD0720B15B6100928FD8 /* ShopTableFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShopTableFooter.xib; path = ../../ShopTableFooter.xib; sourceTree = "<group>"; };
 		0789DB3F20B2DBBB004E66BB /* WideShopsTableRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WideShopsTableRow.xib; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 				07FBBF2B20B07C5A0012B99C /* ShopCollectionViewItem.xib */,
 				0789DB4D20B2F1F9004E66BB /* MixedCollectionViewItem.xib */,
 				071F952120B4162700BEBFC2 /* ClusteredCollectionViewItem.xib */,
+				071DCA1D20B5C92A000E3E79 /* CoverCollectionViewItem.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 				07FBBF2D20B07C8D0012B99C /* ShopCollectionViewItem.swift */,
 				0789DB4F20B2F206004E66BB /* MixedCollectionViewItem.swift */,
 				071F952320B4163600BEBFC2 /* ClusteredCollectionViewItem.swift */,
+				071DCA1B20B5C90A000E3E79 /* CoverCollectionViewItem.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -224,6 +234,7 @@
 				0789DB4120B2DBCB004E66BB /* WideShopsTableRow.swift */,
 				0789DB4B20B2F13C004E66BB /* MixedShopsTableRow.swift */,
 				07DA706820B40D200053FDE4 /* ClusteredShopsTableRow.swift */,
+				072CE3B320B5C71E00E9CB88 /* CoverTableRow.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				0789DB3F20B2DBBB004E66BB /* WideShopsTableRow.xib */,
 				0789DB4920B2F12C004E66BB /* MixedShopsTableRow.xib */,
 				07DA706620B40D120053FDE4 /* ClusteredShopsTableRow.xib */,
+				072CE3B520B5C72C00E9CB88 /* CoverTableRow.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0789DB4E20B2F1F9004E66BB /* MixedCollectionViewItem.xib in Resources */,
+				071DCA1E20B5C92A000E3E79 /* CoverCollectionViewItem.xib in Resources */,
 				0789DB4020B2DBBB004E66BB /* WideShopsTableRow.xib in Resources */,
 				4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */,
 				079ECCF420B14C9A00385CC7 /* ShopTableHeader.xib in Resources */,
@@ -434,6 +447,7 @@
 				0789DB4420B2DC84004E66BB /* WideCollectionViewItem.xib in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
 				0789DB4A20B2F12C004E66BB /* MixedShopsTableRow.xib in Resources */,
+				072CE3B620B5C72C00E9CB88 /* CoverTableRow.xib in Resources */,
 				077FDD0820B15B6100928FD8 /* ShopTableFooter.xib in Resources */,
 				4168F667208E286F00727EEB /* Main.storyboard in Resources */,
 				07AE6B7520B07A8100321D8B /* LinearShopsTableRow.xib in Resources */,
@@ -514,8 +528,10 @@
 				0789DB4620B2DC93004E66BB /* WideCollectionViewItem.swift in Sources */,
 				0789DB5320B30004004E66BB /* MixedCollectionViewSubitem.swift in Sources */,
 				F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */,
+				071DCA1C20B5C90A000E3E79 /* CoverCollectionViewItem.swift in Sources */,
 				077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */,
 				F1F884722099B5F900B6DE7A /* StoresViewController.swift in Sources */,
+				072CE3B420B5C71E00E9CB88 /* CoverTableRow.swift in Sources */,
 				07DA706920B40D200053FDE4 /* ClusteredShopsTableRow.swift in Sources */,
 				079ECCF620B14CF600385CC7 /* ShopTableHeader.swift in Sources */,
 				0789DB5020B2F206004E66BB /* MixedCollectionViewItem.swift in Sources */,
