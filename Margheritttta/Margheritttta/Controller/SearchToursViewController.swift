@@ -54,7 +54,7 @@ class SearchToursViewController: UITableViewController {
             cell.registerNibThis()
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow", for: indexPath) as! LinearShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CoverTableRow", for: indexPath) as! CoverTableRow
             cell.registerNibThis()
             return cell
         }
@@ -63,7 +63,7 @@ class SearchToursViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 300
+            return 230
         case 1:
             return 185
         default:

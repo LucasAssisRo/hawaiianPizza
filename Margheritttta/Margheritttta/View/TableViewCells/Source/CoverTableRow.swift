@@ -11,6 +11,7 @@ import UIKit
 
 class CoverTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -36,19 +37,19 @@ class CoverTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frameWidth = collectionView.frame.size.width
-        return CGSize(width: frameWidth, height: 175)
+        return CGSize(width: frameWidth - 30, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClusteredCollectionViewItem", for: indexPath) as! ClusteredCollectionViewItem
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoverCollectionViewItem", for: indexPath) as! CoverCollectionViewItem
         
         cell.contentView.layer.cornerRadius = 3
-        cell.contentView.layer.masksToBounds = false
+        cell.contentView.layer.masksToBounds = true
 
         return cell
     }
