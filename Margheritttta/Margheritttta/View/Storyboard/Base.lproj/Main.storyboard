@@ -110,6 +110,7 @@
                             <outlet property="delegate" destination="8bv-3P-ifG" id="n2K-YJ-1TV"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="hAX-pU-YJh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKS-g7-L2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -640,6 +641,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8bv-3P-ifG" kind="relationship" relationship="rootViewController" id="x69-R6-NFN"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OS-S4-V6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
