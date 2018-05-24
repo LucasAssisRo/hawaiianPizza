@@ -10,8 +10,6 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +23,6 @@ class MainViewController: UITableViewController {
         self.tableView.register(ClusteredShopsTableRow.self, forCellReuseIdentifier: "ClusteredShopsTableRow")
         self.tableView.register(UINib(nibName: "ClusteredShopsTableRow", bundle: nil), forCellReuseIdentifier: "ClusteredShopsTableRow")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
-
     }
 
     override func didReceiveMemoryWarning() {

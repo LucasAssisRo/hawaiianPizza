@@ -6,12 +6,13 @@
 //  Copyright © 2018 Lucas Assis Rodrigues. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import KituraKit
 
 class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    private var venues: [Venue]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,23 @@ class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         self.collectionView.register(ShopCollectionViewItem.self, forCellWithReuseIdentifier: "ShopCollectionViewItem")
         self.collectionView.register(UINib(nibName: "ShopCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "ShopCollectionViewItem")
+        
+        ServerHandler.shared.getAllVenues { venues, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let venues = venues else {
+                print(RequestError.badRequest)
+                return
+            }
+            
+            self.venues = venues
+            DispatchQueue.main.sync {
+                self.collectionView.reloadData()
+            }
+        }
 
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
@@ -36,11 +54,25 @@ class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        guard let venues = venues else {
+            print("didnt load")
+            return 0
+        }
+        
+        return venues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let venue = venues?[indexPath.row] else {
+            print("didnt load")
+            return UICollectionViewCell()
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCollectionViewItem", for: indexPath) as! ShopCollectionViewItem
+        cell.thumbnailImageView.image = venue.imagesDecoded?.first
+        print(venue.name, venue.imagesDecoded?.first)
+        cell.shopName.text = venue.name
+        cell.categoryLabel.text = venue.category
         
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true

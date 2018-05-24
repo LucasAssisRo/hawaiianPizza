@@ -9,7 +9,10 @@
 import UIKit
 
 class ShopCollectionViewItem: UICollectionViewCell {
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var shopName: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
