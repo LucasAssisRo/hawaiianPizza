@@ -9,7 +9,7 @@
 import UIKit
 import KituraKit
 
-class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class LinearShopsTableRow: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var venues: [Venue]?
@@ -73,6 +73,10 @@ class LinearShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollecti
         print(venue.name, venue.imagesDecoded?.first)
         cell.shopName.text = venue.name
         cell.categoryLabel.text = venue.category
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+        cell.item.addGestureRecognizer(tap)
+        cell.item.delegate = self
         
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true

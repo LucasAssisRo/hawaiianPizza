@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class MixedCollectionViewImageView: UIImageView {
-    @IBInspectable var roundedCorners: CGFloat = 0 {
+class RoundImageView: UIImageView {
+    @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
-            self.layer.cornerRadius = roundedCorners
+            self.layer.cornerRadius = self.cornerRadius
         }
     }
 }

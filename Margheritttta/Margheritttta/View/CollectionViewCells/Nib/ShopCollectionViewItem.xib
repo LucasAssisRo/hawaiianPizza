@@ -19,23 +19,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="169" height="175"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="G0K-P9-iby">
-                        <rect key="frame" x="0.0" y="0.0" width="170" height="123"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-Ks-aaB">
-                        <rect key="frame" x="-1" y="122" width="170" height="71"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-Ks-aaB" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="-1" y="0.0" width="170" height="193"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="G0K-P9-iby">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EW-HT-anH">
-                                <rect key="frame" x="8" y="7" width="162" height="21"/>
+                                <rect key="frame" x="4" y="131" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVz-sK-8e2">
-                                <rect key="frame" x="8" y="29" width="178" height="21"/>
+                                <rect key="frame" x="4" y="154" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,6 +50,7 @@
             <size key="customSize" width="223" height="221"/>
             <connections>
                 <outlet property="categoryLabel" destination="UVz-sK-8e2" id="2TK-N8-rpd"/>
+                <outlet property="item" destination="qyK-Ks-aaB" id="V8K-AT-PKf"/>
                 <outlet property="shopName" destination="8EW-HT-anH" id="0Qc-ER-c4m"/>
                 <outlet property="thumbnailImageView" destination="G0K-P9-iby" id="9Ku-KK-Pgc"/>
             </connections>

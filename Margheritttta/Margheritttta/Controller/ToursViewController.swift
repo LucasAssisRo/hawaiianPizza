@@ -27,9 +27,9 @@ class ToursViewController: UITableViewController {
                                 forCellReuseIdentifier: "WideShopsTableRow")
         
         self.tableView.register(WideShopsTableRow.self,
-                                forCellReuseIdentifier:"MixedShopsTableRow" )
-        self.tableView.register(UINib(nibName: "MixedShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "MixedShopsTableRow")
+                                forCellReuseIdentifier:"MixedShopsTableCell" )
+        self.tableView.register(UINib(nibName: "MixedShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "MixedShopsTableCell")
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
         
@@ -51,16 +51,14 @@ class ToursViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableRow", for: indexPath) as! MixedShopsTableRow
-            cell.registerNibThis()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
             cell.registerNibThis()
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableRow", for: indexPath) as! MixedShopsTableRow
-            cell.registerNibThis()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 class MixedCollectionViewSubItem: UIView {
 
     @IBInspectable var shadowColor: UIColor  = UIColor.clear {
@@ -57,7 +58,7 @@ class MixedCollectionViewSubItem: UIView {
             shadowLayer.shadowOffset = CGSize(width:2,height: 4.0)
             shadowLayer.shadowOpacity = 1
             shadowLayer.shadowRadius = 4
-
+            
             layer.insertSublayer(shadowLayer, at: 0)
             //layer.insertSublayer(shadowLayer, below: nil) // also works
         }

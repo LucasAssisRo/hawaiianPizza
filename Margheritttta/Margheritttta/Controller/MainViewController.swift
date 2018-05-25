@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class MainViewController: GenericTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,8 @@ class MainViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "LinearShopsTableRow", bundle: nil), forCellReuseIdentifier: "LinearShopsTableRow")
         self.tableView.register(WideShopsTableRow.self, forCellReuseIdentifier: "WideShopsTableRow")
         self.tableView.register(UINib(nibName: "WideShopsTableRow", bundle: nil), forCellReuseIdentifier: "WideShopsTableRow")
-        self.tableView.register(MixedShopsTableRow.self, forCellReuseIdentifier: "MixedShopsTableRow")
-        self.tableView.register(UINib(nibName: "MixedShopsTableRow", bundle: nil), forCellReuseIdentifier: "MixedShopsTableRow")
+        self.tableView.register(MixedShopsTableCell.self, forCellReuseIdentifier: "MixedShopsTableCell")
+        self.tableView.register(UINib(nibName: "MixedShopsTableCell", bundle: nil), forCellReuseIdentifier: "MixedShopsTableCell")
         self.tableView.register(ClusteredShopsTableRow.self, forCellReuseIdentifier: "ClusteredShopsTableRow")
         self.tableView.register(UINib(nibName: "ClusteredShopsTableRow", bundle: nil), forCellReuseIdentifier: "ClusteredShopsTableRow")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
@@ -270,25 +270,23 @@ class MainViewController: UITableViewController {
         }
     }
     
-    
-    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow") as! LinearShopsTableRow
                 cell.registerNibThis()
+                cell.delegate = self
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow") as! WideShopsTableRow
                 cell.registerNibThis()
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableRow") as! MixedShopsTableRow
-                cell.registerNibThis()
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+                cell.delegate = self
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableRow") as! ClusteredShopsTableRow
-                cell.registerNibThis()
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow") as! LinearShopsTableRow
@@ -296,8 +294,6 @@ class MainViewController: UITableViewController {
                 return cell
         }
     }
-    
-
 }
 
 
