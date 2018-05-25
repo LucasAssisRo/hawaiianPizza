@@ -32,8 +32,8 @@
 		07F1FBE220B45820009EE51B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDE20B45820009EE51B /* Product.swift */; };
 		07F1FBE320B45820009EE51B /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBDF20B45820009EE51B /* Tour.swift */; };
 		07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBE420B4582B009EE51B /* ServerHandler.swift */; };
-		07FBBF2C20B07C5A0012B99C /* ShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBBF2B20B07C5A0012B99C /* ShopCollectionViewCell.xib */; };
-		07FBBF2E20B07C8D0012B99C /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBBF2D20B07C8D0012B99C /* ShopCollectionViewCell.swift */; };
+		07FBBF2C20B07C5A0012B99C /* LinearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBBF2B20B07C5A0012B99C /* LinearCollectionViewCell.xib */; };
+		07FBBF2E20B07C8D0012B99C /* LinearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBBF2D20B07C8D0012B99C /* LinearCollectionViewCell.swift */; };
 		3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */; };
 		41026B6620B81E8A0005B766 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41026B6520B81E8A0005B766 /* GenericTableViewCell.swift */; };
 		41026B6820B81F9D0005B766 /* ItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41026B6720B81F9D0005B766 /* ItemDelegate.swift */; };
@@ -91,8 +91,8 @@
 		07F1FBDE20B45820009EE51B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		07F1FBDF20B45820009EE51B /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		07F1FBE420B4582B009EE51B /* ServerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
-		07FBBF2B20B07C5A0012B99C /* ShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionViewCell.xib; sourceTree = "<group>"; };
-		07FBBF2D20B07C8D0012B99C /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		07FBBF2B20B07C5A0012B99C /* LinearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearCollectionViewCell.xib; sourceTree = "<group>"; };
+		07FBBF2D20B07C8D0012B99C /* LinearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.debug.xcconfig"; sourceTree = "<group>"; };
 		2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				0789DB4320B2DC84004E66BB /* WideCollectionViewCell.xib */,
-				07FBBF2B20B07C5A0012B99C /* ShopCollectionViewCell.xib */,
+				07FBBF2B20B07C5A0012B99C /* LinearCollectionViewCell.xib */,
 				071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */,
 			);
 			path = Nib;
@@ -208,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				0789DB4520B2DC93004E66BB /* WideCollectionViewCell.swift */,
-				07FBBF2D20B07C8D0012B99C /* ShopCollectionViewCell.swift */,
+				07FBBF2D20B07C8D0012B99C /* LinearCollectionViewCell.swift */,
 				071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */,
 			);
 			path = Source;
@@ -439,7 +439,7 @@
 				0789DB4020B2DBBB004E66BB /* WideShopsTableCell.xib in Resources */,
 				4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */,
 				079ECCF420B14C9A00385CC7 /* ShopTableHeader.xib in Resources */,
-				07FBBF2C20B07C5A0012B99C /* ShopCollectionViewCell.xib in Resources */,
+				07FBBF2C20B07C5A0012B99C /* LinearCollectionViewCell.xib in Resources */,
 				07DA706720B40D120053FDE4 /* ClusteredShopsTableCell.xib in Resources */,
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				0789DB4420B2DC84004E66BB /* WideCollectionViewCell.xib in Resources */,
@@ -550,7 +550,7 @@
 				07F1FBE120B45820009EE51B /* TourVenueLink.swift in Sources */,
 				F1F884782099B66F00B6DE7A /* SavedTableViewController.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* ToursViewController.swift in Sources */,
-				07FBBF2E20B07C8D0012B99C /* ShopCollectionViewCell.swift in Sources */,
+				07FBBF2E20B07C8D0012B99C /* LinearCollectionViewCell.swift in Sources */,
 				41026B6A20B81FE30005B766 /* GenericTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

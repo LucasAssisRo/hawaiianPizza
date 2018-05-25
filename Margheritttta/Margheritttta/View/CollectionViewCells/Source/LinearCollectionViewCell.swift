@@ -1,5 +1,5 @@
 //
-//  ShopCollectionViewCell.swift
+//  LinearCollectionViewCell.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 19.05.18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShopCollectionViewCell: UICollectionViewCell {
+class LinearCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var item: ItemView!
     @IBOutlet weak var thumbnailImageView: UIImageView!

@@ -25,8 +25,8 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(ShopCollectionViewCell.self, forCellWithReuseIdentifier: "ShopCollectionViewCell")
-        self.collectionView.register(UINib(nibName: "ShopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShopCollectionViewCell")
+        self.collectionView.register(LinearCollectionViewCell.self, forCellWithReuseIdentifier: "LinearCollectionViewCell")
+        self.collectionView.register(UINib(nibName: "LinearCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LinearCollectionViewCell")
         
         ServerHandler.shared.getAllVenues { venues, error in
             if let error = error {
@@ -68,7 +68,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             return UICollectionViewCell()
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCollectionViewCell", for: indexPath) as! ShopCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
         cell.thumbnailImageView.image = venue.imagesDecoded?.first
         print(venue.name, venue.imagesDecoded?.first)
         cell.titleLabel.text = venue.name
