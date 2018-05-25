@@ -62,7 +62,7 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.078451581300000003" green="0.082255698739999994" blue="0.090196318920000004" alpha="0.20215556569343066" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -101,7 +101,7 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.078451581300000003" green="0.082255698739999994" blue="0.090196318920000004" alpha="0.20215556569343066" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>
@@ -149,7 +149,7 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.078451581300000003" green="0.082255698739999994" blue="0.090196318920000004" alpha="0.20215556569343066" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>

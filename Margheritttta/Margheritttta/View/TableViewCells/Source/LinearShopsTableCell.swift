@@ -63,17 +63,8 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let venue = venues?[indexPath.row] else {
-            print("didnt load")
-            return UICollectionViewCell()
-        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
-        cell.thumbnailImageView.image = venue.imagesDecoded?.first
-        print(venue.name, venue.imagesDecoded?.first)
-        cell.titleLabel.text = venue.name
-        cell.subtitleLabel.text = venue.category
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
         cell.item.addGestureRecognizer(tap)
         cell.item.delegate = self

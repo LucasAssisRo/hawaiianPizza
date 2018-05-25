@@ -24,7 +24,7 @@ class ClusteredShopsTableCell: GenericTableViewCell {
         }
     }
     
-    @IBOutlet var thumbnailImageViews: [UIImageView]! {
+    @IBOutlet var thumbnailImageViews: [RoundImageView]! {
         didSet {
             self.thumbnailImageViews.sort { first, second -> Bool in
                 return first.tag < second.tag
