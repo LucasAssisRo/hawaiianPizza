@@ -1,5 +1,5 @@
 //
-//  CoverTableRow.swift
+//  CoverTableCell.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 19.05.18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CoverTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+class CoverTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,8 +25,8 @@ class CoverTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionView
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(CoverCollectionViewItem.self, forCellWithReuseIdentifier: "CoverCollectionViewItem")
-        self.collectionView.register(UINib(nibName: "CoverCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "CoverCollectionViewItem")
+        self.collectionView.register(CoverCollectionViewCell.self, forCellWithReuseIdentifier: "CoverCollectionViewCell")
+        self.collectionView.register(UINib(nibName: "CoverCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CoverCollectionViewCell")
         
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
@@ -46,7 +46,7 @@ class CoverTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoverCollectionViewItem", for: indexPath) as! CoverCollectionViewItem
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoverCollectionViewCell", for: indexPath) as! CoverCollectionViewCell
         
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true

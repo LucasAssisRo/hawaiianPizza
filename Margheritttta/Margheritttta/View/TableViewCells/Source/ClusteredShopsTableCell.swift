@@ -1,14 +1,14 @@
 //
-//  WideShopsTableCell.swift
+//  ShopTableRow.swift
 //  Margheritttta
 //
-//  Created by Alexander Schülke on 21.05.18.
+//  Created by Alexander Schülke on 19.05.18.
 //  Copyright © 2018 Lucas Assis Rodrigues. All rights reserved.
 //
 
 import UIKit
 
-class MixedShopsTableCell: GenericTableViewCell {
+class ClusteredShopsTableCell: GenericTableViewCell {
     
     @IBOutlet var items: [ItemView]! {
         didSet {
@@ -49,8 +49,9 @@ class MixedShopsTableCell: GenericTableViewCell {
     }
     
     enum Position: Int {
-        case top = 0
-        case left = 1
-        case right = 2
+        case topLeft = 0
+        case topRight = 1
+        case bottomLeft = 2
+        case bottomRight = 3
     }
 }

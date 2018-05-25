@@ -9,7 +9,7 @@
 import UIKit
 import KituraKit
 
-class LinearShopsTableRow: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var venues: [Venue]?
@@ -25,8 +25,8 @@ class LinearShopsTableRow: GenericTableViewCell, UICollectionViewDelegate, UICol
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(ShopCollectionViewItem.self, forCellWithReuseIdentifier: "ShopCollectionViewItem")
-        self.collectionView.register(UINib(nibName: "ShopCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "ShopCollectionViewItem")
+        self.collectionView.register(ShopCollectionViewCell.self, forCellWithReuseIdentifier: "ShopCollectionViewCell")
+        self.collectionView.register(UINib(nibName: "ShopCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShopCollectionViewCell")
         
         ServerHandler.shared.getAllVenues { venues, error in
             if let error = error {
@@ -68,11 +68,11 @@ class LinearShopsTableRow: GenericTableViewCell, UICollectionViewDelegate, UICol
             return UICollectionViewCell()
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCollectionViewItem", for: indexPath) as! ShopCollectionViewItem
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCollectionViewCell", for: indexPath) as! ShopCollectionViewCell
         cell.thumbnailImageView.image = venue.imagesDecoded?.first
         print(venue.name, venue.imagesDecoded?.first)
-        cell.shopName.text = venue.name
-        cell.categoryLabel.text = venue.category
+        cell.titleLabel.text = venue.name
+        cell.subtitleLabel.text = venue.category
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
         cell.item.addGestureRecognizer(tap)

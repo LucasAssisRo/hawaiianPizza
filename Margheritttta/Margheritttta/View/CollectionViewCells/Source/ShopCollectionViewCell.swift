@@ -1,5 +1,5 @@
 //
-//  ShopCollectionViewItem.swift
+//  ShopCollectionViewCell.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 19.05.18.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ShopCollectionViewItem: UICollectionViewCell {
+class ShopCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var item: ItemView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var shopName: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
 }

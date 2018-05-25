@@ -16,17 +16,17 @@ class ToursViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(LinearShopsTableRow.self,
-                                forCellReuseIdentifier:"LinearShopsTableRow" )
-        self.tableView.register(UINib(nibName: "LinearShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "LinearShopsTableRow")
+        self.tableView.register(LinearShopsTableCell.self,
+                                forCellReuseIdentifier:"LinearShopsTableCell" )
+        self.tableView.register(UINib(nibName: "LinearShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "LinearShopsTableCell")
         
-        self.tableView.register(WideShopsTableRow.self,
-                                forCellReuseIdentifier:"WideShopsTableRow" )
-        self.tableView.register(UINib(nibName: "WideShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "WideShopsTableRow")
+        self.tableView.register(WideShopsTableCell.self,
+                                forCellReuseIdentifier:"WideShopsTableCell" )
+        self.tableView.register(UINib(nibName: "WideShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "WideShopsTableCell")
         
-        self.tableView.register(WideShopsTableRow.self,
+        self.tableView.register(WideShopsTableCell.self,
                                 forCellReuseIdentifier:"MixedShopsTableCell" )
         self.tableView.register(UINib(nibName: "MixedShopsTableCell", bundle: nil),
                                 forCellReuseIdentifier: "MixedShopsTableCell")
@@ -54,26 +54,26 @@ class ToursViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow", for: indexPath) as! LinearShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell", for: indexPath) as! LinearShopsTableCell
             cell.registerNibThis()
             return cell
         }
