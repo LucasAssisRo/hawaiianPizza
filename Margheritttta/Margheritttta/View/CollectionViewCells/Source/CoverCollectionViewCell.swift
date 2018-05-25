@@ -1,5 +1,5 @@
 //
-//  CoverCollectionViewItem.swift
+//  CoverCollectionViewCell.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 21.05.18.
@@ -8,9 +8,6 @@
 
 import UIKit
 
-class CoverCollectionViewItem: UICollectionViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+class CoverCollectionViewCell: UICollectionViewCell {
 }
 

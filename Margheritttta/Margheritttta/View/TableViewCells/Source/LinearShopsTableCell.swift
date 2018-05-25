@@ -6,12 +6,13 @@
 //  Copyright © 2018 Lucas Assis Rodrigues. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import KituraKit
 
-class ClusteredShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    private var venues: [Venue]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +25,26 @@ class ClusteredShopsTableRow: UITableViewCell, UICollectionViewDelegate, UIColle
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(ClusteredCollectionViewItem.self, forCellWithReuseIdentifier: "ClusteredCollectionViewItem")
-        self.collectionView.register(UINib(nibName: "ClusteredCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "ClusteredCollectionViewItem")
+        self.collectionView.register(LinearCollectionViewCell.self, forCellWithReuseIdentifier: "LinearCollectionViewCell")
+        self.collectionView.register(UINib(nibName: "LinearCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LinearCollectionViewCell")
         
+        ServerHandler.shared.getAllVenues { venues, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let venues = venues else {
+                print(RequestError.badRequest)
+                return
+            }
+            
+            self.venues = venues
+            DispatchQueue.main.sync {
+                self.collectionView.reloadData()
+            }
+        }
+
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
     
@@ -36,16 +54,20 @@ class ClusteredShopsTableRow: UITableViewCell, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let frameWidth = collectionView.frame.size.width
-        return CGSize(width: frameWidth / 2 - 30, height: 175)
+        guard let venues = venues else {
+            print("didnt load")
+            return 0
+        }
+        
+        return venues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClusteredCollectionViewItem", for: indexPath) as! ClusteredCollectionViewItem
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+        cell.item.addGestureRecognizer(tap)
+        cell.item.delegate = self
         
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true

@@ -1,5 +1,5 @@
 //
-//  WideShopsTableRow.swift
+//  WideShopsTableCell.swift
 //  Margheritttta
 //
 //  Created by Alexander Schülke on 21.05.18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WideShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -29,8 +29,8 @@ class WideShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollection
     func registerNibThis() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.collectionView.register(WideCollectionViewItem.self, forCellWithReuseIdentifier: "WideCollectionViewItem")
-        self.collectionView.register(UINib(nibName: "WideCollectionViewItem", bundle: nil), forCellWithReuseIdentifier: "WideCollectionViewItem")
+        self.collectionView.register(WideCollectionViewCell.self, forCellWithReuseIdentifier: "WideCollectionViewCell")
+        self.collectionView.register(UINib(nibName: "WideCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WideCollectionViewCell")
         
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
@@ -40,9 +40,11 @@ class WideShopsTableRow: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewItem", for: indexPath) as! WideCollectionViewItem
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
         
-    
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+        cell.item.addGestureRecognizer(tap)
+        cell.item.delegate = self
         cell.contentView.layer.cornerRadius = 3
         cell.contentView.layer.masksToBounds = true
         cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor

@@ -16,16 +16,16 @@ class SavedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //SHOPS
-        self.tableView.register(LinearShopsTableRow.self,
-                                forCellReuseIdentifier:"LinearShopsTableRow" )
-        self.tableView.register(UINib(nibName: "LinearShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "LinearShopsTableRow")
+        self.tableView.register(LinearShopsTableCell.self,
+                                forCellReuseIdentifier:"LinearShopsTableCell" )
+        self.tableView.register(UINib(nibName: "LinearShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "LinearShopsTableCell")
         
         //TOURS
-        self.tableView.register(WideShopsTableRow.self,
-                                forCellReuseIdentifier:"WideShopsTableRow" )
-        self.tableView.register(UINib(nibName: "WideShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "WideShopsTableRow")
+        self.tableView.register(WideShopsTableCell.self,
+                                forCellReuseIdentifier:"WideShopsTableCell" )
+        self.tableView.register(UINib(nibName: "WideShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "WideShopsTableCell")
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
         
@@ -54,11 +54,11 @@ class SavedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch contentSegmentedControl.selectedSegmentIndex {
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableRow", for: indexPath) as! LinearShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell", for: indexPath) as! LinearShopsTableCell
             cell.registerNibThis()
             return cell
         }

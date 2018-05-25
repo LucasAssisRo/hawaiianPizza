@@ -16,15 +16,15 @@ class SearchToursViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(CoverTableRow.self,
-                                forCellReuseIdentifier:"CoverTableRow" )
-        self.tableView.register(UINib(nibName: "CoverTableRow", bundle: nil),
-                                forCellReuseIdentifier: "CoverTableRow")
+        self.tableView.register(CoverTableCell.self,
+                                forCellReuseIdentifier:"CoverTableCell" )
+        self.tableView.register(UINib(nibName: "CoverTableCell", bundle: nil),
+                                forCellReuseIdentifier: "CoverTableCell")
         
-        self.tableView.register(WideShopsTableRow.self,
-                                forCellReuseIdentifier:"WideShopsTableRow" )
-        self.tableView.register(UINib(nibName: "WideShopsTableRow", bundle: nil),
-                                forCellReuseIdentifier: "WideShopsTableRow")
+        self.tableView.register(WideShopsTableCell.self,
+                                forCellReuseIdentifier:"WideShopsTableCell" )
+        self.tableView.register(UINib(nibName: "WideShopsTableCell", bundle: nil),
+                                forCellReuseIdentifier: "WideShopsTableCell")
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
         
@@ -46,15 +46,15 @@ class SearchToursViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CoverTableRow", for: indexPath) as! CoverTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CoverTableCell", for: indexPath) as! CoverTableCell
             cell.registerNibThis()
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableRow", for: indexPath) as! WideShopsTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CoverTableRow", for: indexPath) as! CoverTableRow
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CoverTableCell", for: indexPath) as! CoverTableCell
             cell.registerNibThis()
             return cell
         }
