@@ -24,6 +24,7 @@
 		079ECCF620B14CF600385CC7 /* ShopTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079ECCF520B14CF600385CC7 /* ShopTableHeader.swift */; };
 		07AE6B7520B07A8100321D8B /* LinearShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AE6B7420B07A8100321D8B /* LinearShopsTableCell.xib */; };
 		07AE6B7720B07AF800321D8B /* LinearShopsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE6B7620B07AF800321D8B /* LinearShopsTableCell.swift */; };
+		07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2979620B852E300239CE8 /* GlobalConstants.swift */; };
 		07DA706720B40D120053FDE4 /* ClusteredShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DA706620B40D120053FDE4 /* ClusteredShopsTableCell.xib */; };
 		07DA706920B40D200053FDE4 /* ClusteredShopsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA706820B40D200053FDE4 /* ClusteredShopsTableCell.swift */; };
 		07E4334820B5CAA2001A5BBF /* SearchToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4334720B5CAA2001A5BBF /* SearchToursViewController.swift */; };
@@ -84,6 +85,7 @@
 		079ECCF520B14CF600385CC7 /* ShopTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableHeader.swift; sourceTree = "<group>"; };
 		07AE6B7420B07A8100321D8B /* LinearShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearShopsTableCell.xib; sourceTree = "<group>"; };
 		07AE6B7620B07AF800321D8B /* LinearShopsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearShopsTableCell.swift; sourceTree = "<group>"; };
+		07C2979620B852E300239CE8 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		07DA706620B40D120053FDE4 /* ClusteredShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusteredShopsTableCell.xib; sourceTree = "<group>"; };
 		07DA706820B40D200053FDE4 /* ClusteredShopsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusteredShopsTableCell.swift; sourceTree = "<group>"; };
 		07E4334720B5CAA2001A5BBF /* SearchToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToursViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				4168F661208E286F00727EEB /* AppDelegate.swift */,
 				F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */,
 				415A92CB20B83B7000BC7852 /* Colors.swift */,
+				07C2979620B852E300239CE8 /* GlobalConstants.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,
 				07F1FBE220B45820009EE51B /* Product.swift in Sources */,
 				0789DB4C20B2F13C004E66BB /* MixedShopsTableCell.swift in Sources */,
+				07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */,
 				41A1A31420B45C3D00F18705 /* ExploreViewController.swift in Sources */,
 				07F1FBE320B45820009EE51B /* Tour.swift in Sources */,
 				41026B6820B81F9D0005B766 /* ItemDelegate.swift in Sources */,
