@@ -33,7 +33,7 @@ class ExploreViewController: GenericTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 185
+            return 205
         case 1:
             return 185
         case 2:
@@ -76,7 +76,7 @@ class ExploreViewController: GenericTableViewController {
         let title = UILabel()
         title.frame = CGRect(x: 10, y: 0, width: headerFrame.size.width-20, height: 20)
         title.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        
+        title.textColor = UIColor(red: 36/255, green: 63/255, blue: 133/255, alpha: 1.0)
         let description = UILabel()
         description.frame = CGRect(x: 10, y: 28, width: headerFrame.size.width-20, height: 20)
         description.textColor = UIColor.lightGray

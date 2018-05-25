@@ -69,11 +69,11 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         cell.item.addGestureRecognizer(tap)
         cell.item.delegate = self
         
-        cell.contentView.layer.cornerRadius = 3
+        cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
-        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        cell.layer.shadowOffset = CGSize(width:2,height: 4.0)
-        cell.layer.shadowRadius = 4.0
+        cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
+        cell.layer.shadowOffset = CGSize(width:0,height: 8.0)
+        cell.layer.shadowRadius = 8.0
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false;
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
