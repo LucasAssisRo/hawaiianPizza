@@ -15,7 +15,7 @@ final class ServerHandler {
     public static let shared = ServerHandler()
      
     private init() {
-        kitura = KituraKit(baseURL: "https://capricciosa.herokuapp.com")
+        self.kitura = KituraKit(baseURL: "https://capricciosa.herokuapp.com")
     }
 }
 

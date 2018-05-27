@@ -12,8 +12,6 @@ import KituraKit
 class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private var venues: [Venue]?
-    private var venueImages: [[VenueImage]?] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,18 +52,15 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                         return
                     }
                     
-                    self.venueImages.append(images)
+                    print(self.venueImages.count)
                     DispatchQueue.main.sync {
+                        self.venueImages.append(images)
                         self.collectionView.reloadData()
                     }
                 })
             }
-            
-            DispatchQueue.main.sync {
-                self.collectionView.reloadData()
-            }
         }
-
+        
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
     
