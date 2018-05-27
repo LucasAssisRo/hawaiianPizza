@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07118EFD20BB133F006A9E3A /* SkeletonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07118EFC20BB133F006A9E3A /* SkeletonCollectionViewCell.xib */; };
+		07118EFF20BB136C006A9E3A /* SkeletonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07118EFE20BB136C006A9E3A /* SkeletonCollectionViewCell.swift */; };
 		071DCA1C20B5C90A000E3E79 /* CoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */; };
 		071DCA1E20B5C92A000E3E79 /* CoverCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */; };
 		071F952620B44A8C00BEBFC2 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F952520B44A8C00BEBFC2 /* RoundImageView.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07118EFC20BB133F006A9E3A /* SkeletonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkeletonCollectionViewCell.xib; sourceTree = "<group>"; };
+		07118EFE20BB136C006A9E3A /* SkeletonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCollectionViewCell.swift; sourceTree = "<group>"; };
 		071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverCollectionViewCell.xib; sourceTree = "<group>"; };
 		071F952520B44A8C00BEBFC2 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				0789DB4320B2DC84004E66BB /* WideCollectionViewCell.xib */,
 				07FBBF2B20B07C5A0012B99C /* LinearCollectionViewCell.xib */,
 				071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */,
+				07118EFC20BB133F006A9E3A /* SkeletonCollectionViewCell.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				0789DB4520B2DC93004E66BB /* WideCollectionViewCell.swift */,
 				07FBBF2D20B07C8D0012B99C /* LinearCollectionViewCell.swift */,
 				071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */,
+				07118EFE20BB136C006A9E3A /* SkeletonCollectionViewCell.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				0789DB4420B2DC84004E66BB /* WideCollectionViewCell.xib in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
+				07118EFD20BB133F006A9E3A /* SkeletonCollectionViewCell.xib in Resources */,
 				0789DB4A20B2F12C004E66BB /* MixedShopsTableCell.xib in Resources */,
 				072CE3B620B5C72C00E9CB88 /* CoverTableCell.xib in Resources */,
 				077FDD0820B15B6100928FD8 /* ShopTableFooter.xib in Resources */,
@@ -560,6 +567,7 @@
 				071F952620B44A8C00BEBFC2 /* RoundImageView.swift in Sources */,
 				4168F662208E286F00727EEB /* AppDelegate.swift in Sources */,
 				07F1FBE120B45820009EE51B /* TourVenueLink.swift in Sources */,
+				07118EFF20BB136C006A9E3A /* SkeletonCollectionViewCell.swift in Sources */,
 				F1F884782099B66F00B6DE7A /* SavedTableViewController.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* ToursViewController.swift in Sources */,
 				07FBBF2E20B07C8D0012B99C /* LinearCollectionViewCell.swift in Sources */,
@@ -730,7 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
@@ -746,7 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
