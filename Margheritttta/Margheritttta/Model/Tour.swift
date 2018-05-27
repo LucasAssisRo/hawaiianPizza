@@ -5,46 +5,32 @@
 //  Created by Lucas Assis Rodrigues on 11/05/2018.
 //
 
-import UIKit
+import Foundation
 import KituraKit
 
 struct Tour: Codable {
+    var tourId: String 
+    var name: String
+    var description: String
+    var milestones: Int
+    var duration: Int
+    var city: String
+    var country: String
     
-    private var images: Data
-    private var route: Data
-
-    public var tourId: String
-    public var name: String
-    public var description: String
-    public var milestones: Int
-    public var duration: Int
-    
-    public var imagesDecoded: [UIImage]? {
-        return NSKeyedUnarchiver.unarchiveObject(with: self.images) as? [UIImage]
-    }
-    
-    public var routeDecoded: [String]? {
-        return NSKeyedUnarchiver.unarchiveObject(with: self.route) as? [String]
-    }
-    
-    public init?(tourId: String, name: String, images: Data, description: String, milestones: Int, duration: Int, route: Data) {
+    init?(tourId: String, name: String, description: String, milestones: Int, duration: Int, city: String, country: String) {
         self.tourId = tourId
         self.name = name
-        self.images = images
         self.description = description
         self.milestones = milestones
         self.duration = duration
-        self.route = route
+        self.city = city
+        self.country = country
     }
     
     struct Query: QueryParams {
-        var images: Data?
-        var route: Data
         var tourId: String?
-        var name: String?
-        var description: String?
-        var milestones: Int?
-        var duration: Int?
+        var city: String?
+        var country: String?
     }
 }
 
