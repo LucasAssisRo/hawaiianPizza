@@ -13,6 +13,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var venues: [Venue]?
+    private var venueImages: [[VenueImage]?] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,26 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             }
             
             self.venues = venues
+            self.venueImages.removeAll()
+            for venue in venues {
+                ServerHandler.shared.getVenueImages(by: venue.venueId, completion: { images, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let images = images else {
+                        print(RequestError.badRequest)
+                        return
+                    }
+                    
+                    self.venueImages.append(images)
+                    DispatchQueue.main.sync {
+                        self.collectionView.reloadData()
+                    }
+                })
+            }
+            
             DispatchQueue.main.sync {
                 self.collectionView.reloadData()
             }
@@ -68,6 +89,12 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
         cell.item.addGestureRecognizer(tap)
         cell.item.delegate = self
+        cell.titleLabel.text = self.venues?[indexPath.row].name
+        cell.subtitleLabel.text = self.venues?[indexPath.row].category
+        if indexPath.row < self.venueImages.count,
+            let data = self.venueImages[indexPath.row]?.first?.image {
+            cell.thumbnailImageView.image = UIImage(data: data)
+        }
         
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
