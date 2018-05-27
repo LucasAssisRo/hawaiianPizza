@@ -88,6 +88,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     }
     
     @objc private func animateSkeletons() {
+        if !self.loaded {
         var sortedCells = collectionView.visibleCells
         sortedCells.sort {
             if let itemIndex = collectionView.indexPath(for: $0)?.item, let secondItemIndex = collectionView.indexPath(for: $1)?.item {
@@ -98,12 +99,10 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         print(sortedCells)
         for (index, cell) in sortedCells.enumerated() {
             let skeletonCell = cell as! SkeletonCollectionViewCell
-
             UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {
-//                    print(index)
                 self.highlightSkeletonCell(skeletonCell, totalItems: sortedCells.count, firstCall: true)
-//                    skeletonCell.image.layer.backgroundColor = GlobalConstantss.skeletonHighlighted
                 })
+        }
         }
     }
     
@@ -141,7 +140,6 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-<<<<<<< HEAD
         if self.loaded {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
