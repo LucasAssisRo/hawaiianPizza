@@ -5,45 +5,28 @@
 //  Created by Lucas Assis Rodrigues on 08/05/2018.
 //
 
-import UIKit
+import Foundation
 import KituraKit
 
 struct Product: Codable {
+    var productId: String
+    var venueId: String
+    var name: String
+    var description: String
     
-    private var images: Data
-    private var allergens: Data
-    
-    public var productId: String
-    public var venueId: String
-    public var name: String
-    public var description: String
-    
-    public var imagesDecoded: [UIImage]? {
-        return NSKeyedUnarchiver.unarchiveObject(with: self.images) as? [UIImage]
-    }
-    
-    public var allergensDecoded: [String]? {
-        return NSKeyedUnarchiver.unarchiveObject(with: self.allergens) as? [String]
-    }
-    
-    public init?(productId: String, venueId: String, name: String, images: Data, allergens: Data, description: String) {
+    init?(productId: String, venueId: String, name: String, description: String) {
         self.productId = productId
         self.venueId = venueId
         self.name = name
-        self.images = images
-        self.allergens = allergens
         self.description = description
     }
     
     struct Query: QueryParams {
-        var images: Data?
-        var allergens: Data?
         var productId: String?
         var venueId: String?
-        var name: String?
-        var description: String?
         
-        init(venueId: String) {
+        init(productId: String? = nil, venueId: String? = nil) {
+            self.productId = productId
             self.venueId = venueId
         }
     }

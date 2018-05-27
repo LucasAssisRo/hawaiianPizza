@@ -33,18 +33,7 @@ extension ServerHandler {
         }
     }
     
-    public func post(product: Product?, completion: @escaping ((Product?, Error?) -> Void)) {
-        guard let kitura = kitura else {
-            completion(nil, RequestError.internalServerError)
-            return
-        }
-        
-        kitura.post("/product", data: product) { (product: Product?, error: Error?) in
-            completion(product, error)
-        }
-    }
-    
-    public func getProductsBy(venueId: String, completion: @escaping (([Product]?, RequestError?) -> Void)) {
+    public func getProducts(by venueId: String, completion: @escaping (([Product]?, RequestError?) -> Void)) {
         guard let kitura = kitura else {
             completion(nil, RequestError.internalServerError)
             return
@@ -69,14 +58,14 @@ extension ServerHandler {
         }
     }
     
-    public func post(venue: Venue?, completion: @escaping ((Venue?, Error?) -> Void)) {
+    public func getVenueImages(by venueId: String,completion: @escaping (([VenueImage]?, Error?) -> Void)) {
         guard let kitura = kitura else {
             completion(nil, RequestError.internalServerError)
             return
         }
         
-        kitura.post("/venue", data: venue) { (venue: Venue?, error: Error?) in
-            completion(venue, error)
+        kitura.get("/venue/images", query: VenueImage.Query(venueId: venueId)) { (images: [VenueImage]? , error: Error?) in
+            completion(images, error)
         }
     }
 }
@@ -91,17 +80,6 @@ extension ServerHandler {
         
         kitura.get("/tours/all") { (tours:[Tour]? , error: Error?) in
             completion(tours, error)
-        }
-    }
-    
-    public func post(tour: Tour?, completion: @escaping ((Tour?, Error?) -> Void)) {
-        guard let kitura = kitura else {
-            completion(nil, RequestError.internalServerError)
-            return
-        }
-        
-        kitura.post("/tour", data: tour) { (tour: Tour?, error: Error?) in
-            completion(tour, error)
         }
     }
 }

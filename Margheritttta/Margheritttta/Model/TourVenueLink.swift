@@ -9,10 +9,10 @@ import Foundation
 import KituraKit
 
 struct TourVenueLink: Codable {
-    public var tourId: String
-    public var venueId: String
+    var tourId: String
+    var venueId: String
     
-    public init?(tourId: String, venueId: String) {
+    init?(tourId: String, venueId: String) {
         self.tourId = tourId
         self.venueId = venueId
     }
