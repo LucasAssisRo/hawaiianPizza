@@ -15,4 +15,5 @@ class GlobalConstantss {
     public static let shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
     public static let shadowOffset = CGSize(width:0,height: 8.0)
     public static let shadowradius = 8.0
+    public static let buttonText = "See all shops".uppercased()
 }

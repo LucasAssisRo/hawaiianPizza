@@ -56,7 +56,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let venues = venues else {
             print("didnt load")
-            return 0
+            return 5
         }
         
         return venues.count

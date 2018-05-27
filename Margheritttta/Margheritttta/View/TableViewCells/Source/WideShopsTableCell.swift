@@ -43,13 +43,16 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+        
+        
         cell.item.addGestureRecognizer(tap)
         cell.item.delegate = self
-        cell.contentView.layer.cornerRadius = 3
+        cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
         cell.contentView.layer.masksToBounds = true
-        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        cell.layer.shadowOffset = CGSize(width:2,height: 4.0)
-        cell.layer.shadowRadius = 4.0
+        
+        cell.layer.shadowColor = GlobalConstantss.shadowColor
+        cell.layer.shadowOffset = GlobalConstantss.shadowOffset
+        cell.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false;
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath

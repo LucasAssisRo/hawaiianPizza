@@ -13,6 +13,7 @@ class RoundImageView: UIImageView {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = self.cornerRadius
+            self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class ExploreViewController: GenericTableViewController {
 
+    private let sectionsWithButton: [Int] = [0, 1]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +35,13 @@ class ExploreViewController: GenericTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 205
-        case 1:
             return 185
+        case 1:
+            return 170
         case 2:
-            return 400
+            return 427
         case 3:
-            return 370
+            return 427
         default:
             return 180
         }
@@ -54,11 +56,15 @@ class ExploreViewController: GenericTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
+        if sectionsWithButton.contains(section) {
+            return 160
+        } else {
+            return 0
+        }
     }
     
     /**
@@ -116,29 +122,30 @@ class ExploreViewController: GenericTableViewController {
         // Create the button for the footer view
         let button = self.getTableFooterButton(for: cell)
         
-        // Assign a different tag to trigger different functionality in showMore()
-        switch section {
-        case 0:
-            button.tag = 0
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 1:
-            button.tag = 1
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 2:
-            button.tag = 2
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 3:
-            button.tag = 3
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        default:
-            break
+        if sectionsWithButton.contains(section) {
+            // Assign a different tag to trigger different functionality in showMore()
+            switch section {
+            case 0:
+                button.tag = 0
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 1:
+                button.tag = 1
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 2:
+                button.tag = 2
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 3:
+                button.tag = 3
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            default:
+                break
+            }
+            
+            cell.addSubview(button)
+            
+            // Assign constraints
+            self.createConstants(for: button, with: cell)
         }
-        
-        cell.addSubview(button)
-        
-        // Assign constraints
-        self.createConstants(for: button, with: cell)
-
         return cell
     }
     
@@ -158,11 +165,12 @@ class ExploreViewController: GenericTableViewController {
         let button = UIButton(frame: CGRect(x: footer.frame.width/2-110, y: 40, width: 200, height: 40))
         
         // Button details
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.setTitle("See all shops", for: .normal)
+        button.layer.cornerRadius = 29
+        button.layer.backgroundColor = UIColor.white.cgColor
+        button.setTitleColor(GlobalConstantss.fontColor, for: .normal)
+        button.setTitle(GlobalConstantss.buttonText, for: .normal)
         
+
         return button
     }
     
@@ -242,8 +250,15 @@ class ExploreViewController: GenericTableViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: footer.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: footer.centerYAnchor).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 180).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        button.layer.shadowColor = UIColor(red: 209/255, green: 214/255, blue: 220/255, alpha: 140/255).cgColor
+        button.layer.shadowOffset = CGSize(width:0,height: 18.0)
+        button.layer.shadowRadius = 13.0
+        button.layer.shadowOpacity = 1.0
+        button.layer.masksToBounds = false;
+        button.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: button.bounds.minX, y: button.bounds.minY-10, width: button.bounds.maxX, height: button.bounds.maxY + 20), cornerRadius:button.layer.cornerRadius).cgPath
     }
     
     /**

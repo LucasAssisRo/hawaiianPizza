@@ -1,107 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="423" id="uaU-CE-17z" customClass="ClusteredShopsTableCell" customModule="Margheritttta" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="424" height="427"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="389" id="m2g-H9-eMy" userLabel="Mixed Shops Table Row" customClass="ClusteredShopsTableCell" customModule="Margheritttta" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uaU-CE-17z" id="bRl-Q4-2cL">
-                <rect key="frame" x="0.0" y="0.0" width="424" height="426.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m2g-H9-eMy" id="37U-xm-gT9">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="426.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGj-R2-7RO" userLabel="topLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
-                        <rect key="frame" x="16" y="16" width="188" height="189"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-6g-3Gp" userLabel="topLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="164" height="203"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="i2M-lm-qsb" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="fsg-SV-o4w" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="155.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYd-5f-2mD">
-                                <rect key="frame" x="0.0" y="139" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-tT-dlT">
+                                <rect key="frame" x="8" y="163.5" width="327" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.14117647058823529" green="0.24705882352941178" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyi-g3-9j8">
-                                <rect key="frame" x="0.0" y="168" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqt-Zb-uzY">
+                                <rect key="frame" x="8" y="181.5" width="327" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cyan="0.41999999999999998" magenta="0.18959100540000001" yellow="0.012744791809999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="2Ow-6g-3Gp" secondAttribute="height" multiplier="49:29" constant="-179" id="3P3-h6-YOD"/>
+                            <constraint firstItem="fsg-SV-o4w" firstAttribute="width" secondItem="2Ow-6g-3Gp" secondAttribute="width" id="5Fy-OZ-Mcs"/>
+                            <constraint firstItem="vGN-tT-dlT" firstAttribute="width" secondItem="2Ow-6g-3Gp" secondAttribute="width" constant="163" id="EUC-lC-GwW"/>
+                            <constraint firstItem="Gqt-Zb-uzY" firstAttribute="centerX" secondItem="2Ow-6g-3Gp" secondAttribute="centerX" constant="89.5" id="GBp-1v-eU1"/>
+                            <constraint firstItem="vGN-tT-dlT" firstAttribute="top" secondItem="fsg-SV-o4w" secondAttribute="bottom" constant="8" id="GzO-Me-xTF"/>
+                            <constraint firstItem="fsg-SV-o4w" firstAttribute="top" secondItem="2Ow-6g-3Gp" secondAttribute="top" id="KKU-h0-uMJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Gqt-Zb-uzY" secondAttribute="bottom" constant="8" id="QWg-3F-7As"/>
+                            <constraint firstItem="fsg-SV-o4w" firstAttribute="centerX" secondItem="2Ow-6g-3Gp" secondAttribute="centerX" id="e1l-p1-GAg"/>
+                            <constraint firstAttribute="height" constant="203" id="h5H-9e-ZQi"/>
+                            <constraint firstItem="Gqt-Zb-uzY" firstAttribute="top" secondItem="vGN-tT-dlT" secondAttribute="bottom" id="hk9-ua-RE7"/>
+                            <constraint firstItem="vGN-tT-dlT" firstAttribute="centerX" secondItem="2Ow-6g-3Gp" secondAttribute="centerX" constant="89.5" id="qek-G0-QUx"/>
+                            <constraint firstItem="Gqt-Zb-uzY" firstAttribute="width" secondItem="2Ow-6g-3Gp" secondAttribute="width" constant="163" id="tWP-R7-KWT"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gs-qf-JbX" userLabel="topRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
-                        <rect key="frame" x="220" y="16" width="188" height="189"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mz4-ps-gMT" userLabel="bottomLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="16" y="235" width="164" height="176"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-eG-gIY" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-fH-Q0N" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="128.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM3-Ye-4mb">
-                                <rect key="frame" x="0.0" y="139" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hl-fu-iuu">
+                                <rect key="frame" x="8" y="136.5" width="148" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cyan="0.93999999999999995" magenta="0.78518569469451904" yellow="0.036852426826953888" black="0.080000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQA-an-NcC">
-                                <rect key="frame" x="0.0" y="168" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Tu-jp4">
+                                <rect key="frame" x="8" y="154.5" width="148" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cyan="0.41999999999999998" magenta="0.18959100540000001" yellow="0.012744791809999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="e4d-Tu-jp4" secondAttribute="bottom" constant="8" id="0G8-iQ-FYE"/>
+                            <constraint firstItem="e4d-Tu-jp4" firstAttribute="centerX" secondItem="Mz4-ps-gMT" secondAttribute="centerX" id="8Od-nU-x6m"/>
+                            <constraint firstItem="0Hl-fu-iuu" firstAttribute="width" secondItem="Mz4-ps-gMT" secondAttribute="width" constant="-16" id="8ck-qE-hGo"/>
+                            <constraint firstItem="e4d-Tu-jp4" firstAttribute="width" secondItem="Mz4-ps-gMT" secondAttribute="width" constant="-16" id="GTF-iW-woO"/>
+                            <constraint firstItem="R8y-fH-Q0N" firstAttribute="centerX" secondItem="Mz4-ps-gMT" secondAttribute="centerX" id="H43-hW-ttN"/>
+                            <constraint firstAttribute="width" secondItem="Mz4-ps-gMT" secondAttribute="height" multiplier="41:44" id="HFK-Rv-pem"/>
+                            <constraint firstItem="0Hl-fu-iuu" firstAttribute="top" secondItem="R8y-fH-Q0N" secondAttribute="bottom" constant="8" id="SYw-VM-lzC"/>
+                            <constraint firstItem="R8y-fH-Q0N" firstAttribute="width" secondItem="Mz4-ps-gMT" secondAttribute="width" id="VhG-cJ-OdO"/>
+                            <constraint firstItem="R8y-fH-Q0N" firstAttribute="top" secondItem="Mz4-ps-gMT" secondAttribute="top" id="j9U-Co-yPO"/>
+                            <constraint firstItem="e4d-Tu-jp4" firstAttribute="top" secondItem="0Hl-fu-iuu" secondAttribute="bottom" id="jH4-Xw-2Yd"/>
+                            <constraint firstItem="0Hl-fu-iuu" firstAttribute="centerX" secondItem="Mz4-ps-gMT" secondAttribute="centerX" id="lhY-c8-qzg"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>
@@ -109,47 +129,56 @@
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="0.0"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-bR-1Hi" userLabel="bottomLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
-                        <rect key="frame" x="16" y="222" width="188" height="189"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTm-o5-jBp" userLabel="bottomRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="195" y="235" width="164" height="176"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="f43-87-WMc" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="4YH-dd-dqB" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="128.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-wO-kEm">
-                                <rect key="frame" x="0.0" y="139" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-fM-8JK">
+                                <rect key="frame" x="8" y="136.5" width="148" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cyan="0.93999999999999995" magenta="0.78518569469451904" yellow="0.036852426826953888" black="0.080000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4k-ag-Xl1">
-                                <rect key="frame" x="0.0" y="168" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N83-Ib-Pvm">
+                                <rect key="frame" x="8" y="154.5" width="148" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cyan="0.41999999999999998" magenta="0.18959100540000001" yellow="0.012744791809999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y4E-fM-8JK" firstAttribute="top" secondItem="4YH-dd-dqB" secondAttribute="bottom" constant="8" id="5h1-MX-2Po"/>
+                            <constraint firstItem="4YH-dd-dqB" firstAttribute="centerX" secondItem="tTm-o5-jBp" secondAttribute="centerX" id="GFE-sc-31e"/>
+                            <constraint firstItem="4YH-dd-dqB" firstAttribute="top" secondItem="tTm-o5-jBp" secondAttribute="top" id="HX5-d6-XgN"/>
+                            <constraint firstItem="N83-Ib-Pvm" firstAttribute="width" secondItem="tTm-o5-jBp" secondAttribute="width" constant="-16" id="OJ3-Z9-BVs"/>
+                            <constraint firstAttribute="width" secondItem="tTm-o5-jBp" secondAttribute="height" multiplier="41:44" id="OQX-Xn-YBZ"/>
+                            <constraint firstItem="N83-Ib-Pvm" firstAttribute="top" secondItem="Y4E-fM-8JK" secondAttribute="bottom" id="Of4-Uq-aIl"/>
+                            <constraint firstItem="N83-Ib-Pvm" firstAttribute="centerX" secondItem="tTm-o5-jBp" secondAttribute="centerX" id="UjO-kq-oda"/>
+                            <constraint firstAttribute="bottom" secondItem="N83-Ib-Pvm" secondAttribute="bottom" constant="8" id="oMc-5u-e5B"/>
+                            <constraint firstItem="4YH-dd-dqB" firstAttribute="width" secondItem="tTm-o5-jBp" secondAttribute="width" id="pzW-f4-7eu"/>
+                            <constraint firstItem="Y4E-fM-8JK" firstAttribute="width" secondItem="tTm-o5-jBp" secondAttribute="width" constant="-16" id="uT5-jO-Nj1"/>
+                            <constraint firstItem="Y4E-fM-8JK" firstAttribute="centerX" secondItem="tTm-o5-jBp" secondAttribute="centerX" id="uZX-uE-BQ7"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>
@@ -157,47 +186,55 @@
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="0.0"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-ct-O3G" userLabel="bottomRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
-                        <rect key="frame" x="220" y="222" width="188" height="189"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zU-hd-lax" userLabel="topRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                        <rect key="frame" x="196" y="16" width="164" height="203"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="U7C-Ux-eTL" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lby-VW-aFg">
+                                <rect key="frame" x="8.5" y="181.5" width="148" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cyan="0.41999999999999998" magenta="0.18959100540000001" yellow="0.012744791809999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-Rd-GoN" customClass="RoundImageView" customModule="Margheritttta" customModuleProvider="target">
+                                <rect key="frame" x="-0.5" y="0.0" width="164" height="155.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUf-1M-YkE">
-                                <rect key="frame" x="0.0" y="139" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9n-LC-7Uc">
-                                <rect key="frame" x="0.0" y="168" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.57565646699999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PJ-xa-GPT">
+                                <rect key="frame" x="8.5" y="163.5" width="148" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cyan="0.93999999999999995" magenta="0.78518569469451904" yellow="0.036852426826953888" black="0.080000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7PJ-xa-GPT" firstAttribute="width" secondItem="1zU-hd-lax" secondAttribute="width" constant="-16" id="6fS-kW-muY"/>
+                            <constraint firstItem="jRs-Rd-GoN" firstAttribute="width" secondItem="1zU-hd-lax" secondAttribute="width" id="8dU-06-RP9"/>
+                            <constraint firstItem="Lby-VW-aFg" firstAttribute="centerX" secondItem="1zU-hd-lax" secondAttribute="centerX" id="IMz-ab-dOa"/>
+                            <constraint firstItem="jRs-Rd-GoN" firstAttribute="centerX" secondItem="1zU-hd-lax" secondAttribute="centerX" id="NyJ-TK-JCU"/>
+                            <constraint firstItem="Lby-VW-aFg" firstAttribute="top" secondItem="7PJ-xa-GPT" secondAttribute="bottom" id="OcB-v2-Is7"/>
+                            <constraint firstItem="7PJ-xa-GPT" firstAttribute="top" secondItem="jRs-Rd-GoN" secondAttribute="bottom" constant="8" id="Opm-vE-5Na"/>
+                            <constraint firstItem="Lby-VW-aFg" firstAttribute="width" secondItem="1zU-hd-lax" secondAttribute="width" constant="-16" id="WTw-Rz-bN9"/>
+                            <constraint firstAttribute="bottom" secondItem="Lby-VW-aFg" secondAttribute="bottom" constant="8" id="WUn-Ld-XX3"/>
+                            <constraint firstItem="7PJ-xa-GPT" firstAttribute="centerX" secondItem="1zU-hd-lax" secondAttribute="centerX" id="cR5-gW-Vvz"/>
+                            <constraint firstItem="jRs-Rd-GoN" firstAttribute="top" secondItem="1zU-hd-lax" secondAttribute="top" id="mMH-xd-yFi"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="4"/>
@@ -205,32 +242,48 @@
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="0.0"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20215556570000001" colorSpace="custom" customColorSpace="displayP3"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Mz4-ps-gMT" firstAttribute="leading" secondItem="37U-xm-gT9" secondAttribute="leading" constant="16" id="18b-pI-GVU"/>
+                    <constraint firstItem="tTm-o5-jBp" firstAttribute="leading" secondItem="Mz4-ps-gMT" secondAttribute="trailing" constant="15" id="4SU-t5-Oih"/>
+                    <constraint firstItem="1zU-hd-lax" firstAttribute="top" secondItem="37U-xm-gT9" secondAttribute="top" constant="16" id="7oT-zh-tfB"/>
+                    <constraint firstItem="1zU-hd-lax" firstAttribute="leading" secondItem="2Ow-6g-3Gp" secondAttribute="trailing" constant="16" id="CuX-bA-Bu0"/>
+                    <constraint firstItem="2Ow-6g-3Gp" firstAttribute="top" secondItem="37U-xm-gT9" secondAttribute="top" constant="16" id="Qdq-ml-HbO"/>
+                    <constraint firstAttribute="bottom" secondItem="Mz4-ps-gMT" secondAttribute="bottom" constant="16" id="Umb-uZ-nyW"/>
+                    <constraint firstItem="tTm-o5-jBp" firstAttribute="top" secondItem="1zU-hd-lax" secondAttribute="bottom" constant="16" id="YvW-IP-OHZ"/>
+                    <constraint firstAttribute="trailing" secondItem="tTm-o5-jBp" secondAttribute="trailing" constant="16" id="biu-n7-dnn"/>
+                    <constraint firstItem="2Ow-6g-3Gp" firstAttribute="leading" secondItem="37U-xm-gT9" secondAttribute="leading" constant="16" id="cli-0e-WLz"/>
+                    <constraint firstItem="1zU-hd-lax" firstAttribute="width" secondItem="2Ow-6g-3Gp" secondAttribute="width" id="h3H-e4-cpv"/>
+                    <constraint firstAttribute="trailing" secondItem="2Ow-6g-3Gp" secondAttribute="trailing" constant="195" id="hEL-qA-bdT"/>
+                    <constraint firstItem="tTm-o5-jBp" firstAttribute="top" secondItem="2Ow-6g-3Gp" secondAttribute="bottom" constant="16" id="mHT-sN-dam"/>
+                    <constraint firstAttribute="bottom" secondItem="tTm-o5-jBp" secondAttribute="bottom" constant="16" id="sTm-u2-XsQ"/>
+                    <constraint firstItem="Mz4-ps-gMT" firstAttribute="top" secondItem="2Ow-6g-3Gp" secondAttribute="bottom" constant="16" id="uKr-eV-7Rq"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outletCollection property="items" destination="NGj-R2-7RO" collectionClass="NSMutableArray" id="Xgy-zF-2tF"/>
-                <outletCollection property="items" destination="7Gs-qf-JbX" collectionClass="NSMutableArray" id="2bX-Sf-PiR"/>
-                <outletCollection property="items" destination="ljg-bR-1Hi" collectionClass="NSMutableArray" id="wkV-aK-oi1"/>
-                <outletCollection property="items" destination="kkg-ct-O3G" collectionClass="NSMutableArray" id="WKe-6w-cqp"/>
-                <outletCollection property="thumbnailImageViews" destination="P4I-eG-gIY" collectionClass="NSMutableArray" id="SMv-U0-EvQ"/>
-                <outletCollection property="thumbnailImageViews" destination="f43-87-WMc" collectionClass="NSMutableArray" id="E9H-sr-umO"/>
-                <outletCollection property="thumbnailImageViews" destination="U7C-Ux-eTL" collectionClass="NSMutableArray" id="fL8-gY-83R"/>
-                <outletCollection property="titleLabels" destination="qYd-5f-2mD" collectionClass="NSMutableArray" id="lff-uh-TXq"/>
-                <outletCollection property="titleLabels" destination="iM3-Ye-4mb" collectionClass="NSMutableArray" id="oSa-0I-BzD"/>
-                <outletCollection property="titleLabels" destination="I1u-wO-kEm" collectionClass="NSMutableArray" id="CmF-lU-mt0"/>
-                <outletCollection property="titleLabels" destination="iUf-1M-YkE" collectionClass="NSMutableArray" id="eJZ-C6-SEf"/>
-                <outletCollection property="subtitleLabels" destination="wyi-g3-9j8" collectionClass="NSMutableArray" id="k2B-M4-Ac9"/>
-                <outletCollection property="subtitleLabels" destination="IQA-an-NcC" collectionClass="NSMutableArray" id="XGT-8w-NMf"/>
-                <outletCollection property="subtitleLabels" destination="r4k-ag-Xl1" collectionClass="NSMutableArray" id="ipc-6H-1iE"/>
-                <outletCollection property="subtitleLabels" destination="b9n-LC-7Uc" collectionClass="NSMutableArray" id="btA-OW-kB3"/>
-                <outletCollection property="thumbnailImageViews" destination="i2M-lm-qsb" collectionClass="NSMutableArray" id="SV8-Gr-WkD"/>
+                <outletCollection property="items" destination="2Ow-6g-3Gp" collectionClass="NSMutableArray" id="6Cv-tn-1x8"/>
+                <outletCollection property="items" destination="Mz4-ps-gMT" collectionClass="NSMutableArray" id="Qwe-uq-QwP"/>
+                <outletCollection property="items" destination="tTm-o5-jBp" collectionClass="NSMutableArray" id="DlD-Rq-nE9"/>
+                <outletCollection property="items" destination="1zU-hd-lax" collectionClass="NSMutableArray" id="aIg-Rc-Gao"/>
+                <outletCollection property="thumbnailImageViews" destination="fsg-SV-o4w" collectionClass="NSMutableArray" id="Gpo-nL-r1Q"/>
+                <outletCollection property="thumbnailImageViews" destination="R8y-fH-Q0N" collectionClass="NSMutableArray" id="yn9-uI-rRv"/>
+                <outletCollection property="thumbnailImageViews" destination="4YH-dd-dqB" collectionClass="NSMutableArray" id="J9a-BG-b9a"/>
+                <outletCollection property="thumbnailImageViews" destination="jRs-Rd-GoN" collectionClass="NSMutableArray" id="Z2C-7A-t0c"/>
+                <outletCollection property="titleLabels" destination="vGN-tT-dlT" collectionClass="NSMutableArray" id="WBJ-MH-1pm"/>
+                <outletCollection property="titleLabels" destination="0Hl-fu-iuu" collectionClass="NSMutableArray" id="3pm-SX-FyL"/>
+                <outletCollection property="titleLabels" destination="Y4E-fM-8JK" collectionClass="NSMutableArray" id="FJy-Nx-7AF"/>
+                <outletCollection property="titleLabels" destination="7PJ-xa-GPT" collectionClass="NSMutableArray" id="yab-jB-7T9"/>
+                <outletCollection property="subtitleLabels" destination="Gqt-Zb-uzY" collectionClass="NSMutableArray" id="Iat-2k-dwe"/>
+                <outletCollection property="subtitleLabels" destination="e4d-Tu-jp4" collectionClass="NSMutableArray" id="KPp-tF-36l"/>
+                <outletCollection property="subtitleLabels" destination="N83-Ib-Pvm" collectionClass="NSMutableArray" id="ENK-MJ-Ikf"/>
+                <outletCollection property="subtitleLabels" destination="Lby-VW-aFg" collectionClass="NSMutableArray" id="fOd-wz-fGM"/>
             </connections>
-            <point key="canvasLocation" x="56" y="85"/>
+            <point key="canvasLocation" x="10.5" y="29.5"/>
         </tableViewCell>
     </objects>
     <resources>

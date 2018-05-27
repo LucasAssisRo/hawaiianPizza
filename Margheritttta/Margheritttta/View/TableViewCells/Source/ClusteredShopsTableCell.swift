@@ -20,6 +20,16 @@ class ClusteredShopsTableCell: GenericTableViewCell {
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
                 item.addGestureRecognizer(tap)
                 item.delegate = self
+                
+                item.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
+                item.layer.masksToBounds = true
+                
+                item.layer.shadowColor = GlobalConstantss.shadowColor
+                item.layer.shadowOffset = GlobalConstantss.shadowOffset
+                item.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
+                item.layer.shadowOpacity = 1.0
+                item.layer.masksToBounds = false;
+                item.layer.shadowPath = UIBezierPath(roundedRect:item.bounds, cornerRadius:item.layer.cornerRadius).cgPath
             }
         }
     }
