@@ -356,8 +356,20 @@ class ExploreViewController: GenericTableViewController {
                 self.finishedLoading {
                 let venueImages = ExploreViewController.venueImages
                 for i in 0 ..< cell.items.count {
-                    cell.titleLabels[i].text = venues[i + 3].name
-                    cell.subtitleLabels[i].text = venues[i + 3].name
+                    let venue = venues[i + 3]
+                    cell.titleLabels[i].text = venue.name
+                    cell.subtitleLabels[i].text = venue.name
+                    var imgs: [VenueImage?]? = nil
+                    for images in ExploreViewController.venueImages {
+                        if let venueId = images.first??.venueId,
+                            venueId == venue.venueId {
+                            imgs = images
+                        }
+                    }
+                    
+                    if let data = imgs?.first??.image {
+                        cell.thumbnailImageViews[i].image = UIImage(data: data)
+                    }
                 }
             }
             
