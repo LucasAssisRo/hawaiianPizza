@@ -15,7 +15,6 @@ class ExploreViewController: GenericTableViewController {
     static var venues: [Venue]?
     static var venueImages: [[VenueImage?]] = []
     
-    private var loaded = false
     var mixedTimer: Timer!
     var clusteredTimer: Timer!
     
@@ -350,40 +349,128 @@ class ExploreViewController: GenericTableViewController {
             cell.loaded = self.finishedLoading
             return cell
         case 2:
-            self.loaded = self.finishedLoading
-            if self.loaded {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+            cell.delegate = self
+            cell.contentType = .venue
+            if let venues = ExploreViewController.venues,
+                self.finishedLoading {
+                let venueImages = ExploreViewController.venueImages
+                for i in 0 ..< cell.items.count {
+                    let venue = venues[i + 3]
+                    cell.titleLabels[i].text = venue.name
+                    cell.subtitleLabels[i].text = venue.name
+                    var imgs: [VenueImage?]? = nil
+                    for images in ExploreViewController.venueImages {
+                        if let venueId = images.first??.venueId,
+                            venueId == venue.venueId {
+                            imgs = images
+                        }
+                    }
+                    
+                    if let data = imgs?.first??.image {
+                        cell.thumbnailImageViews[i].image = UIImage(data: data)
+                    }
+                }
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as!
+                MixedSkeletonTableCell
+                
+                return cell
+            }
+            
+        case 3:
+            if self.finishedLoading {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
                 cell.delegate = self
                 cell.contentType = .venue
                 if let venues = ExploreViewController.venues,
                     self.finishedLoading {
                     let venueImages = ExploreViewController.venueImages
                     for i in 0 ..< cell.items.count {
-                        cell.titleLabels[i].text = venues[i + 3].name
-                        cell.subtitleLabels[i].text = venues[i + 3].name
+                        let venue = venues[i + 3 + 3]
+                        cell.titleLabels[i].text = venue.name
+                        cell.subtitleLabels[i].text = venue.name
+                        var imgs: [VenueImage?]? = nil
+                        for images in ExploreViewController.venueImages {
+                            if let venueId = images.first??.venueId,
+                                venueId == venue.venueId {
+                                imgs = images
+                            }
+                        }
+                        
+                        if let data = imgs?.first??.image {
+                            cell.thumbnailImageViews[i].image = UIImage(data: data)
+                        }
                     }
                 }
+                
                 return cell
-            }
-            else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as!
-                MixedSkeletonTableCell
-                return cell
-            }
-        case 3:
-            self.loaded = self.finishedLoading
-            if self.loaded {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
-                cell.delegate = self
-                cell.contentType = .venue
-                return cell
-            }
-            else {
+            }  else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as!
                 ClusteredSkeletonTableCell
                 return cell
             }
+            
         default: return UITableViewCell()
         }
     }
+    
+    public func highlightMixedSkeletonCell(_ cell: MixedSkeletonTableCell) {
+        UIView.animate(withDuration: 2, animations: {
+            print("1")
+            cell.titleLabels.first!.layoutIfNeeded()
+//            cell.titleLabels.first!.backgroundColor = UIColor.red
+                        for titleLabel in cell.titleLabels {
+                            titleLabel.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+                        }
+                        for subTitle in cell.subtitleLabels {
+                            subTitle.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+                        }
+                        for image in cell.thumbnailImageViews {
+                            image.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+                        }
+        })
+    }
+    
+    public func highlightClusteredSkeletonCell(_ cell: ClusteredSkeletonTableCell) {
+        UIView.animate(withDuration: 2, animations: {
+            print("1")
+            cell.titleLabels.first!.layoutIfNeeded()
+            //            cell.titleLabels.first!.backgroundColor = UIColor.red
+            for titleLabel in cell.titleLabels {
+                titleLabel.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
+            for subTitle in cell.subtitleLabels {
+                subTitle.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
+            for image in cell.thumbnailImageViews {
+                image.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
+        })
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !self.finishedLoading {
+            if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 2)) {
+
+                let offset = self.tableView.contentOffset
+                let onScreen = self.tableView.frame.offsetBy(dx: offset.x, dy: offset.y)
+                if onScreen.intersects(cell.frame) {
+                    let skeletonCell = cell as! MixedSkeletonTableCell
+                    self.highlightMixedSkeletonCell(skeletonCell)
+                }
+            }
+            if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 3)) {
+                let offset = self.tableView.contentOffset
+                let onScreen = self.tableView.frame.offsetBy(dx: offset.x, dy: offset.y)
+                if onScreen.intersects(cell.frame) {
+                    let skeletonCell = cell as! ClusteredSkeletonTableCell
+                    self.highlightClusteredSkeletonCell(skeletonCell)
+                }
+            }
+        }
+    }
+
+    
 }

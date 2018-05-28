@@ -20,7 +20,6 @@ class GenericTableViewCell: UITableViewCell {
     }
     
     func findImages(by id: String) -> [VenueImage?]  {
-
         switch self.contentType {
         case .venue:
             for images in ExploreViewController.venueImages {
@@ -29,6 +28,7 @@ class GenericTableViewCell: UITableViewCell {
                     return images
                 }
             }
+            
         case .tour:
             break
         }

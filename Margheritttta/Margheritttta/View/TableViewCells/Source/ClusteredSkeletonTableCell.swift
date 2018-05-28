@@ -27,4 +27,12 @@ class ClusteredSkeletonTableCell: UITableViewCell {
             }
         }
     }
+    
+    @IBOutlet var thumbnailImageViews: [UIView]!
+    
+    @IBOutlet var titleLabels: [UIView]!
+    
+    @IBOutlet var subtitleLabels: [UIView]!
+    
+
 }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -209,6 +208,15 @@
                 <outletCollection property="items" destination="WHC-Cg-PTw" collectionClass="NSMutableArray" id="KmK-IX-f57"/>
                 <outletCollection property="items" destination="KMZ-7c-8ZX" collectionClass="NSMutableArray" id="hwI-d8-4s7"/>
                 <outletCollection property="items" destination="8zb-NW-3uW" collectionClass="NSMutableArray" id="gLA-8q-DnC"/>
+                <outletCollection property="thumbnailImageViews" destination="XeN-JP-aV7" collectionClass="NSMutableArray" id="jmN-Sg-MPx"/>
+                <outletCollection property="thumbnailImageViews" destination="zp9-an-ceP" collectionClass="NSMutableArray" id="mBK-eB-4ky"/>
+                <outletCollection property="thumbnailImageViews" destination="rnm-4B-MW0" collectionClass="NSMutableArray" id="GP4-1p-0DY"/>
+                <outletCollection property="titleLabels" destination="VZ0-Tg-BnB" collectionClass="NSMutableArray" id="UtO-7E-JsU"/>
+                <outletCollection property="titleLabels" destination="N62-XW-ekl" collectionClass="NSMutableArray" id="gMb-aK-hqH"/>
+                <outletCollection property="titleLabels" destination="YUK-vD-dn8" collectionClass="NSMutableArray" id="vo9-Oq-9ZB"/>
+                <outletCollection property="subtitleLabels" destination="FBP-wL-Wxw" collectionClass="NSMutableArray" id="cyW-dO-Ior"/>
+                <outletCollection property="subtitleLabels" destination="dU5-md-Sds" collectionClass="NSMutableArray" id="Re8-cI-VYB"/>
+                <outletCollection property="subtitleLabels" destination="TvD-sE-z8G" collectionClass="NSMutableArray" id="rrM-hr-OmB"/>
             </connections>
             <point key="canvasLocation" x="10.5" y="29.5"/>
         </tableViewCell>

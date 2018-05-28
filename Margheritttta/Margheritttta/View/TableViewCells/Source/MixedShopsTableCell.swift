@@ -63,4 +63,5 @@ class MixedShopsTableCell: GenericTableViewCell {
         case left = 1
         case right = 2
     }
+    
 }

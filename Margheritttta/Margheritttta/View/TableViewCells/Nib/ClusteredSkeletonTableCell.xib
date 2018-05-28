@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,28 +14,28 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="389" id="VZh-Iq-ol3" userLabel="Mixed Shops Table Row" customClass="ClusteredSkeletonTableCell" customModule="Margheritttta" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VZh-Iq-ol3" id="cpc-kg-E5x">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VZh-Iq-ol3" id="cpc-kg-E5x">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="426.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-NJ-RIz" userLabel="topLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-NJ-RIz" userLabel="topLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
                         <rect key="frame" x="16" y="16" width="164" height="203"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-3o-GNJ" userLabel="image">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-3o-GNJ" userLabel="image">
                                 <rect key="frame" x="16" y="16" width="132" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="iPs-LX-1Rd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHA-TA-3wn" userLabel="title">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHA-TA-3wn" userLabel="title">
                                 <rect key="frame" x="16" y="102" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="pRb-fi-EfL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0E-jg-qWx" userLabel="subtitle">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0E-jg-qWx" userLabel="subtitle">
                                 <rect key="frame" x="16" y="134" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -48,7 +47,7 @@
                         <constraints>
                             <constraint firstItem="pHA-TA-3wn" firstAttribute="leading" secondItem="Mq5-NJ-RIz" secondAttribute="leading" constant="16" id="DcK-X8-JIc"/>
                             <constraint firstItem="vYC-3o-GNJ" firstAttribute="leading" secondItem="Mq5-NJ-RIz" secondAttribute="leading" constant="16" id="L3G-Yi-HjX"/>
-                            <constraint firstAttribute="width" secondItem="Mq5-NJ-RIz" secondAttribute="height" multiplier="49:29" constant="-179" id="PTU-Ka-hK2"/>
+                            <constraint firstAttribute="width" secondItem="Mq5-NJ-RIz" secondAttribute="height" multiplier="41:44" constant="-179" id="PTU-Ka-hK2"/>
                             <constraint firstItem="vYC-3o-GNJ" firstAttribute="top" secondItem="Mq5-NJ-RIz" secondAttribute="top" constant="16" id="WVM-Um-H4Y"/>
                             <constraint firstAttribute="trailing" secondItem="vYC-3o-GNJ" secondAttribute="trailing" constant="16" id="juu-Yh-9j4"/>
                             <constraint firstItem="c0E-jg-qWx" firstAttribute="leading" secondItem="Mq5-NJ-RIz" secondAttribute="leading" constant="16" id="kTf-Ep-a7O"/>
@@ -77,24 +76,24 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-yh-ZoK" userLabel="bottomLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                    <view tag="2" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-yh-ZoK" userLabel="bottomLeftItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
                         <rect key="frame" x="16" y="235" width="164" height="176"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-u9-81G" userLabel="image">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-u9-81G" userLabel="image">
                                 <rect key="frame" x="16" y="16" width="132" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4EA-YK-Iyg"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaA-Wv-HEa" userLabel="title">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaA-Wv-HEa" userLabel="title">
                                 <rect key="frame" x="16" y="102" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="9rT-rZ-dX8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-gt-xZ8" userLabel="subtitle">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-gt-xZ8" userLabel="subtitle">
                                 <rect key="frame" x="16" y="134" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -134,24 +133,24 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5i6-Bu-Gq8" userLabel="bottomRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                    <view tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5i6-Bu-Gq8" userLabel="bottomRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
                         <rect key="frame" x="195" y="235" width="164" height="176"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-VG-2oz" userLabel="image">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-VG-2oz" userLabel="image">
                                 <rect key="frame" x="16" y="16" width="132" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="kzl-vF-adc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-dv-yg9" userLabel="title">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-dv-yg9" userLabel="title">
                                 <rect key="frame" x="16" y="102" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Wse-w8-lcM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-ai-SDC" userLabel="subtitle">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-ai-SDC" userLabel="subtitle">
                                 <rect key="frame" x="16" y="134" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -191,24 +190,24 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s83-ns-ZAL" userLabel="topRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
+                    <view tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s83-ns-ZAL" userLabel="topRightItem" customClass="ItemView" customModule="Margheritttta" customModuleProvider="target">
                         <rect key="frame" x="196" y="16" width="164" height="203"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-4k-Yfy" userLabel="image">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-4k-Yfy" userLabel="image">
                                 <rect key="frame" x="16" y="16" width="132" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="0dX-Ed-JTY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqP-Xt-jc6" userLabel="title">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqP-Xt-jc6" userLabel="title">
                                 <rect key="frame" x="16" y="102" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="6Fi-Eh-mQ6"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-B9-pEx" userLabel="subtitle">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-B9-pEx" userLabel="subtitle">
                                 <rect key="frame" x="16" y="134" width="132" height="16"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -259,7 +258,7 @@
                     <constraint firstItem="5i6-Bu-Gq8" firstAttribute="top" secondItem="s83-ns-ZAL" secondAttribute="bottom" constant="16" id="VLv-ic-j3K"/>
                     <constraint firstItem="Mq5-NJ-RIz" firstAttribute="leading" secondItem="cpc-kg-E5x" secondAttribute="leading" constant="16" id="W2Y-Hr-zCr"/>
                     <constraint firstItem="Ee3-yh-ZoK" firstAttribute="top" secondItem="Mq5-NJ-RIz" secondAttribute="bottom" constant="16" id="brp-qU-5j7"/>
-                    <constraint firstItem="s83-ns-ZAL" firstAttribute="width" secondItem="Mq5-NJ-RIz" secondAttribute="width" id="dJg-qo-GRa"/>
+                    <constraint firstAttribute="trailing" secondItem="s83-ns-ZAL" secondAttribute="trailing" constant="15" id="jUV-U0-XLJ"/>
                     <constraint firstItem="s83-ns-ZAL" firstAttribute="leading" secondItem="Mq5-NJ-RIz" secondAttribute="trailing" constant="16" id="opT-8M-KUj"/>
                     <constraint firstAttribute="bottom" secondItem="5i6-Bu-Gq8" secondAttribute="bottom" constant="16" id="vYU-GX-98E"/>
                     <constraint firstAttribute="trailing" secondItem="Mq5-NJ-RIz" secondAttribute="trailing" constant="195" id="vta-0l-QBS"/>
@@ -270,6 +269,18 @@
                 <outletCollection property="items" destination="Ee3-yh-ZoK" collectionClass="NSMutableArray" id="lMA-js-DNB"/>
                 <outletCollection property="items" destination="5i6-Bu-Gq8" collectionClass="NSMutableArray" id="bBB-hR-BVM"/>
                 <outletCollection property="items" destination="s83-ns-ZAL" collectionClass="NSMutableArray" id="BIP-dH-ID8"/>
+                <outletCollection property="thumbnailImageViews" destination="vYC-3o-GNJ" collectionClass="NSMutableArray" id="dez-TV-N5z"/>
+                <outletCollection property="thumbnailImageViews" destination="Olh-u9-81G" collectionClass="NSMutableArray" id="WMp-Tj-hFF"/>
+                <outletCollection property="thumbnailImageViews" destination="LCK-VG-2oz" collectionClass="NSMutableArray" id="qR5-u8-BG8"/>
+                <outletCollection property="thumbnailImageViews" destination="IY5-4k-Yfy" collectionClass="NSMutableArray" id="PPe-rx-YUP"/>
+                <outletCollection property="titleLabels" destination="pHA-TA-3wn" collectionClass="NSMutableArray" id="GD7-V5-9Qu"/>
+                <outletCollection property="titleLabels" destination="LaA-Wv-HEa" collectionClass="NSMutableArray" id="McM-WA-anp"/>
+                <outletCollection property="titleLabels" destination="Haq-dv-yg9" collectionClass="NSMutableArray" id="b2a-7b-KXd"/>
+                <outletCollection property="titleLabels" destination="aqP-Xt-jc6" collectionClass="NSMutableArray" id="27d-uK-Xnb"/>
+                <outletCollection property="subtitleLabels" destination="c0E-jg-qWx" collectionClass="NSMutableArray" id="bK1-ZE-Ask"/>
+                <outletCollection property="subtitleLabels" destination="eSH-gt-xZ8" collectionClass="NSMutableArray" id="Ihu-aR-CiS"/>
+                <outletCollection property="subtitleLabels" destination="KZ8-ai-SDC" collectionClass="NSMutableArray" id="5GQ-JK-Dgf"/>
+                <outletCollection property="subtitleLabels" destination="cfm-B9-pEx" collectionClass="NSMutableArray" id="b21-eE-JZa"/>
             </connections>
             <point key="canvasLocation" x="10.5" y="29.5"/>
         </tableViewCell>
