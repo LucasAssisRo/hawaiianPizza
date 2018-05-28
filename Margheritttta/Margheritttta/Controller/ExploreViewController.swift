@@ -15,6 +15,11 @@ class ExploreViewController: GenericTableViewController {
     static var venues: [Venue]?
     static var venueImages: [[VenueImage?]] = []
     
+    private var mixedLoaded = false
+    var mixedTimer: Timer!
+    private var clusteredLoaded = false
+    var clusteredTimer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +32,10 @@ class ExploreViewController: GenericTableViewController {
         self.tableView.register(UINib(nibName: "MixedShopsTableCell", bundle: nil), forCellReuseIdentifier: "MixedShopsTableCell")
         self.tableView.register(ClusteredShopsTableCell.self, forCellReuseIdentifier: "ClusteredShopsTableCell")
         self.tableView.register(UINib(nibName: "ClusteredShopsTableCell", bundle: nil), forCellReuseIdentifier: "ClusteredShopsTableCell")
+        self.tableView.register(MixedSkeletonTableCell.self, forCellReuseIdentifier: "MixedSkeletonTableCell")
+        self.tableView.register(UINib(nibName: "MixedSkeletonTableCell", bundle: nil), forCellReuseIdentifier: "MixedSkeletonTableCell")
+        self.tableView.register(ClusteredSkeletonTableCell.self, forCellReuseIdentifier: "ClusteredSkeletonTableCell")
+        self.tableView.register(UINib(nibName: "ClusteredSkeletonTableCell", bundle: nil), forCellReuseIdentifier: "ClusteredSkeletonTableCell")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
         
         let kitura = ServerHandler.shared
