@@ -15,9 +15,8 @@ class ExploreViewController: GenericTableViewController {
     static var venues: [Venue]?
     static var venueImages: [[VenueImage?]] = []
     
-    private var mixedLoaded = false
+    private var loaded = false
     var mixedTimer: Timer!
-    private var clusteredLoaded = false
     var clusteredTimer: Timer!
     
     var finishedLoading = false
@@ -340,6 +339,7 @@ class ExploreViewController: GenericTableViewController {
             cell.delegate = self
             cell.contentType = .venue
             cell.collectionView.reloadData()
+            cell.loaded = self.finishedLoading
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell") as! WideShopsTableCell
@@ -347,26 +347,42 @@ class ExploreViewController: GenericTableViewController {
             cell.delegate = self
             cell.contentType = .venue
             cell.collectionView.reloadData()
+            cell.loaded = self.finishedLoading
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
-            cell.delegate = self
-            cell.contentType = .venue
-            if let venues = ExploreViewController.venues,
-                self.finishedLoading {
-                let venueImages = ExploreViewController.venueImages
-                for i in 0 ..< cell.items.count {
-                    cell.titleLabels[i].text = venues[i + 3].name
-                    cell.subtitleLabels[i].text = venues[i + 3].name
+            self.loaded = self.finishedLoading
+            if self.loaded {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+                cell.delegate = self
+                cell.contentType = .venue
+                if let venues = ExploreViewController.venues,
+                    self.finishedLoading {
+                    let venueImages = ExploreViewController.venueImages
+                    for i in 0 ..< cell.items.count {
+                        cell.titleLabels[i].text = venues[i + 3].name
+                        cell.subtitleLabels[i].text = venues[i + 3].name
+                    }
                 }
+                return cell
             }
-            
-            return cell
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as!
+                MixedSkeletonTableCell
+                return cell
+            }
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
-            cell.delegate = self
-            cell.contentType = .venue
-            return cell
+            self.loaded = self.finishedLoading
+            if self.loaded {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
+                cell.delegate = self
+                cell.contentType = .venue
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as!
+                ClusteredSkeletonTableCell
+                return cell
+            }
         default: return UITableViewCell()
         }
     }

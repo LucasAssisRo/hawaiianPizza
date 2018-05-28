@@ -13,7 +13,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var loaded = false
+    public var loaded = false
     private var isSkeletonHighlighted = false
     var timer: Timer!
     
@@ -35,7 +35,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         self.collectionView.register(SkeletonCollectionViewCell.self, forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
         self.collectionView.register(UINib(nibName: "SkeletonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
         self.collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-        self.loaded = true
+//        self.loaded = true
     }
     
     required init?(coder aDecoder: NSCoder) {

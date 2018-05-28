@@ -13,7 +13,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var loaded = true
+    public var loaded = false
     var timer: Timer!
     
     override func awakeFromNib() {
@@ -46,7 +46,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
             }
             print(sortedCells)
             for (index, cell) in sortedCells.enumerated() {
-                let skeletonCell = cell as! SkeletonCollectionViewCell
+                let skeletonCell = cell as! WideSkeletonCollectionViewCell
                 UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {
                     self.highlightSkeletonCell(skeletonCell, totalItems: sortedCells.count, firstCall: true)
                 })
@@ -54,7 +54,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
         }
     }
     
-    private func highlightSkeletonCell(_ cell: SkeletonCollectionViewCell, totalItems: Int, firstCall: Bool) {
+    private func highlightSkeletonCell(_ cell: WideSkeletonCollectionViewCell, totalItems: Int, firstCall: Bool) {
         let delay = firstCall ? 0 : totalItems
         UIView.animate(withDuration: 1, delay: Double(delay/2), animations: {
             cell.image.layer.backgroundColor = GlobalConstantss.skeletonHighlighted
@@ -66,7 +66,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
         })
     }
     
-    private func unhighlightSkeletonCell(_ cell: SkeletonCollectionViewCell, totalItems: Int) {
+    private func unhighlightSkeletonCell(_ cell: WideSkeletonCollectionViewCell, totalItems: Int) {
         UIView.animate(withDuration: 0.4, delay: Double(0), animations: {
             cell.image.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
             cell.title.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
@@ -91,7 +91,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.contentType {
         case .venue:
-            guard let _ = ExploreViewController.venues else { return 0 }
+            guard let _ = ExploreViewController.venues else { return 3 }
             return 3
         case .tour:
             return 20
@@ -99,48 +99,48 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        if self.loaded {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
-        switch self.contentType {
-        case .venue:
-            let venue = ExploreViewController.venues![indexPath.row]
-            cell.subtitleLabel.text = venue.name
-            cell.titleLabel.text = venue.category
-            if let data = self.findImages(by: venue.venueId).first??.image {
-                cell.thumbnailImageView.image = UIImage(data: data)
-            }
+        if self.loaded {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
             
-        case .tour: break
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+            switch self.contentType {
+                case .venue:
+                    let venue = ExploreViewController.venues![indexPath.row]
+                    cell.subtitleLabel.text = venue.name
+                    cell.titleLabel.text = venue.category
+                    if let data = self.findImages(by: venue.venueId).first??.image {
+                        cell.thumbnailImageView.image = UIImage(data: data)
+                    }
+                
+                case .tour: break
+            }
+        
+            cell.item.addGestureRecognizer(tap)
+            cell.item.delegate = self
+            cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
+            cell.contentView.layer.masksToBounds = true
+            
+            cell.layer.shadowColor = GlobalConstantss.shadowColor
+            cell.layer.shadowOffset = GlobalConstantss.shadowOffset
+            cell.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
+            cell.layer.shadowOpacity = 1.0
+            cell.layer.masksToBounds = false;
+            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+            return cell
         }
-        
-        
-        cell.item.addGestureRecognizer(tap)
-        cell.item.delegate = self
-        cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
-        cell.contentView.layer.masksToBounds = true
-        
-        cell.layer.shadowColor = GlobalConstantss.shadowColor
-        cell.layer.shadowOffset = GlobalConstantss.shadowOffset
-        cell.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false;
-        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-        return cell
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideSkeletonCollectionViewCell", for: indexPath) as! WideSkeletonCollectionViewCell
+
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.masksToBounds = true
+            cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
+            cell.layer.shadowOffset = CGSize(width:0,height: 8.0)
+            cell.layer.shadowRadius = 8.0
+            cell.layer.shadowOpacity = 1.0
+            cell.layer.masksToBounds = false;
+            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+
+            return cell
+        }
     }
-    //        else {
-    //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideSkeletonCollectionViewCell", for: indexPath) as! WideSkeletonCollectionViewCell
-    //
-    //            cell.contentView.layer.cornerRadius = 10
-    //            cell.contentView.layer.masksToBounds = true
-    //            cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
-    //            cell.layer.shadowOffset = CGSize(width:0,height: 8.0)
-    //            cell.layer.shadowRadius = 8.0
-    //            cell.layer.shadowOpacity = 1.0
-    //            cell.layer.masksToBounds = false;
-    //            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-    //
-    //            return cell
-    //        }
 }
