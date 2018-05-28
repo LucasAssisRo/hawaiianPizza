@@ -52,29 +52,37 @@ class ToursViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
+            cell.contentType = .tour
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
+            cell.contentType = .tour
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell", for: indexPath) as! MixedShopsTableCell
+            cell.contentType = .tour
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
+            cell.contentType = .tour
+
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
+            cell.contentType = .tour
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
+            cell.contentType = .tour
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell", for: indexPath) as! LinearShopsTableCell
             cell.registerNibThis()
+            cell.contentType = .tour
             return cell
         }
     }

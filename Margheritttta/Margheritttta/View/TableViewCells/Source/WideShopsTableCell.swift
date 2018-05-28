@@ -36,7 +36,13 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        switch self.contentType {
+        case .venue:
+            guard let _ = ExploreViewController.venues else { return 0 }
+            return 3
+        case .tour:
+            return 20
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,11 +50,22 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
         
-        
         cell.item.addGestureRecognizer(tap)
         cell.item.delegate = self
         cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
         cell.contentView.layer.masksToBounds = true
+        
+        switch self.contentType {
+        case .venue:
+            let venue = ExploreViewController.venues![indexPath.row]
+            cell.subtitleLabel.text = venue.name
+            cell.titleLabel.text = venue.category
+            if let data = self.findImages(by: venue.venueId).first??.image {
+                cell.thumbnailImageView.image = UIImage(data: data)
+            }
+            
+        case .tour: break
+        }
         
         cell.layer.shadowColor = GlobalConstantss.shadowColor
         cell.layer.shadowOffset = GlobalConstantss.shadowOffset

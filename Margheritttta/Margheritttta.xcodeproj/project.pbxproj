@@ -57,6 +57,7 @@
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
 		41A1A31420B45C3D00F18705 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1A31320B45C3D00F18705 /* ExploreViewController.swift */; };
+		41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE6D3320BC099E00E0EF2F /* ContentType.swift */; };
 		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
 		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
 		F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */; };
@@ -133,6 +134,7 @@
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41A1A31320B45C3D00F18705 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		41DE6D3320BC099E00E0EF2F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.release.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				415A92CB20B83B7000BC7852 /* Colors.swift */,
 				07C2979620B852E300239CE8 /* GlobalConstants.swift */,
 				0747BE6B20BABFAB00103302 /* UIViewExtension.swift */,
+				41DE6D3320BC099E00E0EF2F /* ContentType.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -459,6 +462,11 @@
 					4168F65D208E286E00727EEB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					4168F671208E286F00727EEB = {
 						CreatedOnToolsVersion = 9.2;
@@ -606,6 +614,7 @@
 				414A61B620BB13BC00AA88F8 /* TourVenueLink.swift in Sources */,
 				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,
 				0789DB4C20B2F13C004E66BB /* MixedShopsTableCell.swift in Sources */,
+				41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */,
 				07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */,
 				41A1A31420B45C3D00F18705 /* ExploreViewController.swift in Sources */,
 				414A61BB20BB13BC00AA88F8 /* VenueImage.swift in Sources */,
@@ -790,7 +799,7 @@
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -807,7 +816,7 @@
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
