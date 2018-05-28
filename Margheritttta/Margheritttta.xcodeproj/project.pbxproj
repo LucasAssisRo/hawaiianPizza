@@ -12,9 +12,13 @@
 		071DCA1C20B5C90A000E3E79 /* CoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */; };
 		071DCA1E20B5C92A000E3E79 /* CoverCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */; };
 		071F952620B44A8C00BEBFC2 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F952520B44A8C00BEBFC2 /* RoundImageView.swift */; };
+		0720B0DA20BB3DF300408CB9 /* ClusteredSkeletonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720B0D920BB3DF300408CB9 /* ClusteredSkeletonTableCell.xib */; };
+		0720B0DC20BB3E2400408CB9 /* ClusteredSkeletonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720B0DB20BB3E2400408CB9 /* ClusteredSkeletonTableCell.swift */; };
 		072CE3B420B5C71E00E9CB88 /* CoverTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072CE3B320B5C71E00E9CB88 /* CoverTableCell.swift */; };
 		072CE3B620B5C72C00E9CB88 /* CoverTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072CE3B520B5C72C00E9CB88 /* CoverTableCell.xib */; };
 		0747BE6C20BABFAB00103302 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747BE6B20BABFAB00103302 /* UIViewExtension.swift */; };
+		075FCC0420BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FCC0320BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib */; };
+		075FCC0620BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FCC0520BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift */; };
 		077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FDD0520B15B5400928FD8 /* ShopTableFooter.swift */; };
 		077FDD0820B15B6100928FD8 /* ShopTableFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077FDD0720B15B6100928FD8 /* ShopTableFooter.xib */; };
 		0789DB4020B2DBBB004E66BB /* WideShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0789DB3F20B2DBBB004E66BB /* WideShopsTableCell.xib */; };
@@ -23,6 +27,8 @@
 		0789DB4620B2DC93004E66BB /* WideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789DB4520B2DC93004E66BB /* WideCollectionViewCell.swift */; };
 		0789DB4A20B2F12C004E66BB /* MixedShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0789DB4920B2F12C004E66BB /* MixedShopsTableCell.xib */; };
 		0789DB4C20B2F13C004E66BB /* MixedShopsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789DB4B20B2F13C004E66BB /* MixedShopsTableCell.swift */; };
+		079E7A8320BB34860049C9D3 /* MixedSkeletonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E7A8220BB34860049C9D3 /* MixedSkeletonTableCell.xib */; };
+		079E7A8520BB34DC0049C9D3 /* MixedSkeletonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E7A8420BB34DC0049C9D3 /* MixedSkeletonTableCell.swift */; };
 		079ECCF420B14C9A00385CC7 /* ShopTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079ECCF320B14C9A00385CC7 /* ShopTableHeader.xib */; };
 		079ECCF620B14CF600385CC7 /* ShopTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079ECCF520B14CF600385CC7 /* ShopTableHeader.swift */; };
 		07AE6B7520B07A8100321D8B /* LinearShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AE6B7420B07A8100321D8B /* LinearShopsTableCell.xib */; };
@@ -82,9 +88,13 @@
 		071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverCollectionViewCell.xib; sourceTree = "<group>"; };
 		071F952520B44A8C00BEBFC2 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		0720B0D920BB3DF300408CB9 /* ClusteredSkeletonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusteredSkeletonTableCell.xib; sourceTree = "<group>"; };
+		0720B0DB20BB3E2400408CB9 /* ClusteredSkeletonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusteredSkeletonTableCell.swift; sourceTree = "<group>"; };
 		072CE3B320B5C71E00E9CB88 /* CoverTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverTableCell.swift; sourceTree = "<group>"; };
 		072CE3B520B5C72C00E9CB88 /* CoverTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverTableCell.xib; sourceTree = "<group>"; };
 		0747BE6B20BABFAB00103302 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		075FCC0320BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WideSkeletonCollectionViewCell.xib; sourceTree = "<group>"; };
+		075FCC0520BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideSkeletonCollectionViewCell.swift; sourceTree = "<group>"; };
 		077FDD0520B15B5400928FD8 /* ShopTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableFooter.swift; sourceTree = "<group>"; };
 		077FDD0720B15B6100928FD8 /* ShopTableFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShopTableFooter.xib; path = ../../ShopTableFooter.xib; sourceTree = "<group>"; };
 		0789DB3F20B2DBBB004E66BB /* WideShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WideShopsTableCell.xib; sourceTree = "<group>"; };
@@ -93,6 +103,8 @@
 		0789DB4520B2DC93004E66BB /* WideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideCollectionViewCell.swift; sourceTree = "<group>"; };
 		0789DB4920B2F12C004E66BB /* MixedShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MixedShopsTableCell.xib; sourceTree = "<group>"; };
 		0789DB4B20B2F13C004E66BB /* MixedShopsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedShopsTableCell.swift; sourceTree = "<group>"; };
+		079E7A8220BB34860049C9D3 /* MixedSkeletonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MixedSkeletonTableCell.xib; sourceTree = "<group>"; };
+		079E7A8420BB34DC0049C9D3 /* MixedSkeletonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedSkeletonTableCell.swift; sourceTree = "<group>"; };
 		079ECCF320B14C9A00385CC7 /* ShopTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableHeader.xib; sourceTree = "<group>"; };
 		079ECCF520B14CF600385CC7 /* ShopTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableHeader.swift; sourceTree = "<group>"; };
 		07AE6B7420B07A8100321D8B /* LinearShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearShopsTableCell.xib; sourceTree = "<group>"; };
@@ -223,6 +235,7 @@
 				07FBBF2B20B07C5A0012B99C /* LinearCollectionViewCell.xib */,
 				071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */,
 				07118EFC20BB133F006A9E3A /* SkeletonCollectionViewCell.xib */,
+				075FCC0320BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 				07FBBF2D20B07C8D0012B99C /* LinearCollectionViewCell.swift */,
 				071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */,
 				07118EFE20BB136C006A9E3A /* SkeletonCollectionViewCell.swift */,
+				075FCC0520BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -257,6 +271,8 @@
 				072CE3B320B5C71E00E9CB88 /* CoverTableCell.swift */,
 				41026B6520B81E8A0005B766 /* GenericTableViewCell.swift */,
 				41026B6B20B821440005B766 /* TableViewCellDelegate.swift */,
+				079E7A8420BB34DC0049C9D3 /* MixedSkeletonTableCell.swift */,
+				0720B0DB20BB3E2400408CB9 /* ClusteredSkeletonTableCell.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -269,6 +285,8 @@
 				0789DB4920B2F12C004E66BB /* MixedShopsTableCell.xib */,
 				07DA706620B40D120053FDE4 /* ClusteredShopsTableCell.xib */,
 				072CE3B520B5C72C00E9CB88 /* CoverTableCell.xib */,
+				079E7A8220BB34860049C9D3 /* MixedSkeletonTableCell.xib */,
+				0720B0D920BB3DF300408CB9 /* ClusteredSkeletonTableCell.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -496,15 +514,18 @@
 				0789DB4020B2DBBB004E66BB /* WideShopsTableCell.xib in Resources */,
 				4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */,
 				079ECCF420B14C9A00385CC7 /* ShopTableHeader.xib in Resources */,
+				079E7A8320BB34860049C9D3 /* MixedSkeletonTableCell.xib in Resources */,
 				07FBBF2C20B07C5A0012B99C /* LinearCollectionViewCell.xib in Resources */,
 				07DA706720B40D120053FDE4 /* ClusteredShopsTableCell.xib in Resources */,
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				0789DB4420B2DC84004E66BB /* WideCollectionViewCell.xib in Resources */,
+				075FCC0420BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
 				07118EFD20BB133F006A9E3A /* SkeletonCollectionViewCell.xib in Resources */,
 				0789DB4A20B2F12C004E66BB /* MixedShopsTableCell.xib in Resources */,
 				072CE3B620B5C72C00E9CB88 /* CoverTableCell.xib in Resources */,
 				077FDD0820B15B6100928FD8 /* ShopTableFooter.xib in Resources */,
+				0720B0DA20BB3DF300408CB9 /* ClusteredSkeletonTableCell.xib in Resources */,
 				4168F667208E286F00727EEB /* Main.storyboard in Resources */,
 				07AE6B7520B07A8100321D8B /* LinearShopsTableCell.xib in Resources */,
 			);
@@ -585,6 +606,7 @@
 				0789DB4620B2DC93004E66BB /* WideCollectionViewCell.swift in Sources */,
 				415A92CC20B83B7000BC7852 /* Colors.swift in Sources */,
 				F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */,
+				075FCC0620BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift in Sources */,
 				071DCA1C20B5C90A000E3E79 /* CoverCollectionViewCell.swift in Sources */,
 				414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */,
 				077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */,
@@ -598,6 +620,7 @@
 				41026B6620B81E8A0005B766 /* GenericTableViewCell.swift in Sources */,
 				F1F884762099B64500B6DE7A /* ProductsViewController.swift in Sources */,
 				07E4334820B5CAA2001A5BBF /* SearchToursViewController.swift in Sources */,
+				0720B0DC20BB3E2400408CB9 /* ClusteredSkeletonTableCell.swift in Sources */,
 				414A61B920BB13BC00AA88F8 /* TourImage.swift in Sources */,
 				07AE6B7720B07AF800321D8B /* LinearShopsTableCell.swift in Sources */,
 				0747BE6C20BABFAB00103302 /* UIViewExtension.swift in Sources */,
@@ -612,10 +635,10 @@
 				41026B6820B81F9D0005B766 /* ItemDelegate.swift in Sources */,
 				41026B6C20B821440005B766 /* TableViewCellDelegate.swift in Sources */,
 				414A61BA20BB13BC00AA88F8 /* ProductImage.swift in Sources */,
+				079E7A8520BB34DC0049C9D3 /* MixedSkeletonTableCell.swift in Sources */,
 				0789DB4220B2DBCB004E66BB /* WideShopsTableCell.swift in Sources */,
 				071F952620B44A8C00BEBFC2 /* RoundImageView.swift in Sources */,
 				4168F662208E286F00727EEB /* AppDelegate.swift in Sources */,
-				07F1FBE120B45820009EE51B /* TourVenueLink.swift in Sources */,
 				07118EFF20BB136C006A9E3A /* SkeletonCollectionViewCell.swift in Sources */,
 				F1F884782099B66F00B6DE7A /* SavedTableViewController.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* ToursViewController.swift in Sources */,

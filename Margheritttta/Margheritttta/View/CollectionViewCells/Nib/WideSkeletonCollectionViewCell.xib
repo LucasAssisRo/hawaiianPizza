@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnL-fL-4fa" customClass="WideSkeletonCollectionViewCell" customModule="Margheritttta" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="231" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="231" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb7-nN-fZI" userLabel="image">
+                        <rect key="frame" x="16" y="16" width="199" height="60"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="7GP-aA-KLQ"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj3-Rz-y2g" userLabel="title">
+                        <rect key="frame" x="16" y="88" width="199" height="16"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="6Av-DC-CMC"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75T-Tc-5ck" userLabel="subtitle">
+                        <rect key="frame" x="16" y="116" width="199" height="16"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Iji-MR-goM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Vb7-nN-fZI" firstAttribute="top" secondItem="PnL-fL-4fa" secondAttribute="top" constant="16" id="MYK-pv-1p5"/>
+                <constraint firstItem="Vb7-nN-fZI" firstAttribute="leading" secondItem="PnL-fL-4fa" secondAttribute="leading" constant="16" id="NUU-6h-VKR"/>
+                <constraint firstItem="75T-Tc-5ck" firstAttribute="leading" secondItem="PnL-fL-4fa" secondAttribute="leading" constant="16" id="Uen-TO-sn6"/>
+                <constraint firstItem="Vb7-nN-fZI" firstAttribute="bottom" secondItem="yj3-Rz-y2g" secondAttribute="top" constant="-12" id="VYt-4e-WT6"/>
+                <constraint firstItem="yj3-Rz-y2g" firstAttribute="leading" secondItem="PnL-fL-4fa" secondAttribute="leading" constant="16" id="Y81-kQ-LoA"/>
+                <constraint firstAttribute="trailing" secondItem="75T-Tc-5ck" secondAttribute="trailing" constant="16" id="ZUv-ie-yoM"/>
+                <constraint firstAttribute="trailing" secondItem="Vb7-nN-fZI" secondAttribute="trailing" constant="16" id="dh2-ur-jbf"/>
+                <constraint firstAttribute="trailing" secondItem="yj3-Rz-y2g" secondAttribute="trailing" constant="16" id="kp5-aq-qPv"/>
+                <constraint firstItem="yj3-Rz-y2g" firstAttribute="bottom" secondItem="75T-Tc-5ck" secondAttribute="top" constant="-12" id="xaH-AK-Q9H"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="y9b-mk-EVI"/>
+            <connections>
+                <outlet property="image" destination="Vb7-nN-fZI" id="aEY-0s-m7R"/>
+                <outlet property="subtitle" destination="75T-Tc-5ck" id="385-nw-cxp"/>
+                <outlet property="title" destination="yj3-Rz-y2g" id="vzZ-hi-k1q"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -12,6 +12,11 @@ class ExploreViewController: GenericTableViewController {
 
     private let sectionsWithButton: [Int] = [0, 1]
     
+    private var mixedLoaded = false
+    var mixedTimer: Timer!
+    private var clusteredLoaded = false
+    var clusteredTimer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +29,13 @@ class ExploreViewController: GenericTableViewController {
         self.tableView.register(UINib(nibName: "MixedShopsTableCell", bundle: nil), forCellReuseIdentifier: "MixedShopsTableCell")
         self.tableView.register(ClusteredShopsTableCell.self, forCellReuseIdentifier: "ClusteredShopsTableCell")
         self.tableView.register(UINib(nibName: "ClusteredShopsTableCell", bundle: nil), forCellReuseIdentifier: "ClusteredShopsTableCell")
+        self.tableView.register(MixedSkeletonTableCell.self, forCellReuseIdentifier: "MixedSkeletonTableCell")
+        self.tableView.register(UINib(nibName: "MixedSkeletonTableCell", bundle: nil), forCellReuseIdentifier: "MixedSkeletonTableCell")
+        self.tableView.register(ClusteredSkeletonTableCell.self, forCellReuseIdentifier: "ClusteredSkeletonTableCell")
+        self.tableView.register(UINib(nibName: "ClusteredSkeletonTableCell", bundle: nil), forCellReuseIdentifier: "ClusteredSkeletonTableCell")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -298,12 +309,12 @@ class ExploreViewController: GenericTableViewController {
                 cell.delegate = self
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
-                cell.delegate = self
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as! MixedSkeletonTableCell
+//                cell.delegate = self
                 return cell
             case 3:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
-                cell.delegate = self
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as! ClusteredSkeletonTableCell
+//                cell.delegate = self
                 return cell
             default: return UITableViewCell()
         }
