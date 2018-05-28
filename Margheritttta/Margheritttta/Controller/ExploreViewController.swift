@@ -378,6 +378,27 @@ class ExploreViewController: GenericTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
             cell.delegate = self
             cell.contentType = .venue
+            if let venues = ExploreViewController.venues,
+                self.finishedLoading {
+                let venueImages = ExploreViewController.venueImages
+                for i in 0 ..< cell.items.count {
+                    let venue = venues[i + 3 + 3]
+                    cell.titleLabels[i].text = venue.name
+                    cell.subtitleLabels[i].text = venue.name
+                    var imgs: [VenueImage?]? = nil
+                    for images in ExploreViewController.venueImages {
+                        if let venueId = images.first??.venueId,
+                            venueId == venue.venueId {
+                            imgs = images
+                        }
+                    }
+                    
+                    if let data = imgs?.first??.image {
+                        cell.thumbnailImageViews[i].image = UIImage(data: data)
+                    }
+                }
+            }
+            
             return cell
         default: return UITableViewCell()
         }
