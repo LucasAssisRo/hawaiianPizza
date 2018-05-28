@@ -13,5 +13,12 @@ class GenericTableViewController: UITableViewController {}
 extension GenericTableViewController: TableViewCellDelegate {
     func performSegue() {
         print("TableViewCellDelegate")
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShopDetails" {
+            let vc = segue.destination as! StoresViewController
+        }
     }
 }
