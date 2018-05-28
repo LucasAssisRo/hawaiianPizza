@@ -9,7 +9,7 @@
 import UIKit
 
 class ExploreViewController: GenericTableViewController {
-
+    
     private let sectionsWithButton: [Int] = [0, 1]
     
     static var venues: [Venue]?
@@ -19,6 +19,8 @@ class ExploreViewController: GenericTableViewController {
     var mixedTimer: Timer!
     private var clusteredLoaded = false
     var clusteredTimer: Timer!
+    
+    var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +64,8 @@ class ExploreViewController: GenericTableViewController {
                     if ExploreViewController.venueImages.count == venues.count {
                         DispatchQueue.main.sync {
                             print("reload")
-                            (self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! WideShopsTableCell).collectionView.reloadData()
+                            self.finishedLoading = true
+                            self.tableView.reloadData()
                         }
                     }
                 })
@@ -70,7 +73,7 @@ class ExploreViewController: GenericTableViewController {
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,12 +115,12 @@ class ExploreViewController: GenericTableViewController {
     }
     
     /**
-    Create a header view for each section. As it was not possible for us to use IBOutlets, the according
-    heading gets created by code.
+     Create a header view for each section. As it was not possible for us to use IBOutlets, the according
+     heading gets created by code.
      
-    - Author:
-    Alexander Schülke
-    */
+     - Author:
+     Alexander Schülke
+     */
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // Get width and height for header view
         let headerFrame = tableView.frame
@@ -146,17 +149,17 @@ class ExploreViewController: GenericTableViewController {
         // Add subviews
         headerView.addSubview(title)
         headerView.addSubview(description)
-
+        
         return headerView
     }
     
     /**
-    Create a footer view for each section. As it was not possible for us to use IBOutlets, the button
-    and the executable action have to be created by code.
+     Create a footer view for each section. As it was not possible for us to use IBOutlets, the button
+     and the executable action have to be created by code.
      
-    - Author
-    Alexander Schülke
-    */
+     - Author
+     Alexander Schülke
+     */
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         // Get width and height for header view
         let footerFrame = tableView.frame
@@ -194,17 +197,17 @@ class ExploreViewController: GenericTableViewController {
     }
     
     /**
-    Creates the button for the section footer.
-    
-    - Author:
-    Alexander Schülke
+     Creates the button for the section footer.
      
-    - parameters:
-        - footer: The footer the button should get created for.
+     - Author:
+     Alexander Schülke
      
-    - returns:
-    The new button for the footer
-    */
+     - parameters:
+     - footer: The footer the button should get created for.
+     
+     - returns:
+     The new button for the footer
+     */
     private func getTableFooterButton(for footer: ShopTableFooter) -> UIButton {
         let button = UIButton(frame: CGRect(x: footer.frame.width/2-110, y: 40, width: 200, height: 40))
         
@@ -214,23 +217,23 @@ class ExploreViewController: GenericTableViewController {
         button.setTitleColor(GlobalConstantss.fontColor, for: .normal)
         button.setTitle(GlobalConstantss.buttonText, for: .normal)
         
-
+        
         return button
     }
     
     /**
-    Returns the according heading text for the section. At the moment the order of the sections is static,
-    for the future more dynamic implementations might be necessary.
+     Returns the according heading text for the section. At the moment the order of the sections is static,
+     for the future more dynamic implementations might be necessary.
      
      - Author
      Alexander Schülke
      
      - parameters:
-        - section: The number of the section the title should be created for
+     - section: The number of the section the title should be created for
      
      - returns:
      The accordig title for the section
-    */
+     */
     private func getHeadingForSection(_ section: Int) -> String {
         var heading = ""
         switch section {
@@ -280,15 +283,15 @@ class ExploreViewController: GenericTableViewController {
     }
     
     /**
-    Places the button into the right position
+     Places the button into the right position
      
      - Author:
      Alexander Schülke
      
      - parameters:
-        - button: The button to position
-        - footer: The footer in which the button should be positioned
-    */
+     - button: The button to position
+     - footer: The footer in which the button should be positioned
+     */
     private func createConstants(for button: UIButton, with footer: ShopTableFooter) {
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -306,14 +309,14 @@ class ExploreViewController: GenericTableViewController {
     }
     
     /**
-    Additional functionality for the button. Necessary because we cannot use IBActions
+     Additional functionality for the button. Necessary because we cannot use IBActions
      
      - Author:
      Alexander Schülke
      
      - parameters:
-        - button: The button to assign the actions to
-    */
+     - button: The button to assign the actions to
+     */
     @objc private func showMore(button: UIButton) {
         switch button.tag {
         case 0:
@@ -329,39 +332,42 @@ class ExploreViewController: GenericTableViewController {
         }
     }
     
-   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell") as! LinearShopsTableCell
-                cell.registerNibThis()
-                cell.delegate = self
-                cell.contentType = .venue
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell") as! WideShopsTableCell
-                cell.registerNibThis()
-                cell.delegate = self
-                cell.contentType = .venue
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
-                cell.delegate = self
-                cell.contentType = .venue
-                if  let venues = ExploreViewController.venues {
-                    let venueImages = ExploreViewController.venueImages
-                    for i in 0 ..< cell.items.count {
-                        cell.titleLabels[i].text = venues[i + 3].name
-                        cell.subtitleLabels[i].text = venues[i + 3].name
-                    }
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell") as! LinearShopsTableCell
+            cell.registerNibThis()
+            cell.delegate = self
+            cell.contentType = .venue
+            cell.collectionView.reloadData()
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell") as! WideShopsTableCell
+            cell.registerNibThis()
+            cell.delegate = self
+            cell.contentType = .venue
+            cell.collectionView.reloadData()
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+            cell.delegate = self
+            cell.contentType = .venue
+            if let venues = ExploreViewController.venues,
+                self.finishedLoading {
+                let venueImages = ExploreViewController.venueImages
+                for i in 0 ..< cell.items.count {
+                    cell.titleLabels[i].text = venues[i + 3].name
+                    cell.subtitleLabels[i].text = venues[i + 3].name
                 }
-                
-                return cell
-            case 3:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
-                cell.delegate = self
-                cell.contentType = .venue
-                return cell
-            default: return UITableViewCell()
+            }
+            
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
+            cell.delegate = self
+            cell.contentType = .venue
+            return cell
+        default: return UITableViewCell()
         }
     }
 }
