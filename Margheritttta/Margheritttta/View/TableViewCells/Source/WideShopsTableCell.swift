@@ -105,13 +105,14 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
         switch self.contentType {
         case .venue:
-            let venue = ExploreViewController.venues![indexPath.row]
-            cell.subtitleLabel.text = venue.name
-            cell.titleLabel.text = venue.category
-            if let data = self.findImages(by: venue.venueId).first??.image {
-                cell.thumbnailImageView.image = UIImage(data: data)
+            if let venue = ExploreViewController.venues?[indexPath.row] {
+                cell.subtitleLabel.text = venue.name
+                cell.titleLabel.text = venue.category
+                if let data = self.findImages(by: venue.venueId).first??.image {
+                    cell.thumbnailImageView.image = UIImage(data: data)
+                }
+                
             }
-            
         case .tour: break
         }
         

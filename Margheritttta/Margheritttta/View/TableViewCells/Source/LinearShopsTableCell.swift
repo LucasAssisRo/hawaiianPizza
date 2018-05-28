@@ -90,7 +90,13 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch self.contentType {
+        case .venue:
+            guard let _ = ExploreViewController.venues else { return 0 }
+            return 4
+        case .tour:
+            return 20
+        }
     }
     
     
@@ -101,6 +107,19 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
             cell.item.addGestureRecognizer(tap)
             cell.item.delegate = self
+            switch self.contentType {
+            case .venue:
+                if let venue = ExploreViewController.venues?[indexPath.row + 3 + 3 + 4] {
+                    cell.titleLabel.text = venue.name
+                    cell.subtitleLabel.text = venue.category
+                    if let data = self.findImages(by: venue.venueId).first??.image {
+                        cell.thumbnailImageView.image = UIImage(data: data)
+                    }
+                }
+                
+            case .tour: break
+            }
+            
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
