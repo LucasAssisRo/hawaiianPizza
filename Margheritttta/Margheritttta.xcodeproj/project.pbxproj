@@ -810,8 +810,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUNH82DZ4W;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -826,8 +827,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUNH82DZ4W;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margheritttta;
 				PRODUCT_NAME = "$(TARGET_NAME)";

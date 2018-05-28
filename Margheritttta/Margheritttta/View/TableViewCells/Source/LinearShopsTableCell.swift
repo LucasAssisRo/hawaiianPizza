@@ -12,8 +12,6 @@ import KituraKit
 class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private var venues: [Venue]?
-    private var venueImages: [[VenueImage]?] = []
     
     private var loaded = false
     private var isSkeletonHighlighted = false
@@ -62,19 +60,16 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                     }
                     
                     self.venueImages.append(images)
-                    DispatchQueue.main.sync {
-                        self.collectionView.reloadData()
+                    if self.venueImages.count == venues.count {
+                        DispatchQueue.main.sync {
+                            self.loaded = true
+                            self.collectionView.reloadData()
+                        }
                     }
                 })
             }
-            
-            DispatchQueue.main.sync {
-                self.loaded = true
-                print("loaded")
-                self.collectionView.reloadData()
-            }
         }
-
+        
         collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     }
     
@@ -89,20 +84,20 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     @objc private func animateSkeletons() {
         if !self.loaded {
-        var sortedCells = collectionView.visibleCells
-        sortedCells.sort {
-            if let itemIndex = collectionView.indexPath(for: $0)?.item, let secondItemIndex = collectionView.indexPath(for: $1)?.item {
-                return itemIndex < secondItemIndex
+            var sortedCells = collectionView.visibleCells
+            sortedCells.sort {
+                if let itemIndex = collectionView.indexPath(for: $0)?.item, let secondItemIndex = collectionView.indexPath(for: $1)?.item {
+                    return itemIndex < secondItemIndex
+                }
+                return true
             }
-            return true
-        }
-        print(sortedCells)
-        for (index, cell) in sortedCells.enumerated() {
-            let skeletonCell = cell as! SkeletonCollectionViewCell
-            UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {
-                self.highlightSkeletonCell(skeletonCell, totalItems: sortedCells.count, firstCall: true)
+            print(sortedCells)
+            for (index, cell) in sortedCells.enumerated() {
+                let skeletonCell = cell as! SkeletonCollectionViewCell
+                UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {
+                    self.highlightSkeletonCell(skeletonCell, totalItems: sortedCells.count, firstCall: true)
                 })
-        }
+            }
         }
     }
     
@@ -137,7 +132,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         return venues.count
     }
     
-  
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.loaded {
@@ -145,6 +140,15 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
             cell.item.addGestureRecognizer(tap)
             cell.item.delegate = self
+            cell.titleLabel.text = venues?[indexPath.row].name
+            cell.subtitleLabel.text = venues?[indexPath.row].category
+            if indexPath.row < venueImages.count,
+                let data = venueImages[indexPath.row]?.first?.image {
+                cell.thumbnailImageView.image = UIImage(data: data)
+            } else {
+                cell.thumbnailImageView.image = nil
+                cell.thumbnailImageView.backgroundColor = UIColor.lightGray
+            }
             
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
