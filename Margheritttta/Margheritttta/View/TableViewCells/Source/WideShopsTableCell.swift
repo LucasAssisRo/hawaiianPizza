@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     private var loaded = true
     var timer: Timer!
     
@@ -89,42 +89,58 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        switch self.contentType {
+        case .venue:
+            guard let _ = ExploreViewController.venues else { return 0 }
+            return 3
+        case .tour:
+            return 20
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //        if self.loaded {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
         
-//        if self.loaded {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideCollectionViewCell", for: indexPath) as! WideCollectionViewCell
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+        switch self.contentType {
+        case .venue:
+            let venue = ExploreViewController.venues![indexPath.row]
+            cell.subtitleLabel.text = venue.name
+            cell.titleLabel.text = venue.category
+            if let data = self.findImages(by: venue.venueId).first??.image {
+                cell.thumbnailImageView.image = UIImage(data: data)
+            }
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
-            
-            
-            cell.item.addGestureRecognizer(tap)
-            cell.item.delegate = self
-            cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
-            cell.contentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = GlobalConstantss.shadowColor
-            cell.layer.shadowOffset = GlobalConstantss.shadowOffset
-            cell.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.masksToBounds = false;
-            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-            return cell
+        case .tour: break
         }
-//        else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideSkeletonCollectionViewCell", for: indexPath) as! WideSkeletonCollectionViewCell
-//
-//            cell.contentView.layer.cornerRadius = 10
-//            cell.contentView.layer.masksToBounds = true
-//            cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
-//            cell.layer.shadowOffset = CGSize(width:0,height: 8.0)
-//            cell.layer.shadowRadius = 8.0
-//            cell.layer.shadowOpacity = 1.0
-//            cell.layer.masksToBounds = false;
-//            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-//
-//            return cell
-//        }
+        
+        
+        cell.item.addGestureRecognizer(tap)
+        cell.item.delegate = self
+        cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)
+        cell.contentView.layer.masksToBounds = true
+        
+        cell.layer.shadowColor = GlobalConstantss.shadowColor
+        cell.layer.shadowOffset = GlobalConstantss.shadowOffset
+        cell.layer.shadowRadius = CGFloat(GlobalConstantss.shadowradius)
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false;
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        return cell
+    }
+    //        else {
+    //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideSkeletonCollectionViewCell", for: indexPath) as! WideSkeletonCollectionViewCell
+    //
+    //            cell.contentView.layer.cornerRadius = 10
+    //            cell.contentView.layer.masksToBounds = true
+    //            cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
+    //            cell.layer.shadowOffset = CGSize(width:0,height: 8.0)
+    //            cell.layer.shadowRadius = 8.0
+    //            cell.layer.shadowOpacity = 1.0
+    //            cell.layer.masksToBounds = false;
+    //            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+    //
+    //            return cell
+    //        }
 }

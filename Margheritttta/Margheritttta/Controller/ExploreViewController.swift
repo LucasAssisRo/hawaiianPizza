@@ -12,6 +12,9 @@ class ExploreViewController: GenericTableViewController {
 
     private let sectionsWithButton: [Int] = [0, 1]
     
+    static var venues: [Venue]?
+    static var venueImages: [[VenueImage?]] = []
+    
     private var mixedLoaded = false
     var mixedTimer: Timer!
     private var clusteredLoaded = false
@@ -35,7 +38,37 @@ class ExploreViewController: GenericTableViewController {
         self.tableView.register(UINib(nibName: "ClusteredSkeletonTableCell", bundle: nil), forCellReuseIdentifier: "ClusteredSkeletonTableCell")
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
         
+        let kitura = ServerHandler.shared
         
+        ExploreViewController.venueImages.removeAll()
+        kitura.getAllVenues { venues, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let venues = venues else { return }
+            ExploreViewController.venues = venues
+            for venue in venues {
+                kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let images = images else { return }
+                    ExploreViewController.venueImages.append(images)
+                    
+                    if ExploreViewController.venueImages.count == venues.count {
+                        DispatchQueue.main.sync {
+                            print("reload")
+                            (self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! WideShopsTableCell).collectionView.reloadData()
+                        }
+                    }
+                })
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -302,19 +335,31 @@ class ExploreViewController: GenericTableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell") as! LinearShopsTableCell
                 cell.registerNibThis()
                 cell.delegate = self
+                cell.contentType = .venue
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell") as! WideShopsTableCell
                 cell.registerNibThis()
                 cell.delegate = self
+                cell.contentType = .venue
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as! MixedSkeletonTableCell
-//                cell.delegate = self
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
+                cell.delegate = self
+                cell.contentType = .venue
+                if  let venues = ExploreViewController.venues {
+                    let venueImages = ExploreViewController.venueImages
+                    for i in 0 ..< cell.items.count {
+                        cell.titleLabels[i].text = venues[i + 3].name
+                        cell.subtitleLabels[i].text = venues[i + 3].name
+                    }
+                }
+                
                 return cell
             case 3:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as! ClusteredSkeletonTableCell
-//                cell.delegate = self
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
+                cell.delegate = self
+                cell.contentType = .venue
                 return cell
             default: return UITableViewCell()
         }

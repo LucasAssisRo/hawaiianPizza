@@ -11,19 +11,29 @@ import UIKit
 class GenericTableViewCell: UITableViewCell {
 
     var delegate: TableViewCellDelegate?
-    
-    var venues: [Venue]?
-    var venueImages: [[VenueImage]?] = []
-    
-    var tours: [Tour]?
-    var tourImages: [[TourImage]?] = []
-    
-    var loadingImageIndex = -1
-    
+    var contentType: ContentType = .venue
+
     @IBAction func selectItem(_ sender: UITapGestureRecognizer) {
         guard let item = sender.view as? ItemView else { return }
 
         item.delegate?.performSegue()
+    }
+    
+    func findImages(by id: String) -> [VenueImage?]  {
+
+        switch self.contentType {
+        case .venue:
+            for images in ExploreViewController.venueImages {
+                if let venueId = images.first??.venueId,
+                    venueId == id {
+                    return images
+                }
+            }
+        case .tour:
+            break
+        }
+        
+        return []
     }
 }
 

@@ -28,49 +28,14 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     func registerNibThis() {
         print("not loaded yet")
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         self.collectionView.register(LinearCollectionViewCell.self, forCellWithReuseIdentifier: "LinearCollectionViewCell")
         self.collectionView.register(UINib(nibName: "LinearCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LinearCollectionViewCell")
         self.collectionView.register(SkeletonCollectionViewCell.self, forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
         self.collectionView.register(UINib(nibName: "SkeletonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
-        ServerHandler.shared.getAllVenues { venues, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let venues = venues else {
-                print(RequestError.badRequest)
-                return
-            }
-            
-            self.venues = venues
-            self.venueImages.removeAll()
-            for venue in venues {
-                ServerHandler.shared.getVenueImages(by: venue.venueId, completion: { images, error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
-                    
-                    guard let images = images else {
-                        print(RequestError.badRequest)
-                        return
-                    }
-                    
-                    self.venueImages.append(images)
-                    if self.venueImages.count == venues.count {
-                        DispatchQueue.main.sync {
-                            self.loaded = true
-                            self.collectionView.reloadData()
-                        }
-                    }
-                })
-            }
-        }
-        
-        collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        self.collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        self.loaded = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -125,11 +90,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let venues = venues else {
-            return 3
-        }
-        
-        return venues.count
+        return 5
     }
     
     
@@ -140,16 +101,6 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
             cell.item.addGestureRecognizer(tap)
             cell.item.delegate = self
-            cell.titleLabel.text = venues?[indexPath.row].name
-            cell.subtitleLabel.text = venues?[indexPath.row].category
-            if indexPath.row < venueImages.count,
-                let data = venueImages[indexPath.row]?.first?.image {
-                cell.thumbnailImageView.image = UIImage(data: data)
-            } else {
-                cell.thumbnailImageView.image = nil
-                cell.thumbnailImageView.backgroundColor = UIColor.lightGray
-            }
-            
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
