@@ -19,6 +19,11 @@ class GenericTableViewCell: UITableViewCell {
         item.delegate?.performSegue()
     }
     
+    @IBAction func setFavorite(_ sender: UITapGestureRecognizer) {
+        guard let icon = sender.view as? FavoriteIcon else { return }
+        icon.image = UIImage(named: "heart_filled")
+    }
+    
     func findImages(by id: String) -> [VenueImage?]  {
         switch self.contentType {
         case .venue:

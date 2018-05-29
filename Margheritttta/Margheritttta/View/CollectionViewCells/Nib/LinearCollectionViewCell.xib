@@ -40,28 +40,33 @@
                                 <color key="textColor" red="0.14117647058823529" green="0.24705882352941178" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUo-FT-HkJ">
+                                <rect key="frame" x="105" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="gCT-Rg-d9b"/>
+                                    <constraint firstAttribute="height" constant="33" id="peU-ew-FdO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="iconClicked:" destination="IzH-8S-fJG" eventType="touchUpInside" id="5hs-7F-gfX"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVz-sK-8e2">
                                 <rect key="frame" x="11" y="133" width="146" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.47450980392156861" green="0.63529411764705879" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart2" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-Py-vJI">
-                                <rect key="frame" x="106" y="8" width="30" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="Sif-FZ-eF0"/>
-                                    <constraint firstAttribute="width" constant="30" id="XQT-fV-bFp"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UVz-sK-8e2" firstAttribute="top" secondItem="G0K-P9-iby" secondAttribute="bottom" constant="25" id="1ba-FV-A4B"/>
-                            <constraint firstAttribute="trailing" secondItem="2OF-Py-vJI" secondAttribute="trailing" constant="8" id="3ve-4u-w5y"/>
-                            <constraint firstItem="2OF-Py-vJI" firstAttribute="top" secondItem="qyK-Ks-aaB" secondAttribute="top" constant="8" id="4LO-JE-RLa"/>
                             <constraint firstItem="G0K-P9-iby" firstAttribute="top" secondItem="qyK-Ks-aaB" secondAttribute="top" id="4nt-tU-SzK"/>
                             <constraint firstAttribute="trailing" secondItem="UVz-sK-8e2" secondAttribute="trailing" constant="-13" id="DTf-2d-A5K"/>
+                            <constraint firstAttribute="trailing" secondItem="lUo-FT-HkJ" secondAttribute="trailing" constant="4" id="OOF-gf-m0P"/>
                             <constraint firstItem="8EW-HT-anH" firstAttribute="top" secondItem="G0K-P9-iby" secondAttribute="bottom" constant="7" id="Olv-mO-ZER"/>
+                            <constraint firstItem="lUo-FT-HkJ" firstAttribute="top" secondItem="qyK-Ks-aaB" secondAttribute="top" constant="8" id="XS6-ZJ-7Bq"/>
                             <constraint firstAttribute="trailing" secondItem="G0K-P9-iby" secondAttribute="trailing" id="bhS-ZP-wab"/>
                             <constraint firstAttribute="bottom" secondItem="UVz-sK-8e2" secondAttribute="bottom" constant="6" id="cxz-O5-g8K"/>
                             <constraint firstItem="G0K-P9-iby" firstAttribute="leading" secondItem="qyK-Ks-aaB" secondAttribute="leading" id="nmV-PH-S93"/>
@@ -98,6 +103,7 @@
             <viewLayoutGuide key="safeArea" id="eFE-QH-LsS"/>
             <size key="customSize" width="223" height="221"/>
             <connections>
+                <outlet property="icon" destination="lUo-FT-HkJ" id="vx5-j0-qZV"/>
                 <outlet property="item" destination="qyK-Ks-aaB" id="V8K-AT-PKf"/>
                 <outlet property="subtitleLabel" destination="UVz-sK-8e2" id="2TK-N8-rpd"/>
                 <outlet property="thumbnailImageView" destination="G0K-P9-iby" id="9Ku-KK-Pgc"/>

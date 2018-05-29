@@ -99,6 +99,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         if self.loaded {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
+
             cell.item.addGestureRecognizer(tap)
             cell.item.delegate = self
             cell.contentView.layer.cornerRadius = 10

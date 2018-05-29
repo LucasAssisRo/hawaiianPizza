@@ -15,4 +15,12 @@ class WideCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: RoundImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    
+    @IBOutlet weak var icon: UIButton!
+    @IBAction func iconClicked(_ sender: Any) {
+        self.icon.setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        
+        self.item.setFavorite()
+    }
+    
 }

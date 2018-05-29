@@ -29,6 +29,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-Zr-jlC">
+                                <rect key="frame" x="304" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="M7c-lh-Oe6"/>
+                                    <constraint firstAttribute="width" constant="35" id="OZj-WY-6kI"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="wideIconClicked:" destination="pUC-6a-4pW" eventType="touchUpInside" id="Anx-Ud-smR"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6h-3U-fnu">
                                 <rect key="frame" x="7.5" y="163.5" width="327" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -51,9 +62,11 @@
                             <constraint firstAttribute="width" secondItem="HDF-RX-Qjl" secondAttribute="height" multiplier="49:29" id="XZc-6s-Srd"/>
                             <constraint firstItem="X3h-d5-tIC" firstAttribute="top" secondItem="HDF-RX-Qjl" secondAttribute="top" id="Y38-p9-yBB"/>
                             <constraint firstItem="n6h-3U-fnu" firstAttribute="top" secondItem="X3h-d5-tIC" secondAttribute="bottom" constant="8" id="aTt-Vm-BAD"/>
+                            <constraint firstItem="KBt-Zr-jlC" firstAttribute="top" secondItem="HDF-RX-Qjl" secondAttribute="top" constant="8" id="bvw-8c-7IK"/>
                             <constraint firstItem="RXb-BC-7N3" firstAttribute="top" secondItem="n6h-3U-fnu" secondAttribute="bottom" id="dme-lg-GUy"/>
                             <constraint firstItem="RXb-BC-7N3" firstAttribute="centerX" secondItem="HDF-RX-Qjl" secondAttribute="centerX" id="gQa-oj-ykX"/>
                             <constraint firstAttribute="bottom" secondItem="RXb-BC-7N3" secondAttribute="bottom" constant="8" id="kw3-bv-okI"/>
+                            <constraint firstAttribute="trailing" secondItem="KBt-Zr-jlC" secondAttribute="trailing" constant="4" id="lAU-4p-zgI"/>
                             <constraint firstItem="n6h-3U-fnu" firstAttribute="centerX" secondItem="HDF-RX-Qjl" secondAttribute="centerX" id="w4f-MA-o8o"/>
                             <constraint firstItem="X3h-d5-tIC" firstAttribute="centerX" secondItem="HDF-RX-Qjl" secondAttribute="centerX" id="y9y-3i-nZX"/>
                         </constraints>
@@ -87,6 +100,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-gv-tjt">
+                                <rect key="frame" x="125" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="8kn-UV-0tM"/>
+                                    <constraint firstAttribute="width" constant="35" id="m00-a2-sPO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="heart2"/>
+                                <connections>
+                                    <action selector="leftIconClicked:" destination="pUC-6a-4pW" eventType="touchUpInside" id="cMN-5r-BIy"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxs-En-adt">
                                 <rect key="frame" x="8" y="136.5" width="78.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -110,6 +134,8 @@
                             <constraint firstItem="Jxs-En-adt" firstAttribute="top" secondItem="NXC-ve-WER" secondAttribute="bottom" constant="8" id="QXD-dO-Dnh"/>
                             <constraint firstItem="NXC-ve-WER" firstAttribute="top" secondItem="r9v-s1-nxL" secondAttribute="top" id="UyH-gn-Mut"/>
                             <constraint firstAttribute="bottom" secondItem="Vp2-ql-SBw" secondAttribute="bottom" constant="8" id="c9k-WO-W6R"/>
+                            <constraint firstAttribute="trailing" secondItem="PaK-gv-tjt" secondAttribute="trailing" constant="4" id="hIX-SJ-zku"/>
+                            <constraint firstAttribute="top" secondItem="PaK-gv-tjt" secondAttribute="top" constant="-8" id="wFY-uk-Foc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -147,6 +173,17 @@
                                 <color key="textColor" red="0.14117647058823529" green="0.24705882352941178" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwM-BV-6rK">
+                                <rect key="frame" x="125" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="LVe-ap-Xu1"/>
+                                    <constraint firstAttribute="height" constant="33" id="jZb-V9-S3Y"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="rightIconClicked:" destination="pUC-6a-4pW" eventType="touchUpInside" id="co8-ak-UYF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp4-Y7-IS0">
                                 <rect key="frame" x="8" y="154.5" width="148" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -159,7 +196,9 @@
                             <constraint firstItem="F6d-4v-COL" firstAttribute="centerX" secondItem="DVz-Fz-eEG" secondAttribute="centerX" id="0nW-kQ-L9N"/>
                             <constraint firstItem="QQN-3n-FEg" firstAttribute="top" secondItem="F6d-4v-COL" secondAttribute="bottom" constant="8" id="41s-Ad-NOc"/>
                             <constraint firstItem="tp4-Y7-IS0" firstAttribute="width" secondItem="DVz-Fz-eEG" secondAttribute="width" constant="-16" id="AcN-Uc-Zyu"/>
+                            <constraint firstItem="lwM-BV-6rK" firstAttribute="top" secondItem="DVz-Fz-eEG" secondAttribute="top" constant="8" id="BPR-Kt-aCO"/>
                             <constraint firstItem="QQN-3n-FEg" firstAttribute="width" secondItem="DVz-Fz-eEG" secondAttribute="width" constant="-16" id="IyQ-vL-bcv"/>
+                            <constraint firstAttribute="trailing" secondItem="lwM-BV-6rK" secondAttribute="trailing" constant="4" id="Ke0-AH-TbB"/>
                             <constraint firstItem="tp4-Y7-IS0" firstAttribute="centerX" secondItem="DVz-Fz-eEG" secondAttribute="centerX" id="OQM-ib-3CB"/>
                             <constraint firstItem="F6d-4v-COL" firstAttribute="top" secondItem="DVz-Fz-eEG" secondAttribute="top" id="ZG6-Eu-qIa"/>
                             <constraint firstItem="tp4-Y7-IS0" firstAttribute="top" secondItem="QQN-3n-FEg" secondAttribute="bottom" id="rph-SJ-LIv"/>
@@ -214,11 +253,15 @@
                 <outletCollection property="subtitleLabels" destination="RXb-BC-7N3" collectionClass="NSMutableArray" id="8Xc-Dz-V9t"/>
                 <outletCollection property="subtitleLabels" destination="Vp2-ql-SBw" collectionClass="NSMutableArray" id="j6y-Hc-4tx"/>
                 <outletCollection property="subtitleLabels" destination="tp4-Y7-IS0" collectionClass="NSMutableArray" id="cPo-0a-z3o"/>
+                <outletCollection property="icons" destination="KBt-Zr-jlC" collectionClass="NSMutableArray" id="TS2-8d-8LY"/>
+                <outletCollection property="icons" destination="PaK-gv-tjt" collectionClass="NSMutableArray" id="pF1-tz-VRB"/>
+                <outletCollection property="icons" destination="lwM-BV-6rK" collectionClass="NSMutableArray" id="ept-qj-tJK"/>
             </connections>
             <point key="canvasLocation" x="10.5" y="29.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="2" width="1280" height="1135"/>
+        <image name="heart2" width="99" height="93"/>
     </resources>
 </document>

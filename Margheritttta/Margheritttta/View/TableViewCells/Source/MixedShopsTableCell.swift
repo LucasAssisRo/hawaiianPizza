@@ -34,6 +34,14 @@ class MixedShopsTableCell: GenericTableViewCell {
         }
     }
     
+    @IBOutlet var icons: [UIButton]! {
+        didSet {
+            self.icons.sort { first, second -> Bool in
+                return first.tag < second.tag
+            }
+        }
+    }
+    
     @IBOutlet var thumbnailImageViews: [RoundImageView]! {
         didSet {
             self.thumbnailImageViews.sort { first, second -> Bool in
@@ -63,5 +71,22 @@ class MixedShopsTableCell: GenericTableViewCell {
         case left = 1
         case right = 2
     }
+    
+    @IBAction func wideIconClicked(_ sender: Any) {
+        self.icons[0].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[0].setFavorite()
+    }
+    
+    @IBAction func leftIconClicked(_ sender: Any) {
+        self.icons[1].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[1].setFavorite()
+    }
+    
+    @IBAction func rightIconClicked(_ sender: Any) {
+        self.icons[2].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[2].setFavorite()
+    }
+    
+    
     
 }

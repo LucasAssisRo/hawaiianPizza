@@ -28,6 +28,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-k6-QvF">
+                                <rect key="frame" x="124.5" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="BV6-2p-hZG"/>
+                                    <constraint firstAttribute="height" constant="33" id="zoE-iJ-Ofe"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="topLeftIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="ySz-Cj-84l"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-tT-dlT">
                                 <rect key="frame" x="8" y="150" width="78.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -46,10 +57,12 @@
                             <constraint firstAttribute="trailing" secondItem="fsg-SV-o4w" secondAttribute="trailing" id="GrS-kq-MIq"/>
                             <constraint firstItem="vGN-tT-dlT" firstAttribute="top" secondItem="fsg-SV-o4w" secondAttribute="bottom" constant="8" id="Rcz-4d-kga"/>
                             <constraint firstAttribute="bottom" secondItem="Gqt-Zb-uzY" secondAttribute="bottom" constant="8" id="Ucz-PW-sms"/>
+                            <constraint firstItem="zp3-k6-QvF" firstAttribute="top" secondItem="2Ow-6g-3Gp" secondAttribute="top" constant="8" id="gB7-8O-ARt"/>
                             <constraint firstItem="fsg-SV-o4w" firstAttribute="leading" secondItem="2Ow-6g-3Gp" secondAttribute="leading" id="nA4-6o-GJc"/>
                             <constraint firstItem="Gqt-Zb-uzY" firstAttribute="top" secondItem="vGN-tT-dlT" secondAttribute="bottom" id="ubr-I1-LOz"/>
                             <constraint firstItem="fsg-SV-o4w" firstAttribute="top" secondItem="2Ow-6g-3Gp" secondAttribute="top" id="wXo-1U-ird"/>
                             <constraint firstItem="vGN-tT-dlT" firstAttribute="leading" secondItem="2Ow-6g-3Gp" secondAttribute="leading" constant="8" id="xbJ-om-QTf"/>
+                            <constraint firstAttribute="trailing" secondItem="zp3-k6-QvF" secondAttribute="trailing" constant="4" id="zap-cn-cOS"/>
                             <constraint firstItem="Gqt-Zb-uzY" firstAttribute="leading" secondItem="2Ow-6g-3Gp" secondAttribute="leading" constant="8" id="zt5-cf-ngW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -82,6 +95,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-nV-v1c">
+                                <rect key="frame" x="124.5" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Q24-Pr-uYf"/>
+                                    <constraint firstAttribute="width" constant="35" id="jth-m5-NO5"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="bottomLeftIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="sL8-xb-ahq"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hl-fu-iuu">
                                 <rect key="frame" x="8" y="150" width="78.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -99,10 +123,12 @@
                         <constraints>
                             <constraint firstItem="R8y-fH-Q0N" firstAttribute="top" secondItem="Mz4-ps-gMT" secondAttribute="top" id="46L-AD-8DW"/>
                             <constraint firstItem="e4d-Tu-jp4" firstAttribute="top" secondItem="0Hl-fu-iuu" secondAttribute="bottom" id="7Eb-rt-EkU"/>
+                            <constraint firstAttribute="trailing" secondItem="SYV-nV-v1c" secondAttribute="trailing" constant="4" id="7cO-nX-Awx"/>
                             <constraint firstItem="e4d-Tu-jp4" firstAttribute="leading" secondItem="Mz4-ps-gMT" secondAttribute="leading" constant="8" id="Dgi-YC-LBK"/>
                             <constraint firstItem="R8y-fH-Q0N" firstAttribute="leading" secondItem="Mz4-ps-gMT" secondAttribute="leading" id="EJX-PY-qPf"/>
                             <constraint firstAttribute="trailing" secondItem="R8y-fH-Q0N" secondAttribute="trailing" id="P1S-Fu-apV"/>
                             <constraint firstItem="0Hl-fu-iuu" firstAttribute="leading" secondItem="Mz4-ps-gMT" secondAttribute="leading" constant="8" id="UkY-PM-LpX"/>
+                            <constraint firstItem="SYV-nV-v1c" firstAttribute="top" secondItem="Mz4-ps-gMT" secondAttribute="top" constant="8" id="Wmq-75-ubc"/>
                             <constraint firstAttribute="bottom" secondItem="e4d-Tu-jp4" secondAttribute="bottom" constant="8" id="Zyb-DW-kPs"/>
                             <constraint firstItem="0Hl-fu-iuu" firstAttribute="top" secondItem="R8y-fH-Q0N" secondAttribute="bottom" constant="8" id="ku9-e8-6TW"/>
                         </constraints>
@@ -136,6 +162,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-gc-1Vw">
+                                <rect key="frame" x="124.5" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="TZN-SD-v9n"/>
+                                    <constraint firstAttribute="height" constant="33" id="pda-CR-p71"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="bottomRightIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="APJ-SK-FcZ"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-fM-8JK">
                                 <rect key="frame" x="8" y="150" width="78.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -156,9 +193,11 @@
                             <constraint firstAttribute="trailing" secondItem="4YH-dd-dqB" secondAttribute="trailing" id="Kh3-XH-gk5"/>
                             <constraint firstItem="Y4E-fM-8JK" firstAttribute="top" secondItem="4YH-dd-dqB" secondAttribute="bottom" constant="8" id="fXr-ou-IuG"/>
                             <constraint firstAttribute="bottom" secondItem="N83-Ib-Pvm" secondAttribute="bottom" constant="8" id="hl6-Vz-Wb0"/>
+                            <constraint firstItem="IRd-gc-1Vw" firstAttribute="top" secondItem="tTm-o5-jBp" secondAttribute="top" constant="8" id="o9D-ut-sbJ"/>
                             <constraint firstItem="N83-Ib-Pvm" firstAttribute="top" secondItem="Y4E-fM-8JK" secondAttribute="bottom" id="pLA-hu-08v"/>
                             <constraint firstItem="4YH-dd-dqB" firstAttribute="leading" secondItem="tTm-o5-jBp" secondAttribute="leading" id="qJ9-Zs-TAB"/>
                             <constraint firstItem="N83-Ib-Pvm" firstAttribute="leading" secondItem="tTm-o5-jBp" secondAttribute="leading" constant="8" id="qSV-qR-qb0"/>
+                            <constraint firstAttribute="trailing" secondItem="IRd-gc-1Vw" secondAttribute="trailing" constant="4" id="zqd-k1-JTm"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -190,6 +229,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-MV-IqF">
+                                <rect key="frame" x="124.5" y="8" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="ceC-jL-EsO"/>
+                                    <constraint firstAttribute="height" constant="33" id="oMx-X8-cmA"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="topRightIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="hXN-71-NsC"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PJ-xa-GPT">
                                 <rect key="frame" x="8" y="150" width="78.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -208,9 +258,11 @@
                             <constraint firstItem="7PJ-xa-GPT" firstAttribute="top" secondItem="jRs-Rd-GoN" secondAttribute="bottom" constant="8" id="Byh-fR-pxb"/>
                             <constraint firstAttribute="bottom" secondItem="Lby-VW-aFg" secondAttribute="bottom" constant="8" id="GUa-Yw-Oqd"/>
                             <constraint firstItem="jRs-Rd-GoN" firstAttribute="leading" secondItem="1zU-hd-lax" secondAttribute="leading" id="GYE-gP-5G4"/>
+                            <constraint firstItem="fNT-MV-IqF" firstAttribute="top" secondItem="1zU-hd-lax" secondAttribute="top" constant="8" id="KRh-vT-n4I"/>
                             <constraint firstAttribute="trailing" secondItem="jRs-Rd-GoN" secondAttribute="trailing" id="WA4-hV-Wsc"/>
                             <constraint firstItem="7PJ-xa-GPT" firstAttribute="leading" secondItem="1zU-hd-lax" secondAttribute="leading" constant="8" id="bGq-Pw-DIE"/>
                             <constraint firstItem="Lby-VW-aFg" firstAttribute="leading" secondItem="1zU-hd-lax" secondAttribute="leading" constant="8" id="i74-Qu-oYr"/>
+                            <constraint firstAttribute="trailing" secondItem="fNT-MV-IqF" secondAttribute="trailing" constant="4" id="odO-YM-kRq"/>
                             <constraint firstItem="Lby-VW-aFg" firstAttribute="top" secondItem="7PJ-xa-GPT" secondAttribute="bottom" id="tgz-0T-bjX"/>
                             <constraint firstItem="jRs-Rd-GoN" firstAttribute="top" secondItem="1zU-hd-lax" secondAttribute="top" id="zgv-Hg-lZe"/>
                         </constraints>
@@ -270,11 +322,16 @@
                 <outletCollection property="subtitleLabels" destination="e4d-Tu-jp4" collectionClass="NSMutableArray" id="KPp-tF-36l"/>
                 <outletCollection property="subtitleLabels" destination="N83-Ib-Pvm" collectionClass="NSMutableArray" id="ENK-MJ-Ikf"/>
                 <outletCollection property="subtitleLabels" destination="Lby-VW-aFg" collectionClass="NSMutableArray" id="fOd-wz-fGM"/>
+                <outletCollection property="icons" destination="zp3-k6-QvF" collectionClass="NSMutableArray" id="3Ou-WP-LUV"/>
+                <outletCollection property="icons" destination="fNT-MV-IqF" collectionClass="NSMutableArray" id="mIi-Al-k9j"/>
+                <outletCollection property="icons" destination="SYV-nV-v1c" collectionClass="NSMutableArray" id="2NN-d7-YH2"/>
+                <outletCollection property="icons" destination="IRd-gc-1Vw" collectionClass="NSMutableArray" id="IsA-kE-WMi"/>
             </connections>
             <point key="canvasLocation" x="10.5" y="29.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="2" width="1280" height="1135"/>
+        <image name="heart2" width="99" height="93"/>
     </resources>
 </document>

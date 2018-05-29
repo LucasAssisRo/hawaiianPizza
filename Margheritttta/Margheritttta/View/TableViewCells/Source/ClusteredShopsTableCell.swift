@@ -34,6 +34,14 @@ class ClusteredShopsTableCell: GenericTableViewCell {
         }
     }
     
+    @IBOutlet var icons: [UIButton]! {
+        didSet {
+            self.icons.sort { first, second -> Bool in
+                return first.tag < second.tag
+            }
+        }
+    }
+    
     @IBOutlet var thumbnailImageViews: [RoundImageView]! {
         didSet {
             self.thumbnailImageViews.sort { first, second -> Bool in
@@ -64,4 +72,24 @@ class ClusteredShopsTableCell: GenericTableViewCell {
         case bottomLeft = 2
         case bottomRight = 3
     }
+    @IBAction func topLeftIconClicked(_ sender: Any) {
+        self.icons[0].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[0].setFavorite()
+    }
+    
+    @IBAction func topRightIconClicked(_ sender: Any) {
+        self.icons[1].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[1].setFavorite()
+    }
+    @IBAction func bottomLeftIconClicked(_ sender: Any) {
+        self.icons[2].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[2].setFavorite()
+    }
+    @IBAction func bottomRightIconClicked(_ sender: Any) {
+        self.icons[3].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        self.items[3].setFavorite()
+    }
+    
+
+
 }

@@ -38,6 +38,17 @@
                                 <color key="textColor" red="0.14117647058823529" green="0.24705882352941178" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C5-vt-aZn">
+                                <rect key="frame" x="197" y="9" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Gwg-SN-PFe"/>
+                                    <constraint firstAttribute="height" constant="33" id="iiM-Z0-RbK"/>
+                                </constraints>
+                                <state key="normal" image="heart2"/>
+                                <connections>
+                                    <action selector="iconClicked:" destination="d8H-BC-PC5" eventType="touchUpInside" id="cRF-r0-KnV"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salumeria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-GS-vcK">
                                 <rect key="frame" x="11" y="123" width="52" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -49,7 +60,9 @@
                         <constraints>
                             <constraint firstItem="PA1-Ma-Vgq" firstAttribute="top" secondItem="BZ0-lg-t5A" secondAttribute="top" id="85I-rS-KIt"/>
                             <constraint firstItem="i6V-aI-c2I" firstAttribute="leading" secondItem="BZ0-lg-t5A" secondAttribute="leading" constant="11" id="DuU-xX-qEs"/>
+                            <constraint firstAttribute="top" secondItem="9C5-vt-aZn" secondAttribute="top" constant="-9" id="Lay-wj-fqo"/>
                             <constraint firstItem="i6V-aI-c2I" firstAttribute="top" secondItem="PA1-Ma-Vgq" secondAttribute="bottom" constant="6" id="MN7-nT-qb8"/>
+                            <constraint firstAttribute="trailing" secondItem="9C5-vt-aZn" secondAttribute="trailing" constant="78" id="Ofw-pH-qvU"/>
                             <constraint firstItem="WGj-GS-vcK" firstAttribute="top" secondItem="PA1-Ma-Vgq" secondAttribute="bottom" constant="23" id="Y85-Au-kEt"/>
                             <constraint firstItem="PA1-Ma-Vgq" firstAttribute="leading" secondItem="BZ0-lg-t5A" secondAttribute="leading" id="hsC-2c-dtL"/>
                             <constraint firstAttribute="trailing" secondItem="PA1-Ma-Vgq" secondAttribute="trailing" constant="78" id="qIe-IR-KHm"/>
@@ -85,6 +98,7 @@
             <viewLayoutGuide key="safeArea" id="gi5-pl-Kf6"/>
             <size key="customSize" width="257" height="174"/>
             <connections>
+                <outlet property="icon" destination="9C5-vt-aZn" id="WrQ-6r-Mia"/>
                 <outlet property="item" destination="BZ0-lg-t5A" id="3zO-wS-v1o"/>
                 <outlet property="subtitleLabel" destination="i6V-aI-c2I" id="d2C-Qc-krz"/>
                 <outlet property="thumbnailImageView" destination="PA1-Ma-Vgq" id="WyK-3c-TuK"/>
@@ -95,5 +109,6 @@
     </objects>
     <resources>
         <image name="2" width="1280" height="1135"/>
+        <image name="heart2" width="99" height="93"/>
     </resources>
 </document>

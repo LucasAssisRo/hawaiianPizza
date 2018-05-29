@@ -11,8 +11,7 @@ import UIKit
 @IBDesignable
 class ItemView: UIView {
     
-    var venue: Venue?
-    var tour: Tour?
+    var id: String?
     var delegate: ItemDelegate?
     
     override var bounds: CGRect {
@@ -62,5 +61,21 @@ class ItemView: UIView {
         didSet {
             self.layer.shadowOffset = self.shadowOffset
         }
+    }
+    
+    // Adds the item to the defaults array and stores it back,
+    // creates an array for the defaults if nothing has been saved yet
+    public func setFavorite() {
+        guard let id = self.id else { return }
+
+        let defaults = UserDefaults.standard
+        if let data = defaults.data(forKey: "savedShops"),
+           var savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+            savedShops.append(id)
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: savedShops), forKey: "savedShops")
+        } else {
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: [id]), forKey: "savedShops")
+        }
+        print("item saved to defaults.")
     }
 }
