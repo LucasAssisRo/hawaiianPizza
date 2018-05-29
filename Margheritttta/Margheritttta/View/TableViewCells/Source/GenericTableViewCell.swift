@@ -48,7 +48,6 @@ class GenericTableViewCell: UITableViewCell {
 
 extension GenericTableViewCell: ItemDelegate {
     func performSegue(id: String) {
-        print("ItemDelegate")
         self.delegate?.performSegue(id: id)
     }
 }

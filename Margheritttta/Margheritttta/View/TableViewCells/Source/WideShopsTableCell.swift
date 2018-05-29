@@ -44,7 +44,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
                 }
                 return true
             }
-            print(sortedCells)
+
             for (index, cell) in sortedCells.enumerated() {
                 let skeletonCell = cell as! WideSkeletonCollectionViewCell
                 UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shops-->
+        <!--Explore-->
         <scene sceneID="sBW-1c-YZM">
             <objects>
                 <tableViewController id="L5O-Ym-q5z" customClass="ExploreViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                             <outlet property="delegate" destination="L5O-Ym-q5z" id="DsQ-8X-PBM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shops" id="DBZ-5a-w2k"/>
+                    <navigationItem key="navigationItem" title="Explore" id="DBZ-5a-w2k"/>
                     <connections>
                         <segue destination="J5Y-Ll-9Zg" kind="show" identifier="ShopDetails" id="MXi-ae-edi"/>
                     </connections>

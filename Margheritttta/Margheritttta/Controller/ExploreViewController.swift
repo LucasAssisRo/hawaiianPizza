@@ -61,7 +61,6 @@ class ExploreViewController: GenericTableViewController {
                     
                     if ExploreViewController.venueImages.count == venues.count {
                         DispatchQueue.main.sync {
-                            print("reload")
                             self.finishedLoading = true
                             self.tableView.reloadData()
                         }
@@ -365,13 +364,15 @@ class ExploreViewController: GenericTableViewController {
                         if let venueId = images.first??.venueId,
                             venueId == venue.venueId {
                             imgs = images
+                            break
                         }
                     }
                     
-                    cell.items[i].id = venue.venueId
                     if let data = imgs?.first??.image {
                         cell.thumbnailImageViews[i].image = UIImage(data: data)
                     }
+                    
+                    cell.items[i].id = venue.venueId
                 }
                 
                 return cell
@@ -398,6 +399,10 @@ class ExploreViewController: GenericTableViewController {
                             }
                         }
                         
+                        if let data = imgs?.first??.image {
+                            cell.thumbnailImageViews[i].image = UIImage(data: data)
+                        }
+                        
                         cell.items[i].id = venue.venueId
                     }
                     
@@ -417,7 +422,6 @@ class ExploreViewController: GenericTableViewController {
     
     public func highlightMixedSkeletonCell(_ cell: MixedSkeletonTableCell) {
         UIView.animate(withDuration: 2, animations: {
-            print("1")
             cell.titleLabels.first!.layoutIfNeeded()
             //            cell.titleLabels.first!.backgroundColor = UIColor.red
             for titleLabel in cell.titleLabels {
@@ -434,7 +438,6 @@ class ExploreViewController: GenericTableViewController {
     
     public func highlightClusteredSkeletonCell(_ cell: ClusteredSkeletonTableCell) {
         UIView.animate(withDuration: 2, animations: {
-            print("1")
             cell.titleLabels.first!.layoutIfNeeded()
             //            cell.titleLabels.first!.backgroundColor = UIColor.red
             for titleLabel in cell.titleLabels {

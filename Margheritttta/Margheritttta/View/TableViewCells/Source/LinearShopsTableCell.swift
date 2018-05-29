@@ -27,7 +27,6 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     }
     
     func registerNibThis() {
-        print("not loaded yet")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(LinearCollectionViewCell.self, forCellWithReuseIdentifier: "LinearCollectionViewCell")
@@ -35,7 +34,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         self.collectionView.register(SkeletonCollectionViewCell.self, forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
         self.collectionView.register(UINib(nibName: "SkeletonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SkeletonCollectionViewCell")
         self.collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-//        self.loaded = true
+        //        self.loaded = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,7 +55,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                 }
                 return true
             }
-            print(sortedCells)
+            
             for (index, cell) in sortedCells.enumerated() {
                 let skeletonCell = cell as! SkeletonCollectionViewCell
                 UIView.animate(withDuration: TimeInterval(index), delay: 0, options: [], animations: {
@@ -92,7 +91,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.contentType {
         case .venue:
-            guard let _ = ExploreViewController.venues else { return 0 }
+            guard let _ = ExploreViewController.venues else { return 4 }
             return 4
         case .tour:
             return 20
@@ -105,7 +104,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         if self.loaded {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
-
+            
             cell.item.addGestureRecognizer(tap)
             cell.item.delegate = self
             switch self.contentType {
@@ -132,8 +131,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             cell.layer.masksToBounds = false;
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             return cell
-        }
-        else {
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkeletonCollectionViewCell", for: indexPath) as! SkeletonCollectionViewCell
             
             cell.contentView.layer.cornerRadius = 10
