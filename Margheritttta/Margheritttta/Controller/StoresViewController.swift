@@ -9,7 +9,7 @@
 import UIKit
 
 class StoresViewController: UIViewController {
-
+    
     // Outlets
     
     //Top
@@ -68,7 +68,6 @@ class StoresViewController: UIViewController {
         
         let myShop = MyShop(images: ["p1", "p2", "p3"], tags: ["tag1", "tag2"], venueId: "VenueId", name: "Tea Shop", description: "The best tea shop", category: "Vegan", address1: "Via da the", address2: "Vomero", city: "Naples", country: "Italy", zipCode: "80100", phone: "+39.081.234.567.89", email: "thebest@thebest.com")
         
-
         imgTopTitleImage.image = UIImage(named: "2")
         lblShopName.text = myShop.name
         lblShopType.text = myShop.category

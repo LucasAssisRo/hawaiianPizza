@@ -115,6 +115,8 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                     if let data = self.findImages(by: venue.venueId).first??.image {
                         cell.thumbnailImageView.image = UIImage(data: data)
                     }
+                    
+                    cell.item.id = venue.venueId
                 }
                 
             case .tour: break

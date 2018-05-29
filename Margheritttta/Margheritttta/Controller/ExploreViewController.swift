@@ -354,7 +354,6 @@ class ExploreViewController: GenericTableViewController {
             cell.contentType = .venue
             if let venues = ExploreViewController.venues,
                 self.finishedLoading {
-                let venueImages = ExploreViewController.venueImages
                 for i in 0 ..< cell.items.count {
                     let venue = venues[i + 3]
                     cell.titleLabels[i].text = venue.name
@@ -367,6 +366,7 @@ class ExploreViewController: GenericTableViewController {
                         }
                     }
                     
+                    cell.items[i].id = venue.venueId
                     if let data = imgs?.first??.image {
                         cell.thumbnailImageViews[i].image = UIImage(data: data)
                     }
@@ -380,7 +380,6 @@ class ExploreViewController: GenericTableViewController {
             cell.contentType = .venue
             if let venues = ExploreViewController.venues,
                 self.finishedLoading {
-                let venueImages = ExploreViewController.venueImages
                 for i in 0 ..< cell.items.count {
                     let venue = venues[i + 3 + 3]
                     cell.titleLabels[i].text = venue.name
@@ -393,6 +392,7 @@ class ExploreViewController: GenericTableViewController {
                         }
                     }
                     
+                    cell.items[i].id = venue.venueId
                     if let data = imgs?.first??.image {
                         cell.thumbnailImageViews[i].image = UIImage(data: data)
                     }
@@ -402,5 +402,10 @@ class ExploreViewController: GenericTableViewController {
             return cell
         default: return UITableViewCell()
         }
+    }
+    
+   override func performSegue() {
+        super.performSegue()
+        self.performSegue(withIdentifier: "ShopDetails", sender: self)
     }
 }

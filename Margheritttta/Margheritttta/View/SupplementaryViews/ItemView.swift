@@ -11,8 +11,7 @@ import UIKit
 @IBDesignable
 class ItemView: UIView {
     
-    var venue: Venue?
-    var tour: Tour?
+    var id: String?
     var delegate: ItemDelegate?
     
     override var bounds: CGRect {

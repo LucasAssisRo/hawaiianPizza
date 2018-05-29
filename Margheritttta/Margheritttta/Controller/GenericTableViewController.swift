@@ -11,8 +11,7 @@ import UIKit
 class GenericTableViewController: UITableViewController {}
 
 extension GenericTableViewController: TableViewCellDelegate {
-    func performSegue() {
-        print("TableViewCellDelegate")
+    @objc func performSegue() {
         
     }
     

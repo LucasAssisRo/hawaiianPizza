@@ -112,6 +112,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
                     cell.thumbnailImageView.image = UIImage(data: data)
                 }
                 
+                cell.item.id = venue.venueId
             }
         case .tour: break
         }
