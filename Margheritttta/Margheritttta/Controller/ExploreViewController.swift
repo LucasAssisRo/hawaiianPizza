@@ -108,7 +108,8 @@ class ExploreViewController: GenericTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if sectionsWithButton.contains(section) {
-            return 160
+//            return 160
+            return 0
         } else {
             return 0
         }
@@ -129,10 +130,10 @@ class ExploreViewController: GenericTableViewController {
         let title = UILabel()
         title.frame = CGRect(x: 10, y: 0, width: headerFrame.size.width-20, height: 20)
         title.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        title.textColor = GlobalConstantss.fontColor
+        title.textColor = UIColor.titleColor
         let description = UILabel()
         description.frame = CGRect(x: 10, y: 28, width: headerFrame.size.width-20, height: 20)
-        description.textColor = GlobalConstantss.descriptionColor
+        description.textColor = UIColor.subtitleColor
         
         // Get the according texts for the sections
         title.text = self.getHeadingForSection(section)
@@ -193,7 +194,9 @@ class ExploreViewController: GenericTableViewController {
             // Assign constraints
             self.createConstants(for: button, with: cell)
         }
-        return cell
+        
+//        return cell
+        return UIView()
     }
     
     /**

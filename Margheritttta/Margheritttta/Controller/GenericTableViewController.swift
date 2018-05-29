@@ -19,7 +19,7 @@ extension GenericTableViewController: TableViewCellDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShopDetails" {
-            let vc = segue.destination as! StoresViewController
+            let vc = segue.destination as! StoreViewController
             vc.venueId = self.clickedId
         }
     }

@@ -8,38 +8,26 @@
 
 import UIKit
 
-class StoresViewController: UIViewController {
+class StoreViewController: UIViewController {
     
-    // Outlets
     var venueId: String!
     
-    //Top
-    @IBOutlet weak var imgTopTitleImage: UIImageView!
-    
-    //Header info - general
-    @IBOutlet weak var lblShopType: UILabel!
-    @IBOutlet weak var lblShopName: UILabel!
-    @IBOutlet weak var lblShopStreetnameCity: UILabel!
-    
-    //Header info - description
-    
-    @IBOutlet weak var lblShopDescription: UILabel!
-    @IBOutlet weak var btnMore: UIButton!
-    @IBAction func btnMoreAction(_ sender: UIButton) {
-    }
-    
-    //Products - header
-    @IBOutlet weak var lblProducts: UILabel!
-    
-    //Products - images
-    @IBOutlet var imgProducts: [UIImageView]!
-    
-    //Button Report this shop
-    @IBOutlet weak var btnReport: UIButton!
-    @IBAction func btnReportAction(_ sender: UIButton) {
-    }
+    @IBOutlet weak var venueImageView: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var readMoreButton: UIButton!
+    @IBOutlet weak var productsStackView: UIStackView!
+    @IBOutlet weak var productsLabel: UILabel!
+    @IBOutlet var productImages: [UIImageView]!
+    @IBOutlet weak var phoneImageView: UIImageView!
+    @IBOutlet weak var phoneTextView: UITextView!
+    @IBOutlet weak var emailImageView: UIImageView!
+    @IBOutlet weak var emailTextView: UITextView!
+    @IBOutlet weak var reportButton: UIButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +41,6 @@ class StoresViewController: UIViewController {
             }
             
             if let venue = venue {
-                self.lblShopName.text = venue.name
-                self.lblShopType.text = venue.category
-                self.lblShopDescription.text = venue.description
-                self.lblShopStreetnameCity.text = "\(venue.address1), \(venue.address2 ?? ""), \(venue.city)"
                 var imgs: [VenueImage?]? = nil
                 for images in ExploreViewController.venueImages {
                     if let venueId = images.first??.venueId,
@@ -66,8 +50,39 @@ class StoresViewController: UIViewController {
                 }
                 
                 if let data = imgs?.first??.image {
-                    self.imgTopTitleImage.image = UIImage(data: data)
+                    self.venueImageView.image = UIImage(data: data)
                 }
+                
+                self.nameLabel.text = venue.name
+                self.categoryLabel.text = venue.category.capitalized
+                self.descriptionLabel.text = venue.description
+                self.streetLabel.text = venue.address1
+                self.cityLabel.text = venue.city
+
+                if let phone = venue.phone {
+                    self.phoneTextView.text = phone
+                } else {
+                    self.phoneTextView.isHidden = true
+                }
+                
+                if let email = venue.email {
+                    self.emailTextView.text = email
+                } else {
+                    self.emailTextView.isHidden = true
+                }
+                
+                self.phoneImageView.image = self.phoneImageView.image?.withRenderingMode(.alwaysTemplate)
+                self.phoneImageView.tintColor = UIColor.titleColor
+                
+                self.emailImageView.image = self.emailImageView.image?.withRenderingMode(.alwaysTemplate)
+                self.emailImageView.tintColor = UIColor.titleColor
+                
+                self.productsStackView.isHidden = true
+                self.productsLabel.isHidden = true
+                self.productImages[0].isHidden = true
+                self.productImages[1].isHidden = true
+                self.productImages[2].isHidden = true
+                self.reportButton.isHidden = true
             } else {
                // ERROR VIEW
             }
@@ -82,20 +97,20 @@ class StoresViewController: UIViewController {
         
         guard let view = sender.view else { return }
         switch view {
-        case self.imgProducts[0]:
+        case self.productImages[0]:
             destination.myProd.images = "p1"
             destination.myProd.name = "First Product"
             destination.myProd.allergens = ["First allergen", "New allergen"]
             destination.myProd.description = "First Product Description"
 
             break
-        case self.imgProducts[1]:
+        case self.productImages[1]:
             destination.myProd.images = "p2"
             destination.myProd.name = "Second Product"
             destination.myProd.allergens = ["Second allergen", "New allergen"]
             destination.myProd.description = "Second Product Description"
             break
-        case self.imgProducts[2]:
+        case self.productImages[2]:
             destination.myProd.images = "p3"
             destination.myProd.name = "Third Product"
             destination.myProd.allergens = ["First allergen", "New allergen"]
@@ -113,7 +128,19 @@ class StoresViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func expandDescription(_ sender: Any) {
+        if self.descriptionLabel.numberOfLines == 1000 {
+            self.descriptionLabel.numberOfLines = 5
+            self.readMoreButton.setTitle("more".localized(), for: .normal)
+        } else {
+            self.descriptionLabel.numberOfLines = 1000
+            self.readMoreButton.setTitle("less".localized(), for: .normal)
+        }
+    }
     
+    @IBAction func btnReportAction(_ sender: UIButton) {
+    }
+
     
     /*
     // MARK: - Navigation
