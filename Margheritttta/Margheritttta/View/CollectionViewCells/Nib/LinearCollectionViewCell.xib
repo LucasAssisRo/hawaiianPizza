@@ -46,10 +46,19 @@
                                 <color key="textColor" red="0.47450980392156861" green="0.63529411764705879" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart2" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-Py-vJI">
+                                <rect key="frame" x="106" y="8" width="30" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="Sif-FZ-eF0"/>
+                                    <constraint firstAttribute="width" constant="30" id="XQT-fV-bFp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UVz-sK-8e2" firstAttribute="top" secondItem="G0K-P9-iby" secondAttribute="bottom" constant="25" id="1ba-FV-A4B"/>
+                            <constraint firstAttribute="trailing" secondItem="2OF-Py-vJI" secondAttribute="trailing" constant="8" id="3ve-4u-w5y"/>
+                            <constraint firstItem="2OF-Py-vJI" firstAttribute="top" secondItem="qyK-Ks-aaB" secondAttribute="top" constant="8" id="4LO-JE-RLa"/>
                             <constraint firstItem="G0K-P9-iby" firstAttribute="top" secondItem="qyK-Ks-aaB" secondAttribute="top" id="4nt-tU-SzK"/>
                             <constraint firstAttribute="trailing" secondItem="UVz-sK-8e2" secondAttribute="trailing" constant="-13" id="DTf-2d-A5K"/>
                             <constraint firstItem="8EW-HT-anH" firstAttribute="top" secondItem="G0K-P9-iby" secondAttribute="bottom" constant="7" id="Olv-mO-ZER"/>
@@ -99,5 +108,6 @@
     </objects>
     <resources>
         <image name="2" width="1280" height="1135"/>
+        <image name="heart2" width="99" height="93"/>
     </resources>
 </document>
