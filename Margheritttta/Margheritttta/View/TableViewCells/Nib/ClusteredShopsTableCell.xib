@@ -28,7 +28,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-k6-QvF">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-k6-QvF">
                                 <rect key="frame" x="124.5" y="8" width="35" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="BV6-2p-hZG"/>
@@ -36,7 +36,7 @@
                                 </constraints>
                                 <state key="normal" image="heart2"/>
                                 <connections>
-                                    <action selector="topLeftIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="ySz-Cj-84l"/>
+                                    <action selector="leftTopClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="WJD-gf-aho"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-tT-dlT">
@@ -95,7 +95,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-nV-v1c">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-nV-v1c">
                                 <rect key="frame" x="124.5" y="8" width="35" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="Q24-Pr-uYf"/>
@@ -103,7 +103,7 @@
                                 </constraints>
                                 <state key="normal" image="heart2"/>
                                 <connections>
-                                    <action selector="bottomLeftIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="sL8-xb-ahq"/>
+                                    <action selector="leftBottomClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="l1b-M7-3YY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hl-fu-iuu">
@@ -162,7 +162,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-gc-1Vw">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-gc-1Vw">
                                 <rect key="frame" x="124.5" y="8" width="35" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="TZN-SD-v9n"/>
@@ -170,7 +170,7 @@
                                 </constraints>
                                 <state key="normal" image="heart2"/>
                                 <connections>
-                                    <action selector="bottomRightIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="APJ-SK-FcZ"/>
+                                    <action selector="rightBottomClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="b4u-nL-qHV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-fM-8JK">
@@ -229,7 +229,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-MV-IqF">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-MV-IqF">
                                 <rect key="frame" x="124.5" y="8" width="35" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="ceC-jL-EsO"/>
@@ -237,7 +237,7 @@
                                 </constraints>
                                 <state key="normal" image="heart2"/>
                                 <connections>
-                                    <action selector="topRightIconClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="hXN-71-NsC"/>
+                                    <action selector="rightTopClicked:" destination="m2g-H9-eMy" eventType="touchUpInside" id="8lA-Ug-P0e"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PJ-xa-GPT">

@@ -78,4 +78,18 @@ class ItemView: UIView {
         }
         print("item saved to defaults.")
     }
+    
+    // Deletes an item fro favorites
+    public func deletFromfavorites() {
+        guard let id = self.id else { return }
+        let defaults = UserDefaults.standard
+        if let data = defaults.data(forKey: "savedShops"),
+            var savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+            let indexForItem = savedShops.index(of: id)
+            if let indexForItem = indexForItem {
+                savedShops.remove(at: indexForItem)
+            }
+        }
+        print("deleted item from favorites")
+    }
 }

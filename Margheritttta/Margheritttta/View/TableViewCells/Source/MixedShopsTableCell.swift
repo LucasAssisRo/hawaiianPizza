@@ -73,18 +73,39 @@ class MixedShopsTableCell: GenericTableViewCell {
     }
     
     @IBAction func wideIconClicked(_ sender: Any) {
-        self.icons[0].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
-        self.items[0].setFavorite()
+        if 1000 % self.icons[0].tag < 1000 {
+            self.icons[0].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
+            self.items[0].deletFromfavorites()
+            self.icons[0].tag -= 1000
+        } else {
+            self.icons[0].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+            self.items[0].setFavorite()
+            self.icons[0].tag += 1000
+        }
     }
     
     @IBAction func leftIconClicked(_ sender: Any) {
-        self.icons[1].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
-        self.items[1].setFavorite()
+        if 1000 % self.icons[1].tag < 1000 {
+            self.icons[1].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
+            self.items[1].deletFromfavorites()
+            self.icons[1].tag -= 1000
+        } else {
+            self.icons[1].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+            self.items[1].setFavorite()
+            self.icons[1].tag += 1000
+        }
     }
     
     @IBAction func rightIconClicked(_ sender: Any) {
-        self.icons[2].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
-        self.items[2].setFavorite()
+        if 1000 % self.icons[2].tag < 1000 {
+            self.icons[2].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
+            self.items[2].deletFromfavorites()
+            self.icons[2].tag -= 1000
+        } else {
+            self.icons[2].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+            self.items[2].setFavorite()
+            self.icons[2].tag += 1000
+        }
     }
     
     

@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class FavoriteIcon: UIImageView {
-    
+class FavoriteIcon: UIButton {
+
 }
