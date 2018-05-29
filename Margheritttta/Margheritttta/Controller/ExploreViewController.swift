@@ -392,10 +392,11 @@ class ExploreViewController: GenericTableViewController {
                         }
                     }
                     
-                    cell.items[i].id = venue.venueId
                     if let data = imgs?.first??.image {
                         cell.thumbnailImageViews[i].image = UIImage(data: data)
                     }
+                    
+                    cell.items[i].id = venue.venueId
                 }
             }
             
@@ -404,8 +405,8 @@ class ExploreViewController: GenericTableViewController {
         }
     }
     
-   override func performSegue() {
-        super.performSegue()
+    override func performSegue(id: String) {
+        super.performSegue(id: id)
         self.performSegue(withIdentifier: "ShopDetails", sender: self)
     }
 }

@@ -8,16 +8,19 @@
 
 import UIKit
 
-class GenericTableViewController: UITableViewController {}
+class GenericTableViewController: UITableViewController {
+    var clickedId: String?
+}
 
 extension GenericTableViewController: TableViewCellDelegate {
-    @objc func performSegue() {
-        
+    @objc func performSegue(id: String) {
+        self.clickedId = id
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShopDetails" {
             let vc = segue.destination as! StoresViewController
+            vc.venueId = self.clickedId
         }
     }
 }

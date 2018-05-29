@@ -14,9 +14,13 @@ class GenericTableViewCell: UITableViewCell {
     var contentType: ContentType = .venue
 
     @IBAction func selectItem(_ sender: UITapGestureRecognizer) {
-        guard let item = sender.view as? ItemView else { return }
+        guard let item = sender.view as? ItemView,
+            let id = item.id
+            else {
+                return
+        }
 
-        item.delegate?.performSegue()
+        item.delegate?.performSegue(id: id)
     }
     
     func findImages(by id: String) -> [VenueImage?]  {
@@ -38,8 +42,8 @@ class GenericTableViewCell: UITableViewCell {
 }
 
 extension GenericTableViewCell: ItemDelegate {
-    func performSegue() {
+    func performSegue(id: String) {
         print("ItemDelegate")
-        self.delegate?.performSegue()
+        self.delegate?.performSegue(id: id)
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class StoresViewController: UIViewController {
     
     // Outlets
+    var venueId: String!
     
     //Top
     @IBOutlet weak var imgTopTitleImage: UIImageView!
@@ -37,50 +38,42 @@ class StoresViewController: UIViewController {
     @IBOutlet weak var btnReport: UIButton!
     @IBAction func btnReportAction(_ sender: UIButton) {
     }
-    
-    
-    //Class var
-    
-    //fake shop struct for testing
-    struct MyShop {
-         var images: [String]
-         var tags: [String]
-         var venueId: String
-         var name: String
-         var description: String
-         var category: String
-         var address1: String
-         var address2: String?
-         var city: String
-         var country: String
-         var zipCode: String
-         var phone: String?
-         var email: String?
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // hide all product images
-        for img in imgProducts {
-            img.isHidden = true
+        if let venues = ExploreViewController.venues {
+            var venue: Venue? = nil
+            for v in venues {
+                if v.venueId == self.venueId {
+                    venue = v
+                    break
+                }
+            }
+            
+            if let venue = venue {
+                self.lblShopName.text = venue.name
+                self.lblShopType.text = venue.category
+                self.lblShopDescription.text = venue.description
+                self.lblShopStreetnameCity.text = "\(venue.address1), \(venue.address2 ?? ""), \(venue.city)"
+                var imgs: [VenueImage?]? = nil
+                for images in ExploreViewController.venueImages {
+                    if let venueId = images.first??.venueId,
+                        venueId == venue.venueId {
+                        imgs = images
+                    }
+                }
+                
+                if let data = imgs?.first??.image {
+                    self.imgTopTitleImage.image = UIImage(data: data)
+                }
+            } else {
+               // ERROR VIEW
+            }
+        } else {
+            // ERROR VIEW
         }
-        
-        let myShop = MyShop(images: ["p1", "p2", "p3"], tags: ["tag1", "tag2"], venueId: "VenueId", name: "Tea Shop", description: "The best tea shop", category: "Vegan", address1: "Via da the", address2: "Vomero", city: "Naples", country: "Italy", zipCode: "80100", phone: "+39.081.234.567.89", email: "thebest@thebest.com")
-        
-        imgTopTitleImage.image = UIImage(named: "2")
-        lblShopName.text = myShop.name
-        lblShopType.text = myShop.category
-        lblShopDescription.text = myShop.description
-        lblShopStreetnameCity.text = "\(myShop.address1), \(myShop.city)"
-        
-        //load the right number of images
-        for i in 0...myShop.images.count - 1 {
-            imgProducts[i].isHidden = false
-            imgProducts[i].image = UIImage(named: myShop.images[i])
-            imgProducts[i].isUserInteractionEnabled = true
-        }
-    
     }
     
     @IBAction func displayProduct(_ sender: UITapGestureRecognizer) {
@@ -113,7 +106,6 @@ class StoresViewController: UIViewController {
         }
         
         self.present(destination, animated: true)
-
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ItemDelegate {
-    func performSegue()
+    func performSegue(id: String)
 }
