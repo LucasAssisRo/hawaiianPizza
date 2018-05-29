@@ -74,7 +74,7 @@ class ClusteredShopsTableCell: GenericTableViewCell {
     }
     
     @IBAction func leftTopClicked(_ sender: Any) {
-        if 1000 % self.icons[0].tag < 1000 {
+        if self.icons[0].tag > 1000 {
             self.icons[0].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
             self.items[0].deletFromfavorites()
             self.icons[0].tag -= 1000
@@ -86,7 +86,7 @@ class ClusteredShopsTableCell: GenericTableViewCell {
     }
     
     @IBAction func rightTopClicked(_ sender: Any) {
-        if 1000 % self.icons[1].tag < 1000 {
+        if self.icons[1].tag > 1000 {
             self.icons[1].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
             self.items[1].deletFromfavorites()
             self.icons[1].tag -= 1000
@@ -98,7 +98,7 @@ class ClusteredShopsTableCell: GenericTableViewCell {
     }
     
     @IBAction func leftBottomClicked(_ sender: Any) {
-        if 1000 % self.icons[2].tag < 1000 {
+        if self.icons[2].tag > 1000 {
             self.icons[2].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
             self.items[2].deletFromfavorites()
             self.icons[2].tag -= 1000
@@ -110,7 +110,7 @@ class ClusteredShopsTableCell: GenericTableViewCell {
     }
     
     @IBAction func rightBottomClicked(_ sender: Any) {
-        if 1000 % self.icons[2].tag < 1000 {
+        if self.icons[3].tag > 1000 {
             self.icons[3].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
             self.items[3].deletFromfavorites()
             self.icons[3].tag -= 1000
