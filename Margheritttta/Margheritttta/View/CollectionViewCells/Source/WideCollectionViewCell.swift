@@ -27,7 +27,6 @@ class WideCollectionViewCell: UICollectionViewCell {
             // C processing tactics for the win .. *COUGH
             self.icon.tag -= 1000
         } else {
-            print("fill")
             self.icon.setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
             self.item.setFavorite()
             

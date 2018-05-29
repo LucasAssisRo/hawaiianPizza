@@ -95,6 +95,8 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             return 4
         case .tour:
             return 20
+        case .saved:
+            return 20
         }
     }
     
@@ -120,6 +122,19 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                 }
                 
             case .tour: break
+            case .saved:
+                print(indexPath.row)
+                if let venues = SavedTableViewController.venues,
+                indexPath.row < venues.count {
+                    let venue = venues[indexPath.row]
+                    cell.titleLabel.text = venue.name
+                    cell.subtitleLabel.text = venue.category
+                    if let data = self.findImages(by: venue.venueId).first??.image {
+                        cell.thumbnailImageView.image = UIImage(data: data)
+                    }
+                    
+                    cell.item.id = venue.venueId
+                }
             }
             
             cell.contentView.layer.cornerRadius = 10
@@ -146,4 +161,6 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             return cell
         }
     }
+    
+    
 }

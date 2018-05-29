@@ -72,11 +72,12 @@ class ItemView: UIView {
         if let data = defaults.data(forKey: "savedShops"),
            var savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
             savedShops.append(id)
-            defaults.set(NSKeyedArchiver.archivedData(withRootObject: savedShops), forKey: "savedShops")
+             defaults.set(NSKeyedArchiver.archivedData(withRootObject: savedShops), forKey: "savedShops")
         } else {
+            print("saved")
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: [id]), forKey: "savedShops")
         }
-        print("item saved to defaults.")
+        
     }
     
     // Deletes an item fro favorites
@@ -90,6 +91,5 @@ class ItemView: UIView {
                 savedShops.remove(at: indexForItem)
             }
         }
-        print("deleted item from favorites")
     }
 }

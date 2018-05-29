@@ -40,10 +40,17 @@ class GenericTableViewCell: UITableViewCell {
             
         case .tour:
             break
+        case .saved:
+            for images in SavedTableViewController.venueImages {
+                if let venueId = images.first??.venueId,
+                    venueId == id {
+                    return images
+                }
+            }
         }
-        
         return []
     }
+    
 }
 
 extension GenericTableViewCell: ItemDelegate {
