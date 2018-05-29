@@ -68,7 +68,7 @@
 		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
 		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
 		F1A5C4C320937718001C93CC /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */; };
-		F1F884722099B5F900B6DE7A /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884712099B5F900B6DE7A /* StoresViewController.swift */; };
+		F1F884722099B5F900B6DE7A /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884712099B5F900B6DE7A /* StoreViewController.swift */; };
 		F1F884742099B61D00B6DE7A /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884732099B61D00B6DE7A /* ToursViewController.swift */; };
 		F1F884762099B64500B6DE7A /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884752099B64500B6DE7A /* ProductsViewController.swift */; };
 		F1F884782099B66F00B6DE7A /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884772099B66F00B6DE7A /* SavedTableViewController.swift */; };
@@ -155,7 +155,7 @@
 		F1A5C4B620936993001C93CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1A5C4B820936995001C93CC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1A5C4C220937718001C93CC /* LocalizedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringExtension.swift; sourceTree = "<group>"; };
-		F1F884712099B5F900B6DE7A /* StoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
+		F1F884712099B5F900B6DE7A /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F1F884732099B61D00B6DE7A /* ToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursViewController.swift; sourceTree = "<group>"; };
 		F1F884752099B64500B6DE7A /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		F1F884772099B66F00B6DE7A /* SavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				41A1A31320B45C3D00F18705 /* ExploreViewController.swift */,
-				F1F884712099B5F900B6DE7A /* StoresViewController.swift */,
+				F1F884712099B5F900B6DE7A /* StoreViewController.swift */,
 				F1F884732099B61D00B6DE7A /* ToursViewController.swift */,
 				F1F884752099B64500B6DE7A /* ProductsViewController.swift */,
 				F1F884772099B66F00B6DE7A /* SavedTableViewController.swift */,
@@ -622,7 +622,7 @@
 				078FD59920BD5A0D00CB8C12 /* FavoriteIcon.swift in Sources */,
 				414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */,
 				077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */,
-				F1F884722099B5F900B6DE7A /* StoresViewController.swift in Sources */,
+				F1F884722099B5F900B6DE7A /* StoreViewController.swift in Sources */,
 				072CE3B420B5C71E00E9CB88 /* CoverTableCell.swift in Sources */,
 				414A61BD20BB13BC00AA88F8 /* Tour.swift in Sources */,
 				414A61BC20BB13BC00AA88F8 /* ProductAllergen.swift in Sources */,

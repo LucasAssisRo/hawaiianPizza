@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TableViewCellDelegate {
-    func performSegue()
+    func performSegue(id: String)
 }

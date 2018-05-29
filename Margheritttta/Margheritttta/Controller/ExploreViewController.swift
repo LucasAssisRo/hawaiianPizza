@@ -106,7 +106,8 @@ class ExploreViewController: GenericTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if sectionsWithButton.contains(section) {
-            return 160
+            //            return 160
+            return 0
         } else {
             return 0
         }
@@ -127,10 +128,10 @@ class ExploreViewController: GenericTableViewController {
         let title = UILabel()
         title.frame = CGRect(x: 10, y: 0, width: headerFrame.size.width-20, height: 20)
         title.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        title.textColor = GlobalConstantss.fontColor
+        title.textColor = UIColor.titleColor
         let description = UILabel()
         description.frame = CGRect(x: 10, y: 28, width: headerFrame.size.width-20, height: 20)
-        description.textColor = GlobalConstantss.descriptionColor
+        description.textColor = UIColor.subtitleColor
         
         // Get the according texts for the sections
         title.text = self.getHeadingForSection(section)
@@ -191,7 +192,9 @@ class ExploreViewController: GenericTableViewController {
             // Assign constraints
             self.createConstants(for: button, with: cell)
         }
-        return cell
+        
+        //        return cell
+        return UIView()
     }
     
     /**
@@ -352,9 +355,7 @@ class ExploreViewController: GenericTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MixedShopsTableCell") as! MixedShopsTableCell
             cell.delegate = self
             cell.contentType = .venue
-            if let venues = ExploreViewController.venues,
-                self.finishedLoading {
-                let venueImages = ExploreViewController.venueImages
+            if let venues = ExploreViewController.venues, self.finishedLoading {
                 for i in 0 ..< cell.items.count {
                     let venue = venues[i + 3]
                     cell.titleLabels[i].text = venue.name
@@ -367,16 +368,15 @@ class ExploreViewController: GenericTableViewController {
                         }
                     }
                     
+                    cell.items[i].id = venue.venueId
                     if let data = imgs?.first??.image {
                         cell.thumbnailImageViews[i].image = UIImage(data: data)
                     }
                 }
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as!
-                MixedSkeletonTableCell
                 
                 return cell
+            } else {
+                return tableView.dequeueReusableCell(withIdentifier: "MixedSkeletonTableCell") as! MixedSkeletonTableCell
             }
             
         case 3:
@@ -384,9 +384,7 @@ class ExploreViewController: GenericTableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredShopsTableCell") as! ClusteredShopsTableCell
                 cell.delegate = self
                 cell.contentType = .venue
-                if let venues = ExploreViewController.venues,
-                    self.finishedLoading {
-                    let venueImages = ExploreViewController.venueImages
+                if let venues = ExploreViewController.venues, self.finishedLoading {
                     for i in 0 ..< cell.items.count {
                         let venue = venues[i + 3 + 3]
                         cell.titleLabels[i].text = venue.name
@@ -396,40 +394,41 @@ class ExploreViewController: GenericTableViewController {
                             if let venueId = images.first??.venueId,
                                 venueId == venue.venueId {
                                 imgs = images
+                                break
                             }
                         }
                         
-                        if let data = imgs?.first??.image {
-                            cell.thumbnailImageViews[i].image = UIImage(data: data)
-                        }
+                        cell.items[i].id = venue.venueId
                     }
+                    
+                    return cell
+                } else {
+                    //ERROR CELL
+                    return UITableViewCell()
                 }
-                
-                return cell
-            }  else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as!
-                ClusteredSkeletonTableCell
-                return cell
+            } else {
+                return tableView.dequeueReusableCell(withIdentifier: "ClusteredSkeletonTableCell") as! ClusteredSkeletonTableCell
             }
             
         default: return UITableViewCell()
         }
+        
     }
     
     public func highlightMixedSkeletonCell(_ cell: MixedSkeletonTableCell) {
         UIView.animate(withDuration: 2, animations: {
             print("1")
             cell.titleLabels.first!.layoutIfNeeded()
-//            cell.titleLabels.first!.backgroundColor = UIColor.red
-                        for titleLabel in cell.titleLabels {
-                            titleLabel.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
-                        }
-                        for subTitle in cell.subtitleLabels {
-                            subTitle.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
-                        }
-                        for image in cell.thumbnailImageViews {
-                            image.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
-                        }
+            //            cell.titleLabels.first!.backgroundColor = UIColor.red
+            for titleLabel in cell.titleLabels {
+                titleLabel.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
+            for subTitle in cell.subtitleLabels {
+                subTitle.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
+            for image in cell.thumbnailImageViews {
+                image.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
+            }
         })
     }
     
@@ -453,7 +452,7 @@ class ExploreViewController: GenericTableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !self.finishedLoading {
             if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 2)) {
-
+                
                 let offset = self.tableView.contentOffset
                 let onScreen = self.tableView.frame.offsetBy(dx: offset.x, dy: offset.y)
                 if onScreen.intersects(cell.frame) {
@@ -471,6 +470,9 @@ class ExploreViewController: GenericTableViewController {
             }
         }
     }
-
     
+    override func performSegue(id: String) {
+        super.performSegue(id: id)
+        self.performSegue(withIdentifier: "ShopDetails", sender: self)
+    }
 }

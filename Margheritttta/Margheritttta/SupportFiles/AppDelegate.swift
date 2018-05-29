@@ -12,10 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navBarProxy = UINavigationBar.appearance()
+        navBarProxy.tintColor = UIColor.titleColor
+        navBarProxy.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.titleColor]
+        navBarProxy.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.titleColor]
         return true
     }
 
