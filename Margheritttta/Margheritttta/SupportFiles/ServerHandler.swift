@@ -48,12 +48,12 @@ extension ServerHandler {
 //MARK: Venues
 extension ServerHandler {
     public func getAllVenues(completion: @escaping (([Venue]?, Error?) -> Void)) {
-        guard let kitura = kitura else {
+        guard let kitura = self.kitura else {
             completion(nil, RequestError.internalServerError)
             return
         }
         
-        kitura.get("/venues/all") { (venues:[Venue]? , error: Error?) in
+        kitura.get("/venues/all") { (venues: [Venue]? , error: Error?) in
             completion(venues, error)
         }
     }
@@ -70,7 +70,7 @@ extension ServerHandler {
     }
     
     public func getVenueImages(by venueId: String,completion: @escaping (([VenueImage]?, Error?) -> Void)) {
-        guard let kitura = kitura else {
+        guard let kitura = self.kitura else {
             completion(nil, RequestError.internalServerError)
             return
         }

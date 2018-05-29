@@ -22,7 +22,6 @@ class ExploreViewController: GenericTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set up NIBs
         self.tableView.register(LinearShopsTableCell.self, forCellReuseIdentifier: "LinearShopsTableCell")
         self.tableView.register(UINib(nibName: "LinearShopsTableCell", bundle: nil), forCellReuseIdentifier: "LinearShopsTableCell")
@@ -439,7 +438,6 @@ class ExploreViewController: GenericTableViewController {
     public func highlightClusteredSkeletonCell(_ cell: ClusteredSkeletonTableCell) {
         UIView.animate(withDuration: 2, animations: {
             cell.titleLabels.first!.layoutIfNeeded()
-            //            cell.titleLabels.first!.backgroundColor = UIColor.red
             for titleLabel in cell.titleLabels {
                 titleLabel.layer.backgroundColor = GlobalConstantss.skeletionUnhighlighted
             }

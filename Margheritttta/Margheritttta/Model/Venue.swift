@@ -44,7 +44,7 @@ struct Venue: Codable {
         var zipCode: String?
         
         init(venueId: String) {
-        self.venueId = venueId
+            self.venueId = venueId
         }
     }
 }
