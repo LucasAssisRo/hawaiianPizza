@@ -40,6 +40,8 @@ class GenericTableViewCell: UITableViewCell {
             
         case .tour:
             break
+        case .saved:
+            break
         }
         
         return []

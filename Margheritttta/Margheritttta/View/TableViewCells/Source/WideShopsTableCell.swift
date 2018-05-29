@@ -95,6 +95,8 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
             return 3
         case .tour:
             return 20
+        case .saved:
+            return 20
         }
     }
     
@@ -129,6 +131,7 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
                 cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
                 return cell
             case .tour: return UICollectionViewCell()
+            case .saved: return UICollectionViewCell()
             }
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WideSkeletonCollectionViewCell", for: indexPath) as! WideSkeletonCollectionViewCell

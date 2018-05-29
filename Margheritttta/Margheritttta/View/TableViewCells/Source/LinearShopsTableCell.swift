@@ -95,6 +95,8 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             return 4
         case .tour:
             return 20
+        case .saved:
+            return 20
         }
     }
     
@@ -120,6 +122,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                 }
                 
             case .tour: break
+            case .saved: break
             }
             
             cell.contentView.layer.cornerRadius = 10

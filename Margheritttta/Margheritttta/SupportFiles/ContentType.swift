@@ -11,4 +11,5 @@ import Foundation
 enum ContentType: Int {
     case venue
     case tour
+    case saved
 }
