@@ -377,7 +377,12 @@ class ExploreViewController: GenericTableViewController {
                     }
                     
                     cell.items[i].id = venue.venueId
+                    
+                    if cell.items[i].checkIfIsInUserDefault() {
+                        cell.setIconHighlighted(i, true)
+                    }
                 }
+                
                 
                 return cell
             } else {
@@ -408,6 +413,10 @@ class ExploreViewController: GenericTableViewController {
                         }
                         
                         cell.items[i].id = venue.venueId
+                        
+                        if cell.items[i].checkIfIsInUserDefault() {
+                            cell.setIconHighlighted(i, true)
+                        }
                     }
                     
                     return cell

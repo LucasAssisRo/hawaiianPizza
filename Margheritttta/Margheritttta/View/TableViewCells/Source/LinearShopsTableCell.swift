@@ -14,6 +14,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     public var loaded = false
+    public var isSavedTabRow = false
     private var isSkeletonHighlighted = false
     var timer: Timer!
     
@@ -96,7 +97,15 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         case .tour:
             return 20
         case .saved:
-            return 20
+            
+            let defaults = UserDefaults.standard
+            if let data = defaults.data(forKey: "savedShops"),
+                let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+                self.collectionView.restore()
+                return savedShops.count
+            }
+            self.collectionView.setEmptyMessage("You did not save any stores yet.")
+            return 0
         }
     }
     
@@ -104,6 +113,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.loaded {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
             
@@ -120,11 +130,26 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                     
                     cell.item.id = venue.venueId
                 }
-                
+                if cell.item.checkIfIsInUserDefault() {
+                    cell.setIconHighlighted(true)
+                }
             case .tour: break
-            case .saved: break
+            case .saved:
+                if let venues = SavedTableViewController.venues,
+                    indexPath.row < venues.count {
+                    let venue = venues[indexPath.row]
+                    cell.titleLabel.text = venue.name
+                    cell.subtitleLabel.text = venue.category
+                    if let data = self.findImages(by: venue.venueId).first??.image {
+                        cell.thumbnailImageView.image = UIImage(data: data)
+                    }
+                    
+                    cell.item.id = venue.venueId
+                }
             }
-            
+            if self.isSavedTabRow {
+                cell.icon.isHidden = true
+            }
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
@@ -135,6 +160,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             return cell
         } else {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkeletonCollectionViewCell", for: indexPath) as! SkeletonCollectionViewCell
             
             cell.contentView.layer.cornerRadius = 10
@@ -149,4 +175,6 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             return cell
         }
     }
+    
+    
 }

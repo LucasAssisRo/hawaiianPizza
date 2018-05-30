@@ -8,9 +8,16 @@
 
 import UIKit
 
-class SavedTableViewController: UITableViewController {
+class SavedTableViewController: GenericTableViewController {
     
     @IBOutlet weak var contentSegmentedControl: UISegmentedControl!
+    
+    private let sectionsWithButton: [Int] = [0, 1]
+    
+    static var venues: [Venue]?
+    static var venueImages: [[VenueImage?]] = []
+    static var shopIds: [String] = []
+    var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +35,49 @@ class SavedTableViewController: UITableViewController {
                                 forCellReuseIdentifier: "WideShopsTableCell")
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
-        
+        self.tableView.reloadData()
+//        let kitura = ServerHandler.shared
+//
+//        let defaults = UserDefaults.standard
+//        if let data = defaults.data(forKey: "savedShops"),
+//            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+//            SavedTableViewController.venues = []
+//            for shopId in savedShops {
+//                kitura.getVenues(by: Venue.Query(venueId: shopId)) { venues, error in
+//                    if let error = error {
+//                        print(error.localizedDescription)
+//                        return
+//                    }
+//
+//                    guard let venues = venues else { return }
+//                    for newVenue in venues {
+//                        SavedTableViewController.venues?.append(newVenue)
+//                        SavedTableViewController.shopIds.append(newVenue.venueId)
+//                    }
+//
+//
+//                    for venue in venues {
+//                        kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+//                            if let error = error {
+//                                print(error.localizedDescription)
+//                                return
+//                            }
+//
+//                            guard let images = images else { return }
+//                            SavedTableViewController.venueImages.append(images)
+//
+//                            if SavedTableViewController.venueImages.count == venues.count {
+//
+//                                DispatchQueue.main.sync {
+//                                    self.finishedLoading = true
+//                                    self.tableView.reloadData()
+//                                }
+//                            }
+//                        })
+//                    }
+//                }
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +88,7 @@ class SavedTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,10 +105,19 @@ class SavedTableViewController: UITableViewController {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WideShopsTableCell", for: indexPath) as! WideShopsTableCell
             cell.registerNibThis()
+            cell.delegate = self
+            cell.contentType = .saved
+            cell.collectionView.reloadData()
+            cell.loaded = self.finishedLoading
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell", for: indexPath) as! LinearShopsTableCell
             cell.registerNibThis()
+            cell.delegate = self
+            cell.contentType = .saved
+            cell.collectionView.reloadData()
+            cell.loaded = self.finishedLoading
+            cell.isSavedTabRow = true
             return cell
         }
     }
@@ -89,7 +147,7 @@ class SavedTableViewController: UITableViewController {
         let title = UILabel()
         title.frame = CGRect(x: 10, y: 0, width: headerFrame.size.width-20, height: 20)
         title.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        
+        title.textColor = GlobalConstantss.fontColor
         // Get the according texts for the sections
         title.text = self.getHeadingForSection(section)
         
@@ -144,10 +202,11 @@ class SavedTableViewController: UITableViewController {
         let button = UIButton(frame: CGRect(x: footer.frame.width/2-110, y: 40, width: 200, height: 40))
         
         // Button details
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.setTitle("See all shops", for: .normal)
+        button.layer.cornerRadius = 29
+        button.layer.backgroundColor = UIColor.white.cgColor
+        button.setTitleColor(GlobalConstantss.fontColor, for: .normal)
+        button.setTitle(GlobalConstantss.buttonText, for: .normal)
+        
         
         return button
     }
@@ -168,34 +227,42 @@ class SavedTableViewController: UITableViewController {
         // Create the button for the footer view
         let button = self.getTableFooterButton(for: cell)
         
-        // Assign a different tag to trigger different functionality in showMore()
-        switch section {
-        case 0:
-            button.tag = 0
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 1:
-            button.tag = 1
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 2:
-            button.tag = 2
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        case 3:
-            button.tag = 3
-            button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
-        default:
-            break
+        if sectionsWithButton.contains(section) {
+            // Assign a different tag to trigger different functionality in showMore()
+            switch section {
+            case 0:
+                button.tag = 0
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 1:
+                button.tag = 1
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 2:
+                button.tag = 2
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            case 3:
+                button.tag = 3
+                button.addTarget(self, action: #selector(self.showMore(button:)), for: .touchUpInside)
+            default:
+                break
+            }
+            
+            cell.addSubview(button)
+            
+            // Assign constraints
+            self.createConstants(for: button, with: cell)
         }
         
-        cell.addSubview(button)
-        
-        // Assign constraints
-        self.createConstants(for: button, with: cell)
-        
-        return cell
+        //        return cell
+        return UIView()
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
+        if sectionsWithButton.contains(section) {
+            //            return 160
+            return 0
+        } else {
+            return 0
+        }
     }
     
     /**
@@ -240,6 +307,62 @@ class SavedTableViewController: UITableViewController {
         button.centerYAnchor.constraint(equalTo: footer.centerYAnchor).isActive = true
         button.widthAnchor.constraint(equalToConstant: 180).isActive = true
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
+    
+    override func performSegue(id: String) {
+        super.performSegue(id: id)
+        self.performSegue(withIdentifier: "ShopDetails", sender: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.finishedLoading = false
+        self.tableView.reloadData()
+        self.getStoresFromDatabase()
+    }
+    
+    private func getStoresFromDatabase() {
+        let kitura = ServerHandler.shared
+        
+        let defaults = UserDefaults.standard
+        if let data = defaults.data(forKey: "savedShops"),
+            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+            SavedTableViewController.venues = []
+            SavedTableViewController.venueImages = []
+            for shopId in savedShops {
+                kitura.getVenues(by: Venue.Query(venueId: shopId)) { venues, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let venues = venues else { return }
+                    for newVenue in venues {
+                        SavedTableViewController.venues?.append(newVenue)
+                        SavedTableViewController.shopIds.append(newVenue.venueId)
+                    }
+                    
+                    for venue in venues {
+                        kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                                return
+                            }
+                            guard let images = images else { return }
+                            SavedTableViewController.venueImages.append(images)
+                            if SavedTableViewController.venueImages.count == SavedTableViewController.venues?.count {
+                                
+                                DispatchQueue.main.sync {
+                                    self.finishedLoading = true
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        }
     }
     
 }

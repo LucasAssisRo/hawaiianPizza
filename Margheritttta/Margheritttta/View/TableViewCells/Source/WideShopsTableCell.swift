@@ -117,7 +117,9 @@ class WideShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UIColl
                     
                     cell.item.id = venue.venueId
                 }
-                
+                if cell.item.checkIfIsInUserDefault() {
+                    cell.setIconHighlighted(true)
+                }
                 cell.item.addGestureRecognizer(tap)
                 cell.item.delegate = self
                 cell.contentView.layer.cornerRadius = CGFloat(GlobalConstantss.cornerRadius)

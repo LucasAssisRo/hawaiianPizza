@@ -63,12 +63,11 @@ extension ServerHandler {
             completion(nil, RequestError.internalServerError)
             return
         }
-
+        
         kitura.get("/venues", query: query) { (venues: [Venue]?, error: Error?) in
             completion(venues, error)
         }
     }
-
     
     public func getVenueImages(by venueId: String,completion: @escaping (([VenueImage]?, Error?) -> Void)) {
         guard let kitura = self.kitura else {

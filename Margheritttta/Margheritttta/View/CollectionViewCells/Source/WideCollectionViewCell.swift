@@ -19,7 +19,6 @@ class WideCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var icon: UIButton!
     
     @IBAction func iconClicked(_ sender: Any) {
-        print(self.icon.tag)
         if self.icon.tag > 1000 {
             self.icon.setBackgroundImage(UIImage(named: "heart2"), for: .normal)
             self.item.deletFromfavorites()
@@ -27,12 +26,19 @@ class WideCollectionViewCell: UICollectionViewCell {
             // C processing tactics for the win .. *COUGH
             self.icon.tag -= 1000
         } else {
-            print("fill")
             self.icon.setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
             self.item.setFavorite()
             
             // C processing tactics for the win .. *COUGH
             self.icon.tag += 1000
+        }
+    }
+    
+    public func setIconHighlighted(_ highlighted: Bool) {
+        if highlighted {
+            self.icon.setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        } else {
+            self.icon.setBackgroundImage(UIImage(named: "heart2"), for: .normal)
         }
     }
     
