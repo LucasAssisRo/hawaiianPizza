@@ -96,7 +96,15 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
         case .tour:
             return 20
         case .saved:
-            return 20
+            
+            let defaults = UserDefaults.standard
+            if let data = defaults.data(forKey: "savedShops"),
+                let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+                self.collectionView.restore()
+                return savedShops.count
+            }
+            self.collectionView.setEmptyMessage("You did not save any stores yet.")
+            return 0
         }
     }
     
@@ -104,6 +112,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.loaded {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LinearCollectionViewCell", for: indexPath) as! LinearCollectionViewCell
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectItem(_:)))
             
@@ -120,12 +129,13 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                     
                     cell.item.id = venue.venueId
                 }
-                
+                if cell.item.checkIfIsInUserDefault() {
+                    cell.setIconHighlighted(true)
+                }
             case .tour: break
             case .saved:
-                print(indexPath.row)
                 if let venues = SavedTableViewController.venues,
-                indexPath.row < venues.count {
+                    indexPath.row < venues.count {
                     let venue = venues[indexPath.row]
                     cell.titleLabel.text = venue.name
                     cell.subtitleLabel.text = venue.category
@@ -147,6 +157,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             return cell
         } else {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkeletonCollectionViewCell", for: indexPath) as! SkeletonCollectionViewCell
             
             cell.contentView.layer.cornerRadius = 10

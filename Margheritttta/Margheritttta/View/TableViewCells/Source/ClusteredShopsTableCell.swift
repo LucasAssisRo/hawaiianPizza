@@ -120,6 +120,14 @@ class ClusteredShopsTableCell: GenericTableViewCell {
             self.icons[3].tag += 1000
         }
     }
+    
+    public func setIconHighlighted(_ index: Int, _ highlighted: Bool) {
+        if highlighted {
+            self.icons[index].setBackgroundImage(UIImage(named: "heart_filled_2"), for: .normal)
+        } else {
+            self.icons[index].setBackgroundImage(UIImage(named: "heart2"), for: .normal)
+        }
+    }
 
 
 }

@@ -74,7 +74,6 @@ class ItemView: UIView {
             savedShops.append(id)
              defaults.set(NSKeyedArchiver.archivedData(withRootObject: savedShops), forKey: "savedShops")
         } else {
-            print("saved")
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: [id]), forKey: "savedShops")
         }
         
@@ -89,7 +88,20 @@ class ItemView: UIView {
             let indexForItem = savedShops.index(of: id)
             if let indexForItem = indexForItem {
                 savedShops.remove(at: indexForItem)
+                defaults.set(NSKeyedArchiver.archivedData(withRootObject: savedShops), forKey: "savedShops")
             }
         }
+    }
+    
+    public func checkIfIsInUserDefault() -> Bool {
+        guard let id = self.id else { return false }
+        let defaults = UserDefaults.standard
+        if let data = defaults.data(forKey: "savedShops"),
+            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+            if savedShops.contains(id) {
+                return true
+            }
+        }
+        return false
     }
 }

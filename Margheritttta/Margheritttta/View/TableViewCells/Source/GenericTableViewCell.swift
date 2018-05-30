@@ -40,7 +40,6 @@ class GenericTableViewCell: UITableViewCell {
             
         case .tour:
             break
-<<<<<<< HEAD
         case .saved:
             for images in SavedTableViewController.venueImages {
                 if let venueId = images.first??.venueId,
@@ -48,11 +47,6 @@ class GenericTableViewCell: UITableViewCell {
                     return images
                 }
             }
-||||||| merged common ancestors
-=======
-        case .saved:
-            break
->>>>>>> 751c7e53d6c8d53555ce48aa53ae1d1d66522407
         }
         return []
     }

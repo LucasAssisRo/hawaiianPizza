@@ -16,7 +16,7 @@ class SavedTableViewController: GenericTableViewController {
     
     static var venues: [Venue]?
     static var venueImages: [[VenueImage?]] = []
-    
+    static var shopIds: [String] = []
     var finishedLoading = false
     
     override func viewDidLoad() {
@@ -35,80 +35,49 @@ class SavedTableViewController: GenericTableViewController {
                                 forCellReuseIdentifier: "WideShopsTableCell")
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0, 0.0, 0.0)
-        
-        let kitura = ServerHandler.shared
-        
-        let defaults = UserDefaults.standard
-        if let data = defaults.data(forKey: "savedShops"),
-            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
-            SavedTableViewController.venues = []
-            for shopId in savedShops {
-                kitura.getVenues(by: Venue.Query(venueId: shopId)) { venues, error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
-                    
-                    guard let venues = venues else { return }
-                    for newVenue in venues {
-                        SavedTableViewController.venues?.append(newVenue)
-                        print(SavedTableViewController.venues)
-                    }
-                    
-                    
-                    for venue in venues {
-                        kitura.getVenueImages(by: venue.venueId, completion: { images, error in
-                            if let error = error {
-                                print(error.localizedDescription)
-                                return
-                            }
-                            
-                            guard let images = images else { return }
-                            SavedTableViewController.venueImages.append(images)
-                            
-                            if SavedTableViewController.venueImages.count == venues.count {
-                                
-                                DispatchQueue.main.sync {
-                                    self.finishedLoading = true
-                                    self.tableView.reloadData()
-                                }
-                            }
-                        })
-                    }
-                }
-            }
-        }
-        
-//        ExploreViewController.venueImages.removeAll()
-//        kitura.getAllVenues { venues, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
+        self.tableView.reloadData()
+//        let kitura = ServerHandler.shared
 //
-//            guard let venues = venues else { return }
-//            ExploreViewController.venues = venues
-//            for venue in venues {
-//                kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+//        let defaults = UserDefaults.standard
+//        if let data = defaults.data(forKey: "savedShops"),
+//            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+//            SavedTableViewController.venues = []
+//            for shopId in savedShops {
+//                kitura.getVenues(by: Venue.Query(venueId: shopId)) { venues, error in
 //                    if let error = error {
 //                        print(error.localizedDescription)
 //                        return
 //                    }
 //
-//                    guard let images = images else { return }
-//                    ExploreViewController.venueImages.append(images)
-//
-//                    if ExploreViewController.venueImages.count == venues.count {
-//                        DispatchQueue.main.sync {
-//                            self.finishedLoading = true
-//                            self.tableView.reloadData()
-//                        }
+//                    guard let venues = venues else { return }
+//                    for newVenue in venues {
+//                        SavedTableViewController.venues?.append(newVenue)
+//                        SavedTableViewController.shopIds.append(newVenue.venueId)
 //                    }
-//                })
-//            }
 //
+//
+//                    for venue in venues {
+//                        kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+//                            if let error = error {
+//                                print(error.localizedDescription)
+//                                return
+//                            }
+//
+//                            guard let images = images else { return }
+//                            SavedTableViewController.venueImages.append(images)
+//
+//                            if SavedTableViewController.venueImages.count == venues.count {
+//
+//                                DispatchQueue.main.sync {
+//                                    self.finishedLoading = true
+//                                    self.tableView.reloadData()
+//                                }
+//                            }
+//                        })
+//                    }
+//                }
+//            }
 //        }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,7 +88,7 @@ class SavedTableViewController: GenericTableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,7 +111,6 @@ class SavedTableViewController: GenericTableViewController {
             cell.loaded = self.finishedLoading
             return cell
         default:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "LinearShopsTableCell", for: indexPath) as! LinearShopsTableCell
             cell.registerNibThis()
             cell.delegate = self
@@ -346,13 +314,54 @@ class SavedTableViewController: GenericTableViewController {
         self.performSegue(withIdentifier: "ShopDetails", sender: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.finishedLoading = false
         self.tableView.reloadData()
-        
+        self.getStoresFromDatabase()
     }
     
     private func getStoresFromDatabase() {
+        let kitura = ServerHandler.shared
         
+        let defaults = UserDefaults.standard
+        if let data = defaults.data(forKey: "savedShops"),
+            let savedShops = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+            SavedTableViewController.venues = []
+            SavedTableViewController.venueImages = []
+            for shopId in savedShops {
+                kitura.getVenues(by: Venue.Query(venueId: shopId)) { venues, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let venues = venues else { return }
+                    for newVenue in venues {
+                        SavedTableViewController.venues?.append(newVenue)
+                        SavedTableViewController.shopIds.append(newVenue.venueId)
+                    }
+                    
+                    for venue in venues {
+                        kitura.getVenueImages(by: venue.venueId, completion: { images, error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                                return
+                            }
+                            guard let images = images else { return }
+                            SavedTableViewController.venueImages.append(images)
+                            if SavedTableViewController.venueImages.count == SavedTableViewController.venues?.count {
+                                
+                                DispatchQueue.main.sync {
+                                    self.finishedLoading = true
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        }
     }
     
 }
