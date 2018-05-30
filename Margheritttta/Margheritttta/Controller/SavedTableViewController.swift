@@ -117,6 +117,7 @@ class SavedTableViewController: GenericTableViewController {
             cell.contentType = .saved
             cell.collectionView.reloadData()
             cell.loaded = self.finishedLoading
+            cell.isSavedTabRow = true
             return cell
         }
     }

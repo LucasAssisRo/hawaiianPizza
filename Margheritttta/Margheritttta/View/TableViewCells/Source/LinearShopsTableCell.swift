@@ -14,6 +14,7 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     public var loaded = false
+    public var isSavedTabRow = false
     private var isSkeletonHighlighted = false
     var timer: Timer!
     
@@ -146,7 +147,9 @@ class LinearShopsTableCell: GenericTableViewCell, UICollectionViewDelegate, UICo
                     cell.item.id = venue.venueId
                 }
             }
-            
+            if self.isSavedTabRow {
+                cell.icon.isHidden = true
+            }
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             cell.layer.shadowColor = UIColor(red: 229/255, green: 234/255, blue: 240/255, alpha: 146/255).cgColor
