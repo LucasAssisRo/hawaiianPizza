@@ -61,12 +61,17 @@ class ExploreViewController: GenericTableViewController {
                     if ExploreViewController.venueImages.count == venues.count {
                         DispatchQueue.main.sync {
                             self.finishedLoading = true
-                            self.tableView.reloadData()
+                            UIView.transition(with: self.tableView,
+                                              duration: 0.1,
+                                              options: .transitionCrossDissolve,
+                                              animations: {
+                                                
+                                                self.tableView.reloadData()
+                            })
                         }
                     }
                 })
             }
-            
         }
     }
     
