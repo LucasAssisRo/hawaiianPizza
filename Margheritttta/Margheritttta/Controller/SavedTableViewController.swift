@@ -146,7 +146,7 @@ class SavedTableViewController: GenericTableViewController {
         let title = UILabel()
         title.frame = CGRect(x: 10, y: 0, width: headerFrame.size.width-20, height: 20)
         title.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        
+        title.textColor = GlobalConstantss.fontColor
         // Get the according texts for the sections
         title.text = self.getHeadingForSection(section)
         
