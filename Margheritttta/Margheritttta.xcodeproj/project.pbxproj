@@ -29,6 +29,9 @@
 		0789DB4A20B2F12C004E66BB /* MixedShopsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0789DB4920B2F12C004E66BB /* MixedShopsTableCell.xib */; };
 		0789DB4C20B2F13C004E66BB /* MixedShopsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789DB4B20B2F13C004E66BB /* MixedShopsTableCell.swift */; };
 		078FD59920BD5A0D00CB8C12 /* FavoriteIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FD59820BD5A0D00CB8C12 /* FavoriteIcon.swift */; };
+		07961B8520C82168005C1AC0 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07961B8420C82168005C1AC0 /* TourViewController.swift */; };
+		07961B8720C822B5005C1AC0 /* TourShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07961B8620C822B5005C1AC0 /* TourShopCollectionViewCell.xib */; };
+		07961B8920C82456005C1AC0 /* TourShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07961B8820C82456005C1AC0 /* TourShopCollectionViewCell.swift */; };
 		079E7A8320BB34860049C9D3 /* MixedSkeletonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E7A8220BB34860049C9D3 /* MixedSkeletonTableCell.xib */; };
 		079E7A8520BB34DC0049C9D3 /* MixedSkeletonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E7A8420BB34DC0049C9D3 /* MixedSkeletonTableCell.swift */; };
 		079ECCF420B14C9A00385CC7 /* ShopTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079ECCF320B14C9A00385CC7 /* ShopTableHeader.xib */; };
@@ -109,6 +112,9 @@
 		0789DB4920B2F12C004E66BB /* MixedShopsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MixedShopsTableCell.xib; sourceTree = "<group>"; };
 		0789DB4B20B2F13C004E66BB /* MixedShopsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedShopsTableCell.swift; sourceTree = "<group>"; };
 		078FD59820BD5A0D00CB8C12 /* FavoriteIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIcon.swift; sourceTree = "<group>"; };
+		07961B8420C82168005C1AC0 /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		07961B8620C822B5005C1AC0 /* TourShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TourShopCollectionViewCell.xib; sourceTree = "<group>"; };
+		07961B8820C82456005C1AC0 /* TourShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		079E7A8220BB34860049C9D3 /* MixedSkeletonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MixedSkeletonTableCell.xib; sourceTree = "<group>"; };
 		079E7A8420BB34DC0049C9D3 /* MixedSkeletonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedSkeletonTableCell.swift; sourceTree = "<group>"; };
 		079ECCF320B14C9A00385CC7 /* ShopTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableHeader.xib; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 				071DCA1D20B5C92A000E3E79 /* CoverCollectionViewCell.xib */,
 				07118EFC20BB133F006A9E3A /* SkeletonCollectionViewCell.xib */,
 				075FCC0320BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib */,
+				07961B8620C822B5005C1AC0 /* TourShopCollectionViewCell.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 				071DCA1B20B5C90A000E3E79 /* CoverCollectionViewCell.swift */,
 				07118EFE20BB136C006A9E3A /* SkeletonCollectionViewCell.swift */,
 				075FCC0520BB31E70085D5E9 /* WideSkeletonCollectionViewCell.swift */,
+				07961B8820C82456005C1AC0 /* TourShopCollectionViewCell.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 				07E4334720B5CAA2001A5BBF /* SearchToursViewController.swift */,
 				41026B6920B81FE30005B766 /* GenericTableViewController.swift */,
 				41954EB620BD9956007F2078 /* TabBarViewController.swift */,
+				07961B8420C82168005C1AC0 /* TourViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -535,6 +544,7 @@
 				07DA706720B40D120053FDE4 /* ClusteredShopsTableCell.xib in Resources */,
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				0789DB4420B2DC84004E66BB /* WideCollectionViewCell.xib in Resources */,
+				07961B8720C822B5005C1AC0 /* TourShopCollectionViewCell.xib in Resources */,
 				075FCC0420BB2F720085D5E9 /* WideSkeletonCollectionViewCell.xib in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
 				07118EFD20BB133F006A9E3A /* SkeletonCollectionViewCell.xib in Resources */,
@@ -628,6 +638,7 @@
 				414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */,
 				077FDD0620B15B5400928FD8 /* ShopTableFooter.swift in Sources */,
 				F1F884722099B5F900B6DE7A /* StoreViewController.swift in Sources */,
+				07961B8920C82456005C1AC0 /* TourShopCollectionViewCell.swift in Sources */,
 				074F5B1320BEF3780041F485 /* Extension_UICollectionView.swift in Sources */,
 				072CE3B420B5C71E00E9CB88 /* CoverTableCell.swift in Sources */,
 				414A61BD20BB13BC00AA88F8 /* Tour.swift in Sources */,
@@ -663,6 +674,7 @@
 				F1F884782099B66F00B6DE7A /* SavedTableViewController.swift in Sources */,
 				F1F884742099B61D00B6DE7A /* ToursViewController.swift in Sources */,
 				07FBBF2E20B07C8D0012B99C /* LinearCollectionViewCell.swift in Sources */,
+				07961B8520C82168005C1AC0 /* TourViewController.swift in Sources */,
 				41026B6A20B81FE30005B766 /* GenericTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,7 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -846,7 +858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				DEVELOPMENT_TEAM = QUNH82DZ4W;
 				INFOPLIST_FILE = Margheritttta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
