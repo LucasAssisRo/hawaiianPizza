@@ -65,7 +65,6 @@ class ExploreViewController: GenericTableViewController {
                                               duration: 0.1,
                                               options: .transitionCrossDissolve,
                                               animations: {
-                                                
                                                 self.tableView.reloadData()
                             })
                         }

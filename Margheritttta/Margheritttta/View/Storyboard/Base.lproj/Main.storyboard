@@ -262,11 +262,11 @@
             <objects>
                 <viewController storyboardIdentifier="productsViewController" title="Product" id="wdS-C4-7P7" customClass="ProductsViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qh-PH-4zl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-BF-5Or">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pk-ea-88b">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="628.5"/>
@@ -368,11 +368,11 @@
             <objects>
                 <viewController title="Shop" id="J5Y-Ll-9Zg" customClass="StoreViewController" customModule="Margheritttta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pxp-4j-Lbe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1884"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZQh-w6-Z76">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1951"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1835"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PZ-XK-8op">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1409.5"/>
@@ -743,6 +743,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Oh-bQ-3SS"/>
+        <segue reference="MXi-ae-edi"/>
     </inferredMetricsTieBreakers>
 </document>
