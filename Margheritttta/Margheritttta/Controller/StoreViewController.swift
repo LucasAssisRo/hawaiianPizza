@@ -9,9 +9,9 @@
 import UIKit
 
 class StoreViewController: UIViewController {
-    
     var venueId: String!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,12 +30,6 @@ class StoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationController?.view.backgroundColor = .clear
         
         if let venues = ExploreViewController.venues {
             var venue: Venue? = nil
@@ -158,4 +152,24 @@ class StoreViewController: UIViewController {
     }
     */
 
+}
+
+extension StoreViewController: SpringViewDelegate {
+    func expand(_ bounds: CGRect, with duration: TimeInterval) {
+        self.view.isUserInteractionEnabled = true
+        UIView.animate(withDuration: duration) {
+            self.view.frame = bounds
+        }
+    }
+    
+    func colapse(_ bounds: CGRect, with duration: TimeInterval) {
+        self.view.isUserInteractionEnabled = false
+        self.scrollView.setContentOffset(.zero, animated: true)
+        UIView.animate(withDuration: duration) {
+            self.view.frame = bounds
+        }
+    }
+}
+
+extension StoreViewController: UIScrollViewDelegate {
 }
