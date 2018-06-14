@@ -9,6 +9,6 @@
 import UIKit
 
 protocol SpringViewDelegate {
-    func expand(_ bounds: CGRect, with duration: TimeInterval)
-    func colapse(_ bounds: CGRect, with duration: TimeInterval)
+    func expand(to bounds: CGRect, with duration: TimeInterval)
+    func colapse(to bounds: CGRect, with duration: TimeInterval)
 }

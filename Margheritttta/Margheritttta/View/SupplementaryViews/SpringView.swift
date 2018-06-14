@@ -92,7 +92,10 @@ class SpringView: UIView {
         self.closeButton.frame.size = CGSize(width: self.closeButtonRadius * 2,
                                              height: self.closeButtonRadius * 2)
         self.closeButton.layer.cornerRadius = self.closeButtonRadius
-        self.closeButton.backgroundColor = UIColor.gray.withAlphaComponent(0.7)
+        self.closeButton.setTitle("X", for: .normal)
+        self.closeButton.setTitleColor(UIColor.white.withAlphaComponent(0.9), for: .normal)
+        self.closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .black)
+        self.closeButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         self.closeButton.addTarget(self, action: #selector(self.colapseView), for: .touchUpInside)
         self.closeButton.alpha = 0
         self.closeButton.center = self.closeButtonCenter
@@ -133,7 +136,7 @@ class SpringView: UIView {
         if !self.isPresenting {
             UIView.animate(withDuration: 0.1,
                            delay: 0,
-                           options: [.layoutSubviews, .allowAnimatedContent, .curveEaseInOut],
+                           options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
                            animations: {
                             self.transform = self.shrink
             })
@@ -151,7 +154,7 @@ class SpringView: UIView {
         if !self.isPresenting {
             UIView.animate(withDuration: 0.1,
                            delay: 0,
-                           options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
+                           options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
                            animations: {
                             self.transform = .identity
             }) { finished in
@@ -170,6 +173,7 @@ class SpringView: UIView {
                                         view.frame = superview.frame
                                         self.embededViewController?.view.frame = view.bounds
                                         self.embededViewController?.view.isUserInteractionEnabled = true
+                                        self.delegate?.expand(to: self.bounds, with: TimeInterval(self.animationDuration))
                                     } else {
                                         view.center.x = self.subviewExpandedCenters[i].x
                                     }
@@ -182,6 +186,7 @@ class SpringView: UIView {
     func embed(viewController: UIViewController, in parent: UIViewController, delegate: SpringViewDelegate) {
         parent.addChildViewController(viewController)
         self.containerView.addSubview(viewController.view)
+        self.delegate = delegate
         viewController.view.frame = self.containerView.bounds
         viewController.view.isUserInteractionEnabled = false
         viewController.didMove(toParentViewController: parent)
@@ -204,6 +209,7 @@ class SpringView: UIView {
                                 view.frame = self.bounds
                                 self.embededViewController?.view.frame = view.bounds
                                 self.embededViewController?.view.isUserInteractionEnabled = false
+                                self.delegate?.colapse(to: self.bounds, with: TimeInterval(self.animationDuration))
                             } else {
                                 view.center.x = self.subviewColapsedCenters[i].x
                             }
@@ -211,13 +217,13 @@ class SpringView: UIView {
         }) { finished in
             UIView.animate(withDuration: 0.1,
                            delay: 0,
-                           options: [.layoutSubviews, .curveEaseOut],
+                           options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
                            animations: {
                             self.transform = self.shrink
             }) { finished in
                 UIView.animate(withDuration: 0.1,
                                delay: 0,
-                               options: [.layoutSubviews, .allowAnimatedContent],
+                               options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
                                animations: {
                                 self.transform = .identity
                 })

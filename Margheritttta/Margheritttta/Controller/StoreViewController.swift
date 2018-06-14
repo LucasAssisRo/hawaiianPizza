@@ -58,7 +58,7 @@ class StoreViewController: UIViewController {
                 self.descriptionLabel.text = venue.description
                 self.streetLabel.text = venue.address1
                 self.cityLabel.text = venue.city
-
+                
                 if let phone = venue.phone {
                     self.phoneTextView.text = phone
                 } else {
@@ -84,7 +84,7 @@ class StoreViewController: UIViewController {
                 self.productImages[2].isHidden = true
                 self.reportButton.isHidden = true
             } else {
-               // ERROR VIEW
+                // ERROR VIEW
             }
         } else {
             // ERROR VIEW
@@ -102,7 +102,7 @@ class StoreViewController: UIViewController {
             destination.myProd.name = "First Product"
             destination.myProd.allergens = ["First allergen", "New allergen"]
             destination.myProd.description = "First Product Description"
-
+            
             break
         case self.productImages[1]:
             destination.myProd.images = "p2"
@@ -122,7 +122,7 @@ class StoreViewController: UIViewController {
         
         self.present(destination, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -140,34 +140,38 @@ class StoreViewController: UIViewController {
     
     @IBAction func btnReportAction(_ sender: UIButton) {
     }
-
+    
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension StoreViewController: SpringViewDelegate {
-    func expand(_ bounds: CGRect, with duration: TimeInterval) {
-        self.view.isUserInteractionEnabled = true
-        UIView.animate(withDuration: duration) {
-            self.view.frame = bounds
-        }
+    func expand(to bounds: CGRect, with duration: TimeInterval) {
+        UIView.animate(withDuration: TimeInterval(duration),
+                       delay: 0,
+                       options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
+                       animations: {
+                        self.scrollView.frame = bounds
+        })
     }
     
-    func colapse(_ bounds: CGRect, with duration: TimeInterval) {
-        self.view.isUserInteractionEnabled = false
+    func colapse(to bounds: CGRect, with duration: TimeInterval) {
         self.scrollView.setContentOffset(.zero, animated: true)
-        UIView.animate(withDuration: duration) {
-            self.view.frame = bounds
-        }
+        UIView.animate(withDuration: TimeInterval(duration),
+                       delay: 0,
+                       options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
+                       animations: {
+                        self.scrollView.frame = bounds
+        })
     }
 }
 

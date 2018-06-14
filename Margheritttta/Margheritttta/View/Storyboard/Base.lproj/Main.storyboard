@@ -685,7 +685,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-K7-cGG" customClass="SpringView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="17" y="49" width="341" height="267"/>
+                                <rect key="frame" x="17" y="49" width="341" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -715,23 +715,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-tP-dUr" customClass="SpringView" customModule="Margheritttta" customModuleProvider="target">
-                                <rect key="frame" x="17" y="350" width="341" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BNb-bM-c71"/>
                     </view>
                     <connections>
                         <outletCollection property="shopViews" destination="7gm-K7-cGG" collectionClass="NSMutableArray" id="NAU-7S-JWN"/>
-                        <outletCollection property="shopViews" destination="Cfj-tP-dUr" collectionClass="NSMutableArray" id="Klp-oI-emC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juE-ac-7oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3950" y="1043"/>
+            <point key="canvasLocation" x="3949.5999999999999" y="1042.128935532234"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="HUF-ai-oyl">
