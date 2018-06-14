@@ -31,6 +31,12 @@ class StoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.view.backgroundColor = .clear
+        
         if let venues = ExploreViewController.venues {
             var venue: Venue? = nil
             for v in venues {
@@ -131,10 +137,10 @@ class StoreViewController: UIViewController {
     @IBAction func expandDescription(_ sender: Any) {
         if self.descriptionLabel.numberOfLines == 1000 {
             self.descriptionLabel.numberOfLines = 5
-            self.readMoreButton.setTitle("more".localized(), for: .normal)
+            self.readMoreButton.setTitle(NSLocalizedString("show_more", comment: ""), for: .normal)
         } else {
             self.descriptionLabel.numberOfLines = 1000
-            self.readMoreButton.setTitle("less".localized(), for: .normal)
+            self.readMoreButton.setTitle(NSLocalizedString("show_less", comment: ""), for: .normal)
         }
     }
     
