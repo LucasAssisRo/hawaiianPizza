@@ -16,13 +16,30 @@ class MainViewController: UIViewController {
         return .lightContent
     }
     
+    private var _isStatusBarHidden: Bool = false
+    
+    var isStatusBarHidden: Bool {
+        get {
+            return self._isStatusBarHidden
+        }
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return self._isStatusBarHidden
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         for shopView in self.shopViews {
             shopView.didMoveToSuperview()
-            let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! StoreViewController
+            let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
             shopView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
+            shopView.indexSubviews(self.view)
         }
     }
 
@@ -30,8 +47,14 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    func setStatusBarHidden(_ isHidden: Bool, with duration: TimeInterval) {
+        self._isStatusBarHidden = isHidden
+        UIView.animate(withDuration: duration) {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

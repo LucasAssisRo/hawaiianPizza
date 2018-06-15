@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -79,7 +79,7 @@
 		20B850A27626C98BC88303F7B5D823D9 /* KituraKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KituraKit-prefix.pch"; sourceTree = "<group>"; };
 		23AC18C6B73207C966BCD2FA905844B7 /* Pods-MargherittttaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MargherittttaUITests-resources.sh"; sourceTree = "<group>"; };
 		2F8AED8E91C5EFEF7D1227605E035D22 /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/KituraKit/SwiftyRequest/StringExtensions.swift; sourceTree = "<group>"; };
-		308B74CA96092551C3979ACD971AB4C1 /* KituraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KituraKit.framework; path = KituraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		308B74CA96092551C3979ACD971AB4C1 /* KituraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KituraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		319B11C45C39AB7B82448DE3A7FB9C04 /* Pods-MargherittttaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MargherittttaUITests-umbrella.h"; sourceTree = "<group>"; };
 		32B8B0A0FD12A874904D04F12C70D99E /* Pods-Margheritttta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Margheritttta.debug.xcconfig"; sourceTree = "<group>"; };
 		340F251CE9FBFBC72066AB4D49A46B94 /* ClosureAliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureAliases.swift; path = Sources/KituraKit/KituraContracts/ClosureAliases.swift; sourceTree = "<group>"; };
@@ -92,15 +92,15 @@
 		6215511ACC63EC3F2EB4672723ACC861 /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6E78760E106E9AD535FF671704D35B2B /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Sources/KituraKit/SwiftyRequest/HTTPMethod.swift; sourceTree = "<group>"; };
-		73F11CE7C0155E1F5804560B3539322F /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Margheritttta.framework; path = "Pods-Margheritttta.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F11CE7C0155E1F5804560B3539322F /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BFCA018BF69CEA4EAD67FBAAC11971 /* CodableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableExtensions.swift; path = Sources/KituraKit/SwiftyRequest/CodableExtensions.swift; sourceTree = "<group>"; };
-		7840AE989D06EB29DDD8A33EEBA489C2 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MargherittttaUITests.framework; path = "Pods-MargherittttaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7840AE989D06EB29DDD8A33EEBA489C2 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FF8A5C76F630EE56234A8098D77008 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/KituraKit/KituraContracts/Extensions.swift; sourceTree = "<group>"; };
 		81F29099532E0F262527ACE205E75982 /* Invocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Invocation.swift; path = Sources/KituraKit/CircuitBreaker/Invocation.swift; sourceTree = "<group>"; };
 		87ACF038DF64A661DDB97D1A40DA835B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C11C2C4E0018E8DAA615DB897625A56 /* KituraKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KituraKit.modulemap; sourceTree = "<group>"; };
 		8E6B27C88C866E0DCC177604C6E9D74D /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/KituraKit/CircuitBreaker/Utils.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		967BD6EB0822DAD6664FD51B4D713ACF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B09A81FB4D0D806BAD0A54F3F3672C /* Bulkhead.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bulkhead.swift; path = Sources/KituraKit/CircuitBreaker/Bulkhead.swift; sourceTree = "<group>"; };
 		9D6DEA29D64054A85FF5577DBEF1082F /* RestToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RestToken.swift; path = Sources/KituraKit/SwiftyRequest/RestToken.swift; sourceTree = "<group>"; };
@@ -309,7 +309,6 @@
 				A012D95D87917EE68DA9F7987DA475C7 /* Support Files */,
 				CA2FCD05C85F96AA0C8AE5ACDAD5C50A /* SwiftyRequest */,
 			);
-			name = KituraKit;
 			path = KituraKit;
 			sourceTree = "<group>";
 		};
@@ -446,7 +445,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -629,6 +628,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

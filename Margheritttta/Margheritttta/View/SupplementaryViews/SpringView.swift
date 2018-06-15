@@ -152,34 +152,7 @@ class SpringView: UIView {
         }
         
         if !self.isPresenting {
-            UIView.animate(withDuration: 0.1,
-                           delay: 0,
-                           options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
-                           animations: {
-                            self.transform = .identity
-            }) { finished in
-                self.layer.add(self.sharpCornerAnimation, forKey: "cornerRadius")
-                self.containerView.layer.add(self.sharpCornerAnimation, forKey: "cornerRadius")
-                self.isPresenting = true
-                UIView.animate(withDuration: TimeInterval(self.animationDuration),
-                               delay: 0,
-                               options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
-                               animations: {
-                                self.frame = UIScreen.main.bounds
-                                self.frame.origin = CGPoint(x: 0, y: -20)
-                                self.closeButton.alpha = 1
-                                for (i, view) in self.subviews.enumerated() {
-                                    if view.tag == Tag.containerView {
-                                        view.frame = superview.frame
-                                        self.embededViewController?.view.frame = view.bounds
-                                        self.embededViewController?.view.isUserInteractionEnabled = true
-                                        self.delegate?.expand(to: self.bounds, with: TimeInterval(self.animationDuration))
-                                    } else {
-                                        view.center.x = self.subviewExpandedCenters[i].x
-                                    }
-                                }
-                })
-            }
+            self.expandView(in: superview, animated: true)
         }
     }
     
@@ -193,12 +166,45 @@ class SpringView: UIView {
         self.embededViewController = viewController
     }
     
-    @IBAction func colapseView() {
+    @objc func expandView(in superview: UIView, animated: Bool = true) {
+        UIView.animate(withDuration: !animated ? 0 : 0.1,
+                       delay: 0,
+                       options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
+                       animations: {
+                        self.transform = .identity
+        }) { finished in
+            self.layer.add(self.sharpCornerAnimation, forKey: "cornerRadius")
+            self.containerView.layer.add(self.sharpCornerAnimation, forKey: "cornerRadius")
+            self.isPresenting = true
+            UIView.animate(withDuration: !animated ? 0 : TimeInterval(self.animationDuration),
+                           delay: 0,
+                           options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
+                           animations: {
+                            self.frame = UIScreen.main.bounds
+                            self.closeButton.alpha = 1
+                            for (i, view) in self.subviews.enumerated() {
+                                if view.tag == Tag.containerView {
+                                    view.frame = superview.frame
+                                    self.embededViewController?.view.frame = view.bounds
+                                    self.embededViewController?.view.isUserInteractionEnabled = true
+                                    self.delegate?.expand(to: self.bounds,
+                                                          animated: animated,
+                                                          with: TimeInterval(self.animationDuration))
+                                } else {
+                                    view.center.x = self.subviewExpandedCenters[i].x
+                                }
+                            }
+            })
+        }
+    }
+    
+    @objc func colapseView(_ sender: Any, animated: Bool = true) {
+        let animated = sender is  UIButton
         self.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
         self.containerView.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
         self.isPresenting = false
         
-        UIView.animate(withDuration: TimeInterval(self.animationDuration),
+        UIView.animate(withDuration: TimeInterval(!animated ? 0 : self.animationDuration),
                        delay: 0,
                        options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
                        animations: {
@@ -209,19 +215,21 @@ class SpringView: UIView {
                                 view.frame = self.bounds
                                 self.embededViewController?.view.frame = view.bounds
                                 self.embededViewController?.view.isUserInteractionEnabled = false
-                                self.delegate?.colapse(to: self.bounds, with: TimeInterval(self.animationDuration))
+                                self.delegate?.colapse(to: self.bounds,
+                                                       animated: animated,
+                                                       with: TimeInterval(self.animationDuration))
                             } else {
                                 view.center.x = self.subviewColapsedCenters[i].x
                             }
                         }
         }) { finished in
-            UIView.animate(withDuration: 0.1,
+            UIView.animate(withDuration: !animated ? 0 : 0.1,
                            delay: 0,
                            options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
                            animations: {
                             self.transform = self.shrink
             }) { finished in
-                UIView.animate(withDuration: 0.1,
+                UIView.animate(withDuration: !animated ? 0 : 0.1,
                                delay: 0,
                                options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
                                animations: {
