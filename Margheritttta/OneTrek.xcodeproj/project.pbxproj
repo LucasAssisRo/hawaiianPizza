@@ -65,13 +65,13 @@
 		414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAllergen.swift; sourceTree = "<group>"; };
 		414A61B320BB13BC00AA88F8 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		415A92CB20B83B7000BC7852 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		4168F65E208E286F00727EEB /* Margheritttta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Margheritttta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4168F65E208E286F00727EEB /* OneTrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4168F666208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4168F668208E286F00727EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4168F66B208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4168F66D208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4168F672208E286F00727EEB /* MargherittttaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MargherittttaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4168F672208E286F00727EEB /* OneTrekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTrekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41D6A84D20D2726700D79694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 		4168F655208E286E00727EEB = {
 			isa = PBXGroup;
 			children = (
-				4168F660208E286F00727EEB /* Margheritttta */,
-				4168F675208E286F00727EEB /* MargherittttaUITests */,
+				4168F660208E286F00727EEB /* OneTrek */,
+				4168F675208E286F00727EEB /* OneTrekUITests */,
 				4168F65F208E286F00727EEB /* Products */,
 				E3835AE4A79D8134E3A12229 /* Pods */,
 				3695AB3BF7361A5AA11043C6 /* Frameworks */,
@@ -196,13 +196,13 @@
 		4168F65F208E286F00727EEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4168F65E208E286F00727EEB /* Margheritttta.app */,
-				4168F672208E286F00727EEB /* MargherittttaUITests.xctest */,
+				4168F65E208E286F00727EEB /* OneTrek.app */,
+				4168F672208E286F00727EEB /* OneTrekUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4168F660208E286F00727EEB /* Margheritttta */ = {
+		4168F660208E286F00727EEB /* OneTrek */ = {
 			isa = PBXGroup;
 			children = (
 				07F1FBD420B4566D009EE51B /* Model */,
@@ -213,16 +213,16 @@
 				4168F66D208E286F00727EEB /* Info.plist */,
 				F1A5C4B720936993001C93CC /* Localizable.strings */,
 			);
-			path = Margheritttta;
+			path = OneTrek;
 			sourceTree = "<group>";
 		};
-		4168F675208E286F00727EEB /* MargherittttaUITests */ = {
+		4168F675208E286F00727EEB /* OneTrekUITests */ = {
 			isa = PBXGroup;
 			children = (
 				4168F676208E286F00727EEB /* MargherittttaUITests.swift */,
 				4168F678208E286F00727EEB /* Info.plist */,
 			);
-			path = MargherittttaUITests;
+			path = OneTrekUITests;
 			sourceTree = "<group>";
 		};
 		E3835AE4A79D8134E3A12229 /* Pods */ = {
@@ -271,9 +271,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4168F65D208E286E00727EEB /* Margheritttta */ = {
+		4168F65D208E286E00727EEB /* OneTrek */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "Margheritttta" */;
+			buildConfigurationList = 4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrek" */;
 			buildPhases = (
 				C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */,
 				4168F65A208E286E00727EEB /* Sources */,
@@ -285,14 +285,14 @@
 			);
 			dependencies = (
 			);
-			name = Margheritttta;
+			name = OneTrek;
 			productName = Margheritttta;
-			productReference = 4168F65E208E286F00727EEB /* Margheritttta.app */;
+			productReference = 4168F65E208E286F00727EEB /* OneTrek.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4168F671208E286F00727EEB /* MargherittttaUITests */ = {
+		4168F671208E286F00727EEB /* OneTrekUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "MargherittttaUITests" */;
+			buildConfigurationList = 4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrekUITests" */;
 			buildPhases = (
 				ED8A0DE9875E4DA8394457A2 /* [CP] Check Pods Manifest.lock */,
 				4168F66E208E286F00727EEB /* Sources */,
@@ -304,9 +304,9 @@
 			dependencies = (
 				4168F674208E286F00727EEB /* PBXTargetDependency */,
 			);
-			name = MargherittttaUITests;
+			name = OneTrekUITests;
 			productName = MargherittttaUITests;
-			productReference = 4168F672208E286F00727EEB /* MargherittttaUITests.xctest */;
+			productReference = 4168F672208E286F00727EEB /* OneTrekUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +335,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4168F659208E286E00727EEB /* Build configuration list for PBXProject "Margheritttta" */;
+			buildConfigurationList = 4168F659208E286E00727EEB /* Build configuration list for PBXProject "OneTrek" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -348,8 +348,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4168F65D208E286E00727EEB /* Margheritttta */,
-				4168F671208E286F00727EEB /* MargherittttaUITests */,
+				4168F65D208E286E00727EEB /* OneTrek */,
+				4168F671208E286F00727EEB /* OneTrekUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -474,7 +474,7 @@
 /* Begin PBXTargetDependency section */
 		4168F674208E286F00727EEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4168F65D208E286E00727EEB /* Margheritttta */;
+			target = 4168F65D208E286E00727EEB /* OneTrek */;
 			targetProxy = 4168F673208E286F00727EEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -627,7 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HH88N3P4EZ;
-				INFOPLIST_FILE = Margheritttta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OneTrek/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
@@ -644,7 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HH88N3P4EZ;
-				INFOPLIST_FILE = Margheritttta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OneTrek/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
@@ -691,7 +691,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4168F659208E286E00727EEB /* Build configuration list for PBXProject "Margheritttta" */ = {
+		4168F659208E286E00727EEB /* Build configuration list for PBXProject "OneTrek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4168F679208E286F00727EEB /* Debug */,
@@ -700,7 +700,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "Margheritttta" */ = {
+		4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4168F67C208E286F00727EEB /* Debug */,
@@ -709,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "MargherittttaUITests" */ = {
+		4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrekUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4168F67F208E286F00727EEB /* Debug */,
