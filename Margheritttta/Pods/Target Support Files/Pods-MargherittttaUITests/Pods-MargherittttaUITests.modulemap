@@ -1,6 +1,0 @@
-framework module Pods_MargherittttaUITests {
-  umbrella header "Pods-MargherittttaUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
