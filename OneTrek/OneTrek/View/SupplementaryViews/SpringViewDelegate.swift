@@ -11,7 +11,6 @@ import UIKit
 protocol SpringViewDelegate {
     func expand(to bounds: CGRect, animated: Bool, with duration: TimeInterval)
     func colapse(to bounds: CGRect, animated: Bool, with duration: TimeInterval)
-    func disableParentScroll()
 }
 
 extension Notification.Name {
