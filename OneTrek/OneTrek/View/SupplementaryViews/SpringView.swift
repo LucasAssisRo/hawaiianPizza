@@ -121,6 +121,8 @@ class SpringView: UIView {
         self.sharpCornerAnimation.fillMode = kCAFillModeForwards
         self.sharpCornerAnimation.autoreverses = false
         self.sharpCornerAnimation.isRemovedOnCompletion = false
+        
+
     }
     
     override func didMoveToSuperview() {
@@ -168,6 +170,7 @@ class SpringView: UIView {
     
     @objc func expandView(in superview: UIView, animated: Bool = true) {
         NotificationCenter.default.post(name: .springExpand, object: (superview: superview, animated: animated))
+        
         UIView.animate(withDuration: !animated ? 0 : 0.1,
                        delay: 0,
                        options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
@@ -184,7 +187,7 @@ class SpringView: UIView {
                             self.frame = UIScreen.main.bounds
                             self.frame.origin += SpringView.offset
                             
-//                            self.frame.origin.y -= 20
+//                          self.frame.origin.y -= 20
                             
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {
@@ -201,6 +204,10 @@ class SpringView: UIView {
                             }
             })
         }
+    }
+    
+    @objc func disableParentScroll() {
+        self.delegate?.disableParentScroll()
     }
     
     @objc func colapseView(_ sender: Any, animated: Bool = true) {

@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
 //        let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
 //        self.springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
 //        self.springView.indexSubviews(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(disableScrolling(notfication:)), name: NSNotification.Name.springExpand, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(enableScrolling(notfication:)), name: NSNotification.Name.springColapse, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,16 @@ class MainViewController: UIViewController {
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
+    }
+    
+    @objc func disableScrolling(notfication: NSNotification) {
+        self.scrollView.isScrollEnabled = false
+        //self.scrollView.isUserInteractionEnabled = false
+    }
+    
+    @objc func enableScrolling(notfication: NSNotification) {
+        self.scrollView.isScrollEnabled = true
+        //self.scrollView.isUserInteractionEnabled = false
     }
     
     /*

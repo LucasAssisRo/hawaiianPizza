@@ -34,6 +34,8 @@ class VenueViewController: UIViewController {
         
         self.emailImageView.image = self.emailImageView.image?.withRenderingMode(.alwaysTemplate)
         self.emailImageView.tintColor = .black
+
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +58,9 @@ extension VenueViewController: SpringViewDelegate {
     func expand(to bounds: CGRect, animated: Bool, with duration: TimeInterval) {
         if let parent = self.parent as? MainViewController {
             parent.setStatusBarHidden(true, with: duration)
+           // parent.scrollView.isScrollEnabled = false
+       
+            
         }
         
         UIView.animate(withDuration: !animated ? 0 : TimeInterval(duration),
@@ -78,6 +83,14 @@ extension VenueViewController: SpringViewDelegate {
                        animations: {
                         self.scrollView.frame = bounds
         })
+    }
+    
+    @objc func disableParentScroll() {
+        if let parent = self.parent as? MainViewController {
+            parent.scrollView.isScrollEnabled = false
+            parent.scrollView.isUserInteractionEnabled = false
+            print("lp")
+        }
     }
 }
 
