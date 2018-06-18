@@ -85,13 +85,7 @@ extension VenueViewController: SpringViewDelegate {
         })
     }
     
-    @objc func disableParentScroll() {
-        if let parent = self.parent as? MainViewController {
-            parent.scrollView.isScrollEnabled = false
-            parent.scrollView.isUserInteractionEnabled = false
-            print("lp")
-        }
-    }
+
 }
 
 extension VenueViewController: UIScrollViewDelegate { }

@@ -206,9 +206,6 @@ class SpringView: UIView {
         }
     }
     
-    @objc func disableParentScroll() {
-        self.delegate?.disableParentScroll()
-    }
     
     @objc func colapseView(_ sender: Any, animated: Bool = true) {
         NotificationCenter.default.post(name: .springColapse, object: (animated: animated))
