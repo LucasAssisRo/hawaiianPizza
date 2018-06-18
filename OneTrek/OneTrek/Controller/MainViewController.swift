@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var springView: SpringView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -34,11 +34,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let storyboard = self.storyboard else { return }
-        self.springView.didMoveToSuperview()
-        let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
-        self.springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
-        self.springView.indexSubviews(self.view)
+//        guard let storyboard = self.storyboard else { return }
+//        self.springView.didMoveToSuperview()
+//        let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
+//        self.springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
+//        self.springView.indexSubviews(self.view)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,4 +62,11 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        SpringView.offset = scrollView.contentOffset
+        SpringView.offset.y -= 8
+    }
 }

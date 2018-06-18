@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class SpringView: UIView {
     var delegate: SpringViewDelegate?
+    static var offset: CGPoint = CGPoint(x: 0, y: -8)
     
     private var shrink = CGAffineTransform(scaleX: 1, y: 1)
     var smallFrame: CGRect!
@@ -146,7 +147,6 @@ class SpringView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let superview = self.superview else { return }
         superview.bringSubview(toFront: self)
-        
         if self.subviewColapsedCenters.count == 0 {
             self.indexSubviews(superview)
         }
@@ -182,6 +182,10 @@ class SpringView: UIView {
                            options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
                            animations: {
                             self.frame = UIScreen.main.bounds
+                            self.frame.origin += SpringView.offset
+                            
+//                            self.frame.origin.y -= 20
+                            
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {
                                 if view.tag == Tag.containerView {
@@ -214,7 +218,6 @@ class SpringView: UIView {
                         self.closeButton.alpha = 0
                         for (i, view) in self.subviews.enumerated() {
                             if view.tag == Tag.containerView {
-                                view.frame = self.bounds
                                 self.embededViewController?.view.frame = view.bounds
                                 self.embededViewController?.view.isUserInteractionEnabled = false
                                 self.delegate?.colapse(to: self.bounds,
@@ -271,5 +274,11 @@ class SpringView: UIView {
         static func !=(left: SpringView.Tag, right: Int) -> Bool {
             return left.rawValue != right
         }
+    }
+}
+
+extension CGPoint {
+    static func +=(left: inout CGPoint, right: CGPoint) {
+        left = CGPoint(x: left.x + right.x, y: left.y + right.y)
     }
 }
