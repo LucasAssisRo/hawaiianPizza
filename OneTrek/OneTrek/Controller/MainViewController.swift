@@ -57,12 +57,12 @@ class MainViewController: UIViewController {
     
     @objc func disableScrolling(_ notification: NSNotification) {
         self.scrollView.isScrollEnabled = false
-        self.setStatusBarHidden(true, with: 0.2)
+        self.setStatusBarHidden(true, with: 0.1)
     }
     
     @objc func enableScrolling(_ notification: NSNotification) {
         self.scrollView.isScrollEnabled = true
-        self.setStatusBarHidden(false, with: 0.2)
+        self.setStatusBarHidden(false, with: 0.1)
     }
     
     /*

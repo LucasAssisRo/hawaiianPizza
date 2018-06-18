@@ -22,7 +22,6 @@
 		414A61BC20BB13BC00AA88F8 /* ProductAllergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */; };
 		414A61BD20BB13BC00AA88F8 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B320BB13BC00AA88F8 /* Tour.swift */; };
 		415A92CC20B83B7000BC7852 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415A92CB20B83B7000BC7852 /* Colors.swift */; };
-		4164D53C20D412B600EB1E99 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164D53B20D412B600EB1E99 /* TourTableViewController.swift */; };
 		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
 		4168F667208E286F00727EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F665208E286F00727EEB /* Main.storyboard */; };
 		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
@@ -68,7 +67,6 @@
 		414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAllergen.swift; sourceTree = "<group>"; };
 		414A61B320BB13BC00AA88F8 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		415A92CB20B83B7000BC7852 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		4164D53B20D412B600EB1E99 /* TourTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewController.swift; sourceTree = "<group>"; };
 		4168F65E208E286F00727EEB /* OneTrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4168F666208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			children = (
 				F1F884712099B5F900B6DE7A /* VenueViewController.swift */,
 				41D6A84D20D2726700D79694 /* MainViewController.swift */,
-				4164D53B20D412B600EB1E99 /* TourTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,7 +447,6 @@
 				414A61B920BB13BC00AA88F8 /* TourImage.swift in Sources */,
 				41FD237C20D3DD8900E960D9 /* ShadowLabel.swift in Sources */,
 				0747BE6C20BABFAB00103302 /* UIViewExtension.swift in Sources */,
-				4164D53C20D412B600EB1E99 /* TourTableViewController.swift in Sources */,
 				414A61B420BB13BC00AA88F8 /* Product.swift in Sources */,
 				414A61B620BB13BC00AA88F8 /* TourVenueLink.swift in Sources */,
 				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,

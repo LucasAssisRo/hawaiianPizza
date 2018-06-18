@@ -173,7 +173,6 @@ class SpringView: UIView {
     
     @objc func expandView(in superview: UIView, animated: Bool = true) {
         NotificationCenter.default.post(name: .springExpand, object: (superview: superview, animated: animated))
-        
         UIView.animate(withDuration: !animated ? 0 : 0.1,
                        delay: 0,
                        options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
