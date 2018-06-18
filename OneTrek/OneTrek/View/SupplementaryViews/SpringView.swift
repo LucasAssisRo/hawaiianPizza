@@ -121,14 +121,17 @@ class SpringView: UIView {
         self.sharpCornerAnimation.fillMode = kCAFillModeForwards
         self.sharpCornerAnimation.autoreverses = false
         self.sharpCornerAnimation.isRemovedOnCompletion = false
-        
-
     }
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        self.smallFrame = self.frame
-        self.containerView.frame = self.bounds
+        self.smallFrame = CGRect()
+        self.smallFrame.origin = self.frame.origin
+        self.smallFrame.size.width = UIScreen.main.bounds.width - 32
+        self.smallFrame.size.height = self.smallFrame.size.width * 26 / 25
+        var bounds = self.smallFrame!
+        bounds.origin = .zero
+        self.containerView.frame = bounds
         self.containerView.layer.cornerRadius = self.cornerRadius
         self.bringSubview(toFront: self.closeButton)
     }
@@ -245,6 +248,10 @@ class SpringView: UIView {
                                 self.transform = .identity
                 })
             }
+        }
+        
+        if let stackView = self.superview as? UIStackView {
+            stackView.setNeedsLayout()
         }
     }
     
