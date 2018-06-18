@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0747BE6C20BABFAB00103302 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747BE6B20BABFAB00103302 /* UIViewExtension.swift */; };
+		07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2979620B852E300239CE8 /* GlobalConstants.swift */; };
+		07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1FBE420B4582B009EE51B /* ServerHandler.swift */; };
+		3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */; };
+		414A61B420BB13BC00AA88F8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AA20BB13BB00AA88F8 /* Product.swift */; };
+		414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AB20BB13BB00AA88F8 /* VenueTag.swift */; };
+		414A61B620BB13BC00AA88F8 /* TourVenueLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AC20BB13BC00AA88F8 /* TourVenueLink.swift */; };
+		414A61B720BB13BC00AA88F8 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AD20BB13BC00AA88F8 /* Venue.swift */; };
+		414A61B820BB13BC00AA88F8 /* TourRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AE20BB13BC00AA88F8 /* TourRoute.swift */; };
+		414A61B920BB13BC00AA88F8 /* TourImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61AF20BB13BC00AA88F8 /* TourImage.swift */; };
+		414A61BA20BB13BC00AA88F8 /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B020BB13BC00AA88F8 /* ProductImage.swift */; };
+		414A61BB20BB13BC00AA88F8 /* VenueImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B120BB13BC00AA88F8 /* VenueImage.swift */; };
+		414A61BC20BB13BC00AA88F8 /* ProductAllergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */; };
+		414A61BD20BB13BC00AA88F8 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A61B320BB13BC00AA88F8 /* Tour.swift */; };
+		415A92CC20B83B7000BC7852 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415A92CB20B83B7000BC7852 /* Colors.swift */; };
+		4164D53C20D412B600EB1E99 /* TourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164D53B20D412B600EB1E99 /* TourTableViewController.swift */; };
+		4168F662208E286F00727EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F661208E286F00727EEB /* AppDelegate.swift */; };
+		4168F667208E286F00727EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F665208E286F00727EEB /* Main.storyboard */; };
+		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
+		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
+		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
+		41D4A2CF20D40F94007A684C /* SpringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */; };
+		41D4A2D020D40F94007A684C /* SpringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */; };
+		41D6A84E20D2726700D79694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A84D20D2726700D79694 /* MainViewController.swift */; };
+		41D986E520D2A2FC00FDA2B2 /* SpringViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D986E420D2A2FC00FDA2B2 /* SpringViewDelegate.swift */; };
+		41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE6D3320BC099E00E0EF2F /* ContentType.swift */; };
+		41DE775D20D2956800BE5042 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE775C20D2956800BE5042 /* SpringView.swift */; };
+		41FD237C20D3DD8900E960D9 /* ShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD237B20D3DD8900E960D9 /* ShadowLabel.swift */; };
+		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
+		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
+		F1F884722099B5F900B6DE7A /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884712099B5F900B6DE7A /* VenueViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4168F673208E286F00727EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4168F656208E286E00727EEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4168F65D208E286E00727EEB;
+			remoteInfo = Margheritttta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0747BE6B20BABFAB00103302 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		07C2979620B852E300239CE8 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		07F1FBE420B4582B009EE51B /* ServerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
+		0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.debug.xcconfig"; sourceTree = "<group>"; };
+		2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		414A61AA20BB13BB00AA88F8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		414A61AB20BB13BB00AA88F8 /* VenueTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTag.swift; sourceTree = "<group>"; };
+		414A61AC20BB13BC00AA88F8 /* TourVenueLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourVenueLink.swift; sourceTree = "<group>"; };
+		414A61AD20BB13BC00AA88F8 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		414A61AE20BB13BC00AA88F8 /* TourRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourRoute.swift; sourceTree = "<group>"; };
+		414A61AF20BB13BC00AA88F8 /* TourImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourImage.swift; sourceTree = "<group>"; };
+		414A61B020BB13BC00AA88F8 /* ProductImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
+		414A61B120BB13BC00AA88F8 /* VenueImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueImage.swift; sourceTree = "<group>"; };
+		414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAllergen.swift; sourceTree = "<group>"; };
+		414A61B320BB13BC00AA88F8 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		415A92CB20B83B7000BC7852 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4164D53B20D412B600EB1E99 /* TourTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewController.swift; sourceTree = "<group>"; };
+		4168F65E208E286F00727EEB /* OneTrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4168F661208E286F00727EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4168F666208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4168F668208E286F00727EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4168F66B208E286F00727EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4168F66D208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4168F672208E286F00727EEB /* OneTrekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTrekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
+		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTableViewCell.swift; sourceTree = "<group>"; };
+		41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringTableViewCell.xib; sourceTree = "<group>"; };
+		41D6A84D20D2726700D79694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		41D986E420D2A2FC00FDA2B2 /* SpringViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringViewDelegate.swift; sourceTree = "<group>"; };
+		41DE6D3320BC099E00E0EF2F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		41DE775C20D2956800BE5042 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		41FD237B20D3DD8900E960D9 /* ShadowLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLabel.swift; sourceTree = "<group>"; };
+		ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.release.xcconfig"; sourceTree = "<group>"; };
+		F1A5C4B620936993001C93CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F1F884712099B5F900B6DE7A /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4168F65B208E286E00727EEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4168F66F208E286F00727EEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0789DB5120B2FFD3004E66BB /* SupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				41DE775C20D2956800BE5042 /* SpringView.swift */,
+				41D986E420D2A2FC00FDA2B2 /* SpringViewDelegate.swift */,
+				41FD237B20D3DD8900E960D9 /* ShadowLabel.swift */,
+			);
+			path = SupplementaryViews;
+			sourceTree = "<group>";
+		};
+		07F1FBD420B4566D009EE51B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				414A61C020BB13D200AA88F8 /* Venue */,
+				414A61BE20BB13BF00AA88F8 /* Product */,
+				414A61BF20BB13CC00AA88F8 /* Tour */,
+				414A61AC20BB13BC00AA88F8 /* TourVenueLink.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07F1FBD520B4569D009EE51B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4168F66A208E286F00727EEB /* LaunchScreen.storyboard */,
+				4168F665208E286F00727EEB /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3695AB3BF7361A5AA11043C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */,
+				37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		414A61BE20BB13BF00AA88F8 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				414A61AA20BB13BB00AA88F8 /* Product.swift */,
+				414A61B220BB13BC00AA88F8 /* ProductAllergen.swift */,
+				414A61B020BB13BC00AA88F8 /* ProductImage.swift */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		414A61BF20BB13CC00AA88F8 /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				414A61B320BB13BC00AA88F8 /* Tour.swift */,
+				414A61AF20BB13BC00AA88F8 /* TourImage.swift */,
+				414A61AE20BB13BC00AA88F8 /* TourRoute.swift */,
+			);
+			name = Tour;
+			sourceTree = "<group>";
+		};
+		414A61C020BB13D200AA88F8 /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				414A61AD20BB13BC00AA88F8 /* Venue.swift */,
+				414A61B120BB13BC00AA88F8 /* VenueImage.swift */,
+				414A61AB20BB13BB00AA88F8 /* VenueTag.swift */,
+			);
+			name = Venue;
+			sourceTree = "<group>";
+		};
+		4168F655208E286E00727EEB = {
+			isa = PBXGroup;
+			children = (
+				4168F660208E286F00727EEB /* OneTrek */,
+				4168F675208E286F00727EEB /* OneTrekUITests */,
+				4168F65F208E286F00727EEB /* Products */,
+				E3835AE4A79D8134E3A12229 /* Pods */,
+				3695AB3BF7361A5AA11043C6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4168F65F208E286F00727EEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4168F65E208E286F00727EEB /* OneTrek.app */,
+				4168F672208E286F00727EEB /* OneTrekUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4168F660208E286F00727EEB /* OneTrek */ = {
+			isa = PBXGroup;
+			children = (
+				07F1FBD420B4566D009EE51B /* Model */,
+				F1A5C49C20934443001C93CC /* View */,
+				F1A5C49E20934443001C93CC /* Controller */,
+				F1A5C4C1209376ED001C93CC /* SupportFiles */,
+				4168F668208E286F00727EEB /* Assets.xcassets */,
+				4168F66D208E286F00727EEB /* Info.plist */,
+				F1A5C4B720936993001C93CC /* Localizable.strings */,
+			);
+			path = OneTrek;
+			sourceTree = "<group>";
+		};
+		4168F675208E286F00727EEB /* OneTrekUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4168F676208E286F00727EEB /* MargherittttaUITests.swift */,
+				4168F678208E286F00727EEB /* Info.plist */,
+			);
+			path = OneTrekUITests;
+			sourceTree = "<group>";
+		};
+		E3835AE4A79D8134E3A12229 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */,
+				EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */,
+				ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */,
+				2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1A5C49C20934443001C93CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0789DB5120B2FFD3004E66BB /* SupplementaryViews */,
+				07F1FBD520B4569D009EE51B /* Storyboard */,
+				41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */,
+				41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1A5C49E20934443001C93CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1F884712099B5F900B6DE7A /* VenueViewController.swift */,
+				41D6A84D20D2726700D79694 /* MainViewController.swift */,
+				4164D53B20D412B600EB1E99 /* TourTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F1A5C4C1209376ED001C93CC /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				07F1FBE420B4582B009EE51B /* ServerHandler.swift */,
+				4168F661208E286F00727EEB /* AppDelegate.swift */,
+				415A92CB20B83B7000BC7852 /* Colors.swift */,
+				07C2979620B852E300239CE8 /* GlobalConstants.swift */,
+				0747BE6B20BABFAB00103302 /* UIViewExtension.swift */,
+				41DE6D3320BC099E00E0EF2F /* ContentType.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4168F65D208E286E00727EEB /* OneTrek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrek" */;
+			buildPhases = (
+				C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */,
+				4168F65A208E286E00727EEB /* Sources */,
+				4168F65B208E286E00727EEB /* Frameworks */,
+				4168F65C208E286E00727EEB /* Resources */,
+				9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneTrek;
+			productName = Margheritttta;
+			productReference = 4168F65E208E286F00727EEB /* OneTrek.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4168F671208E286F00727EEB /* OneTrekUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrekUITests" */;
+			buildPhases = (
+				ED8A0DE9875E4DA8394457A2 /* [CP] Check Pods Manifest.lock */,
+				4168F66E208E286F00727EEB /* Sources */,
+				4168F66F208E286F00727EEB /* Frameworks */,
+				4168F670208E286F00727EEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4168F674208E286F00727EEB /* PBXTargetDependency */,
+			);
+			name = OneTrekUITests;
+			productName = MargherittttaUITests;
+			productReference = 4168F672208E286F00727EEB /* OneTrekUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4168F656208E286E00727EEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Lucas Assis Rodrigues";
+				TargetAttributes = {
+					4168F65D208E286E00727EEB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+					4168F671208E286F00727EEB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4168F65D208E286E00727EEB;
+					};
+				};
+			};
+			buildConfigurationList = 4168F659208E286E00727EEB /* Build configuration list for PBXProject "OneTrek" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4168F655208E286E00727EEB;
+			productRefGroup = 4168F65F208E286F00727EEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4168F65D208E286E00727EEB /* OneTrek */,
+				4168F671208E286F00727EEB /* OneTrekUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4168F65C208E286E00727EEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */,
+				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
+				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
+				4168F667208E286F00727EEB /* Main.storyboard in Resources */,
+				41D4A2D020D40F94007A684C /* SpringTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4168F670208E286F00727EEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Margheritttta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED8A0DE9875E4DA8394457A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MargherittttaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4168F65A208E286E00727EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41D4A2CF20D40F94007A684C /* SpringTableViewCell.swift in Sources */,
+				414A61B820BB13BC00AA88F8 /* TourRoute.swift in Sources */,
+				415A92CC20B83B7000BC7852 /* Colors.swift in Sources */,
+				414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */,
+				F1F884722099B5F900B6DE7A /* VenueViewController.swift in Sources */,
+				414A61BD20BB13BC00AA88F8 /* Tour.swift in Sources */,
+				414A61BC20BB13BC00AA88F8 /* ProductAllergen.swift in Sources */,
+				414A61B720BB13BC00AA88F8 /* Venue.swift in Sources */,
+				414A61B920BB13BC00AA88F8 /* TourImage.swift in Sources */,
+				41FD237C20D3DD8900E960D9 /* ShadowLabel.swift in Sources */,
+				0747BE6C20BABFAB00103302 /* UIViewExtension.swift in Sources */,
+				4164D53C20D412B600EB1E99 /* TourTableViewController.swift in Sources */,
+				414A61B420BB13BC00AA88F8 /* Product.swift in Sources */,
+				414A61B620BB13BC00AA88F8 /* TourVenueLink.swift in Sources */,
+				07F1FBE520B4582B009EE51B /* ServerHandler.swift in Sources */,
+				41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */,
+				07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */,
+				414A61BB20BB13BC00AA88F8 /* VenueImage.swift in Sources */,
+				414A61BA20BB13BC00AA88F8 /* ProductImage.swift in Sources */,
+				41DE775D20D2956800BE5042 /* SpringView.swift in Sources */,
+				41D6A84E20D2726700D79694 /* MainViewController.swift in Sources */,
+				4168F662208E286F00727EEB /* AppDelegate.swift in Sources */,
+				41D986E520D2A2FC00FDA2B2 /* SpringViewDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4168F66E208E286F00727EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4168F674208E286F00727EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4168F65D208E286E00727EEB /* OneTrek */;
+			targetProxy = 4168F673208E286F00727EEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4168F665208E286F00727EEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4168F666208E286F00727EEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4168F66A208E286F00727EEB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4168F66B208E286F00727EEB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F1A5C4B720936993001C93CC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1A5C4B620936993001C93CC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4168F679208E286F00727EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4168F67A208E286F00727EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4168F67C208E286F00727EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OneTrek/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4168F67D208E286F00727EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OneTrek/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.Margherita;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4168F67F208E286F00727EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				INFOPLIST_FILE = MargherittttaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.MargherittttaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Margheritttta;
+			};
+			name = Debug;
+		};
+		4168F680208E286F00727EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HH88N3P4EZ;
+				INFOPLIST_FILE = MargherittttaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hawaiianPizza.MargherittttaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Margheritttta;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4168F659208E286E00727EEB /* Build configuration list for PBXProject "OneTrek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4168F679208E286F00727EEB /* Debug */,
+				4168F67A208E286F00727EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4168F67B208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4168F67C208E286F00727EEB /* Debug */,
+				4168F67D208E286F00727EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4168F67E208E286F00727EEB /* Build configuration list for PBXNativeTarget "OneTrekUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4168F67F208E286F00727EEB /* Debug */,
+				4168F680208E286F00727EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4168F656208E286E00727EEB /* Project object */;
+}
