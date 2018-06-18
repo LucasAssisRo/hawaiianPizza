@@ -172,6 +172,7 @@ class SpringView: UIView {
     }
     
     @objc func expandView(in superview: UIView, animated: Bool = true) {
+        self.bringSubview(toFront: self.closeButton)
         NotificationCenter.default.post(name: .springExpand, object: (superview: superview, animated: animated))
         UIView.animate(withDuration: !animated ? 0 : 0.1,
                        delay: 0,
@@ -188,13 +189,12 @@ class SpringView: UIView {
                            animations: {
                             self.frame = UIScreen.main.bounds
                             self.frame.origin += SpringView.offset
-                            
 //                          self.frame.origin.y -= 20
                             
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {
                                 if view.tag == Tag.containerView {
-                                    view.frame = superview.frame
+                                    view.frame = self.bounds
                                     self.embededViewController?.view.frame = view.bounds
                                     self.embededViewController?.view.isUserInteractionEnabled = true
                                     self.delegate?.expand(to: self.bounds,
@@ -210,6 +210,7 @@ class SpringView: UIView {
     
     
     @objc func colapseView(_ sender: Any, animated: Bool = true) {
+        print("colapse")
         NotificationCenter.default.post(name: .springColapse, object: (animated: animated))
         let animated = sender is  UIButton
         self.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
@@ -224,6 +225,7 @@ class SpringView: UIView {
                         self.closeButton.alpha = 0
                         for (i, view) in self.subviews.enumerated() {
                             if view.tag == Tag.containerView {
+                                view.frame = self.bounds
                                 self.embededViewController?.view.frame = view.bounds
                                 self.embededViewController?.view.isUserInteractionEnabled = false
                                 self.delegate?.colapse(to: self.bounds,

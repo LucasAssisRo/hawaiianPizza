@@ -11,9 +11,10 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     private var _isStatusBarHidden: Bool = false
@@ -34,13 +35,24 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        guard let storyboard = self.storyboard else { return }
-//        self.springView.didMoveToSuperview()
-//        let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
-//        self.springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
-//        self.springView.indexSubviews(self.view)
-        NotificationCenter.default.addObserver(self, selector: #selector(disableScrolling(_:)), name: NSNotification.Name.springExpand, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(enableScrolling(_:)), name: NSNotification.Name.springColapse, object: nil)
+        guard let storyboard = self.storyboard else { return }
+        for view in self.stackView.arrangedSubviews {
+            if let springView = view as? SpringView {
+                springView.didMoveToSuperview()
+                let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
+                springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
+                springView.indexSubviews(self.view)
+            }
+        }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(disableScrolling(_:)),
+                                               name: NSNotification.Name.springExpand,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(enableScrolling(_:)),
+                                               name: NSNotification.Name.springColapse,
+                                               object: nil)
     }
 
     override func didReceiveMemoryWarning() {

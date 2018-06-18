@@ -27,8 +27,6 @@
 		4168F669208E286F00727EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4168F668208E286F00727EEB /* Assets.xcassets */; };
 		4168F66C208E286F00727EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4168F66A208E286F00727EEB /* LaunchScreen.storyboard */; };
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
-		41D4A2CF20D40F94007A684C /* SpringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */; };
-		41D4A2D020D40F94007A684C /* SpringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */; };
 		41D6A84E20D2726700D79694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A84D20D2726700D79694 /* MainViewController.swift */; };
 		41D986E520D2A2FC00FDA2B2 /* SpringViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D986E420D2A2FC00FDA2B2 /* SpringViewDelegate.swift */; };
 		41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE6D3320BC099E00E0EF2F /* ContentType.swift */; };
@@ -76,8 +74,6 @@
 		4168F672208E286F00727EEB /* OneTrekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTrekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4168F676208E286F00727EEB /* MargherittttaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargherittttaUITests.swift; sourceTree = "<group>"; };
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTableViewCell.swift; sourceTree = "<group>"; };
-		41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringTableViewCell.xib; sourceTree = "<group>"; };
 		41D6A84D20D2726700D79694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41D986E420D2A2FC00FDA2B2 /* SpringViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringViewDelegate.swift; sourceTree = "<group>"; };
 		41DE6D3320BC099E00E0EF2F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -238,8 +234,6 @@
 			children = (
 				0789DB5120B2FFD3004E66BB /* SupplementaryViews */,
 				07F1FBD520B4569D009EE51B /* Storyboard */,
-				41D4A2CD20D40F94007A684C /* SpringTableViewCell.swift */,
-				41D4A2CE20D40F94007A684C /* SpringTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,7 +355,6 @@
 				F1A5C4B520936993001C93CC /* Localizable.strings in Resources */,
 				4168F669208E286F00727EEB /* Assets.xcassets in Resources */,
 				4168F667208E286F00727EEB /* Main.storyboard in Resources */,
-				41D4A2D020D40F94007A684C /* SpringTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D4A2CF20D40F94007A684C /* SpringTableViewCell.swift in Sources */,
 				414A61B820BB13BC00AA88F8 /* TourRoute.swift in Sources */,
 				415A92CC20B83B7000BC7852 /* Colors.swift in Sources */,
 				414A61B520BB13BC00AA88F8 /* VenueTag.swift in Sources */,

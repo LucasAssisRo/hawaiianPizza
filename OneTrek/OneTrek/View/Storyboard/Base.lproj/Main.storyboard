@@ -416,28 +416,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="dR9-2y-8N0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBV-HY-C6Z">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThR-ke-rbg">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="1495.5"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="1511.5"/>
                                         <subviews>
-                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc6-I0-Ah4">
-                                                <rect key="frame" x="0.0" y="352" width="375" height="1620"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g6d-ai-FOS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1620"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </view>
-                                                <blurEffect style="light"/>
-                                            </visualEffectView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-vX-pKD">
-                                                <rect key="frame" x="0.0" y="400" width="375" height="1095.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1511.5"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbd-im-cst">
+                                                        <rect key="frame" x="16" y="0.0" width="343" height="400"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the tour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFk-8h-7bL">
+                                                                <rect key="frame" x="0.0" y="48" width="279" height="45.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="MFk-8h-7bL" firstAttribute="top" secondItem="xbd-im-cst" secondAttribute="top" constant="48" id="6tF-Mn-49X"/>
+                                                            <constraint firstItem="MFk-8h-7bL" firstAttribute="leading" secondItem="xbd-im-cst" secondAttribute="leading" id="M2D-8T-Grb"/>
+                                                            <constraint firstAttribute="height" constant="400" id="Vd2-me-4zU"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MFk-8h-7bL" secondAttribute="trailing" constant="20" symbolic="YES" id="qmE-PJ-iL2"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2a-AP-Nb0" customClass="SpringView" customModule="OneTrek" customModuleProvider="target">
-                                                        <rect key="frame" x="17" y="0.0" width="341" height="354.5"/>
+                                                        <rect key="frame" x="17" y="416" width="341" height="354.5"/>
                                                         <color key="backgroundColor" red="1" green="0.41960784309999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="S2a-AP-Nb0" secondAttribute="height" multiplier="25:26" id="0cl-0F-431"/>
@@ -456,7 +462,7 @@
                                                                 <size key="value" width="0.0" height="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -470,7 +476,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-Gy-7L8" customClass="SpringView" customModule="OneTrek" customModuleProvider="target">
-                                                        <rect key="frame" x="17" y="370.5" width="341" height="354.5"/>
+                                                        <rect key="frame" x="17" y="786.5" width="341" height="354.5"/>
                                                         <color key="backgroundColor" red="0.46603287450000003" green="0.0" blue="0.80319219829999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="CJZ-Gy-7L8" secondAttribute="height" multiplier="25:26" id="Ty3-YH-oTf"/>
@@ -489,7 +495,7 @@
                                                                 <size key="value" width="0.0" height="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -503,7 +509,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjZ-VM-mun" customClass="SpringView" customModule="OneTrek" customModuleProvider="target">
-                                                        <rect key="frame" x="17" y="741" width="341" height="354.5"/>
+                                                        <rect key="frame" x="17" y="1157" width="341" height="354.5"/>
                                                         <color key="backgroundColor" name="titleColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="GjZ-VM-mun" secondAttribute="height" multiplier="25:26" id="9cX-NZ-DHI"/>
@@ -522,7 +528,7 @@
                                                                 <size key="value" width="0.0" height="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,13 +545,10 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="hc6-I0-Ah4" firstAttribute="leading" secondItem="hqL-vX-pKD" secondAttribute="leading" id="2DR-hc-IcT"/>
                                             <constraint firstAttribute="trailing" secondItem="hqL-vX-pKD" secondAttribute="trailing" id="4gi-gX-b8V"/>
-                                            <constraint firstItem="hqL-vX-pKD" firstAttribute="top" secondItem="ThR-ke-rbg" secondAttribute="top" constant="400" id="AQs-Qc-cVp"/>
-                                            <constraint firstItem="hc6-I0-Ah4" firstAttribute="trailing" secondItem="hqL-vX-pKD" secondAttribute="trailing" id="NEd-hi-gpQ"/>
+                                            <constraint firstItem="hqL-vX-pKD" firstAttribute="top" secondItem="ThR-ke-rbg" secondAttribute="top" id="AQs-Qc-cVp"/>
                                             <constraint firstItem="hqL-vX-pKD" firstAttribute="leading" secondItem="ThR-ke-rbg" secondAttribute="leading" id="TqB-do-dDS"/>
                                             <constraint firstAttribute="bottom" secondItem="hqL-vX-pKD" secondAttribute="bottom" id="W0e-8z-zji"/>
-                                            <constraint firstItem="hc6-I0-Ah4" firstAttribute="top" secondItem="hqL-vX-pKD" secondAttribute="top" constant="-48" id="yo7-lr-gDO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -560,19 +563,15 @@
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80145308946041349" green="0.80145308946041349" blue="0.80145308946041349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="leading" secondItem="BNb-bM-c71" secondAttribute="leading" id="0uG-zn-875"/>
                             <constraint firstItem="S2a-AP-Nb0" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" constant="-34" id="10i-G7-0vM"/>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="bottom" secondItem="BNb-bM-c71" secondAttribute="bottom" id="6hc-LF-Amp"/>
-                            <constraint firstItem="dR9-2y-8N0" firstAttribute="top" secondItem="WB6-x9-yxg" secondAttribute="top" id="Cc9-Mh-Fbr"/>
+                            <constraint firstItem="xbd-im-cst" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" constant="-32" id="Alf-mU-bDX"/>
                             <constraint firstItem="BNb-bM-c71" firstAttribute="top" secondItem="aBV-HY-C6Z" secondAttribute="top" id="KLD-UY-d42"/>
-                            <constraint firstAttribute="bottom" secondItem="dR9-2y-8N0" secondAttribute="bottom" id="KkO-Y0-uVd"/>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="trailing" secondItem="BNb-bM-c71" secondAttribute="trailing" id="L9j-sI-O1P"/>
-                            <constraint firstAttribute="trailing" secondItem="dR9-2y-8N0" secondAttribute="trailing" id="RFA-Dl-lOz"/>
-                            <constraint firstAttribute="bottom" secondItem="hc6-I0-Ah4" secondAttribute="bottom" id="UdE-lC-ply"/>
                             <constraint firstItem="GjZ-VM-mun" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" constant="-34" id="foT-F6-ZCu"/>
-                            <constraint firstItem="dR9-2y-8N0" firstAttribute="leading" secondItem="WB6-x9-yxg" secondAttribute="leading" id="fp2-cY-U0X"/>
                             <constraint firstItem="CJZ-Gy-7L8" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" constant="-34" id="kcZ-98-omS"/>
                             <constraint firstItem="ThR-ke-rbg" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" id="zSF-AP-qL9"/>
                         </constraints>
@@ -581,6 +580,7 @@
                     <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="scrollView" destination="aBV-HY-C6Z" id="Ivf-kN-BLZ"/>
+                        <outlet property="stackView" destination="hqL-vX-pKD" id="ab6-zq-wCw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juE-ac-7oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
