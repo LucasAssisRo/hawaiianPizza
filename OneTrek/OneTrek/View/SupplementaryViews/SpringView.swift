@@ -144,7 +144,7 @@ class SpringView: UIView {
         self.smallFrame = CGRect()
         self.smallFrame.origin = self.frame.origin
         self.smallFrame.size.width = UIScreen.main.bounds.width - 48
-        self.smallFrame.size.height = self.smallFrame.size.width * 356 / 327
+        self.smallFrame.size.height = self.smallFrame.size.width * 376 / 327
         var bounds = self.smallFrame!
         bounds.origin = .zero
         self.containerView.frame = bounds

@@ -10,6 +10,9 @@ import UIKit
 
 class VenueViewController: UIViewController {
     var venue: Venue!
+    var venueImage: UIImage? = nil
+    var products: [Product] = []
+    var productImages: [UIImage] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var venueImageView: UIImageView!
@@ -20,10 +23,13 @@ class VenueViewController: UIViewController {
     @IBOutlet weak var readMoreButton: UIButton!
     @IBOutlet weak var productsStackView: UIStackView!
     @IBOutlet weak var productsLabel: UILabel!
-    @IBOutlet var productImages: [UIImageView]!
+    @IBOutlet var productImageViews: [UIImageView]!
+    @IBOutlet var productTitleLabels: [UILabel]!
     @IBOutlet weak var addressTextView: UITextViewFixed!
+    @IBOutlet weak var phoneStackView: UIStackView!
     @IBOutlet weak var phoneImageView: UIImageView!
     @IBOutlet weak var phoneTextView: UITextView!
+    @IBOutlet weak var emailStackView: UIStackView!
     @IBOutlet weak var emailImageView: UIImageView!
     @IBOutlet weak var emailTextView: UITextView!
     
@@ -37,9 +43,21 @@ class VenueViewController: UIViewController {
         self.emailImageView.image = self.emailImageView.image?.withRenderingMode(.alwaysTemplate)
         self.emailImageView.tintColor = .black
         
+        self.productsLabel.isHidden = true
+        
+        self.productImageViews.sort { first, second -> Bool in
+            return first.tag < second.tag
+        }
+        
+        self.productTitleLabels.sort { first, second -> Bool in
+            return first.tag < second.tag
+        }
+        
         if let venue = self.venue {
+            self.venueImageView.image = self.venueImage
             self.nameLabel.text = venue.name
             self.categoryLabel.text = venue.category
+            self.promotionalLabel.text = venue.promotional
             self.descriptionLabel.text = venue.description
             if let address2 = venue.address2 {
                 self.addressTextView.text =
@@ -56,8 +74,31 @@ class VenueViewController: UIViewController {
                 """
             }
             
-            self.phoneTextView.text = venue.phone
-            self.emailTextView.text = venue.email
+            if let phone = venue.phone {
+                self.phoneTextView.text = phone
+            } else {
+                self.phoneStackView.isHidden = true
+            }
+            
+            if let email = venue.email {
+                self.emailTextView.text = email
+            } else {
+                self.emailStackView.isHidden = true
+            }
+            
+            if self.products.count > 0 {
+                for (i, product) in self.products.enumerated() {
+                    if i < self.products.count {
+                        self.productTitleLabels[i].text = product.name
+                        self.productImageViews[i].image = self.productImages[i]
+                    } else {
+                        self.productTitleLabels[i].isHidden = true
+                        self.productImageViews[i].isHidden = true
+                    }
+                }
+            } else {
+                self.productsStackView.isHidden = true
+            }
         }
     }
     
