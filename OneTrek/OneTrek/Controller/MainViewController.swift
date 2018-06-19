@@ -8,7 +8,13 @@
 
 import UIKit
 
+@IBDesignable
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var marginView: UIView!
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
     var venues: [Venue?] = [
         Venue(venueId: "0",
@@ -27,11 +33,14 @@ Il Musicante is the perfect place where to find any kind of rare vinyl from pop 
               email: "idk the email")
     ]
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBInspectable var hasLightStatusBar: Bool = false {
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        return self.hasLightStatusBar ? .lightContent : .default
     }
     
     private var _isStatusBarHidden: Bool = false
@@ -72,6 +81,25 @@ Il Musicante is the perfect place where to find any kind of rare vinyl from pop 
                                                name: NSNotification.Name.springColapse,
                                                object: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1,
+                       delay: 0.5,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.filterView.alpha = 0.3
+                        self.scrollView.contentOffset = CGPoint(x: 0, y: self.marginView.bounds.height + 20)
+        }) { finished in
+            self.scrollView.contentOffset = .zero
+            self.marginView.isHidden = true
+            for view in self.stackView.arrangedSubviews {
+                if let springView = view as? SpringView {
+                    springView.smallFrame.origin.y -= self.marginView.bounds.height
+                }
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,6 +110,8 @@ Il Musicante is the perfect place where to find any kind of rare vinyl from pop 
         self._isStatusBarHidden = isHidden
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
+            self.scrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
+            self.scrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
         }
     }
     

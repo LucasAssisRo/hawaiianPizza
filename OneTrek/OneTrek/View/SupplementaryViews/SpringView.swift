@@ -78,6 +78,18 @@ class SpringView: UIView {
         }
     }
     
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = self.borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            self.layer.borderColor = self.borderColor.cgColor
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.constructor()
@@ -125,10 +137,14 @@ class SpringView: UIView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
+        self.getSmallFrame()
+    }
+    
+    func getSmallFrame() {
         self.smallFrame = CGRect()
         self.smallFrame.origin = self.frame.origin
-        self.smallFrame.size.width = UIScreen.main.bounds.width - 32
-        self.smallFrame.size.height = self.smallFrame.size.width * 26 / 25
+        self.smallFrame.size.width = UIScreen.main.bounds.width - 48
+        self.smallFrame.size.height = self.smallFrame.size.width * 356 / 327
         var bounds = self.smallFrame!
         bounds.origin = .zero
         self.containerView.frame = bounds
@@ -194,6 +210,7 @@ class SpringView: UIView {
                            animations: {
                             self.frame = UIScreen.main.bounds
                             self.frame.origin += SpringView.offset
+                            self.frame.size.height += 20
                             
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {
