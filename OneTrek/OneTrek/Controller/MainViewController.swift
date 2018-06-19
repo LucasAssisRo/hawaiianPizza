@@ -54,12 +54,10 @@ class MainViewController: UIViewController {
                 embededViewController.venue = self.venues[0]
                 springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
                 springView.indexSubviews(self.view)
-                
-                print(springView.frame)
             }
         }
         
-        self.addTextToStory()
+        self.addTextToStory(index: 3)
         self.addActionToStory()
         
         let gradient = CAGradientLayer()
@@ -130,27 +128,45 @@ class MainViewController: UIViewController {
         return springView
     }
     
-    private func addTextToStory() {
+    private func addTextToStory(index: Int) {
         
-        let container = UIView()
+        let container = SpringView()
+        container.cornerRadius = 5
+        container.shadowOffset = CGSize(width: 1, height: 1)
+        container.shadowRadius = 6
+        container.shadowOpacity = 0.5
+        container.shadowColor = UIColor(white: 0.33, alpha: 1)
+        container.backgroundColor = .white
+        container.isUserInteractionEnabled = false
         let textLabel = UILabel()
+        container.addSubview(textLabel)
         textLabel.text = "Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant."
-        textLabel.numberOfLines = 0
-        textLabel.textAlignment = .center
+        textLabel.numberOfLines = 1
+        textLabel.sizeToFit()
+        textLabel.textAlignment = .left
+        func lines(label: UILabel) -> Int {
+            let textSize = CGSize(width: label.frame.size.width, height: CGFloat(Float.infinity))
+            let rHeight = lroundf(Float(label.sizeThatFits(textSize).height))
+            let charSize = lroundf(Float(label.font.lineHeight))
+            let lineCount = rHeight/charSize
+            return lineCount
+        }
         
-        self.stackView.addArrangedSubview(container)
+        
+        self.stackView.insertArrangedSubview(container, at: index)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
-        container.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 100 + 16)
+            .isActive = true
 //        container.backgroundColor = UIColor.green
         
         // subStackView.addArrangedSubview(textLabel)
-        container.addSubview(textLabel)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 0).isActive = true
-        textLabel.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
+        textLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 8).isActive = true
+        textLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 1, constant: -16).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-        
+        print(textLabel.bounds.size)
+        print("")
     }
     
     private func addActionToStory() {
