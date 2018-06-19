@@ -172,8 +172,13 @@ class SpringView: UIView {
     }
     
     @objc func expandView(in superview: UIView, animated: Bool = true) {
+        NotificationCenter.default.post(name: .springExpand, object: self, userInfo: [
+            "superview": superview,
+            "animated" : animated,
+            "duration": self.animationDuration
+            ])
+
         self.bringSubview(toFront: self.closeButton)
-        NotificationCenter.default.post(name: .springExpand, object: (superview: superview, animated: animated))
         UIView.animate(withDuration: !animated ? 0 : 0.1,
                        delay: 0,
                        options: [.layoutSubviews, .allowAnimatedContent, .curveLinear],
@@ -189,7 +194,6 @@ class SpringView: UIView {
                            animations: {
                             self.frame = UIScreen.main.bounds
                             self.frame.origin += SpringView.offset
-//                          self.frame.origin.y -= 20
                             
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {
@@ -210,8 +214,11 @@ class SpringView: UIView {
     
     
     @objc func colapseView(_ sender: Any, animated: Bool = true) {
-        print("colapse")
-        NotificationCenter.default.post(name: .springColapse, object: (animated: animated))
+        NotificationCenter.default.post(name: .springColapse, object: self, userInfo: [
+            "animated" : animated,
+            "duration": self.animationDuration
+            ])
+        
         let animated = sender is  UIButton
         self.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
         self.containerView.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")

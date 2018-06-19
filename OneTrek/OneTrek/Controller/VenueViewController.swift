@@ -9,17 +9,19 @@
 import UIKit
 
 class VenueViewController: UIViewController {
-    var venueId: String!
+    var venue: Venue!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var promotionalLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var readMoreButton: UIButton!
     @IBOutlet weak var productsStackView: UIStackView!
     @IBOutlet weak var productsLabel: UILabel!
     @IBOutlet var productImages: [UIImageView]!
+    @IBOutlet weak var addressTextView: UITextViewFixed!
     @IBOutlet weak var phoneImageView: UIImageView!
     @IBOutlet weak var phoneTextView: UITextView!
     @IBOutlet weak var emailImageView: UIImageView!
@@ -34,8 +36,29 @@ class VenueViewController: UIViewController {
         
         self.emailImageView.image = self.emailImageView.image?.withRenderingMode(.alwaysTemplate)
         self.emailImageView.tintColor = .black
-
         
+        if let venue = self.venue {
+            self.nameLabel.text = venue.name
+            self.categoryLabel.text = venue.category
+            self.descriptionLabel.text = venue.description
+            if let address2 = venue.address2 {
+                self.addressTextView.text =
+                """
+                \(venue.address1)
+                \(address2), \(venue.zipCode)
+                \(venue.city), \(venue.country)
+                """
+            } else {
+                self.addressTextView.text =
+                """
+                \(venue.address1), \(venue.zipCode)
+                \(venue.city), \(venue.country)
+                """
+            }
+            
+            self.phoneTextView.text = venue.phone
+            self.emailTextView.text = venue.email
+        }
     }
     
     override func didReceiveMemoryWarning() {

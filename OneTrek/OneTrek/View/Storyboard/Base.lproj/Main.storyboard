@@ -91,6 +91,7 @@
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <color key="textColor" red="0.27460106379999999" green="0.27460106379999999" blue="0.27460106379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <string key="userLabel">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                                                             </label>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-f6-uOM">
                                                                                 <rect key="frame" x="0.0" y="93" width="334" height="102"/>
@@ -387,6 +388,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="2000"/>
                     <connections>
+                        <outlet property="addressTextView" destination="Qi9-ZI-Fui" id="Pw5-A4-W1X"/>
                         <outlet property="categoryLabel" destination="Dh8-Jc-Acl" id="19r-tx-LTn"/>
                         <outlet property="descriptionLabel" destination="M1x-CS-m2n" id="As0-gy-34G"/>
                         <outlet property="emailImageView" destination="pLi-Yb-WDA" id="GNR-RX-6xx"/>
@@ -396,6 +398,7 @@
                         <outlet property="phoneTextView" destination="IJz-jh-q4u" id="O7F-Cm-A2i"/>
                         <outlet property="productsLabel" destination="ufC-rG-zsB" id="MMd-81-mDs"/>
                         <outlet property="productsStackView" destination="Iva-3j-TQB" id="MvW-2e-IuD"/>
+                        <outlet property="promotionalLabel" destination="260-Xd-FZQ" id="flj-6e-bYV"/>
                         <outlet property="readMoreButton" destination="6jM-EE-jxC" id="HTU-zH-XFQ"/>
                         <outlet property="scrollView" destination="ZQh-w6-Z76" id="Qxt-t4-Xjw"/>
                         <outlet property="venueImageView" destination="WHc-bz-0t6" id="heS-yL-nIf"/>

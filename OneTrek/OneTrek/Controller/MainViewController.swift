@@ -10,6 +10,23 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var venues: [Venue?] = [
+        Venue(venueId: "0",
+              name: "Il Musicante",
+              description:
+"""
+Il Musicante is the perfect place where to find any kind of rare vinyl from pop to classic music. Of course this is just the place to be if you want to discover some Neapolitan traditional music gems, like Roberto De Simone original records and iconic Neapolitan movies.
+""",
+              category: "Vintage Store",
+              address1: "idk the address",
+              address2: "idk the address",
+              city: "Naples",
+              country: "Italy",
+              zipCode: "idk the address",
+              phone: "idk the phone",
+              email: "idk the email")
+    ]
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     
@@ -40,6 +57,7 @@ class MainViewController: UIViewController {
             if let springView = view as? SpringView {
                 springView.didMoveToSuperview()
                 let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
+                embededViewController.venue = self.venues[0]
                 springView.embed(viewController: embededViewController, in: self, delegate: embededViewController)
                 springView.indexSubviews(self.view)
             }
@@ -69,12 +87,20 @@ class MainViewController: UIViewController {
     
     @objc func disableScrolling(_ notification: NSNotification) {
         self.scrollView.isScrollEnabled = false
-        self.setStatusBarHidden(true, with: 0.1)
+        if let info = notification.userInfo,
+            let animated = info["animated"] as? Bool,
+            let duration = info["duration"] as? CGFloat {
+            self.setStatusBarHidden(animated, with: TimeInterval(duration))
+        }
     }
     
     @objc func enableScrolling(_ notification: NSNotification) {
         self.scrollView.isScrollEnabled = true
-        self.setStatusBarHidden(false, with: 0.1)
+        if let info = notification.userInfo,
+            let animated = info["animated"] as? Bool,
+            let duration = info["duration"] as? CGFloat {
+            self.setStatusBarHidden(animated, with: TimeInterval(duration))
+        }
     }
     
     /*
@@ -92,5 +118,20 @@ extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         SpringView.offset = scrollView.contentOffset
         SpringView.offset.y -= 8
+        
+        for subview in self.stackView.arrangedSubviews {
+            if let springview = subview as? SpringView {
+                UIView.animate(withDuration: 0.1,
+                               delay: 0,
+                               options: [.layoutSubviews, .allowAnimatedContent, .curveEaseOut],
+                               animations: {
+                                springview.transform = .identity
+                })
+            }
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+  
     }
 }
