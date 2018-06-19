@@ -11,6 +11,7 @@ import KituraKit
 struct Venue: Codable {
     var venueId: String
     var name: String
+    var promotional: String
     var description: String
     var category: String
     var address1: String
@@ -21,9 +22,10 @@ struct Venue: Codable {
     var phone: String?
     var email: String?
     
-    init?(venueId: String, name: String, description: String, category: String, address1: String, address2: String?, city: String, country: String, zipCode: String, phone: String?, email: String?) {
+    init?(venueId: String, name: String, promotional: String, description: String, category: String, address1: String, address2: String?, city: String, country: String, zipCode: String, phone: String?, email: String?) {
         self.venueId = venueId
         self.name = name
+        self.promotional = promotional
         self.description = description
         self.category = category
         self.address1 = address1

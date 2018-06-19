@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     var icons: [UIImageView] = []
-    var springViews: [SpringView] = []
+    @IBOutlet var springViews: [SpringView]!
     
     @IBInspectable var hasLightStatusBar: Bool = false {
         didSet {
@@ -56,9 +56,6 @@ class MainViewController: UIViewController {
                 springView.indexSubviews(self.view)
             }
         }
-        
-        self.addTextToStory(index: 3)
-        self.addActionToStory()
         
         let gradient = CAGradientLayer()
         gradient.colors = [
@@ -165,8 +162,6 @@ class MainViewController: UIViewController {
         textLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 8).isActive = true
         textLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 1, constant: -16).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-        print(textLabel.bounds.size)
-        print("")
     }
     
     private func addActionToStory() {
@@ -244,52 +239,7 @@ class MainViewController: UIViewController {
     
     
     //MARK: VENUES
-    var venues: [Venue?] = [
-        Venue(venueId: "0",
-              name: "Il Musicante",
-              description:
-            """
-Il Musicante is the perfect place where to find any kind of rare vinyl from pop to classic music. Of course this is just the place to be if you want to discover some Neapolitan traditional music gems, like Roberto De Simone original records and iconic Neapolitan movies.
-""",
-              category: "Vintage Store",
-              address1: "idk the address",
-              address2: "idk the address",
-              city: "Naples",
-              country: "Italy",
-              zipCode: "idk the address",
-              phone: "idk the phone",
-              email: "idk the email"),
-        
-        Venue(venueId: "0",
-              name: "Il Musicante",
-              description:
-            """
-Il Musicante is the perfect place where to find any kind of rare vinyl from pop to classic music. Of course this is just the place to be if you want to discover some Neapolitan traditional music gems, like Roberto De Simone original records and iconic Neapolitan movies.
-""",
-              category: "Vintage Store",
-              address1: "idk the address",
-              address2: "idk the address",
-              city: "Naples",
-              country: "Italy",
-              zipCode: "idk the address",
-              phone: "idk the phone",
-              email: "idk the email"),
-        
-        Venue(venueId: "0",
-              name: "Il Musicante",
-              description:
-            """
-Il Musicante is the perfect place where to find any kind of rare vinyl from pop to classic music. Of course this is just the place to be if you want to discover some Neapolitan traditional music gems, like Roberto De Simone original records and iconic Neapolitan movies.
-""",
-              category: "Vintage Store",
-              address1: "idk the address",
-              address2: "idk the address",
-              city: "Naples",
-              country: "Italy",
-              zipCode: "idk the address",
-              phone: "idk the phone",
-              email: "idk the email")
-    ]
+    var venues: [Venue?] = []
 }
 
 extension MainViewController: UIScrollViewDelegate {
