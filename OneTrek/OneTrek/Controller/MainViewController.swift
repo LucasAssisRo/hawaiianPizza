@@ -140,8 +140,8 @@ class MainViewController: UIViewController {
         container.isUserInteractionEnabled = false
         let textLabel = UILabel()
         container.addSubview(textLabel)
-        textLabel.text = "Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant."
-        textLabel.numberOfLines = 1
+        textLabel.text = "Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant.Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant."
+        textLabel.numberOfLines = 0
         textLabel.sizeToFit()
         textLabel.textAlignment = .left
         func lines(label: UILabel) -> Int {
@@ -151,13 +151,12 @@ class MainViewController: UIViewController {
             let lineCount = rHeight/charSize
             return lineCount
         }
-        
+        //textLabel.backgroundColor = UIColor.red
         
         self.stackView.insertArrangedSubview(container, at: index)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
-        container.heightAnchor.constraint(equalToConstant: 100 + 16)
-            .isActive = true
+        container.heightAnchor.constraint(equalTo: textLabel.heightAnchor, constant: 16).isActive = true
 //        container.backgroundColor = UIColor.green
         
         // subStackView.addArrangedSubview(textLabel)
