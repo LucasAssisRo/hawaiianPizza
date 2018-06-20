@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 @IBDesignable
 class MainViewController: UIViewController {
@@ -14,6 +15,8 @@ class MainViewController: UIViewController {
     var icons: [UIImageView] = []
     var springViews: [SpringView] = []
     
+    @IBOutlet weak var startPinButton: UIButton!
+    @IBOutlet weak var startPinButton2: UIButton!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var contentsStackView: UIStackView!
     
@@ -65,23 +68,39 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
-        self.insertTextToStory(at: 2, text: "TEST")
-        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
-        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
-        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
+        self.insertTextToStory(at: 2,
+                               text: "If you feel ready dive in one of the richest Neapolitan palaces in terms of history and creativity. Take few more steps and on your right you will find Palazzo Marigliano.")
+        self.insertActionToStory(at: 4,
+                                 action: "Look up to the charming suspended garden. Maybe take the time to take gorgeous and unforgettable pictures.",
+                                 icon: #imageLiteral(resourceName: "cam3"))
+        self.insertTextToStory(at: 6,
+                               text: """
+Get out of Palazzo Marigliano now. Forget the peace the Marigliano courtyard and get back in the tumultuous colourful chaos of Spaccanapoli.
+""")
+        self.insertActionToStory(at: 8,
+                                 action: """
+This is a good time to take a break and sit down at one of the benches in front of Parrocchia all’Olmo. Take a look at black lava tiles, here for nearly 400 hundreds years.
+""",
+                                 icon: #imageLiteral(resourceName: "cam3"))
+        self.insertActionToStory(at: 10,
+                                 action: """
+Our Vintage Grand Tour is finishing now, but before the end you might want to relax with a few drinks on our next stop.
+""",
+                                 icon: #imageLiteral(resourceName: "drink"))
+        self.startPinButton.imageView?.tintColor = .black
         
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [
-//            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
-//            UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1).cgColor
-//        ]
-//
-//        gradient.frame = self.view.bounds
-//        gradient.startPoint = .zero
-//        gradient.endPoint = CGPoint(x: 0.2, y: 1)
-//        self.view.layer.insertSublayer(gradient, at: 0)
+        //        let gradient = CAGradientLayer()
+        //        gradient.colors = [
+        //            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
+        //            UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1).cgColor
+        //        ]
+        //
+        //        gradient.frame = self.view.bounds
+        //        gradient.startPoint = .zero
+        //        gradient.endPoint = CGPoint(x: 0.2, y: 1)
+        //        self.view.layer.insertSublayer(gradient, at: 0)
         
-//        self.view.backgroundColor = UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1)
+        //        self.view.backgroundColor = UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -119,6 +138,42 @@ class MainViewController: UIViewController {
             self.setNeedsStatusBarAppearanceUpdate()
             self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
             self.mainScrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
+        }
+    }
+    
+    private func coordinates(forAddress address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            guard error == nil,
+                let placemarks = placemarks
+                else {
+                    print("Geocoding error: \(error!)")
+                    completion(nil)
+                    return
+            }
+            
+            completion(placemarks.first?.location?.coordinate)
+        }
+    }
+    
+    @IBAction func startTour(_ sender: Any) {
+        self.coordinates(forAddress: "Via Vicaria Vecchia, 80138 Napoli NA") { (location) in
+            guard let location = location else { return }
+            
+            let latitude: CLLocationDegrees = location.latitude
+            let longitude: CLLocationDegrees = location.longitude
+            let regionDistance: CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            ]
+            
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "San Genaro Mural"
+            mapItem.openInMaps(launchOptions: options)
         }
     }
     
@@ -171,7 +226,7 @@ class MainViewController: UIViewController {
         textLabel.text = text
         textLabel.numberOfLines = 0
         textLabel.sizeToFit()
-        textLabel.textAlignment = .left
+        textLabel.textAlignment = .center
         
         if let index = index {
             self.contentsStackView.insertArrangedSubview(container, at: index)
@@ -243,7 +298,7 @@ class MainViewController: UIViewController {
     var venues: [Venue?] = [
         Venue(venueId: "0",
               name: "Il Musicante",
-              promotional: "Gianluca is a real music lover and if you are too you will have for sure a very interesting conversation and some precious hints.",
+              promotional: "Gianluca is a real music lover. You will have for sure a very interesting conversation and precious hints.",
               description: """
 Il Musicante is the perfect place where to find any kind of rare vinyl from pop to classic music, but of course this is just the place to be if you want to discover some Neapolitan traditional music pearls as Roberto De Simone original records and even some iconic Neapolitan movies.
 """,
@@ -255,9 +310,10 @@ Il Musicante is the perfect place where to find any kind of rare vinyl from pop 
               zipCode: "80138",
               phone: "+39 391 350 2187",
               email: "gianlucarignelli@libero.it"),
+        
         Venue(venueId: "1",
               name: "L’Ospedale delle Bambole",
-              promotional: "L'ospedale delle Bambole (The Dolls Hospital) is a museum/shop, unique in it's kind, inside the Palazzo Marigliano.",
+              promotional: "It’s a museum/shop (Dolls Hospital), unique in its kind, inside Palazzo Marigliano.",
               description: """
 In the late ninety century Luigi Grassi was a puppet maker, counting the Royal Court among his clients. One day a poor woman came to him bagging to repair the doll of her daughter, not knowing anyone else with the ability to do so. Surprised by the request he puzzled for a minute, then he accepted to fix the humble doll, succeeding.
 """,
@@ -269,9 +325,10 @@ In the late ninety century Luigi Grassi was a puppet maker, counting the Royal C
               zipCode: "80138",
               phone: "+39 393 484 7244",
               email: "ospedaledellebambole@gmail.com"),
+        
         Venue(venueId: "2",
-              name: "Legatoria Artigiana Napoli",
-              promotional: "A beautiful book workshop, one of the few survived the centuries, again in Palazzo Marigliano.",
+              name: "Antica Legatoria Marigliano",
+              promotional: "A beautiful book workshop, one of the few survived the centuries, at Palazzo Marigliano.",
               description: """
 In this incredible place you can watch the artisans at work in restoring ancient books, but also working on new refined paper product. In the Legatoria you will find elegant hand-made agendas, booklets and so much more. Everything carefully crafted and decorated.
 """,
@@ -283,9 +340,10 @@ In this incredible place you can watch the artisans at work in restoring ancient
               zipCode: "80138",
               phone: "081 551 1280",
               email: "legatorianapoli@virgilio.it"),
+        
         Venue(venueId: "3",
               name: "Il Baule Volante",
-              promotional: "Right at the corner between Spaccanapoli and the renowned San Gregorio Armeno (famous for its crib artisans) you have the chance to meet Claudia.",
+              promotional: "At the corner between Spaccanapoli and San Gregorio Armeno you’ll have the chance to meet Claudia.",
               description: """
 Claudia is the owner of the Baule Volante a vintage cloths shop with a super selected selection of the best outfit for you. If you can’t find what you are looking for, be sure that Claudia will look for that particular request personally.
 
@@ -299,6 +357,7 @@ In a blink of an eye she will hold in her hand the thing that suits you perfectl
               zipCode: "80138",
               phone: nil,
               email: "baulevolante.vintage@libero.it"),
+        
         Venue(venueId: "4",
               name: "Stampe e Oggetti d’Epoca",
               promotional: "Here you will meet one of the protagonist of the Neapolitan vintage scene: Alfonso Sorrentino.",
@@ -318,7 +377,7 @@ At the first glance it will look difficult to orient yourself among all those ob
               email: "alfonso_sorrentino@hotmail.it"),
         Venue(venueId: "5",
               name: "Liquid Spirit Art Bar",
-              promotional: "Some of the best drinks in the city, carefully batched by perfectionist bartenders",
+              promotional: "Some of the best drinks in the city, carefully batched by perfectionist bartenders.",
               description: """
 You should know about a quite well hidden night bar, that merges contemporary art together with the ancient greek walls found in the basement of this special place.
 

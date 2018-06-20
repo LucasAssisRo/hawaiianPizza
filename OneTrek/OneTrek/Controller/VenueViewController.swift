@@ -126,6 +126,7 @@ extension VenueViewController: SpringViewDelegate {
             parent.setStatusBarHidden(true, with: duration)
         }
         
+        self.scrollView.isScrollEnabled = true
         UIView.animate(withDuration: !animated ? 0 : TimeInterval(duration),
                        delay: 0,
                        options: [.layoutSubviews, .allowAnimatedContent, .curveEaseIn],
@@ -157,6 +158,7 @@ extension VenueViewController: UIScrollViewDelegate {
             self.springView.transform = CGAffineTransform(scaleX: 1 + scale, y: 1 + scale)
             if scale <= -0.15 {
                 let frame = self.springView.frame
+                self.scrollView.isScrollEnabled = false
                 self.springView.transform = .identity
                 self.springView.frame = frame
                 self.springView.colapseView(self, animated: true)
