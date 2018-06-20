@@ -36,7 +36,8 @@ class VenueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        
+        self.descriptionLabel.isHidden = true
+
         self.phoneImageView.image = self.phoneImageView.image?.withRenderingMode(.alwaysTemplate)
         self.phoneImageView.tintColor = .black
         
@@ -108,11 +109,11 @@ class VenueViewController: UIViewController {
     }
     
     @IBAction func expandDescription(_ sender: Any) {
-        if self.descriptionLabel.numberOfLines == 1000 {
-            self.descriptionLabel.numberOfLines = 5
+        if !self.descriptionLabel.isHidden {
+            self.descriptionLabel.isHidden = true
             self.readMoreButton.setTitle(NSLocalizedString("show_more", comment: ""), for: .normal)
         } else {
-            self.descriptionLabel.numberOfLines = 1000
+            self.descriptionLabel.isHidden = false            
             self.readMoreButton.setTitle(NSLocalizedString("show_less", comment: ""), for: .normal)
         }
     }
@@ -122,9 +123,6 @@ extension VenueViewController: SpringViewDelegate {
     func expand(to bounds: CGRect, animated: Bool, with duration: TimeInterval) {
         if let parent = self.parent as? MainViewController {
             parent.setStatusBarHidden(true, with: duration)
-           // parent.scrollView.isScrollEnabled = false
-       
-            
         }
         
         UIView.animate(withDuration: !animated ? 0 : TimeInterval(duration),
