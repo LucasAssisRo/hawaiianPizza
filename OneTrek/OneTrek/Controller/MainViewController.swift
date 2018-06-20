@@ -11,10 +11,11 @@ import UIKit
 @IBDesignable
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
     var icons: [UIImageView] = []
     var springViews: [SpringView] = []
+    
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var contentsStackView: UIStackView!
     
     @IBInspectable var hasLightStatusBar: Bool = false {
         didSet {
@@ -63,10 +64,11 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
-        self.addTextToStory(at: 2, text: "TEST")
-        self.addActionToStory(at: 4, action: "TEST")
-        self.addActionToStory(at: 4, action: "TEST")
-        self.addActionToStory(at: 4, action: "TEST")
+        self.insertTextToStory(at: 2, text: "TEST")
+        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
+        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
+        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
+        
 //        let gradient = CAGradientLayer()
 //        gradient.colors = [
 //            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
@@ -76,7 +78,7 @@ class MainViewController: UIViewController {
 //        gradient.frame = self.view.bounds
 //        gradient.startPoint = .zero
 //        gradient.endPoint = CGPoint(x: 0.2, y: 1)
-        //        self.view.layer.insertSublayer(gradient, at: 0)
+//        self.view.layer.insertSublayer(gradient, at: 0)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -87,7 +89,7 @@ class MainViewController: UIViewController {
                                                name: NSNotification.Name.springColapse,
                                                object: nil)
         
-        self.stackView.addArrangedSubview(UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24)))
+        self.contentsStackView.addArrangedSubview(UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,20 +107,20 @@ class MainViewController: UIViewController {
         let defaults = UserDefaults.standard
         let x = defaults.double(forKey: "scrollViewXOffset")
         let y = defaults.double(forKey: "scrollViewYOffset")
-        self.scrollView.contentOffset = CGPoint(x: x, y: y)
+        self.mainScrollView.contentOffset = CGPoint(x: x, y: y)
     }
     
     func setStatusBarHidden(_ isHidden: Bool, with duration: TimeInterval) {
         self._isStatusBarHidden = isHidden
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
-            self.scrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
-            self.scrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
+            self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
+            self.mainScrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
         }
     }
     
     @objc func disableScrolling(_ notification: NSNotification) {
-        self.scrollView.isScrollEnabled = false
+        self.mainScrollView.isScrollEnabled = false
         if let info = notification.userInfo,
             let animated = info["animated"] as? Bool,
             let duration = info["duration"] as? CGFloat {
@@ -127,7 +129,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func enableScrolling(_ notification: NSNotification) {
-        self.scrollView.isScrollEnabled = true
+        self.mainScrollView.isScrollEnabled = true
         if let info = notification.userInfo,
             let animated = info["animated"] as? Bool,
             let duration = info["duration"] as? CGFloat {
@@ -149,9 +151,9 @@ class MainViewController: UIViewController {
         springView.shadowColor = UIColor(white: 0.33, alpha: 1)
         springView.translatesAutoresizingMaskIntoConstraints = false
         if let index = index {
-            self.stackView.insertArrangedSubview(springView, at: index)
+            self.contentsStackView.insertArrangedSubview(springView, at: index)
         } else {
-            self.stackView.addArrangedSubview(springView)
+            self.contentsStackView.addArrangedSubview(springView)
         }
         
         springView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
@@ -159,7 +161,7 @@ class MainViewController: UIViewController {
         return springView
     }
     
-    private func addTextToStory(at index: Int? = nil, text: String) {
+    private func insertTextToStory(at index: Int? = nil, text: String) {
         let container = UIView()
         let textLabel = UILabel()
         container.addSubview(textLabel)
@@ -169,9 +171,9 @@ class MainViewController: UIViewController {
         textLabel.textAlignment = .left
         
         if let index = index {
-            self.stackView.insertArrangedSubview(container, at: index)
+            self.contentsStackView.insertArrangedSubview(container, at: index)
         } else {
-            self.stackView.addArrangedSubview(container)
+            self.contentsStackView.addArrangedSubview(container)
         }
         
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -184,25 +186,24 @@ class MainViewController: UIViewController {
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
     }
     
-    private func addActionToStory(at index: Int? = nil, action text: String) {
+    private func insertActionToStory(at index: Int? = nil, action text: String, icon: UIImage?) {
         let container = UIView()
         let textLabel = UILabel()
         textLabel.text = text
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .center
         textLabel.sizeToFit()
-        let image = UIImage(named: "cam3")
+        let image = icon
         let imageView = UIImageView()
         imageView.image = image
         imageView.tintColor = .black
         imageView.contentMode = .scaleAspectFill
         
-        
         // Add text to story
         if let index = index {
-            self.stackView.insertArrangedSubview(container, at: index)
+            self.contentsStackView.insertArrangedSubview(container, at: index)
         } else {
-            self.stackView.addArrangedSubview(container)
+            self.contentsStackView.addArrangedSubview(container)
         }
         
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -234,17 +235,6 @@ class MainViewController: UIViewController {
         imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
         imageView.tag = 1321
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     
     //MARK: VENUES
     var venues: [Venue?] = [
@@ -452,7 +442,7 @@ extension MainViewController: UIScrollViewDelegate {
         SpringView.offset = scrollView.contentOffset
         SpringView.offset.y -= 8
         
-        for subview in self.stackView.arrangedSubviews {
+        for subview in self.contentsStackView.arrangedSubviews {
             if let springview = subview as? SpringView {
                 UIView.animate(withDuration: 0.1,
                                delay: 0,
@@ -469,7 +459,7 @@ extension MainViewController: UIScrollViewDelegate {
                                height: scrollView.frame.size.height)
         let shrink = CGAffineTransform(scaleX: 0.8, y: 0.8)
         for icon in self.icons {
-            if container.intersects(icon.convert(icon.bounds, to: self.scrollView)) {
+            if container.intersects(icon.convert(icon.bounds, to: self.mainScrollView)) {
                 if icon.tag == 1321 {
                     icon.tag = 4321
                     UIView.animate(withDuration: 0.2,
