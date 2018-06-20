@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     var icons: [UIImageView] = []
-    @IBOutlet var springViews: [SpringView]!
+    var springViews: [SpringView] = []
     
     @IBInspectable var hasLightStatusBar: Bool = false {
         didSet {
@@ -45,10 +45,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let storyboard = self.storyboard else { return }
-        for (i, springView) in self.springViews.enumerated() {
-            springView.didMoveToSuperview()
+        for (i, venue) in self.venues.enumerated() {
+            let springView = self.insertSpringView()
+            self.springViews.append(springView)
             let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
-            embededViewController.venue = self.venues[i]
+            embededViewController.venue = venue
             embededViewController.venueImage = self.venueImages[i]
             
             for productBundle in self.products {
@@ -66,16 +67,15 @@ class MainViewController: UIViewController {
         self.addActionToStory(at: 4, action: "TEST")
         self.addActionToStory(at: 4, action: "TEST")
         self.addActionToStory(at: 4, action: "TEST")
-
-        let gradient = CAGradientLayer()
-        gradient.colors = [
-            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
-            UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1).cgColor
-        ]
-        
-        gradient.frame = self.view.bounds
-        gradient.startPoint = .zero
-        gradient.endPoint = CGPoint(x: 0.2, y: 1)
+//        let gradient = CAGradientLayer()
+//        gradient.colors = [
+//            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
+//            UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1).cgColor
+//        ]
+//
+//        gradient.frame = self.view.bounds
+//        gradient.startPoint = .zero
+//        gradient.endPoint = CGPoint(x: 0.2, y: 1)
         //        self.view.layer.insertSublayer(gradient, at: 0)
         
         NotificationCenter.default.addObserver(self,
@@ -101,6 +101,11 @@ class MainViewController: UIViewController {
             springView.getSmallFrame()
             springView.indexSubviews(self.view)
         }
+        
+        let defaults = UserDefaults.standard
+        let x = defaults.double(forKey: "scrollViewXOffset")
+        let y = defaults.double(forKey: "scrollViewYOffset")
+        self.scrollView.contentOffset = CGPoint(x: x, y: y)
     }
     
     func setStatusBarHidden(_ isHidden: Bool, with duration: TimeInterval) {
@@ -130,7 +135,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func createSpringView() -> SpringView {
+    private func insertSpringView(at index: Int? = nil) -> SpringView {
         let width = self.view.bounds.width - 48
         let height = width * 327 / 356
         let springView = SpringView(frame: CGRect(x: 0, y: 0, width: width, height: height))
@@ -142,12 +147,20 @@ class MainViewController: UIViewController {
         springView.shadowRadius = 6
         springView.shadowOpacity = 0.5
         springView.shadowColor = UIColor(white: 0.33, alpha: 1)
+        springView.translatesAutoresizingMaskIntoConstraints = false
+        if let index = index {
+            self.stackView.insertArrangedSubview(springView, at: index)
+        } else {
+            self.stackView.addArrangedSubview(springView)
+        }
+        
+        springView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
+        springView.heightAnchor.constraint(equalTo: springView.widthAnchor, multiplier: 376/327, constant: 1).isActive = true
         return springView
     }
     
-    private func addTextToStory(at index: Int, text: String) {
+    private func addTextToStory(at index: Int? = nil, text: String) {
         let container = UIView()
-        container.isUserInteractionEnabled = false
         let textLabel = UILabel()
         container.addSubview(textLabel)
         textLabel.text = text
@@ -155,7 +168,12 @@ class MainViewController: UIViewController {
         textLabel.sizeToFit()
         textLabel.textAlignment = .left
         
-        self.stackView.insertArrangedSubview(container, at: index)
+        if let index = index {
+            self.stackView.insertArrangedSubview(container, at: index)
+        } else {
+            self.stackView.addArrangedSubview(container)
+        }
+        
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
         container.heightAnchor.constraint(equalTo: textLabel.heightAnchor, constant: 16).isActive = true
@@ -166,14 +184,14 @@ class MainViewController: UIViewController {
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
     }
     
-    private func addActionToStory(at index: Int, action text: String) {
+    private func addActionToStory(at index: Int? = nil, action text: String) {
         let container = UIView()
         let textLabel = UILabel()
         textLabel.text = text
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .center
         textLabel.sizeToFit()
-        let image = UIImage(named: "cam3")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "cam3")
         let imageView = UIImageView()
         imageView.image = image
         imageView.tintColor = .black
@@ -181,7 +199,12 @@ class MainViewController: UIViewController {
         
         
         // Add text to story
-        self.stackView.insertArrangedSubview(container, at: index)
+        if let index = index {
+            self.stackView.insertArrangedSubview(container, at: index)
+        } else {
+            self.stackView.addArrangedSubview(container)
+        }
+        
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
         
@@ -474,7 +497,7 @@ extension MainViewController: UIScrollViewDelegate {
         }
         
         let defaults = UserDefaults.standard
-        defaults.set(scrollView.contentOffset.x, forKey: "scrollViewXOffset")
-        defaults.set(scrollView.contentOffset.y, forKey: "scrollViewYOffset")
+        defaults.set(Double(scrollView.contentOffset.x), forKey: "scrollViewXOffset")
+        defaults.set(Double(scrollView.contentOffset.y), forKey: "scrollViewYOffset")
     }
 }
