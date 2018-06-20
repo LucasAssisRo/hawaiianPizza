@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLO-DN-4KR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -19,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PZ-XK-8op">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1635"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1619"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="y8f-Uu-HDz" userLabel="Content">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1635"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1619"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DjW-pF-2sa" userLabel="Top">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="738.5"/>
@@ -130,10 +133,10 @@
                                                         <rect key="frame" x="0.0" y="754.5" width="375" height="665"/>
                                                         <subviews>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F3D-Wl-Xl9" userLabel="Header">
-                                                                <rect key="frame" x="0.0" y="-762.5" width="375" height="16"/>
+                                                                <rect key="frame" x="0.0" y="-754.5" width="375" height="16"/>
                                                                 <subviews>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufC-rG-zsB">
-                                                                        <rect key="frame" x="0.0" y="8" width="94.5" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="0.0"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
@@ -278,7 +281,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fOe-9C-1b3" userLabel="Contact">
-                                                        <rect key="frame" x="0.0" y="1435.5" width="375" height="199.5"/>
+                                                        <rect key="frame" x="0.0" y="1435.5" width="375" height="183.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sld-ef-0HY" userLabel="Header">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
@@ -293,10 +296,10 @@
                                                                 <edgeInsets key="layoutMargins" top="8" left="17" bottom="8" right="8"/>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h2V-Kl-RjY" userLabel="Contactdata">
-                                                                <rect key="frame" x="0.0" y="44.5" width="375" height="155"/>
+                                                                <rect key="frame" x="0.0" y="44.5" width="375" height="139"/>
                                                                 <subviews>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="69, Address Lane Naples, Italy" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qi9-ZI-Fui" customClass="UITextViewFixed" customModule="OneTrek" customModuleProvider="target">
-                                                                        <rect key="frame" x="17" y="8" width="350" height="59"/>
+                                                                        <rect key="frame" x="17" y="8" width="350" height="43"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <color key="textColor" red="0.27460106379999999" green="0.27460106379999999" blue="0.27460106379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -304,7 +307,7 @@
                                                                         <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                                                     </textView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-Zf-krC" userLabel="Telephone">
-                                                                        <rect key="frame" x="17" y="83" width="350" height="24"/>
+                                                                        <rect key="frame" x="17" y="67" width="350" height="24"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone-1" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-DS-i22">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -324,7 +327,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aOY-rS-3OE" userLabel="Mail">
-                                                                        <rect key="frame" x="17" y="123" width="350" height="24"/>
+                                                                        <rect key="frame" x="17" y="107" width="350" height="24"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="pLi-Yb-WDA">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -508,6 +511,7 @@
                         <constraints>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="leading" secondItem="BNb-bM-c71" secondAttribute="leading" id="0uG-zn-875"/>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="bottom" secondItem="BNb-bM-c71" secondAttribute="bottom" id="6hc-LF-Amp"/>
+                            <constraint firstItem="aBV-HY-C6Z" firstAttribute="centerX" secondItem="WB6-x9-yxg" secondAttribute="centerX" id="7As-rx-86f"/>
                             <constraint firstItem="up6-9F-41n" firstAttribute="width" secondItem="WB6-x9-yxg" secondAttribute="width" constant="-48" id="H7f-jk-61b"/>
                             <constraint firstItem="BNb-bM-c71" firstAttribute="top" secondItem="aBV-HY-C6Z" secondAttribute="top" id="KLD-UY-d42"/>
                             <constraint firstItem="aBV-HY-C6Z" firstAttribute="trailing" secondItem="BNb-bM-c71" secondAttribute="trailing" id="L9j-sI-O1P"/>

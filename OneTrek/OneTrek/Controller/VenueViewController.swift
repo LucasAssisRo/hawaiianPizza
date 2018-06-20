@@ -9,6 +9,7 @@
 import UIKit
 
 class VenueViewController: UIViewController {
+    var springView: SpringView!
     var venue: Venue!
     var venueImage: UIImage? = nil
     var products: [Product] = []
@@ -146,11 +147,23 @@ extension VenueViewController: SpringViewDelegate {
                         self.scrollView.frame = bounds
         })
     }
-    
-
 }
 
-extension VenueViewController: UIScrollViewDelegate { }
+extension VenueViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        if y <= 0 {
+            let scale = y / 1000 // this should be a negative value
+            self.springView.transform = CGAffineTransform(scaleX: 1 + scale, y: 1 + scale)
+            if scale <= -0.15 {
+                let frame = self.springView.frame
+                self.springView.transform = .identity
+                self.springView.frame = frame
+                self.springView.colapseView(self, animated: true)
+            }
+        }
+    }
+}
 
 @IBDesignable class UITextViewFixed: UITextView {
     override func layoutSubviews() {

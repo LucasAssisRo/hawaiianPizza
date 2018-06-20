@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
             let embededViewController = storyboard.instantiateViewController(withIdentifier: "shop") as! VenueViewController
             embededViewController.venue = venue
             embededViewController.venueImage = self.venueImages[i]
+            embededViewController.springView = springView
             
             for productBundle in self.products {
                 if productBundle.product.venueId == self.venues[i]?.venueId {
@@ -65,9 +66,9 @@ class MainViewController: UIViewController {
         }
         
         self.insertTextToStory(at: 2, text: "TEST")
-        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
-        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
-        self.insertActionToStory(at: 4, action: "TEST", icon: UIImage(named: "cam3"))
+        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
+        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
+        self.insertActionToStory(at: 4, action: "TEST", icon: #imageLiteral(resourceName: "cam3"))
         
 //        let gradient = CAGradientLayer()
 //        gradient.colors = [
@@ -79,6 +80,8 @@ class MainViewController: UIViewController {
 //        gradient.startPoint = .zero
 //        gradient.endPoint = CGPoint(x: 0.2, y: 1)
 //        self.view.layer.insertSublayer(gradient, at: 0)
+        
+//        self.view.backgroundColor = UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -486,8 +489,10 @@ extension MainViewController: UIScrollViewDelegate {
             }
         }
         
-        let defaults = UserDefaults.standard
-        defaults.set(Double(scrollView.contentOffset.x), forKey: "scrollViewXOffset")
-        defaults.set(Double(scrollView.contentOffset.y), forKey: "scrollViewYOffset")
+        if scrollView.contentOffset.y >= 0 {
+            let defaults = UserDefaults.standard
+            defaults.set(Double(scrollView.contentOffset.x), forKey: "scrollViewXOffset")
+            defaults.set(Double(scrollView.contentOffset.y), forKey: "scrollViewYOffset")
+        }
     }
 }

@@ -236,7 +236,7 @@ class SpringView: UIView {
             "duration": self.animationDuration
             ])
         
-        let animated = sender is  UIButton
+        let animated = sender is UIButton ? true : animated
         self.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
         self.containerView.layer.add(self.roundCornerAnimation, forKey: "cornerRadius")
         self.isPresenting = false
