@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLO-DN-4KR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CbA-Jj-0Og">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -414,6 +414,38 @@
             </objects>
             <point key="canvasLocation" x="4630" y="1819"/>
         </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="eCi-14-9xb">
+            <objects>
+                <viewController id="CbA-Jj-0Og" customClass="SplashScreenViewController" customModule="OneTrek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rJB-oA-jhT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Z9S-E5-Jdt">
+                                <rect key="frame" x="37.5" y="66.5" width="300" height="534"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="K1R-RC-znr"/>
+                                    <constraint firstAttribute="width" secondItem="Z9S-E5-Jdt" secondAttribute="height" multiplier="375:667" id="hvq-Nx-b4V"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z9S-E5-Jdt" firstAttribute="centerY" secondItem="rJB-oA-jhT" secondAttribute="centerY" id="Zfb-ED-sMg"/>
+                            <constraint firstItem="Z9S-E5-Jdt" firstAttribute="centerX" secondItem="rJB-oA-jhT" secondAttribute="centerX" id="gMg-Ao-my6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mra-xo-uZ8"/>
+                    </view>
+                    <connections>
+                        <outlet property="icon" destination="Z9S-E5-Jdt" id="fDl-BX-jPF"/>
+                        <segue destination="pLO-DN-4KR" kind="presentation" identifier="loaded" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="LYL-bV-AzF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buU-Bs-fuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="1262.5187406296852"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="zR4-Uv-rIk">
             <objects>
@@ -567,5 +599,6 @@
         <image name="envelope" width="84" height="64"/>
         <image name="phone-1" width="84" height="84"/>
         <image name="pin" width="21" height="38"/>
+        <image name="splashscreen" width="751" height="1335"/>
     </resources>
 </document>

@@ -210,7 +210,7 @@ class SpringView: UIView {
                            animations: {
                             self.frame = UIScreen.main.bounds
                             self.frame.origin += SpringView.offset
-                            self.frame.size.height += 20
+                            self.frame.size.height += AppDelegate.statusBarHeight
                             
                             self.closeButton.alpha = 1
                             for (i, view) in self.subviews.enumerated() {

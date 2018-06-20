@@ -136,8 +136,10 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         self._isStatusBarHidden = isHidden
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
-            self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
-            self.mainScrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
+            print(self.mainScrollView.frame)
+            self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
+            self.mainScrollView.frame.size.height += self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
+            print(self.mainScrollView.frame)
         }
     }
     
@@ -502,7 +504,7 @@ The atmosphere is absolutely unique either if you decide to enjoy you aperitivo 
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         SpringView.offset = scrollView.contentOffset
-        SpringView.offset.y -= 8
+        SpringView.offset.y -= AppDelegate.statusBarHeight == 20 ? 8 : 16
         
         for subview in self.contentsStackView.arrangedSubviews {
             if let springview = subview as? SpringView {
