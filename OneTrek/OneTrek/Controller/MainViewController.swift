@@ -62,10 +62,10 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
-        self.addTextToStory(index: 2)
-        self.addActionToStory(index: 4)
-        self.addActionToStory(index: 4)
-        self.addActionToStory(index: 4)
+        self.addTextToStory(at: 2, text: "TEST")
+        self.addActionToStory(at: 4, action: "TEST")
+        self.addActionToStory(at: 4, action: "TEST")
+        self.addActionToStory(at: 4, action: "TEST")
 
         let gradient = CAGradientLayer()
         gradient.colors = [
@@ -145,19 +145,12 @@ class MainViewController: UIViewController {
         return springView
     }
     
-    private func addTextToStory(index: Int) {
-        
-        let container = SpringView()
-        //        container.cornerRadius = 5
-        //        container.shadowOffset = CGSize(width: 1, height: 1)
-        //        container.shadowRadius = 6
-        //        container.shadowOpacity = 0.5
-        //        container.shadowColor = UIColor(white: 0.33, alpha: 1)
-        //        container.backgroundColor = .white
+    private func addTextToStory(at index: Int, text: String) {
+        let container = UIView()
         container.isUserInteractionEnabled = false
         let textLabel = UILabel()
         container.addSubview(textLabel)
-        textLabel.text = "Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant.Lorem ipsum test in which many iuals died in the process. Bathing in whale guts is considered to be pleasant."
+        textLabel.text = text
         textLabel.numberOfLines = 0
         textLabel.sizeToFit()
         textLabel.textAlignment = .left
@@ -173,67 +166,50 @@ class MainViewController: UIViewController {
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
     }
     
-    private func addActionToStory(index: Int) {
+    private func addActionToStory(at index: Int, action text: String) {
         let container = UIView()
-        
-        let subStackView = UIStackView()
-        subStackView.axis = .vertical
-        
         let textLabel = UILabel()
-        textLabel.text = "Lorem ipsum test in which many iuals died in the process."
+        textLabel.text = text
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .center
-        
-        let image = UIImage(named: "cam3")
-        
+        textLabel.sizeToFit()
+        let image = UIImage(named: "cam3")?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView()
         imageView.image = image
+        imageView.tintColor = .black
         imageView.contentMode = .scaleAspectFill
-        //   imageView.frame = CGRect(x: imageView.frame.minX, y: imageView.frame.minY, width: imageView.frame.width / 8, height: imageView.frame.height / 8)
+        
         
         // Add text to story
         self.stackView.insertArrangedSubview(container, at: index)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
-        container.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        container.backgroundColor = UIColor.green
-        /**
-         container.addSubview(subStackView)
-         subStackView.alignment = .leading
-         subStackView.translatesAutoresizingMaskIntoConstraints = false
-         //        subStackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-         subStackView.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
-         subStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
-         subStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
-         subStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
-         subStackView.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 1).isActive = true
-         subStackView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 1).isActive = true
-         
-         subStackView.backgroundColor = UIColor.red
-         **/
         
-        
-        //subStackView.addArrangedSubview(imageView)
         container.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.icons.append(imageView)
-        imageView.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.0003).isActive = true
-        imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.5).isActive = true
+        
         imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: 0).isActive = true
+        
         imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 0).isActive = true
         
-        // subStackView.addArrangedSubview(textLabel)
         container.addSubview(textLabel)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
         textLabel.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-        //textLabel.widthAnchor.constraint(equalTo: subStackView.widthAnchor, multiplier: 1).isActive = true
         
-        //imageView.frame = CGRect(x: imageView.frame.minX, y: imageView.frame.minY, width: 0, height: 0)
+        container.bottomAnchor.constraint(equalTo: textLabel.bottomAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        ///imageView.bottomAnchor.constraint(equalTo: textLabel.topAnchor, constant: 0).isActive = true
+        
+        container.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
+        container.bottomAnchor.constraint(equalTo: textLabel.bottomAnchor).isActive = true
+        
+        imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        imageView.tag = 1321
     }
     
     /*
@@ -468,22 +444,37 @@ extension MainViewController: UIScrollViewDelegate {
                                y: scrollView.contentOffset.y,
                                width: scrollView.frame.size.width,
                                height: scrollView.frame.size.height)
-        
+        let shrink = CGAffineTransform(scaleX: 0.8, y: 0.8)
         for icon in self.icons {
             if container.intersects(icon.convert(icon.bounds, to: self.scrollView)) {
-                if icon.tag == 0 {
-                    icon.tag = 1
-                    UIView.animate(withDuration: 0.3, animations: {
-                        icon.frame = CGRect(x: icon.frame.minX, y: icon.frame.minY, width: icon.frame.width / 1.2, height: icon.frame.height / 1.2)
-                    }, completion: { finish in
-                        UIView.animate(withDuration: 0.2, animations: {
-                            icon.frame = CGRect(x: icon.frame.minX, y: icon.frame.minY, width: icon.frame.width * 1.2, height: icon.frame.height * 1.2)
-                        })
-                    })
+                if icon.tag == 1321 {
+                    icon.tag = 4321
+                    UIView.animate(withDuration: 0.2,
+                                   delay: 0.15,
+                                   options: .curveEaseIn,
+                                   animations: {
+                                    icon.transform = .identity
+                    }) { finished in
+                        UIView.animate(withDuration: 0.1,
+                                       delay: 0,
+                                       options: .curveLinear,
+                                       animations: {
+                                        icon.transform = shrink
+                        }) { finished in
+                            UIView.animate(withDuration: 0.1,
+                                           delay: 0,
+                                           options: .curveEaseOut,
+                                           animations: {
+                                            icon.transform = .identity
+                            })
+                        }
+                    }
                 }
-            } else {
-                icon.tag = 0
             }
         }
+        
+        let defaults = UserDefaults.standard
+        defaults.set(scrollView.contentOffset.x, forKey: "scrollViewXOffset")
+        defaults.set(scrollView.contentOffset.y, forKey: "scrollViewYOffset")
     }
 }
