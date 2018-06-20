@@ -68,25 +68,30 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
-        self.insertTextToStory(at: 2,
-                               text: "If you feel ready dive in one of the richest Neapolitan palaces in terms of history and creativity. Take few more steps and on your right you will find Palazzo Marigliano.")
-        self.insertActionToStory(at: 4,
-                                 action: "Look up to the charming suspended garden. Maybe take the time to take gorgeous and unforgettable pictures.",
-                                 icon: #imageLiteral(resourceName: "cam3"))
-        self.insertTextToStory(at: 6,
-                               text: """
-Get out of Palazzo Marigliano now. Forget the peace the Marigliano courtyard and get back in the tumultuous colourful chaos of Spaccanapoli.
-""")
-        self.insertActionToStory(at: 8,
-                                 action: """
+//        self.insertTextToStory(at: 2,
+//                               text: "If you feel ready dive in one of the richest Neapolitan palaces in terms of history and creativity. Take few more steps and on your right you will find Palazzo Marigliano.")
+        self.insertActionToStory(at: 2,
+                                 action: /*"Look up to the charming suspended garden. Maybe take the time to take gorgeous and unforgettable pictures."*/ "Palazzo Marigliano",
+                                 icon: #imageLiteral(resourceName: "pin"))
+//        self.insertTextToStory(at: 6,
+//                               text: """
+//Get out of Palazzo Marigliano now. Forget the peace the Marigliano courtyard and get back in the tumultuous colourful chaos of Spaccanapoli.
+//""")
+        self.insertActionToStory(at: 5,
+                                 action: /*"""
+             This is a good time to take a break and sit down at one of the benches in front of Parrocchia all’Olmo. Take a look at black lava tiles, here for nearly 400 hundreds years.
+             """*/ "Spaccanapoli",
+                                 icon: #imageLiteral(resourceName: "pin"))
+        self.insertActionToStory(at: 7,
+                                 action: /*"""
 This is a good time to take a break and sit down at one of the benches in front of Parrocchia all’Olmo. Take a look at black lava tiles, here for nearly 400 hundreds years.
-""",
-                                 icon: #imageLiteral(resourceName: "cam3"))
-        self.insertActionToStory(at: 10,
-                                 action: """
+"""*/ "Parrocchia all’Olmo",
+                                 icon: #imageLiteral(resourceName: "pin"))
+        self.insertActionToStory(at: 9,
+                                 action: /*"""
 Our Vintage Grand Tour is finishing now, but before the end you might want to relax with a few drinks on our next stop.
-""",
-                                 icon: #imageLiteral(resourceName: "drink"))
+"""*/ "Via Mezzocannone",
+                                 icon: #imageLiteral(resourceName: "pin"))
         self.startPinButton.imageView?.tintColor = .black
         
         //        let gradient = CAGradientLayer()
@@ -136,10 +141,8 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         self._isStatusBarHidden = isHidden
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
-            print(self.mainScrollView.frame)
             self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
             self.mainScrollView.frame.size.height += self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
-            print(self.mainScrollView.frame)
         }
     }
     
@@ -257,7 +260,7 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         let imageView = UIImageView()
         imageView.image = image
         imageView.tintColor = .black
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .center
         
         // Add text to story
         if let index = index {
