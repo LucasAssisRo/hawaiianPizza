@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
                                  icon: pin)
         self.insertActionToStory(at: 5,
                                  name: "Spaccanapoli",
-                                 address: "",
+                                 address: "Via San Biagio dei Librai 106",
                                  icon: pin)
         self.insertActionToStory(at: 7,
                                  name: "Parrocchia all’Olmo",
@@ -88,7 +88,7 @@ class MainViewController: UIViewController {
                                  icon: pin)
         self.insertActionToStory(at: 9,
                                  name: "Via Mezzocannone",
-                                 address: "Via Pallonetto a S, Via Santa Chiara, 14/b, 80134 Napoli NA",
+                                 address: "Vico Pallonetto Santa Chiara, 14b",
                                  icon: pin)
         
         NotificationCenter.default.addObserver(self,
@@ -308,7 +308,7 @@ Il Musicante is the perfect place where to find any kind of rare vinyl from pop 
         
         Venue(venueId: "1",
               name: "L’Ospedale delle Bambole",
-              promotional: "It’s a museum/shop (Dolls Hospital), unique in its kind, inside Palazzo Marigliano.",
+              promotional: "It's a museum/shop (Dolls Hospital), unique in it's kind, inside Palazzo Marigliano.",
               description: """
 In the late ninety century Luigi Grassi was a puppet maker, counting the Royal Court among his clients. One day a poor woman came to him bagging to repair the doll of her daughter, not knowing anyone else with the ability to do so. Surprised by the request he puzzled for a minute, then he accepted to fix the humble doll, succeeding.
 """,
@@ -323,7 +323,7 @@ In the late ninety century Luigi Grassi was a puppet maker, counting the Royal C
         
         Venue(venueId: "2",
               name: "Antica Legatoria Marigliano",
-              promotional: "A beautiful book workshop, one of the few survived the centuries, at Palazzo Marigliano.",
+              promotional: "A beautiful book workshop, one of the few that survived the centuries, at Palazzo Marigliano.",
               description: """
 In this incredible place you can watch the artisans at work in restoring ancient books, but also working on new refined paper product. In the Legatoria you will find elegant hand-made agendas, booklets and so much more. Everything carefully crafted and decorated.
 """,
@@ -355,10 +355,10 @@ In a blink of an eye she will hold in her hand the thing that suits you perfectl
         
         Venue(venueId: "4",
               name: "Stampe e Oggetti d’Epoca",
-              promotional: "Here you will meet one of the protagonist of the Neapolitan vintage scene: Alfonso Sorrentino.",
+              promotional: "Here you will meet one of the protagonists of the Neapolitan vintage scene: Alfonso Sorrentino.",
               description: """
 Alfonso runs and select for twenty years a charming underground place that we might call a wunderkammer, a wonder room.
-Stampe e oggetti d’Epoca totally reflects the refined taste of Alfonso who carefully select the best objects embodying the most interesting stories.
+Stampe e oggetti d'Epoca totally reflects the refined taste of Alfonso who carefully select the best objects embodying the most interesting stories.
 
 At the first glance it will look difficult to orient yourself among all those objects, but be sure that Alfonso, quietly sat on his comfy red armchair, absently reading a book, will greatly guide you through the thing you will never wish to be separated from.
 """,
@@ -381,7 +381,7 @@ The Liquid Spirit Art Bar is in the end of Vico Pallonetto a Santa Chiara, a nar
 The atmosphere is absolutely unique either if you decide to enjoy you aperitivo inside, surrounded by pieces of arts, or outside, in a charming small square.
 """,
               category: "Bar",
-              address1: "Via Pallonetto a S, Via Santa Chiara, 14/b",
+              address1: "Vico Pallonetto Santa Chiara, 14b",
               address2: nil,
               city: "Naples",
               country: "Italy",
