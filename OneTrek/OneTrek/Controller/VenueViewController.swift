@@ -58,7 +58,7 @@ class VenueViewController: UIViewController {
         if let venue = self.venue {
             self.venueImageView.image = self.venueImage
             self.nameLabel.text = venue.name
-            self.categoryLabel.text = venue.category
+            self.categoryLabel.text = venue.category.uppercased()
             self.promotionalLabel.text = venue.promotional
             self.descriptionLabel.text = venue.description
             if let address2 = venue.address2 {

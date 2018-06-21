@@ -50,6 +50,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         guard let storyboard = self.storyboard else { return }
         self.startPinButton.imageView?.tintColor = .black
+        self.startPinButton.imageView?.contentMode = .scaleAspectFit
         self.iconBundles.append((icon: self.startPinButton,
                                  name: "San Gennaro Mural",
                                  address: "Via Vicaria Vecchia, 80138 Napoli NA"))
@@ -72,22 +73,23 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
+        let pin = #imageLiteral(resourceName: "location_black")
         self.insertActionToStory(at: 2,
                                  name:"Palazzo Marigliano",
                                  address: "Via San Biagio Dei Librai, 39, 80138 Napoli NA",
-                                 icon: #imageLiteral(resourceName: "pin"))
+                                 icon: pin)
         self.insertActionToStory(at: 5,
                                  name: "Spaccanapoli",
                                  address: "",
-                                 icon: #imageLiteral(resourceName: "pin"))
+                                 icon: pin)
         self.insertActionToStory(at: 7,
                                  name: "Parrocchia all’Olmo",
                                  address: "Via San Biagio Dei Librai, 106, 80138 Napoli NA",
-                                 icon: #imageLiteral(resourceName: "pin"))
+                                 icon: pin)
         self.insertActionToStory(at: 9,
                                  name: "Via Mezzocannone",
                                  address: "Via Pallonetto a S, Via Santa Chiara, 14/b, 80134 Napoli NA",
-                                 icon: #imageLiteral(resourceName: "pin"))
+                                 icon: pin)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -241,18 +243,28 @@ class MainViewController: UIViewController {
     }
     
     private func insertActionToStory(at index: Int? = nil, name: String, address: String, icon: UIImage?) {
-        let container = UIView()
-        let button2 = UIButton()
-        button2.setTitle(name, for: .normal)
-        button2.titleLabel?.numberOfLines = 0
-        button2.titleLabel?.textAlignment = .center
-        button2.setTitleColor(.black, for: .normal)
-        button2.sizeToFit()
+        let container = UIStackView()
+        container.alignment = .fill
+        container.distribution = .fill
+        container.axis = .vertical
+        
         let image = icon
         let button = UIButton()
         button.setImage(image, for: .normal)
         button.imageView?.tintColor = .black
-        
+        button.imageView?.contentMode = .scaleAspectFit
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 50).isActive = true
+
+        let button2 = UIButton()
+        button2.setTitle(name.uppercased(), for: .normal)
+        button2.titleLabel?.numberOfLines = 0
+        button2.titleLabel?.textAlignment = .center
+        button2.setTitleColor(.black, for: .normal)
+        button2.sizeToFit()
+        button2.translatesAutoresizingMaskIntoConstraints = false
+
         // Add text to story
         if let index = index {
             self.contentsStackView.insertArrangedSubview(container, at: index)
@@ -263,28 +275,12 @@ class MainViewController: UIViewController {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
         
-        container.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        container.addArrangedSubview(button)
+        container.addArrangedSubview(button2)
+
         
         self.iconBundles.append((button, name, address))
         
-        button.topAnchor.constraint(equalTo: container.topAnchor, constant: 0).isActive = true
-        
-        button.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 0).isActive = true
-        
-        container.addSubview(button2)
-        button2.translatesAutoresizingMaskIntoConstraints = false
-        button2.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20).isActive = true
-        button2.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
-        button2.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-        
-        container.bottomAnchor.constraint(equalTo: button2.bottomAnchor).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
-        container.topAnchor.constraint(equalTo: button.topAnchor).isActive = true
-        container.bottomAnchor.constraint(equalTo: button2.bottomAnchor).isActive = true
         
         button.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
         button.tag = 1321
