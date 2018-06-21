@@ -25,7 +25,7 @@ class SplashScreenViewController: UIViewController {
             })
         }
 
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { timer in
             self.performSegue(withIdentifier: "loaded", sender: self)
         }
     }

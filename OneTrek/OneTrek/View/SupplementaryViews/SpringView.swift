@@ -32,6 +32,7 @@ class SpringView: UIView {
     private var subviewColapsedCenters: [CGPoint] = []
     private var subviewExpandedCenters: [CGPoint] = []
     
+    var impact = UIImpactFeedbackGenerator(style: .light)
     var isPresenting = false
     
     @IBInspectable var animationDuration: CGFloat = 0
@@ -101,6 +102,7 @@ class SpringView: UIView {
     }
     
     private func constructor() {
+        self.impact.prepare()
         self.closeButton = UIButton()
         self.closeButton.frame.size = CGSize(width: self.closeButtonRadius * 2,
                                              height: self.closeButtonRadius * 2)
@@ -231,6 +233,7 @@ class SpringView: UIView {
     
     
     @objc func colapseView(_ sender: Any, animated: Bool = true) {
+        self.impact.impactOccurred()
         NotificationCenter.default.post(name: .springColapse, object: self, userInfo: [
             "animated" : animated,
             "duration": self.animationDuration

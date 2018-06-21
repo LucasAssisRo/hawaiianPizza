@@ -1,6 +1,0 @@
-framework module Pods_Margheritttta {
-  umbrella header "Pods-Margheritttta-umbrella.h"
-
-  export *
-  module * { export * }
-}

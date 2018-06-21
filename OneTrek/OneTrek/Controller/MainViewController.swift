@@ -90,6 +90,10 @@ class MainViewController: UIViewController {
                                  name: "Via Mezzocannone",
                                  address: "Vico Pallonetto Santa Chiara, 14b",
                                  icon: pin)
+        self.insertActionToStory(name: """
+You've reached the end.
+See you next week!
+""", address: "", icon: #imageLiteral(resourceName: "flag"))
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -258,7 +262,7 @@ class MainViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
         let button2 = UIButton()
-        button2.setTitle(name.uppercased(), for: .normal)
+        button2.setTitle(name, for: .normal)
         button2.titleLabel?.numberOfLines = 0
         button2.titleLabel?.textAlignment = .center
         button2.setTitleColor(.black, for: .normal)

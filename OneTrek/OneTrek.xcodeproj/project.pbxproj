@@ -33,6 +33,8 @@
 		41BDF55C20D946F500B221FA /* ShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BDF55B20D946F500B221FA /* ShadowLabel.swift */; };
 		41D6A84E20D2726700D79694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A84D20D2726700D79694 /* MainViewController.swift */; };
 		41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE6D3320BC099E00E0EF2F /* ContentType.swift */; };
+		4A58916D6B0E2D4F3BBD5E24 /* Pods_OneTrekUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60A36A6E2B26008FB602824 /* Pods_OneTrekUITests.framework */; };
+		77EB1FD12B7AD9735318639A /* Pods_OneTrek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE24A1F5D7B189FCA736D8AF /* Pods_OneTrek.framework */; };
 		D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */; };
 		F1A5C4B520936993001C93CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C4B720936993001C93CC /* Localizable.strings */; };
 		F1F884722099B5F900B6DE7A /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F884712099B5F900B6DE7A /* VenueViewController.swift */; };
@@ -53,6 +55,7 @@
 		07C2979620B852E300239CE8 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		07F1FBE420B4582B009EE51B /* ServerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHandler.swift; sourceTree = "<group>"; };
 		0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.debug.xcconfig"; sourceTree = "<group>"; };
+		1CDD7EBBB104D126AC7BB499 /* Pods-OneTrek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTrek.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneTrek/Pods-OneTrek.release.xcconfig"; sourceTree = "<group>"; };
 		2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MargherittttaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414A61AA20BB13BB00AA88F8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -81,11 +84,16 @@
 		41BDF55B20D946F500B221FA /* ShadowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLabel.swift; sourceTree = "<group>"; };
 		41D6A84D20D2726700D79694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41DE6D3320BC099E00E0EF2F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		51C8B0C07FC16F7605FD8D01 /* Pods-OneTrek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTrek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneTrek/Pods-OneTrek.debug.xcconfig"; sourceTree = "<group>"; };
+		7A697C6F3090B2E85212079B /* Pods-OneTrekUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTrekUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneTrekUITests/Pods-OneTrekUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MargherittttaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MargherittttaUITests/Pods-MargherittttaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C60A36A6E2B26008FB602824 /* Pods_OneTrekUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneTrekUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Margheritttta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B2778F793BCF078BBE51D5 /* Pods-OneTrekUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTrekUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneTrekUITests/Pods-OneTrekUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Margheritttta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta.release.xcconfig"; sourceTree = "<group>"; };
 		F1A5C4B620936993001C93CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F884712099B5F900B6DE7A /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
+		FE24A1F5D7B189FCA736D8AF /* Pods_OneTrek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneTrek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCB617F606C93494A7BB287 /* Pods_Margheritttta.framework in Frameworks */,
+				77EB1FD12B7AD9735318639A /* Pods_OneTrek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D807318FD661F222AD1C0ACB /* Pods_MargherittttaUITests.framework in Frameworks */,
+				4A58916D6B0E2D4F3BBD5E24 /* Pods_OneTrekUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,8 @@
 			children = (
 				D4F3FC6564ED908088D57AB3 /* Pods_Margheritttta.framework */,
 				37F3EEC5BC97CF4B46206253 /* Pods_MargherittttaUITests.framework */,
+				FE24A1F5D7B189FCA736D8AF /* Pods_OneTrek.framework */,
+				C60A36A6E2B26008FB602824 /* Pods_OneTrekUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +239,10 @@
 				EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */,
 				ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */,
 				2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */,
+				51C8B0C07FC16F7605FD8D01 /* Pods-OneTrek.debug.xcconfig */,
+				1CDD7EBBB104D126AC7BB499 /* Pods-OneTrek.release.xcconfig */,
+				E7B2778F793BCF078BBE51D5 /* Pods-OneTrekUITests.debug.xcconfig */,
+				7A697C6F3090B2E85212079B /* Pods-OneTrekUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -275,6 +291,7 @@
 				4168F65B208E286E00727EEB /* Frameworks */,
 				4168F65C208E286E00727EEB /* Resources */,
 				9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */,
+				41CE4A150AB452F4FC6BCCA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +310,8 @@
 				4168F66E208E286F00727EEB /* Sources */,
 				4168F66F208E286F00727EEB /* Frameworks */,
 				4168F670208E286F00727EEB /* Resources */,
+				789737244D0D72472FFAB79D /* [CP] Embed Pods Frameworks */,
+				B2C284314D35B277E7AAB0BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,13 +390,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		41CE4A150AB452F4FC6BCCA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTrek/Pods-OneTrek-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		789737244D0D72472FFAB79D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTrekUITests/Pods-OneTrekUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9CA7EFA137FD73F267EA3051 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-OneTrek/Pods-OneTrek-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -386,7 +435,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Margheritttta/Pods-Margheritttta-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTrek/Pods-OneTrek-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2C284314D35B277E7AAB0BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneTrekUITests/Pods-OneTrekUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C96679843F816716D7A66C21 /* [CP] Check Pods Manifest.lock */ = {
@@ -400,7 +464,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Margheritttta-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OneTrek-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,7 +482,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MargherittttaUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OneTrekUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -618,7 +682,7 @@
 		};
 		4168F67C208E286F00727EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D8AA5D010F8730BE55B111E /* Pods-Margheritttta.debug.xcconfig */;
+			baseConfigurationReference = 51C8B0C07FC16F7605FD8D01 /* Pods-OneTrek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -635,7 +699,7 @@
 		};
 		4168F67D208E286F00727EEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA2B02FE614860A9415F281D /* Pods-Margheritttta.release.xcconfig */;
+			baseConfigurationReference = 1CDD7EBBB104D126AC7BB499 /* Pods-OneTrek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -652,7 +716,7 @@
 		};
 		4168F67F208E286F00727EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABC9FDD6FF1CABBACD56653C /* Pods-MargherittttaUITests.debug.xcconfig */;
+			baseConfigurationReference = E7B2778F793BCF078BBE51D5 /* Pods-OneTrekUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -669,7 +733,7 @@
 		};
 		4168F680208E286F00727EEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2835F7167DE412400D79AB63 /* Pods-MargherittttaUITests.release.xcconfig */;
+			baseConfigurationReference = 7A697C6F3090B2E85212079B /* Pods-OneTrekUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
