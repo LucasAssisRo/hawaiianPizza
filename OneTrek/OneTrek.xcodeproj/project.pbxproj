@@ -29,6 +29,7 @@
 		4168F677208E286F00727EEB /* MargherittttaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168F676208E286F00727EEB /* MargherittttaUITests.swift */; };
 		4197E36920D82F1D00C0EEF6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197E36720D82F1D00C0EEF6 /* SpringView.swift */; };
 		4197E36A20D82F1D00C0EEF6 /* SpringViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197E36820D82F1D00C0EEF6 /* SpringViewDelegate.swift */; };
+		41B76F4B20DACBFA00BC3A3E /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B76F4A20DACBFA00BC3A3E /* SplashScreenViewController.swift */; };
 		41BDF55C20D946F500B221FA /* ShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BDF55B20D946F500B221FA /* ShadowLabel.swift */; };
 		41D6A84E20D2726700D79694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A84D20D2726700D79694 /* MainViewController.swift */; };
 		41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE6D3320BC099E00E0EF2F /* ContentType.swift */; };
@@ -76,6 +77,7 @@
 		4168F678208E286F00727EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4197E36720D82F1D00C0EEF6 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		4197E36820D82F1D00C0EEF6 /* SpringViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewDelegate.swift; sourceTree = "<group>"; };
+		41B76F4A20DACBFA00BC3A3E /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		41BDF55B20D946F500B221FA /* ShadowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLabel.swift; sourceTree = "<group>"; };
 		41D6A84D20D2726700D79694 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41DE6D3320BC099E00E0EF2F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		F1A5C49E20934443001C93CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41B76F4A20DACBFA00BC3A3E /* SplashScreenViewController.swift */,
 				F1F884712099B5F900B6DE7A /* VenueViewController.swift */,
 				41D6A84D20D2726700D79694 /* MainViewController.swift */,
 			);
@@ -445,6 +448,7 @@
 				4197E36A20D82F1D00C0EEF6 /* SpringViewDelegate.swift in Sources */,
 				41DE6D3420BC099E00E0EF2F /* ContentType.swift in Sources */,
 				07C2979720B852E300239CE8 /* GlobalConstants.swift in Sources */,
+				41B76F4B20DACBFA00BC3A3E /* SplashScreenViewController.swift in Sources */,
 				414A61BB20BB13BC00AA88F8 /* VenueImage.swift in Sources */,
 				414A61BA20BB13BC00AA88F8 /* ProductImage.swift in Sources */,
 				4197E36920D82F1D00C0EEF6 /* SpringView.swift in Sources */,

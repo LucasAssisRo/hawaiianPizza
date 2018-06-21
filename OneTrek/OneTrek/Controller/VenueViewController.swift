@@ -58,7 +58,7 @@ class VenueViewController: UIViewController {
         if let venue = self.venue {
             self.venueImageView.image = self.venueImage
             self.nameLabel.text = venue.name
-            self.categoryLabel.text = venue.category
+            self.categoryLabel.text = venue.category.uppercased()
             self.promotionalLabel.text = venue.promotional
             self.descriptionLabel.text = venue.description
             if let address2 = venue.address2 {
@@ -156,7 +156,7 @@ extension VenueViewController: UIScrollViewDelegate {
         if y <= 0 {
             let scale = y / 1000 // this should be a negative value
             self.springView.transform = CGAffineTransform(scaleX: 1 + scale, y: 1 + scale)
-            if scale <= -0.15 {
+            if scale <= -0.1 {
                 let frame = self.springView.frame
                 self.scrollView.isScrollEnabled = false
                 self.springView.transform = .identity

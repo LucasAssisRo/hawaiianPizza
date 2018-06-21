@@ -12,7 +12,7 @@ import MapKit
 @IBDesignable
 class MainViewController: UIViewController {
     
-    var icons: [UIImageView] = []
+    var iconBundles: [(icon: UIButton, name: String, address: String)] = []
     var springViews: [SpringView] = []
     
     @IBOutlet weak var startPinButton: UIButton!
@@ -49,6 +49,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let storyboard = self.storyboard else { return }
+        self.startPinButton.imageView?.tintColor = .black
+        self.startPinButton.imageView?.contentMode = .scaleAspectFit
+        self.iconBundles.append((icon: self.startPinButton,
+                                 name: "San Gennaro Mural",
+                                 address: "Via Vicaria Vecchia, 80138 Napoli NA"))
         for (i, venue) in self.venues.enumerated() {
             let springView = self.insertSpringView()
             self.springViews.append(springView)
@@ -68,39 +73,23 @@ class MainViewController: UIViewController {
             springView.indexSubviews(self.view)
         }
         
-        self.insertTextToStory(at: 2,
-                               text: "If you feel ready dive in one of the richest Neapolitan palaces in terms of history and creativity. Take few more steps and on your right you will find Palazzo Marigliano.")
-        self.insertActionToStory(at: 4,
-                                 action: "Look up to the charming suspended garden. Maybe take the time to take gorgeous and unforgettable pictures.",
-                                 icon: #imageLiteral(resourceName: "cam3"))
-        self.insertTextToStory(at: 6,
-                               text: """
-Get out of Palazzo Marigliano now. Forget the peace the Marigliano courtyard and get back in the tumultuous colourful chaos of Spaccanapoli.
-""")
-        self.insertActionToStory(at: 8,
-                                 action: """
-This is a good time to take a break and sit down at one of the benches in front of Parrocchia all’Olmo. Take a look at black lava tiles, here for nearly 400 hundreds years.
-""",
-                                 icon: #imageLiteral(resourceName: "cam3"))
-        self.insertActionToStory(at: 10,
-                                 action: """
-Our Vintage Grand Tour is finishing now, but before the end you might want to relax with a few drinks on our next stop.
-""",
-                                 icon: #imageLiteral(resourceName: "drink"))
-        self.startPinButton.imageView?.tintColor = .black
-        
-        //        let gradient = CAGradientLayer()
-        //        gradient.colors = [
-        //            UIColor(red: 0xf3 / 255, green: 0xcf / 255, blue: 0x55 / 255, alpha: 1).cgColor,
-        //            UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1).cgColor
-        //        ]
-        //
-        //        gradient.frame = self.view.bounds
-        //        gradient.startPoint = .zero
-        //        gradient.endPoint = CGPoint(x: 0.2, y: 1)
-        //        self.view.layer.insertSublayer(gradient, at: 0)
-        
-        //        self.view.backgroundColor = UIColor(red: 0xc6 / 255, green: 0x6f / 255, blue: 0x29 / 255, alpha: 1)
+        let pin = #imageLiteral(resourceName: "location_black")
+        self.insertActionToStory(at: 2,
+                                 name:"Palazzo Marigliano",
+                                 address: "Via San Biagio Dei Librai, 39, 80138 Napoli NA",
+                                 icon: pin)
+        self.insertActionToStory(at: 5,
+                                 name: "Spaccanapoli",
+                                 address: "",
+                                 icon: pin)
+        self.insertActionToStory(at: 7,
+                                 name: "Parrocchia all’Olmo",
+                                 address: "Via San Biagio Dei Librai, 106, 80138 Napoli NA",
+                                 icon: pin)
+        self.insertActionToStory(at: 9,
+                                 name: "Via Mezzocannone",
+                                 address: "Via Pallonetto a S, Via Santa Chiara, 14/b, 80134 Napoli NA",
+                                 icon: pin)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(disableScrolling(_:)),
@@ -127,17 +116,20 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         }
         
         let defaults = UserDefaults.standard
-        let x = defaults.double(forKey: "scrollViewXOffset")
-        let y = defaults.double(forKey: "scrollViewYOffset")
-        self.mainScrollView.contentOffset = CGPoint(x: x, y: y)
+        if let data = defaults.data(forKey: "scrollViewOffset"),
+            let scrollViewOffset = NSKeyedUnarchiver.unarchiveObject(with: data) as? CGPoint {
+            self.mainScrollView.contentOffset = scrollViewOffset
+            SpringView.offset = scrollViewOffset
+            SpringView.offset.y -= 8
+        }
     }
     
     func setStatusBarHidden(_ isHidden: Bool, with duration: TimeInterval) {
         self._isStatusBarHidden = isHidden
         UIView.animate(withDuration: duration) {
             self.setNeedsStatusBarAppearanceUpdate()
-            self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? 20 : -20
-            self.mainScrollView.frame.size.height += self._isStatusBarHidden ? 20 : -20
+            self.mainScrollView.frame.origin.y -= self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
+            self.mainScrollView.frame.size.height += self._isStatusBarHidden ? AppDelegate.statusBarHeight : -AppDelegate.statusBarHeight
         }
     }
     
@@ -156,24 +148,30 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         }
     }
     
-    @IBAction func startTour(_ sender: Any) {
-        self.coordinates(forAddress: "Via Vicaria Vecchia, 80138 Napoli NA") { (location) in
-            guard let location = location else { return }
-            
-            let latitude: CLLocationDegrees = location.latitude
-            let longitude: CLLocationDegrees = location.longitude
-            let regionDistance: CLLocationDistance = 10000
-            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-            let options = [
-                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-            ]
-            
-            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "San Genaro Mural"
-            mapItem.openInMaps(launchOptions: options)
+    @IBAction func startTour(_ sender: UIButton) {
+        for bundle in self.iconBundles {
+            if bundle.icon == sender {
+                self.coordinates(forAddress: bundle.address) { (location) in
+                    guard let location = location else { return }
+                    
+                    let latitude: CLLocationDegrees = location.latitude
+                    let longitude: CLLocationDegrees = location.longitude
+                    let regionDistance: CLLocationDistance = 10000
+                    let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+                    let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+                    let options = [
+                        MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+                    ]
+                    
+                    let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+                    let mapItem = MKMapItem(placemark: placemark)
+                    mapItem.name = bundle.name
+                    mapItem.openInMaps(launchOptions: options)
+                }
+                
+                break
+            }
         }
     }
     
@@ -244,19 +242,29 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
     }
     
-    private func insertActionToStory(at index: Int? = nil, action text: String, icon: UIImage?) {
-        let container = UIView()
-        let textLabel = UILabel()
-        textLabel.text = text
-        textLabel.numberOfLines = 0
-        textLabel.textAlignment = .center
-        textLabel.sizeToFit()
-        let image = icon
-        let imageView = UIImageView()
-        imageView.image = image
-        imageView.tintColor = .black
-        imageView.contentMode = .scaleAspectFill
+    private func insertActionToStory(at index: Int? = nil, name: String, address: String, icon: UIImage?) {
+        let container = UIStackView()
+        container.alignment = .fill
+        container.distribution = .fill
+        container.axis = .vertical
         
+        let image = icon
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.imageView?.tintColor = .black
+        button.imageView?.contentMode = .scaleAspectFit
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 50).isActive = true
+
+        let button2 = UIButton()
+        button2.setTitle(name.uppercased(), for: .normal)
+        button2.titleLabel?.numberOfLines = 0
+        button2.titleLabel?.textAlignment = .center
+        button2.setTitleColor(.black, for: .normal)
+        button2.sizeToFit()
+        button2.translatesAutoresizingMaskIntoConstraints = false
+
         // Add text to story
         if let index = index {
             self.contentsStackView.insertArrangedSubview(container, at: index)
@@ -267,31 +275,18 @@ Our Vintage Grand Tour is finishing now, but before the end you might want to re
         container.translatesAutoresizingMaskIntoConstraints = false
         container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1, constant: -48).isActive = true
         
-        container.addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        container.addArrangedSubview(button)
+        container.addArrangedSubview(button2)
+
         
-        self.icons.append(imageView)
-        
-        imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: 0).isActive = true
-        
-        imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 0).isActive = true
-        
-        container.addSubview(textLabel)
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
-        textLabel.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
-        textLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-        
-        container.bottomAnchor.constraint(equalTo: textLabel.bottomAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.iconBundles.append((button, name, address))
         
         
-        container.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
-        container.bottomAnchor.constraint(equalTo: textLabel.bottomAnchor).isActive = true
+        button.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        button.tag = 1321
         
-        imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-        imageView.tag = 1321
+        button.addTarget(self, action: #selector(startTour(_:)), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(startTour(_:)), for: .touchUpInside)
     }
     
     //MARK: VENUES
@@ -520,7 +515,7 @@ extension MainViewController: UIScrollViewDelegate {
                                width: scrollView.frame.size.width,
                                height: scrollView.frame.size.height)
         let shrink = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        for icon in self.icons {
+        for (icon, _, _) in self.iconBundles {
             if container.intersects(icon.convert(icon.bounds, to: self.mainScrollView)) {
                 if icon.tag == 1321 {
                     icon.tag = 4321
@@ -549,9 +544,8 @@ extension MainViewController: UIScrollViewDelegate {
         }
         
         if scrollView.contentOffset.y >= 0 {
-            let defaults = UserDefaults.standard
-            defaults.set(Double(scrollView.contentOffset.x), forKey: "scrollViewXOffset")
-            defaults.set(Double(scrollView.contentOffset.y), forKey: "scrollViewYOffset")
+            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: scrollView.contentOffset),
+                                      forKey: "scrollViewOffset")
         }
     }
 }
