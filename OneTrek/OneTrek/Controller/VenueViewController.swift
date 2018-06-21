@@ -156,7 +156,7 @@ extension VenueViewController: UIScrollViewDelegate {
         if y <= 0 {
             let scale = y / 1000 // this should be a negative value
             self.springView.transform = CGAffineTransform(scaleX: 1 + scale, y: 1 + scale)
-            if scale <= -0.15 {
+            if scale <= -0.1 {
                 let frame = self.springView.frame
                 self.scrollView.isScrollEnabled = false
                 self.springView.transform = .identity

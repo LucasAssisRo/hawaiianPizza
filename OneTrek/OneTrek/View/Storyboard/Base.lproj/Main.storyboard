@@ -133,10 +133,10 @@
                                                         <rect key="frame" x="0.0" y="754.5" width="375" height="665"/>
                                                         <subviews>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F3D-Wl-Xl9" userLabel="Header">
-                                                                <rect key="frame" x="0.0" y="-762.5" width="375" height="16"/>
+                                                                <rect key="frame" x="0.0" y="-754.5" width="375" height="16"/>
                                                                 <subviews>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufC-rG-zsB">
-                                                                        <rect key="frame" x="0.0" y="8" width="94.5" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="0.0"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
